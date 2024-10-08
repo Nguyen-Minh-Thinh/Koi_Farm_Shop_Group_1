@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.fish-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.fish-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: calc(50% - 20px);
+    text-align: center;
+}
+
+.fish-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.fish-card h3 {
+    margin: 10px 0;
+}
+
+.fish-card p {
+    color: #555;
+}
