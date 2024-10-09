@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    height: auto;
+    width: auto;
 }
 
 /* CSS header */
