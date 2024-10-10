@@ -16,7 +16,7 @@ public class TaiKhoanCuaQuanLyController {
     private TaiKhoanCuaQuanLyServiceImpl taiKhoanCuaQuanLyServiceImpl;
 
     @CrossOrigin(origins = "*") // Co the duoc truy cap tu cac nguon cua frontend
-    @PostMapping("/api/login")
+    @PostMapping("/admin/login")
     public TaiKhoanCuaQuanLy login(@RequestBody HashMap<String, String> map) {
         String userName = map.get("userName");
         String password = map.get("passWord");
