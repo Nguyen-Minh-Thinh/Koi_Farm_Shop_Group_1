@@ -3,8 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang trại cá Koi</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/sidenav.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
     <!-- Header -->
@@ -19,7 +18,8 @@
           >Đăng nhập/Đăng ký</a
         >
 
-        <a href="#">Giỏ hàng</a>
+        <!-- <a href="cart.html">Giỏ hàng</a> -->
+
       </div>
     </div>
 
@@ -166,7 +166,7 @@
         </li>
 
         <li class="menu">
-          <a href="#">Tin tức</a>
+          <a href="tintuc.html">Tin tức</a>
         </li>
 
         <li class="menu">
@@ -233,37 +233,27 @@
         <!-- /Giới thiệu loài -->
 
         <!--thẻ sản phẩm -->
-        <div class="products">
+        <div class="products shop-item">
           <div class="product_img">
-            <img src="img/tancho.png" alt="Tancho Kohaku" />
+              <img class="product_img" src="img/tancho.png" alt="Tancho Kohaku">
           </div>
           <div class="product_status">
-            <button class="status_button">Đang bán</button>
-            <h3>Tancho Kohaku</h3>
+              <button class="status_button">Đang bán</button>
+              <div class="shop-item-title">
+                  <h3>Tancho Kohaku</h3>
+              </div>
           </div>
           <div class="product_details">
-            <p>
-              Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể
-              đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn
-              rất ấn tượng.
-            </p>
-            <div class="price">
+              <p>
+                  Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể
+                  đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn
+                  rất ấn tượng.
+              </p>
               <span>Giá mua ngay:</span>
-              <strong>300.000 ₫</strong>
-            </div>
-            <button class="buy_button">ĐẶT HÀNG NGAY</button>
+              <span class="price">300,000 ₫</span>
+              <button class="buy_button">ĐẶT HÀNG NGAY</button>
           </div>
-          <div class="product_meta">
-            <p>Người bán: <strong>OnKoi Quang Minh</strong></p>
-            <p>Năm sinh: <strong>2017</strong></p>
-            <p>Kích thước: <strong>84 cm</strong></p>
-            <p>
-              Giống: <a href="#">Cá koi Kohaku</a>,
-              <a href="#">Cá koi Tancho</a>
-            </p>
-            <p>Nguồn gốc: <a href="#">Dainichi Koi Farm</a></p>
-          </div>
-        </div>
+      </div>
         <!-- /thẻ sản phẩm -->
 
         <!-- Giới thiệu loài -->
@@ -478,7 +468,6 @@
       </div>
       <img src="img/logo.png" alt="#" style="right: 20px" />
       <div class="text">
-        <p>@Copyright</p>
       </div>
 
       <!-- back to top -->
@@ -491,5 +480,7 @@
 
     <!--Scripts-->
     <script src="js/user_login_register.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>

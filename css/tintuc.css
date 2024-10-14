@@ -4,6 +4,7 @@
     scroll-behavior: smooth;
     height: auto;
     width: auto;
+    font-family: Arial, sans-serif; 
 }
 
 /* CSS header */
@@ -189,7 +190,6 @@ a:hover {
 .menu_bar .menu a:hover {
     background-color: #CC0000;
     color: #fff;
-    border-radius: 5px;
 }
 
 /* Submenu */
@@ -278,6 +278,38 @@ h1 {
     text-align: center;
     background-color: 7CF5FF;
 }
+
+/* Điều hướng */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+  
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+  
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+  
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+  
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
 /* /CSS header */
 
 /* CSS main */
@@ -286,166 +318,120 @@ h1 {
     padding: 20px;
     flex: 1;
     background-color: 7CF5FF;
-}
-
-/* Sản phẩm */
-.kind {
-    background-image: url("../img/background.jpg"); 
-    text-align: center;
     display: flex;
 }
 
-.text {
-    margin-left: 100px;
-    font-size: large;
+.container {
+    display: flex;
+    background-color: 7CF5FF;
 }
 
-.products {
-    border-radius: 8px;
-    margin-bottom: 3em;
-    margin-top: 3em;
-    width: 300px;
-    background-color: white;
-    border: 1px solid #ddd;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.product_img img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.product_status {
-    padding: 10px;
-    background-color: #f2f2f2;
-    border-bottom: 1px solid #ddd;
-}
-
-.status_button {
-    background-color: #e00000;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
+/* Sidebar container */
+.sidebar {
+    margin-right: 50px;
+    background-color: #414ec7;
+    padding: 20px;
+    width: 500px;
+    color: rgb(228, 255, 91);
+    font-family: Arial, sans-serif;
+    max-height: 300px;
+  }
+  
+/* Sidebar title */
+.sidebar h2 {
+    color: #ffcc00; /* Yellow color for the title */
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
+  
+/* List styling */
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+  
+.sidebar ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+  
+/* Icon styling (optional) */
+.sidebar h2::before {
+    content: "\2630"; /* Menu icon (hamburger icon) */
+    margin-right: 10px;
+}
+  
 
-.product_status h3 {
-    margin: 5px 0;
-    font-size: 18px;
+/* Container for the news section */
+#news {
+    background-color: 7CF5FF; /* Light background for the news section */
+    padding: 20px;
+}
+  
+#news h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
     color: #333;
 }
-
-.product_status p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #777;
+  
+/* Styling for the cards container */
+.cards {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-
-.product_sdetails {
-    padding: 15px;
-    text-align: left;
-}
-
-.product_details p {
-    font-size: 14px;
-    color: #666;
-}
-
-.price {
-    margin-top: 10px;
-}
-
-.price span {
-    font-size: 14px;
-    color: #555;
-}
-
-.price strong {
-    display: block;
-    font-size: 20px;
-    color: #e00000;
-    margin-top: 5px;
-}
-
-.buy-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #e00000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.product-meta {
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-top: 1px solid #ddd;
-    font-size: 13px;
-}
-
-.product-meta a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.product-meta a:hover {
-    text-decoration: underline;
-}
-
-/* tin tức */
-.news {
-    text-align: center;
-    margin-bottom: 2em;
-}
-
-
+  
+/* Each individual card styling */
 .card {
     background-color: white;
-    color: #111;
-    overflow: hidden;
-    width: 30%;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
 }
-
+  
+/* Image in the card */
 .card img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
-
+  
+  /* Card content styling */
 .card-content {
-    padding: 15px;
+    text-align: left;
 }
-
-.card h2 {
-    font-size: 1.2em;
-    color: #b30000; /* Dark red for headers */
+  
+.card-content h2 {
+    font-size: 1.2rem;
     margin-bottom: 10px;
+    color: #333;
 }
-
-.card p {
-    font-size: 0.9em;
-    margin-bottom: 15px;
+  
+.card-content p {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #666;
+    line-height: 1.5;
 }
-
-.card a {
-    color: #008CBA;
+  
+.card-content a {
+    display: inline-block;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
-
-.card a:hover {
-    text-decoration: underline;
+  
+.card-content a:hover {
+    background-color: rgba(162, 161, 161, 0.529); /* Darken the button on hover */
 }
+  
 
 /* /CSS main */
 
@@ -496,144 +482,3 @@ h1 {
 } */
  
 /* /CSS footer */
-
-/* news */
-
-.news-top{
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    padding-left: 100px;
-    padding-right: 100px;
-    background-color: lightskyblue;
-    
-}
-.news-top p{
-    margin-right: 10px;
-}
-.news-top span{
-    margin-right: 5px;
-}
-.news-top img{
-    width: 13px;
-    height: 13px;
-    margin-right: 5px;
-}
-.news-container{
-    padding: 10px;
-    background-color: #008CBA;
-}
-.content-box {
-    margin-left: 200px;
-    border: 1px solid #ffffff;
-    padding: 10px;
-    background-color: blue;
-    width: 800px;
-    color: #e1c8a0;
-    font-family: Arial, sans-serif;
-}
-
-.content-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffb100;
-    margin-bottom: 10px;
-}
-
-.content-list {
-    list-style-type: decimal;
-    margin-left: 20px;
-}
-
-.content-list li {
-    margin-bottom: 10px;
-}
-
-.content-list a {
-    text-decoration: none;
-    color: #e1c8a0;
-}
-
-.content-list a:hover {
-    color: #ffffff;
-}
-
-#section1, #section2, #section3, #section4, #section5 {
-    margin-top: 50px; /* Tạo khoảng cách để khi cuộn đến phần không bị che khuất */
-}
-
-.news-container .p-title{
-    color: yellow;
-    text-align: left;
-    font-size: 25px;
-    font-variant: small-caps;
-
-}
-.news-container{
-    list-style-type:decimal;
-    color: whitesmoke;
-    padding-left: 170px;
-    padding-right: 100px;
-    font-family: 'times new roman', times, serif; font-size: 14pt;
-}
-.news-container p{
-    text-align: justify;
-    font-size: 20px;
-}
-.news-container li{
-    margin-bottom: 10px;
-    font-size: 20px;
-    padding-left: 15px;
-}
-
-.news-container .em-title{
-    font-size: 22px;
-    color: rgb(221, 190, 15);
-    font-family: 'times new roman', times, serif;
-
-}
-.news-container li img{
-    padding-top: 20px;
-    padding-left: 170px;
-    align-items: center;
-    width: auto;
-    height: 600px;
-    padding-bottom: 20px;
-}
-.instructions{
-    list-style-type: disc; /* Sử dụng dấu chấm tròn cho danh sách */
-    margin-left: 30px;     /* Tạo khoảng cách lề cho danh sách */
-}
-
-.instructions ul {
-    list-style-type: none; /* Loại bỏ kiểu danh sách mặc định cho danh sách con */
-    padding-left: 20px;    /* Tạo khoảng cách bên trái cho danh sách con */
-}
-
-.instructions ul li {
-    position: relative;
-    padding-left: 15px;    /* Tạo khoảng trống cho dấu cộng */
-}
-
-.instructions ul li:before {
-    content: "+";          /* Thêm dấu cộng trước mỗi mục */
-    position: absolute;
-    left: 0;               /* Căn dấu cộng ở đầu dòng */
-    color: #ffffff;        /* Màu dấu cộng (có thể thay đổi theo ý thích) */
-}
-.news-video {
-    width: 750px;
-    height: 420px;
-    grid-column: 1 / 2;
-    padding-bottom: 20px;
-    padding-top: 20px;
-}
-.news-p{
-    list-style-type: disc;
-    margin-left: 20px;
-    color: rgb(220, 199, 40);
-}
-.news-container a{
-    text-decoration: none;
-    color: yellow;
-}

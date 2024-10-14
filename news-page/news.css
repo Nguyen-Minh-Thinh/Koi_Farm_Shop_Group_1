@@ -4,6 +4,7 @@
     scroll-behavior: smooth;
     height: auto;
     width: auto;
+    font-family: Arial, sans-serif; 
 }
 
 /* CSS header */
@@ -290,7 +291,6 @@ h1 {
 /* Sản phẩm */
 .kind {
     background-image: url("../img/background.jpg"); 
-    background-size: cover;
     text-align: center;
     display: flex;
 }
@@ -496,3 +496,159 @@ h1 {
 } */
  
 /* /CSS footer */
+
+/* news */
+
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+  
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+  
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+  
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+  
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.news-container{
+    justify-content: left;
+    padding: 10px;
+    background-color: #008CBA;
+}
+.content-box {
+    float: right;
+    margin-left: 200px;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    background-color: blue;
+    width: 300px;
+    color: #e1c8a0;
+    font-family: Arial, sans-serif;
+}
+
+.content-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffb100;
+    margin-bottom: 10px;
+}
+
+.content-list {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+.content-list li {
+    margin-bottom: 10px;
+}
+
+.content-list a {
+    text-decoration: none;
+    color: #e1c8a0;
+}
+
+.content-list a:hover {
+    color: #ffffff;
+}
+
+#section1, #section2, #section3, #section4, #section5 {
+    margin-top: 50px; /* Tạo khoảng cách để khi cuộn đến phần không bị che khuất */
+}
+
+.news-container .p-title{
+    color: yellow;
+    text-align: left;
+    font-size: 25px;
+    font-variant: small-caps;
+
+}
+.news-container{
+    list-style-type:decimal;
+    color: whitesmoke;
+    padding-left: 170px;
+    padding-right: 100px;
+    font-family: 'times new roman', times, serif; font-size: 14pt;
+}
+.news-container p{
+    text-align: left;
+    font-size: 20px;
+}
+.news-container li{
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.news-container .em-title{
+    font-size: 22px;
+    color: rgb(221, 190, 15);
+    font-family: 'times new roman', times, serif;
+
+}
+.news-container li img{
+    padding-top: 20px;
+    padding-left: 170px;
+    align-items: center;
+    width: auto;
+    height: 400px;
+    padding-bottom: 20px;
+}
+.instructions{
+    justify-items: left;
+    list-style-type: disc; /* Sử dụng dấu chấm tròn cho danh sách */
+    margin-left: 30px;     /* Tạo khoảng cách lề cho danh sách */
+}
+
+.instructions ul {
+    list-style-type: none; /* Loại bỏ kiểu danh sách mặc định cho danh sách con */
+    padding-left: 20px;    /* Tạo khoảng cách bên trái cho danh sách con */
+}
+
+.instructions ul li {
+    position: relative;
+    padding-left: 15px;    /* Tạo khoảng trống cho dấu cộng */
+}
+
+.instructions ul li:before {
+    content: "+";          /* Thêm dấu cộng trước mỗi mục */
+    position: absolute;
+    left: 0;               /* Căn dấu cộng ở đầu dòng */
+    color: #ffffff;        /* Màu dấu cộng (có thể thay đổi theo ý thích) */
+}
+.news-video {
+    width: 750px;
+    height: 420px;
+    grid-column: 1 / 2;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.news-p{
+    list-style-type: disc;
+    margin-left: 20px;
+    color: rgb(220, 199, 40);
+}
+.news-container a{
+    text-decoration: none;
+    color: yellow;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .cart-items {
+            margin-top: 20px;
+        }
+
+        .cart-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart-items displayCart">
+        <!-- Các sản phẩm sẽ được thêm vào đây -->
+    </div>
+    <div class="cart-total">
+        <strong class="cart-total-title">Tổng cộng: </strong>
+        <span class="total-cart">0 ₫</span>
+    </div>
+    <button class="purchase_button">Thanh toán</button>
+    
+    <script src="js/cart.js"></script>
+</body>
+</html>
