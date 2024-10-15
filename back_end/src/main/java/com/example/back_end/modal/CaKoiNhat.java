@@ -1,9 +1,11 @@
 package com.example.back_end.modal;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
-@Table(name = "ca_koi_nhat")
+@Table(name = "ca_koi_nhat", schema = "koi_farm_shop")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CaKoiNhat {
     @Id
     @Column(name = "id_of_fish", nullable = false, length = 50)
@@ -40,18 +42,7 @@ public class CaKoiNhat {
     @Column(name = "origin_of_fish", length = 100)
     private String originOfFish;
 
-    // Thay FetchType.LAZY -> FetchType.EAGER
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "type_of_fish")
-    private GioiThieu typeOfFish;
-
-    public GioiThieu getTypeOfFish() {
-        return typeOfFish;
-    }
-
-    public void setTypeOfFish(GioiThieu typeOfFish) {
-        this.typeOfFish = typeOfFish;
-    }
+    // Getters and Setters
 
     public String getIdOfFish() {
         return idOfFish;
@@ -140,5 +131,4 @@ public class CaKoiNhat {
     public void setOriginOfFish(String originOfFish) {
         this.originOfFish = originOfFish;
     }
-
 }

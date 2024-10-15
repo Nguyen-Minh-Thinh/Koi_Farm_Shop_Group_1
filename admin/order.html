@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="order.css">
+    <title>Quản lý đơn hàng</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Admin</h2>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Quản lý sản phẩm</a></li>
+                <li><a href="/admin/order.html" class="active">Quản lý đơn hàng</a></li>
+                <li><a href="#">Quản lý khách hàng</a></li>
+                <li><a href="#">Quản lý giao dịch</a></li>
+                <li><a href="#">Quản lý khuyến mãi</a></li>
+                <li><a href="#">Thống kê</a></li>
+                <li><a href="#">Cài đặt</a></li>
+                <li><a href="#">Hỗ trợ</a></li>
+                <li><a href="#">Đăng xuất</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <h1>Danh sách đơn hàng</h1>
+            <div class="table-wrapper">
+                <table class="order-table">
+                    <thead>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Ngày đặt hàng</th>
+                            <th>Khách hàng</th>
+                            <th>Trạng thái</th>
+                            <th>Tổng tiền</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be dynamically generated here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Order Details Modal -->
+<!-- Order Details Modal -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>CHI TIẾT ĐƠN HÀNG</h2>
+        
+        <div class="order-details-container">
+            <!-- Left: Order Items -->
+            <div id="order-items" class="order-items"></div>
+
+            <!-- Right: Order Information -->
+            <div id="order-info-container" class="order-info"></div>
+        </div>
+        
+        <div id="order-total" class="order-total">
+            <p><strong>Thành tiền:</strong> <span id="total-price"></span></p>
+        </div>
+        
+        <button class="btn cancel-btn">Chưa xử lý</button>
+    </div>
+</div>
+
+<!-- Status History Modal -->
+<div id="statusModal" class="modal">
+    <div class="modal-content">
+        <span class="close-status">&times;</span>
+        <h2>Tình Trạng Đơn Hàng</h2>
+
+        <table class="status-table">
+            <thead>
+                <tr>
+                    <th>Thời gian</th>
+                    <th>Tình trạng</th>
+                    <th>Chi tiết</th>
+                </tr>
+            </thead>
+            <tbody id="status-table-body">
+                <!-- Status history will be dynamically populated here -->
+            </tbody>
+        </table>
+
+        <!-- Form to Add New Status -->
+        <h3>Thêm tình trạng mới</h3>
+        <div class="add-status-form">
+            <input type="text" id="new-time" placeholder="Thời gian (VD: 13/10/2024 20h00)">
+            <input type="text" id="new-situation" placeholder="Tình trạng (VD: Đang giao)">
+            <input type="text" id="new-details" placeholder="Chi tiết (VD: Shipper đang giao)">
+            <button id="add-status-btn" class="btn add-status-btn">Thêm tình trạng</button>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- Include the order.js script -->
+    <script src="order.js"></script>
+</body>
+
+</html>
