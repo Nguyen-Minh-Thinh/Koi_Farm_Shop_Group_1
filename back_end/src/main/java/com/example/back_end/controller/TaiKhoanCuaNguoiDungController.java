@@ -32,7 +32,7 @@ public class TaiKhoanCuaNguoiDungController {
     }
 
     @CrossOrigin(origins = "*") // Co the duoc truy cap tu cac nguon cua frontend
-    @PostMapping("/user/register/authenticate")
+    @PostMapping("/user/register/user-name")
     public ResponseEntity<Map<String, Boolean>> registerAuthenticateUserName(@RequestBody HashMap<String, String> request) {
         String userName = request.get("userName"); // Lấy giá trị từ key 'username'
         boolean exists = taiKhoanCuaNguoiDungServiceImple.xacThucDangKyUserName(userName);
@@ -58,6 +58,28 @@ public class TaiKhoanCuaNguoiDungController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Đã có lỗi xảy ra. Vui lòng thử lại."); // Trả về thông báo lỗi chung
         }
     }
+    
+    @CrossOrigin(origins = "*") // Có thể được truy cập từ các nguồn của frontend
+    @PostMapping("/user/register/email")
+    public ResponseEntity<String> authenticateEmail(@RequestBody HashMap<String, String> request) {
+        String userName = request.get("userName");
+        String email = request.get("email");
+
+        boolean isEmailValid = taiKhoanCuaNguoiDungServiceImple.xacThucEmail(userName, email);
+
+        if (isEmailValid) {
+            // Nếu xác thực thành công, trả về mã trạng thái 200 OK
+            return ResponseEntity.ok("Email is valid.");
+        } else {
+            // Nếu xác thực thất bại, trả về mã trạng thái 400 Bad Request
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Email is not valid.");
+        }
+    }
+
+
+
+
 
 
 }

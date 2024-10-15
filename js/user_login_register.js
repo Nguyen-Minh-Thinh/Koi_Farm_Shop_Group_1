@@ -123,7 +123,7 @@ document.getElementById('reg_username').addEventListener('input', function () {
     // Chỉ kiểm tra nếu tên đăng nhập không rỗng
     if (username) {
         // Gửi yêu cầu kiểm tra tên đăng nhập có tồn tại không
-        fetch('http://localhost:8080/user/register/authenticate', {
+        fetch('http://localhost:8080/user/register/user-name', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -214,7 +214,104 @@ document.querySelector('#registerForm form').addEventListener('submit', function
     });
 });
 
+// Function to check if username exists as user types in forgot password
+document.getElementById('forgot_user_name').addEventListener('input', function () {
+    // Lấy thông báo lỗi
+    const errorMessage = document.getElementById('error-message-3');
+    const username = this.value;
+    console.log(username);
+    errorMessage.style.display = 'none';
+    // Chỉ kiểm tra nếu tên đăng nhập không rỗng
+    if (username) {
+        // Gửi yêu cầu kiểm tra tên đăng nhập có tồn tại không
+        fetch('http://localhost:8080/user/register/user-name', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userName: username }),
+        })
+        .then(response => response.json()) // Chuyển đổi phản hồi thành JSON
+        .then(data => {
+            const exists = data.exists; // Lấy giá trị exists từ phản hồi
 
+            
+
+            // Xóa thông báo trước nếu có
+            errorMessage.style.display = 'none'; // Ẩn thông báo lỗi
+
+            if (!exists) {
+                // Hiển thị thông báo nếu tên đăng nhập đã tồn tại
+                errorMessage.textContent = '*Tên đăng nhập không tồn tại.';
+                errorMessage.style.display = 'block'; // Hiện thông báo lỗi
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+});
+
+
+// Function to check if email exists as user types in forgot password
+document.getElementById('forgot_email').addEventListener('input', function () {
+    const errorMessage_1 = document.getElementById('error-message-3');
+    const userName = document.getElementById('forgot_user_name').value;
+    const email = document.getElementById('forgot_email').value;
+
+    const errorMessage_2 = document.getElementById('error-message-4');
+    // Kiểm tra nếu userName trống hoặc thông báo lỗi của userName đang hiển thị
+    if (!userName.trim() && !email.trim()){
+        errorMessage_2.style.display = 'none';
+    }
+    else if (!userName.trim()) {
+        // Hiển thị thông báo yêu cầu nhập tên đăng nhập
+        errorMessage_2.style.display = 'none';
+        errorMessage_2.textContent = '*Vui lòng nhập tên đăng nhập trước.';
+        errorMessage_2.style.display = 'block'; // Hiện thông báo lỗi
+    } 
+    else if (errorMessage_1.style.display === 'block') {
+        errorMessage_2.style.display = 'none';
+        // Nếu tên đăng nhập không tồn tại, yêu cầu sửa tên đăng nhập
+        errorMessage_2.textContent = '*Vui lòng sửa tên đăng nhập.';
+        errorMessage_2.style.display = 'block'; // Hiện thông báo lỗi
+    } 
+    // else {
+    //     // Xóa thông báo trước nếu có
+    //     errorMessage_2.style.display = 'none'; // Ẩn thông báo lỗi
+    //     // Tạo body cho yêu cầu POST
+    //     const email = document.getElementById('forgot_email').value;
+    //     const requestBody = {
+    //         userName: userName,
+    //         email: email
+    //     };
+
+    //     // Gửi yêu cầu POST để kiểm tra email
+    //     fetch('http://localhost:8080/user/register/email', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(requestBody),
+    //     })
+    //     .then(response => {
+    //         if (response.status === 200) {
+    //             // Nếu trạng thái là 200, xử lý thành công
+    //             console.log('Email khớp, yêu cầu thành công.');
+    //             // Bạn có thể thêm mã ở đây để thực hiện hành động khác
+    //         } else if (response.status === 400) {
+    //             // Nếu trạng thái là 400, xử lý lỗi
+    //             console.log('Email không khớp, vui lòng kiểm tra lại.');
+    //             // Hiển thị thông báo lỗi hoặc thực hiện hành động khác
+    //         } else {
+    //             console.log('Có lỗi xảy ra:', response.status);
+    //         }
+    //     })
+    //     .catch(error => {
+    //         console.error('Error:', error);
+    //     });
+    // }
+});
 
 
 

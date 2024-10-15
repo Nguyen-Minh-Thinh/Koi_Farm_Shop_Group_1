@@ -104,6 +104,16 @@
           <h2 style="text-align: center;">Quên mật khẩu</h2>
           <form action="/forgot-password" method="POST">
             <div class="form-group">
+              <label for="forgot_user_name">Nhập tên đăng nhập:</label>
+              <input
+                type="text"
+                id="forgot_user_name"
+                name="forgot_user_name"
+                required
+              />
+            </div>
+            <p id="error-message-3" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <div class="form-group">
               <label for="forgot_email">Nhập email của bạn:</label>
               <input
                 type="email"
@@ -112,10 +122,12 @@
                 required
               />
             </div>
+            <p id="error-message-4" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
             <button type="submit" style="width: 30%; margin-left: 35%;">Lấy lại mật khẩu</button>
             <p>Quay lại <a href="#" id="backToLogin">Đăng nhập</a></p>
           </form>
         </div>
+
       </div>
     </div>
 
