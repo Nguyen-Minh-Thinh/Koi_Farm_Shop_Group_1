@@ -106,7 +106,7 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"]{
     width: 100%; /* Chiều rộng 100% */
     padding: 10px; /* Padding cho input */
     border: 1px solid #ddd; /* Đường viền cho input */

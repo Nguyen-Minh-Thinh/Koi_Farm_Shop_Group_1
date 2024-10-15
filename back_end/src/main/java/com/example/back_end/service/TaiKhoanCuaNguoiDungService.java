@@ -6,4 +6,5 @@ public interface TaiKhoanCuaNguoiDungService {
     TaiKhoanCuaNguoiDung xacThucDangNhap(String userName, String passWord);
     boolean xacThucDangKyUserName(String userName);
     TaiKhoanCuaNguoiDung xacThucDangKy(TaiKhoanCuaNguoiDung taiKhoanCuaNguoiDung);
+    boolean xacThucEmail(String userName, String email);
 }

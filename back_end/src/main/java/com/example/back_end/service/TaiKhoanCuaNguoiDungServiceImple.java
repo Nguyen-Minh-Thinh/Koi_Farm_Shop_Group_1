@@ -49,4 +49,17 @@ public class TaiKhoanCuaNguoiDungServiceImple implements TaiKhoanCuaNguoiDungSer
             throw new RuntimeException("Tên đăng nhập đã tồn tại."); // Hoặc bạn có thể trả về một giá trị khác
         }
     }
+
+    @Override
+    public boolean xacThucEmail(String userName, String email) {
+        Optional<TaiKhoanCuaNguoiDung> existingAccount = taiKhoanCuaNguoiDungRepository.findById(userName);
+
+        // Kiểm tra xem tài khoản có tồn tại không
+        if (existingAccount.isPresent()) {
+            // So sánh chuỗi bằng phương thức equals()
+            return email.equals(existingAccount.get().getEmail());
+        }
+        return false; // Nếu tài khoản không tồn tại, trả về false
+
+    }
 }

@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tai_khoan_cua_nguoi_dung")
-public class TaiKhoanCuaNguoiDung {
+    public class TaiKhoanCuaNguoiDung {
     @Id
     @Column(name = "user_name", nullable = false, length = 50)
     private String userName;
