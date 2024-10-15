@@ -1,0 +1,103 @@
+.dh {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dh a {
+    color: #000; 
+    text-decoration: none; 
+    margin-right: 5px; 
+}
+
+.dh a:visited {
+    color: #000; 
+}
+
+.dh a:hover {
+    text-decoration: underline; 
+}
+
+.dh span {
+    margin: 0 5px;
+    color: #666;
+}
+
+.home-icon {
+    width: 14px; 
+    height: 14px; 
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+body {
+    background-color: #7CF5FF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.gioithieu {
+    text-align: left;
+    margin: 20px auto; 
+    max-width: 1000px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.gioithieu h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.gioithieu hr {
+    width: 1000px;
+    height: 2px;
+    background-color: black;
+    border: none;
+    margin: 10px auto;
+}
+
+.gioithieu iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 20px auto;
+    display:block;
+}
+
+.noidung {
+    padding: 20px;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.noidung p {
+    text-align: justify;
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.thongtin {
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.thongtin h2{
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.thongtin p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 8px;
+}

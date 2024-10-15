@@ -1,0 +1,146 @@
+body {
+    background-color: #7CF5FF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dh {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dh a {
+    color: #000; 
+    text-decoration: none; 
+    margin-right: 5px; 
+}
+
+.dh a:visited {
+    color: #000; 
+}
+
+.dh a:hover {
+    text-decoration: underline; 
+}
+
+.dh span {
+    margin: 0 5px;
+    color: #666;
+}
+
+.dh a:visited {
+    color: #000; 
+}
+
+.dh a:hover {
+    text-decoration: underline; 
+}
+
+.dh span {
+    margin: 0 5px;
+    color: #666;
+}
+
+.home-icon {
+    width: 14px; 
+    height: 14px; 
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.tin {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.tin div {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.tin h2 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #FFA500;
+}
+
+.tin a {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+.tin a:hover {
+    text-decoration: underline;
+}
+
+.tin ul {
+    padding-left: 20px;
+}
+
+.tin ul li {
+    margin-bottom: 10px;
+}
+
+.tin img {
+    max-width: 100%;
+    height: auto; 
+    display: block;
+    margin: 15px auto; 
+    border-radius: 8px; 
+}
+
+.tin h3 {
+    font-size: 24px;
+    color: #FFA500;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.4; 
+}
+
+.bangtin {
+    max-width: 450px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #0000FF;
+    border: 2px solid #00FFFF;
+    border-radius: 5px;
+}
+
+.bangtin table {
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.bangtin table td {
+    padding: 10px 0;
+}
+
+.bangtin a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.bangtin a:hover {
+    text-decoration: underline;
+}
+
+.bangtin h2 {
+    font-size: 20px;
+    color: #FFA500;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #FFA500;
+}
+
+
