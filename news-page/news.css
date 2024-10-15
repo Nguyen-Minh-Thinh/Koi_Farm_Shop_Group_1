@@ -538,11 +538,13 @@ ul.breadcrumb li a:hover {
 }
 .content-box {
     float: right;
-    margin-left: 200px;
+    margin-top: 5rem;
+    margin-right: 100px;
     border: 1px solid #ffffff;
     padding: 10px;
-    background-color: blue;
+    background-color: #414ec7;
     width: 300px;
+    height: 300px;
     color: #e1c8a0;
     font-family: Arial, sans-serif;
 }
@@ -576,6 +578,10 @@ ul.breadcrumb li a:hover {
     margin-top: 50px; /* Tạo khoảng cách để khi cuộn đến phần không bị che khuất */
 }
 
+.news-main {
+    background-color: #008CBA;
+}
+
 .news-container .p-title{
     color: yellow;
     text-align: left;
@@ -584,6 +590,8 @@ ul.breadcrumb li a:hover {
 
 }
 .news-container{
+    display: flex;
+    flex-direction: column;
     list-style-type:decimal;
     color: whitesmoke;
     padding-left: 170px;
