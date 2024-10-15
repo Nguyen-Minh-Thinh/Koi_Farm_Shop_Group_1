@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         try {
             // Gửi yêu cầu POST đến API login
-            const response = await fetch("http://localhost:8080/api/login", {
+            const response = await fetch("http://localhost:8080/admin/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

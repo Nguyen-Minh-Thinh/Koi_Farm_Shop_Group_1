@@ -1,0 +1,484 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    height: auto;
+    width: auto;
+    font-family: Arial, sans-serif; 
+}
+
+/* CSS header */
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: 00CCDD;
+    color: #111;
+    font-family: Arial, sans-serif;
+}
+
+/* Chức năng */
+.top_head {
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.top_head .tele {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.top_head .tele img {
+    margin-right: 8px;
+}
+
+.top_head a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    text-align: left;
+}
+
+/* User đăng nhập, đăng ký */
+/* Modal styling */
+.modal {
+    display: none; /* Ẩn modal mặc định */
+    position: fixed; /* Định vị modal */
+    z-index: 1; /* Nằm trên tất cả các phần khác */
+    left: 0; /* Đặt từ bên trái */
+    top: 0; /* Đặt từ trên cùng */
+    width: 100%; /* Chiều rộng 100% */
+    height: 100%; /* Chiều cao 100% */
+    background-color: rgba(0, 0, 0, 0.4); /* Nền trong suốt */
+}
+
+.modal-content {
+    background-color: white; /* Nền trắng cho nội dung */
+    margin: 5% auto; /* Căn giữa */
+    padding: 30px; /* Padding cho nội dung */
+    border-radius: 10px; /* Bo góc cho modal */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng cho modal */
+    width: 500px; /* Chiều rộng tối đa của modal */
+    text-align: left; /* Căn trái nội dung */
+}
+
+/* Đóng icon */
+.close {
+    color: #aaa; /* Màu cho icon đóng */
+    float: right; /* Đặt ở góc trên bên phải */
+    font-size: 28px; /* Kích thước chữ cho icon */
+    font-weight: bold; /* Đậm chữ */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Màu khi hover */
+    text-decoration: none; /* Không gạch chân */
+    cursor: pointer; /* Con trỏ khi hover */
+}
+
+/* Style cho tiêu đề */
+h2 {
+    color: #333; /* Màu chữ cho tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* Style cho input */
+.form-group {
+    display: flex; /* Sử dụng flexbox để đặt label và input nằm ngang */
+    align-items: center; /* Căn giữa dọc */
+    margin-bottom: 15px; /* Khoảng cách giữa các nhóm */
+}
+
+label {
+    width: 150px; /* Chiều rộng cố định cho label */
+    margin-right: 10px; /* Khoảng cách giữa label và input */
+    color: #333; /* Màu chữ cho label */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%; /* Chiều rộng 100% */
+    padding: 10px; /* Padding cho input */
+    border: 1px solid #ddd; /* Đường viền cho input */
+    border-radius: 5px; /* Bo góc cho input */
+    background-color: #f9f9f9; /* Màu nền cho input */
+    transition: border 0.3s; /* Hiệu ứng khi focus */
+}
+
+input:focus {
+    border-color: #F07334; /* Màu viền khi focus */
+    outline: none; /* Ẩn outline khi focus */
+}
+
+
+
+
+/* Style cho button */
+button {
+    padding: 5px; /* Giảm padding cho button */
+    width: 100%; /* Chiều rộng 100% */
+    background-color: #F07334; /* Màu nền cho button */
+    color: white; /* Màu chữ cho button */
+    border: none; /* Ẩn viền cho button */
+    cursor: pointer; /* Con trỏ khi hover */
+    border-radius: 5px; /* Bo góc cho button */
+    transition: background-color 0.3s; /* Hiệu ứng khi hover */
+    font-size: 16px; /* Kích thước chữ cho button */
+}
+
+button:hover {
+    background-color: #D95C2A; /* Màu nền khi hover */
+}
+
+/* Style cho liên kết trong modal */
+p {
+    margin: 10px 0; /* Khoảng cách cho các đoạn văn */
+    text-align: center; /* Căn giữa văn bản */
+}
+
+a {
+    color: #4CAF50; /* Màu chữ cho liên kết */
+    text-decoration: none; /* Không gạch chân */
+}
+
+a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+
+
+
+/* Logo */
+.logo img {
+    margin-left: 150px;
+    height: 60px;
+    width: 100px;
+}
+
+/* Menu bar */
+.menu_bar {
+    display: flex;
+    list-style-type: none;
+    
+    
+}
+
+.menu_bar .menu {
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu_bar .menu a {
+    color: #111;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-weight: bold;
+}
+
+.menu_bar .menu a:hover {
+    background-color: #CC0000;
+    color: #fff;
+}
+
+/* Submenu */
+.sub_menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 999;
+    list-style-type: none;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.sub_menu li {
+    text-align: left;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.sub_menu li a {
+    color: #111;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.sub_menu li a:hover {
+    background-color: #ddd;
+}
+
+.menu:hover .sub_menu {
+    display: block;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+}
+
+/* nav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #CC0000;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* Tên shop */
+h1 {
+    text-align: center;
+    background-color: 7CF5FF;
+}
+
+/* Điều hướng */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+  
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+  
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+  
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+  
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+/* /CSS header */
+
+/* CSS main */
+.main {
+    min-height: 400px;
+    padding: 20px;
+    flex: 1;
+    background-color: 7CF5FF;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    background-color: 7CF5FF;
+}
+
+/* Sidebar container */
+.sidebar {
+    margin-right: 50px;
+    background-color: #414ec7;
+    padding: 20px;
+    width: 500px;
+    color: rgb(228, 255, 91);
+    font-family: Arial, sans-serif;
+    max-height: 300px;
+  }
+  
+/* Sidebar title */
+.sidebar h2 {
+    color: #ffcc00; /* Yellow color for the title */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+  
+/* List styling */
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+  
+.sidebar ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+  
+/* Icon styling (optional) */
+.sidebar h2::before {
+    content: "\2630"; /* Menu icon (hamburger icon) */
+    margin-right: 10px;
+}
+  
+
+/* Container for the news section */
+#news {
+    background-color: 7CF5FF; /* Light background for the news section */
+    padding: 20px;
+}
+  
+#news h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+  
+/* Styling for the cards container */
+.cards {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  
+/* Each individual card styling */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+  
+/* Image in the card */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+  
+  /* Card content styling */
+.card-content {
+    text-align: left;
+}
+  
+.card-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+  
+.card-content p {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #666;
+    line-height: 1.5;
+}
+  
+.card-content a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+  
+.card-content a:hover {
+    background-color: rgba(162, 161, 161, 0.529); /* Darken the button on hover */
+}
+  
+
+/* /CSS main */
+
+/* CSS footer */
+.footer {
+    color: white;
+    line-height:50px; 
+    background-color:#111; 
+    text-align:center; 
+    font-family: Arial, sans-serif; 
+    clear:both;
+    position: relative;
+}
+
+.social {
+    font-size: 20px;
+}
+
+.text {
+    text-align: center;
+}
+
+/* .btntop {
+    display: flex;
+    align-items: flex-end;
+    width: 60px;
+    mask:linear-gradient(#0000 100vh,#000 0)
+} */
+  
+/* .top {
+    position: sticky;
+    bottom: 20px;      
+    margin-right:10px; 
+    
+    width:100%;
+    aspect-ratio:1;
+    background:#ff8b24;
+    border-radius:10px;
+} */
+
+/* .top:before {
+    content:"";
+    position:absolute;
+    inset:30%;
+    transform:translateY(20%) rotate(-45deg);
+    border-top:5px solid #fff;
+    border-right:5px solid #fff;
+} */
+ 
+/* /CSS footer */

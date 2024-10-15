@@ -189,7 +189,6 @@ a:hover {
 .menu_bar .menu a:hover {
     background-color: #CC0000;
     color: #fff;
-    border-radius: 5px;
 }
 
 /* Submenu */
@@ -291,6 +290,7 @@ h1 {
 /* Sản phẩm */
 .kind {
     background-image: url("../img/background.jpg"); 
+    background-size: cover;
     text-align: center;
     display: flex;
 }
