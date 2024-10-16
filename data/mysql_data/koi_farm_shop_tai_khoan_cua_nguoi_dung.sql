@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `koi_farm_shop` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `koi_farm_shop`;
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
 -- Host: localhost    Database: koi_farm_shop
@@ -29,7 +27,8 @@ CREATE TABLE `tai_khoan_cua_nguoi_dung` (
   `pass_word` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `phone_number` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`user_name`)
+  PRIMARY KEY (`user_name`),
+  UNIQUE KEY `phone_number` (`phone_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -39,7 +38,7 @@ CREATE TABLE `tai_khoan_cua_nguoi_dung` (
 
 LOCK TABLES `tai_khoan_cua_nguoi_dung` WRITE;
 /*!40000 ALTER TABLE `tai_khoan_cua_nguoi_dung` DISABLE KEYS */;
-INSERT INTO `tai_khoan_cua_nguoi_dung` VALUES ('nguyenminhthinh','26122004','fsafsa@fdas','0123456789');
+INSERT INTO `tai_khoan_cua_nguoi_dung` VALUES ('nguyenminhthinh','26122004','2251120114@ut.edu.vn','0123456789'),('nguyenminhthinhb','0123456789','nguyenminhthinh26122004@gmail.com','0123456788'),('nguyenvana','12345','nguyenminhthinh26122004@gmail.com','0123456787');
 /*!40000 ALTER TABLE `tai_khoan_cua_nguoi_dung` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-10 18:00:13
+-- Dump completed on 2024-10-16 22:23:24

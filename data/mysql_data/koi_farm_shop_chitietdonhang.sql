@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: koi_farm_shop
+-- Host: localhost    Database: koi_farm_shop
 -- ------------------------------------------------------
 -- Server version	8.0.39
 
@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `chitietdonhang`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `chitietdonhang` (
-  `Id` int NOT NULL,
   `don_hang_id` int NOT NULL,
-  `id_of_fish` varchar(50) DEFAULT NULL,
+  `id_of_fish` varchar(50) NOT NULL,
   `quantity` int NOT NULL,
-  PRIMARY KEY (`Id`),
+  PRIMARY KEY (`don_hang_id`,`id_of_fish`),
   KEY `fk_fish` (`id_of_fish`),
   KEY `idx_DonHangId` (`don_hang_id`),
+  CONSTRAINT `don_hang_id` FOREIGN KEY (`don_hang_id`) REFERENCES `donhang` (`order_id`),
   CONSTRAINT `fk_fish` FOREIGN KEY (`id_of_fish`) REFERENCES `ca_koi_nhat` (`id_of_fish`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,7 +40,7 @@ CREATE TABLE `chitietdonhang` (
 
 LOCK TABLES `chitietdonhang` WRITE;
 /*!40000 ALTER TABLE `chitietdonhang` DISABLE KEYS */;
-INSERT INTO `chitietdonhang` VALUES (1,1,'Asagi_06',2),(2,1,'Kohaku_053',1),(3,1,'Kohaku_054',3),(4,2,'Kohaku_056',1),(5,2,'Kohaku_057',2),(6,3,'Kohaku_054',3),(7,4,'Kohaku_056',1),(8,5,'Kohaku_057',2);
+INSERT INTO `chitietdonhang` VALUES (1,'Asagi_06',2),(1,'Kohaku_053',1),(1,'Kohaku_054',3),(2,'Kohaku_056',1),(2,'Kohaku_057',2),(3,'Kohaku_054',3),(4,'Kohaku_056',1);
 /*!40000 ALTER TABLE `chitietdonhang` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-15 20:24:17
+-- Dump completed on 2024-10-16 22:23:24
