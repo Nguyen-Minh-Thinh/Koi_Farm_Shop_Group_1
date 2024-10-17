@@ -3,6 +3,9 @@ package com.example.back_end.modal;
 import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "ca_koi_nhat", schema = "koi_farm_shop")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -41,6 +44,29 @@ public class CaKoiNhat {
 
     @Column(name = "origin_of_fish", length = 100)
     private String originOfFish;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "type_of_fish")
+    private GioiThieu typeOfFish;
+
+    @OneToMany(mappedBy = "idOfFish")
+    private Set<Chitietdonhang> chitietdonhangs = new LinkedHashSet<>();
+
+    public Set<Chitietdonhang> getChitietdonhangs() {
+        return chitietdonhangs;
+    }
+
+    public void setChitietdonhangs(Set<Chitietdonhang> chitietdonhangs) {
+        this.chitietdonhangs = chitietdonhangs;
+    }
+
+    public GioiThieu getTypeOfFish() {
+        return typeOfFish;
+    }
+
+    public void setTypeOfFish(GioiThieu typeOfFish) {
+        this.typeOfFish = typeOfFish;
+    }
 
     // Getters and Setters
 

@@ -3,10 +3,6 @@ package com.example.back_end.modal;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,8 +11,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "donhang", schema = "koi_farm_shop")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Donhang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,27 +43,23 @@ public class Donhang {
     @Column(name = "user_name", length = 50)
     private String userName;
 
-    @OneToMany(mappedBy = "donHang", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private Set<Chitietdonhang> donHangDetails = new LinkedHashSet<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "phone_number", referencedColumnName = "phone_number")
+    private TaiKhoanCuaNguoiDung phoneNumber;
 
-    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private Set<TinhTrangDonHang> ttDonhangid = new LinkedHashSet<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_khuyen_mai")
+    private KhuyenMai idKhuyenMai;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "don_hang_id", referencedColumnName = "don_hang_id")
     private Chitietdonhang donHang;
 
-    public Chitietdonhang getDonHang() {
-        return donHang;
-    }
+    @OneToMany(mappedBy = "donHang")
+    private Set<Chitietdonhang> chitietdonhangs = new LinkedHashSet<>();
 
-    public void setDonHang(Chitietdonhang donHang) {
-        this.donHang = donHang;
-    }
-
-    // Getters and Setters
+    @OneToMany(mappedBy = "order")
+    private Set<TinhTrangDonHang> tinhTrangDonHangs = new LinkedHashSet<>();
 
     public Integer getId() {
         return id;
@@ -127,27 +117,44 @@ public class Donhang {
         this.userName = userName;
     }
 
-    public Set<Chitietdonhang> getDonHangDetails() {
-        return donHangDetails;
+    public TaiKhoanCuaNguoiDung getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setDonHangDetails(Set<Chitietdonhang> donHangDetails) {
-        this.donHangDetails = donHangDetails;
+    public void setPhoneNumber(TaiKhoanCuaNguoiDung phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public Set<TinhTrangDonHang> getTtDonhangid() {
-        return ttDonhangid;
+    public KhuyenMai getIdKhuyenMai() {
+        return idKhuyenMai;
     }
 
-    public void setTtDonhangid(Set<TinhTrangDonHang> ttDonhangid) {
-        this.ttDonhangid = ttDonhangid;
+    public void setIdKhuyenMai(KhuyenMai idKhuyenMai) {
+        this.idKhuyenMai = idKhuyenMai;
     }
 
-    //    public TinhTrangDonHang getTtDonhangid() {
-//        return ttDonhangid;
-//    }
-//
-//    public void setTtDonhangid(TinhTrangDonHang ttDonhangid) {
-//        this.ttDonhangid = ttDonhangid;
-//    }
+    public Chitietdonhang getDonHang() {
+        return donHang;
+    }
+
+    public void setDonHang(Chitietdonhang donHang) {
+        this.donHang = donHang;
+    }
+
+    public Set<Chitietdonhang> getChitietdonhangs() {
+        return chitietdonhangs;
+    }
+
+    public void setChitietdonhangs(Set<Chitietdonhang> chitietdonhangs) {
+        this.chitietdonhangs = chitietdonhangs;
+    }
+
+    public Set<TinhTrangDonHang> getTinhTrangDonHangs() {
+        return tinhTrangDonHangs;
+    }
+
+    public void setTinhTrangDonHangs(Set<TinhTrangDonHang> tinhTrangDonHangs) {
+        this.tinhTrangDonHangs = tinhTrangDonHangs;
+    }
+
 }

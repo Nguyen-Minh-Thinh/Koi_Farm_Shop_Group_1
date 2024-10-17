@@ -46,9 +46,14 @@ public class TaiKhoanCuaNguoiDungController {
 
     @CrossOrigin(origins = "*") // Có thể được truy cập từ các nguồn của frontend
     @PostMapping("/user/register")
-    public ResponseEntity<?> register(@RequestBody TaiKhoanCuaNguoiDung taiKhoanCuaNguoiDung) {
+    public ResponseEntity<?> register(@RequestBody HashMap<String, String> request) {
+        TaiKhoanCuaNguoiDung newObj = new TaiKhoanCuaNguoiDung();
+        newObj.setUserName(request.get("userName"));
+        newObj.setPassWord(request.get("passWord"));
+        newObj.setEmail(request.get("email"));
+        newObj.setPhoneNumber(request.get("phoneNumber"));
         try {
-            TaiKhoanCuaNguoiDung newAccount = taiKhoanCuaNguoiDungServiceImple.xacThucDangKy(taiKhoanCuaNguoiDung);
+            TaiKhoanCuaNguoiDung newAccount = taiKhoanCuaNguoiDungServiceImple.xacThucDangKy(newObj);
             return ResponseEntity.status(HttpStatus.CREATED).body(newAccount); // Trả về tài khoản đã được lưu với mã trạng thái 201 Created
         } catch (RuntimeException e) {
             // Xử lý trường hợp tên đăng nhập đã tồn tại

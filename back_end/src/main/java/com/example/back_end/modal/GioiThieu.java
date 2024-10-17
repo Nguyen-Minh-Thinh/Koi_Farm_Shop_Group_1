@@ -1,9 +1,9 @@
 package com.example.back_end.modal;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "gioi_thieu")
@@ -17,6 +17,17 @@ public class GioiThieu {
 
     @Column(name = "video")
     private String video;
+
+    @OneToMany(mappedBy = "typeOfFish")
+    private Set<CaKoiNhat> caKoiNhats = new LinkedHashSet<>();
+
+    public Set<CaKoiNhat> getCaKoiNhats() {
+        return caKoiNhats;
+    }
+
+    public void setCaKoiNhats(Set<CaKoiNhat> caKoiNhats) {
+        this.caKoiNhats = caKoiNhats;
+    }
 
     public String getTypeOfFish() {
         return typeOfFish;

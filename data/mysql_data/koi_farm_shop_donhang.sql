@@ -32,10 +32,13 @@ CREATE TABLE `donhang` (
   `user_name` varchar(50) DEFAULT NULL,
   `phone_number` varchar(15) DEFAULT NULL,
   `id_khuyen_mai` int DEFAULT NULL,
+  `don_hang_id` int DEFAULT NULL,
   PRIMARY KEY (`order_id`),
   KEY `phone_number` (`phone_number`),
   KEY `fk_id_khuyen_mai` (`id_khuyen_mai`),
+  KEY `FKit2ijd3rp1mi8fmdu33qe6ojc` (`don_hang_id`),
   CONSTRAINT `fk_id_khuyen_mai` FOREIGN KEY (`id_khuyen_mai`) REFERENCES `khuyen_mai` (`id`),
+  CONSTRAINT `FKit2ijd3rp1mi8fmdu33qe6ojc` FOREIGN KEY (`don_hang_id`) REFERENCES `chitietdonhang` (`don_hang_id`),
   CONSTRAINT `phone_number` FOREIGN KEY (`phone_number`) REFERENCES `tai_khoan_cua_nguoi_dung` (`phone_number`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -46,7 +49,7 @@ CREATE TABLE `donhang` (
 
 LOCK TABLES `donhang` WRITE;
 /*!40000 ALTER TABLE `donhang` DISABLE KEYS */;
-INSERT INTO `donhang` VALUES (1,'123 Đường ABC, Quận 1, TP. HCM','2024-10-15 10:00:00','2024-10-14','Thanh toán khi nhận hàng',1500000.00,'Nguyễn Văn A','0123456789',NULL),(2,'456 Đường DEF, Quận 2, TP. HCM','2024-10-16 11:30:00','2024-10-15','Chuyển khoản ngân hàng',2000000.00,'Trần Thị B','0123456789',NULL),(3,'789 Đường GHI, Quận 3, TP. HCM','2024-10-17 12:00:00','2024-10-16','Ví điện tử',2500000.00,'Lê Minh C','0123456789',NULL),(4,'321 Đường JKL, Quận 4, TP. HCM','2024-10-18 14:00:00','2024-10-17','Thanh toán khi nhận hàng',1800000.00,'Phạm Thị D','0123456789',NULL);
+INSERT INTO `donhang` VALUES (1,'123 Đường ABC, Quận 1, TP. HCM','2024-10-15 10:00:00','2024-10-14','Thanh toán khi nhận hàng',1500000.00,'Nguyễn Văn A','0123456789',NULL,NULL),(2,'456 Đường DEF, Quận 2, TP. HCM','2024-10-16 11:30:00','2024-10-15','Chuyển khoản ngân hàng',2000000.00,'Trần Thị B','0123456789',NULL,NULL),(3,'789 Đường GHI, Quận 3, TP. HCM','2024-10-17 12:00:00','2024-10-16','Ví điện tử',2500000.00,'Lê Minh C','0123456789',NULL,NULL),(4,'321 Đường JKL, Quận 4, TP. HCM','2024-10-18 14:00:00','2024-10-17','Thanh toán khi nhận hàng',1800000.00,'Phạm Thị D','0123456789',NULL,NULL);
 /*!40000 ALTER TABLE `donhang` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-16 22:57:28
+-- Dump completed on 2024-10-17 20:55:34

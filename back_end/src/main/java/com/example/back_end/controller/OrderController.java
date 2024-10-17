@@ -1,10 +1,9 @@
 package com.example.back_end.controller;
 
-import com.example.back_end.modal.Donhang;
-import com.example.back_end.modal.TinhTrangDonHang;
 import com.example.back_end.repository.DonHangRepository;
 import com.example.back_end.repository.TinhTrangDonHangRepository;
 import com.example.back_end.service.OrderService;
+import com.example.back_end.modal.Donhang;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -57,7 +56,7 @@ public class OrderController {
     public ResponseEntity<Set<TinhTrangDonHang>> getOrderStatus(@PathVariable Integer orderId) {
         Optional<Donhang> optionalOrder = orderService.getOrderDetails(orderId);
         if (optionalOrder.isPresent()) {
-            Set<TinhTrangDonHang> orderStatuses = optionalOrder.get().getTtDonhangid();
+            Set<TinhTrangDonHang> orderStatuses = optionalOrder.get().getTinhTrangDonHangs();
             return ResponseEntity.ok(orderStatuses);
         } else {
             return ResponseEntity.notFound().build();

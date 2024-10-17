@@ -27,6 +27,8 @@ CREATE TABLE `tai_khoan_cua_nguoi_dung` (
   `pass_word` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `phone_number` varchar(15) DEFAULT NULL,
+  `dia_chi` varchar(255) DEFAULT NULL,
+  `ten_khach_hang` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_name`),
   UNIQUE KEY `phone_number` (`phone_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -38,7 +40,7 @@ CREATE TABLE `tai_khoan_cua_nguoi_dung` (
 
 LOCK TABLES `tai_khoan_cua_nguoi_dung` WRITE;
 /*!40000 ALTER TABLE `tai_khoan_cua_nguoi_dung` DISABLE KEYS */;
-INSERT INTO `tai_khoan_cua_nguoi_dung` VALUES ('nguyenminhthinh','26122004','2251120114@ut.edu.vn','0123456789'),('nguyenminhthinhb','0123456789','nguyenminhthinh26122004@gmail.com','0123456788'),('nguyenvana','12345','nguyenminhthinh26122004@gmail.com','0123456787');
+INSERT INTO `tai_khoan_cua_nguoi_dung` VALUES ('nguyenminhthinh','26122004','2251120114@ut.edu.vn','0123456789',NULL,NULL),('nguyenminhthinhb','0123456789','nguyenminhthinh26122004@gmail.com','0123456788',NULL,NULL),('nguyenvana','12345','nguyenminhthinh26122004@gmail.com','0123456787',NULL,NULL);
 /*!40000 ALTER TABLE `tai_khoan_cua_nguoi_dung` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-16 22:23:24
+-- Dump completed on 2024-10-17 20:55:34

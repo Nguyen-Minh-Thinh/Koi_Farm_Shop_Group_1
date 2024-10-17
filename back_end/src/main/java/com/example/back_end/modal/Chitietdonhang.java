@@ -2,38 +2,38 @@ package com.example.back_end.modal;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonInclude;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "chitietdonhang", schema = "koi_farm_shop")
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Chitietdonhang {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    @EmbeddedId
+    private ChitietdonhangId id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "don_hang_id")
-    @JsonBackReference
+    @MapsId("donHangId")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "don_hang_id", nullable = false)
     private Donhang donHang;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_of_fish")
+    @MapsId("idOfFish")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_of_fish", nullable = false)
     private CaKoiNhat idOfFish;
 
     @NotNull
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-    // Getters and Setters
+    @OneToMany(mappedBy = "donHang")
+    private Set<Donhang> donhangs = new LinkedHashSet<>();
 
-    public Integer getId() {
+    public ChitietdonhangId getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(ChitietdonhangId id) {
         this.id = id;
     }
 
@@ -60,4 +60,13 @@ public class Chitietdonhang {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+    public Set<Donhang> getDonhangs() {
+        return donhangs;
+    }
+
+    public void setDonhangs(Set<Donhang> donhangs) {
+        this.donhangs = donhangs;
+    }
+
 }
