@@ -7,6 +7,8 @@ if (document.readyState == 'loading') {
 
 // Hàm chạy khi tài liệu đã sẵn sàng
 function ready() {
+    loadCartItems(); // Tải sản phẩm từ localStorage và hiển thị trên trang giỏ hàng
+
     var removeCartItemButtons = document.getElementsByClassName('btn-danger');
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i];
@@ -19,66 +21,58 @@ function ready() {
         input.addEventListener('change', quantityChanged);
     }
 
-    var addToCartButtons = document.getElementsByClassName('buy_button');
-    for (var i = 0; i < addToCartButtons.length; i++) {
-        var button = addToCartButtons[i];
-        button.addEventListener('click', addToCartClicked);
-    }
-
     document.getElementsByClassName('purchase_button')[0].addEventListener('click', purchaseClicked);
 }
 
-// Hàm xử lý khi người dùng nhấn nút mua hàng
-function purchaseClicked() {
-    alert('Cảm ơn bạn đã mua hàng');
-    var cartItems = document.getElementsByClassName('cart-items')[0];
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild);
-    }
-    updateCartTotal();
-}
-
-// Hàm xóa sản phẩm khỏi giỏ hàng
-function removeCartItem(event) {
-    var buttonClicked = event.target;
-    buttonClicked.parentElement.parentElement.remove();
-    updateCartTotal();
-}
-
-// Hàm xử lý khi số lượng sản phẩm thay đổi
-function quantityChanged(event) {
-    var input = event.target;
-    if (isNaN(input.value) || input.value <= 0) {
-        input.value = 1;
-    }
-    updateCartTotal();
-}
-
-// Hàm xử lý khi nhấn nút thêm sản phẩm vào giỏ
+// Hàm thêm sản phẩm vào localStorage khi nhấn nút "Thêm vào giỏ"
 function addToCartClicked(event) {
     var button = event.target;
     var shopItem = button.parentElement.parentElement;
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText;
     var price = shopItem.getElementsByClassName('price')[0].innerText;
     var imageSrc = shopItem.getElementsByClassName('product_img')[0].src;
-    
-    addItemToCart(title, price, imageSrc);
-    updateCartTotal();
+
+    addItemToLocalStorage(title, price, imageSrc);
+    alert('Sản phẩm đã được thêm vào giỏ hàng');
 }
 
-// Hàm thêm sản phẩm vào giỏ hàng
-function addItemToCart(title, price, imageSrc) {
-    var cartRow = document.createElement('div');
-    cartRow.classList.add('cart-row');
-    var cartItems = document.getElementsByClassName('displayCart')[0];
-    var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
-    
-    for (var i = 0; i < cartItemNames.length; i++) {
-        if (cartItemNames[i].innerText == title) {
+// Hàm lưu sản phẩm vào localStorage
+function addItemToLocalStorage(title, price, imageSrc) {
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    let item = { title, price, imageSrc };
+
+    // Kiểm tra xem sản phẩm đã tồn tại chưa
+    for (var i = 0; i < cartItems.length; i++) {
+        if (cartItems[i].title === title) {
             alert('Sản phẩm này đã có trong giỏ hàng');
             return;
         }
     }
+
+    cartItems.push(item);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+// Hàm hiển thị sản phẩm từ localStorage trên trang giỏ hàng
+function loadCartItems() {
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartItemsContainer = document.querySelector('.cart-items.displayCart');
+
+    // Xóa nội dung hiện tại trong giỏ hàng (nếu có)
+    cartItemsContainer.innerHTML = '';
+
+    cartItems.forEach(item => {
+        addItemToCart(item.title, item.price, item.imageSrc);
+    });
+
+    updateCartTotal();
+}
+
+// Hàm thêm sản phẩm vào giao diện giỏ hàng
+function addItemToCart(title, price, imageSrc) {
+    var cartRow = document.createElement('div');
+    cartRow.classList.add('cart-row');
+    var cartItems = document.getElementsByClassName('cart-items')[0];
 
     var cartRowContents = `
         <div class="cart-row">
@@ -94,24 +88,54 @@ function addItemToCart(title, price, imageSrc) {
         </div>`;
     cartRow.innerHTML = cartRowContents;
     cartItems.append(cartRow);
-    
+
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem);
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
 }
 
-// Hàm tính toán tổng giá trị giỏ hàng
+// Hàm xử lý khi xóa sản phẩm khỏi giỏ hàng
+function removeCartItem(event) {
+    var buttonClicked = event.target;
+    var title = buttonClicked.parentElement.parentElement.getElementsByClassName('cart-item-title')[0].innerText;
+
+    let cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    cartItems = cartItems.filter(item => item.title !== title); // Xóa sản phẩm khỏi localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    buttonClicked.parentElement.parentElement.remove(); // Xóa sản phẩm khỏi giao diện
+    updateCartTotal();
+}
+
+// Hàm xử lý khi số lượng sản phẩm thay đổi
+function quantityChanged(event) {
+    var input = event.target;
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1;
+    }
+    updateCartTotal();
+}
+
+// Hàm xử lý khi nhấn nút "Thanh toán"
+function purchaseClicked() {
+    alert('Cảm ơn bạn đã mua hàng');
+    localStorage.removeItem('cartItems'); // Xóa toàn bộ giỏ hàng trong localStorage
+    document.getElementsByClassName('cart-items')[0].innerHTML = ''; // Xóa hiển thị giỏ hàng
+    updateCartTotal();
+}
+
+// Hàm tính tổng giá trị giỏ hàng
 function updateCartTotal() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0];
     var cartRows = cartItemContainer.getElementsByClassName('cart-row');
     var total = 0;
-    
+
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i];
         var priceElement = cartRow.getElementsByClassName('cart-price')[0];
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0];
         var price = parseFloat(priceElement.innerText.replace('₫', '').replace(',', ''));
         var quantity = quantityElement.value;
-        
+
         total = total + (price * quantity);
     }
 

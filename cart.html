@@ -6,32 +6,88 @@
     <title>Cart Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .cart-items {
+        .cart-container {
+            margin-top: 50px;
+        }
+
+        .cart-header {
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            font-size: 1.2em;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+
+        .cart-table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .cart-total-container {
             margin-top: 20px;
+            text-align: right;
+            font-size: 1.2em;
         }
 
-        .cart-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .cart-total {
+        .cart-total-title {
             font-weight: bold;
-            font-size: 1.5em;
+        }
+
+        .total-cart {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            margin-top: 20px;
+            float: right;
+            padding: 10px 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <div class="cart-items displayCart">
-        <!-- Các sản phẩm sẽ được thêm vào đây -->
+    <div class="container cart-container">
+        <div class="cart-header">
+            <h2>Giỏ hàng</h2>
+        </div>
+        <table class="cart-table" id="cart-table">
+            <thead>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Tổng cộng</th>
+                </tr>
+            </thead>
+            <tbody class="displayCart">
+
+            </tbody>
+        </table>
+        <div class="cart-total-container">
+            <span class="cart-total-title">Total: </span>
+            <span class="total-cart">0 ₫</span>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
     </div>
-    <div class="cart-total">
-        <strong class="cart-total-title">Tổng cộng: </strong>
-        <span class="total-cart">0 ₫</span>
-    </div>
-    <button class="purchase_button">Thanh toán</button>
-    
+
     <script src="js/cart.js"></script>
 </body>
 </html>
