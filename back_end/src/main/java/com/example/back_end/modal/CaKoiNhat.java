@@ -47,10 +47,21 @@ public class CaKoiNhat {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "type_of_fish")
-    private GioiThieu typeOfFish;
+    private Loaica typeOfFish;
 
     @OneToMany(mappedBy = "idOfFish")
     private Set<Chitietdonhang> chitietdonhangs = new LinkedHashSet<>();
+
+//    @OneToMany(mappedBy = "idOfFish")
+//    private Set<GioHang> gioHangs = new LinkedHashSet<>();
+
+//    public Set<GioHang> getGioHangs() {
+//        return gioHangs;
+//    }
+//
+//    public void setGioHangs(Set<GioHang> gioHangs) {
+//        this.gioHangs = gioHangs;
+//    }
 
     public Set<Chitietdonhang> getChitietdonhangs() {
         return chitietdonhangs;
@@ -60,11 +71,11 @@ public class CaKoiNhat {
         this.chitietdonhangs = chitietdonhangs;
     }
 
-    public GioiThieu getTypeOfFish() {
+    public Loaica getTypeOfFish() {
         return typeOfFish;
     }
 
-    public void setTypeOfFish(GioiThieu typeOfFish) {
+    public void setTypeOfFish(Loaica typeOfFish) {
         this.typeOfFish = typeOfFish;
     }
 

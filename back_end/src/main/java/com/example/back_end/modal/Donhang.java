@@ -51,16 +51,13 @@ public class Donhang {
     @JoinColumn(name = "id_khuyen_mai")
     private KhuyenMai idKhuyenMai;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "don_hang_id", referencedColumnName = "don_hang_id")
-    private Chitietdonhang donHang;
-
-    @OneToMany(mappedBy = "donHang")
+    @OneToMany(mappedBy = "donHang")  // Mối quan hệ với Chitietdonhang
     private Set<Chitietdonhang> chitietdonhangs = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order")  // Giả định là bạn có lớp TinhTrangDonHang
     private Set<TinhTrangDonHang> tinhTrangDonHangs = new LinkedHashSet<>();
 
+    // Getter và Setter
     public Integer getId() {
         return id;
     }
@@ -133,14 +130,6 @@ public class Donhang {
         this.idKhuyenMai = idKhuyenMai;
     }
 
-    public Chitietdonhang getDonHang() {
-        return donHang;
-    }
-
-    public void setDonHang(Chitietdonhang donHang) {
-        this.donHang = donHang;
-    }
-
     public Set<Chitietdonhang> getChitietdonhangs() {
         return chitietdonhangs;
     }
@@ -156,5 +145,4 @@ public class Donhang {
     public void setTinhTrangDonHangs(Set<TinhTrangDonHang> tinhTrangDonHangs) {
         this.tinhTrangDonHangs = tinhTrangDonHangs;
     }
-
 }

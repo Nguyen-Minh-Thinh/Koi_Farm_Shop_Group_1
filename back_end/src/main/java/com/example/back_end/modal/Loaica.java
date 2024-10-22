@@ -6,8 +6,8 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "gioi_thieu")
-public class GioiThieu {
+@Table(name = "loai_ca")
+public class Loaica {
     @Id
     @Column(name = "type_of_fish", nullable = false)
     private String typeOfFish;

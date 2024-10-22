@@ -5,6 +5,8 @@ import com.example.back_end.repository.TaiKhoanCuaNguoiDungRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -14,15 +16,23 @@ public class TaiKhoanCuaNguoiDungServiceImple implements TaiKhoanCuaNguoiDungSer
     private TaiKhoanCuaNguoiDungRepository taiKhoanCuaNguoiDungRepository;
 
     @Override
-    public TaiKhoanCuaNguoiDung xacThucDangNhap(String userName, String password) {
+    public Map<String, String> xacThucDangNhap(String userName, String password) {
+        // Tìm kiếm tài khoản trong repository theo userName
         Optional<TaiKhoanCuaNguoiDung> accountOptional = taiKhoanCuaNguoiDungRepository.findById(userName);
+
+        // Kiểm tra nếu tài khoản tồn tại
         if (accountOptional.isPresent()) {
-            TaiKhoanCuaNguoiDung account = accountOptional.get();
-            if (account.getPassWord().equals(password)) {
-                return account;
+            // So sánh mật khẩu
+            if (accountOptional.get().getPassWord().equals(password)) {
+                // Nếu mật khẩu đúng, trả về thông tin
+                Map<String, String> response = new HashMap<>();
+                response.put("user_name", accountOptional.get().getUserName());
+                response.put("pass_word", accountOptional.get().getPassWord());
+                return response;
             }
         }
-        return null; // Hoặc ném ngoại lệ tùy theo yêu cầu
+        // Trả về null hoặc một Map rỗng nếu không có tài khoản hoặc mật khẩu không khớp
+        return null; // Hoặc bạn có thể trả về new HashMap<>(); nếu không muốn trả về null
     }
 
     @Override

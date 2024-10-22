@@ -3,7 +3,6 @@ package com.example.back_end.controller;
 import com.example.back_end.repository.DonHangRepository;
 import com.example.back_end.repository.TinhTrangDonHangRepository;
 import com.example.back_end.service.OrderService;
-import com.example.back_end.modal.Donhang;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-
+import com.example.back_end.modal.TinhTrangDonHang;
+import com.example.back_end.modal.Donhang;
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {

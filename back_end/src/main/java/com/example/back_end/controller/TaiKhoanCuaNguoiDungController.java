@@ -18,11 +18,11 @@ public class TaiKhoanCuaNguoiDungController {
 
     @CrossOrigin(origins = "*") // Co the duoc truy cap tu cac nguon cua frontend
     @PostMapping("/user/login")
-    public TaiKhoanCuaNguoiDung login(@RequestBody HashMap<String, String> map) {
+    public Map<String, String> login(@RequestBody HashMap<String, String> map) {
         String userName = map.get("userName");
         String password = map.get("passWord");
 
-        TaiKhoanCuaNguoiDung account = taiKhoanCuaNguoiDungServiceImple.xacThucDangNhap(userName, password);
+        Map<String, String> account = taiKhoanCuaNguoiDungServiceImple.xacThucDangNhap(userName, password);
 
         if (account != null) {
             return account; // Đăng nhập thành công

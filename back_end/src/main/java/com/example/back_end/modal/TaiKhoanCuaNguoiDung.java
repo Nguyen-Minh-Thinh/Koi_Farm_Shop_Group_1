@@ -33,6 +33,17 @@ import java.util.Set;
     @OneToMany(mappedBy = "phoneNumber")
     private Set<Donhang> donhangs = new LinkedHashSet<>();
 
+//    @OneToMany(mappedBy = "taiKhoanNguoiDung")
+//    private Set<GioHang> gioHangs = new LinkedHashSet<>();
+
+//    public Set<GioHang> getGioHangs() {
+//        return gioHangs;
+//    }
+//
+//    public void setGioHangs(Set<GioHang> gioHangs) {
+//        this.gioHangs = gioHangs;
+//    }
+
     public Set<Donhang> getDonhangs() {
         return donhangs;
     }

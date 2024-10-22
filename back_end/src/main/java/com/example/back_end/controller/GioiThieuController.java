@@ -1,6 +1,6 @@
 package com.example.back_end.controller;
 
-import com.example.back_end.modal.GioiThieu;
+import com.example.back_end.modal.Loaica;
 import com.example.back_end.service.GioiThieuService;
 import com.example.back_end.service.GioiThieuServiceImple;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +19,13 @@ public class GioiThieuController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/gioi-thieu")
-    public ArrayList<GioiThieu> getAllGioiThieu() {
+    public ArrayList<Loaica> getAllGioiThieu() {
         return gioiThieuServiceImple.findAllGioiThieu();
     };
 
     @CrossOrigin(origins = "*")
     @GetMapping("/gioi-thieu/{id}")
-    public GioiThieu getGioiThieuById(@PathVariable String id) {
+    public Loaica getGioiThieuById(@PathVariable String id) {
         return gioiThieuServiceImple.findGioiThieuById(id);
     }
 

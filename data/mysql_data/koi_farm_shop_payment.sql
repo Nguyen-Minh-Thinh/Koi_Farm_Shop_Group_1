@@ -16,32 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tai_khoan_cua_nguoi_dung`
+-- Table structure for table `payment`
 --
 
-DROP TABLE IF EXISTS `tai_khoan_cua_nguoi_dung`;
+DROP TABLE IF EXISTS `payment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tai_khoan_cua_nguoi_dung` (
-  `user_name` varchar(50) NOT NULL,
-  `pass_word` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `phone_number` varchar(15) DEFAULT NULL,
-  `dia_chi` varchar(255) DEFAULT NULL,
-  `ten_khach_hang` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`user_name`),
-  UNIQUE KEY `phone_number` (`phone_number`)
+CREATE TABLE `payment` (
+  `pay_id` int NOT NULL AUTO_INCREMENT,
+  `method` varchar(255) DEFAULT NULL,
+  `amount` decimal(10,2) DEFAULT NULL,
+  `user_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`pay_id`),
+  KEY `user_name` (`user_name`),
+  CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`user_name`) REFERENCES `tai_khoan_cua_nguoi_dung` (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tai_khoan_cua_nguoi_dung`
+-- Dumping data for table `payment`
 --
 
-LOCK TABLES `tai_khoan_cua_nguoi_dung` WRITE;
-/*!40000 ALTER TABLE `tai_khoan_cua_nguoi_dung` DISABLE KEYS */;
-INSERT INTO `tai_khoan_cua_nguoi_dung` VALUES ('nguyenminhthinh','26122004','2251120114@ut.edu.vn','0123456789',NULL,NULL),('nguyenminhthinh2','12345','nguyenminhthinh26122004@gmail.com','0999999999',NULL,NULL),('nguyenminhthinhb','0123456789','nguyenminhthinh26122004@gmail.com','0123456788',NULL,NULL),('nguyenvana','12345','nguyenminhthinh26122004@gmail.com','0123456787',NULL,NULL);
-/*!40000 ALTER TABLE `tai_khoan_cua_nguoi_dung` ENABLE KEYS */;
+LOCK TABLES `payment` WRITE;
+/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-22 23:04:13
+-- Dump completed on 2024-10-22 23:04:14
