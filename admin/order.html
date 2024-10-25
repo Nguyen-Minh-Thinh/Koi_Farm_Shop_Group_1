@@ -27,6 +27,22 @@
         </nav>
         <main class="main-content">
             <h1>Danh sách đơn hàng</h1>
+            <div class="search-filter-sort">
+                <input type="text" id="search-bar" placeholder="Tìm kiếm theo mã đơn hàng, khách hàng...">
+                <select id="filter-status">
+                    <option value="all">Tất cả trạng thái</option>
+                    <option value="Đang xử lý">Đang xử lý</option>
+                    <option value="Đã giao hàng">Đã giao hàng</option>
+                    <option value="Đã hủy">Đã hủy</option>
+                </select>
+                <select id="sort-orders">
+                    <option value="date-desc">Ngày đặt hàng (Mới → Cũ)</option>
+                    <option value="date-asc">Ngày đặt hàng (Cũ → Mới)</option>
+                    <option value="total-desc">Tổng tiền (Cao → Thấp)</option>
+                    <option value="total-asc">Tổng tiền (Thấp → Cao)</option>
+                </select>
+                <button onclick="applySearchFilterSort()" class="btn filter-btn">Áp dụng</button>
+            </div>
             <div class="table-wrapper">
                 <table class="order-table">
                     <thead>
@@ -48,59 +64,48 @@
     </div>
 
     <!-- Order Details Modal -->
-<!-- Order Details Modal -->
-<div id="orderModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>CHI TIẾT ĐƠN HÀNG</h2>
-        
-        <div class="order-details-container">
-            <!-- Left: Order Items -->
-            <div id="order-items" class="order-items"></div>
-
-            <!-- Right: Order Information -->
-            <div id="order-info-container" class="order-info"></div>
-        </div>
-        
-        <div id="order-total" class="order-total">
-            <p><strong>Thành tiền:</strong> <span id="total-price"></span></p>
-        </div>
-        
-        <button class="btn cancel-btn">Chưa xử lý</button>
-    </div>
-</div>
-
-<!-- Status History Modal -->
-<div id="statusModal" class="modal">
-    <div class="modal-content">
-        <span class="close-status">&times;</span>
-        <h2>Tình Trạng Đơn Hàng</h2>
-
-        <table class="status-table">
-            <thead>
-                <tr>
-                    <th>Thời gian</th>
-                    <th>Tình trạng</th>
-                    <th>Chi tiết</th>
-                </tr>
-            </thead>
-            <tbody id="status-table-body">
-                <!-- Status history will be dynamically populated here -->
-            </tbody>
-        </table>
-
-        <!-- Form to Add New Status -->
-        <h3>Thêm tình trạng mới</h3>
-        <div class="add-status-form">
-            <input type="text" id="new-time" placeholder="Thời gian (VD: 13/10/2024 20h00)">
-            <input type="text" id="new-situation" placeholder="Tình trạng (VD: Đang giao)">
-            <input type="text" id="new-details" placeholder="Chi tiết (VD: Shipper đang giao)">
-            <button id="add-status-btn" class="btn add-status-btn">Thêm tình trạng</button>
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>CHI TIẾT ĐƠN HÀNG</h2>
+            <div class="order-details-container">
+                <div id="order-items" class="order-items"></div>
+                <div id="order-info-container" class="order-info"></div>
+            </div>
+            <div id="order-total" class="order-total">
+                <p><strong>Thành tiền:</strong> <span id="total-price"></span></p>
+            </div>
+            <button class="btn cancel-btn">Chưa xử lý</button>
         </div>
     </div>
-</div>
 
-    
+    <!-- Status History Modal -->
+    <div id="statusModal" class="modal">
+        <div class="modal-content">
+            <span class="close-status">&times;</span>
+            <h2>Tình Trạng Đơn Hàng</h2>
+            <table class="status-table">
+                <thead>
+                    <tr>
+                        <th>Thời gian</th>
+                        <th>Tình trạng</th>
+                        <th>Chi tiết</th>
+                    </tr>
+                </thead>
+                <tbody id="status-table-body">
+                    <!-- Status history will be dynamically populated here -->
+                </tbody>
+            </table>
+            <h3>Thêm tình trạng mới</h3>
+            <div class="add-status-form">
+                <input type="text" id="new-time" placeholder="Thời gian (VD: 13/10/2024 20h00)">
+                <input type="text" id="new-situation" placeholder="Tình trạng (VD: Đang giao)">
+                <input type="text" id="new-details" placeholder="Chi tiết (VD: Shipper đang giao)">
+                <button id="add-status-btn" class="btn add-status-btn">Thêm tình trạng</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Include the order.js script -->
     <script src="order.js"></script>
 </body>
