@@ -30,12 +30,12 @@ import java.util.Set;
     @Column(name = "dia_chi")
     private String diaChi;
 
-    @OneToMany(mappedBy = "phoneNumber")
-    private Set<Donhang> donhangs = new LinkedHashSet<>();
+//    @OneToMany(mappedBy = "phoneNumber")
+//    private Set<Donhang> donhangs = new LinkedHashSet<>();
 
 //    @OneToMany(mappedBy = "taiKhoanNguoiDung")
 //    private Set<GioHang> gioHangs = new LinkedHashSet<>();
-
+//
 //    public Set<GioHang> getGioHangs() {
 //        return gioHangs;
 //    }
@@ -44,13 +44,13 @@ import java.util.Set;
 //        this.gioHangs = gioHangs;
 //    }
 
-    public Set<Donhang> getDonhangs() {
-        return donhangs;
-    }
-
-    public void setDonhangs(Set<Donhang> donhangs) {
-        this.donhangs = donhangs;
-    }
+//    public Set<Donhang> getDonhangs() {
+//        return donhangs;
+//    }
+//
+//    public void setDonhangs(Set<Donhang> donhangs) {
+//        this.donhangs = donhangs;
+//    }
 
     public String getDiaChi() {
         return diaChi;

@@ -2,12 +2,14 @@ package com.example.back_end.modal;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "chitietdonhang", schema = "koi_farm_shop")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Chitietdonhang {
     @EmbeddedId
     private ChitietdonhangId id;
@@ -15,6 +17,7 @@ public class Chitietdonhang {
     @MapsId("donHangId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "don_hang_id", nullable = false)
+    @JsonBackReference
     private Donhang donHang; // Đảm bảo tên thuộc tính này là "donHang"
 
     @MapsId("idOfFish")

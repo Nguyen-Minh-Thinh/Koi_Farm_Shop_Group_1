@@ -18,16 +18,10 @@ public class Loaica {
     @Column(name = "video")
     private String video;
 
-    @OneToMany(mappedBy = "typeOfFish")
-    private Set<CaKoiNhat> caKoiNhats = new LinkedHashSet<>();
+//    @OneToMany(mappedBy = "typeOfFish")
+//    private Set<CaKoiNhat> caKoiNhats = new LinkedHashSet<>();
 
-    public Set<CaKoiNhat> getCaKoiNhats() {
-        return caKoiNhats;
-    }
 
-    public void setCaKoiNhats(Set<CaKoiNhat> caKoiNhats) {
-        this.caKoiNhats = caKoiNhats;
-    }
 
     public String getTypeOfFish() {
         return typeOfFish;

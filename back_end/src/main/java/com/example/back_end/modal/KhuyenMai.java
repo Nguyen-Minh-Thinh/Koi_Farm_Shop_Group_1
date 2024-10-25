@@ -1,18 +1,20 @@
 package com.example.back_end.modal;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "khuyen_mai", schema = "koi_farm_shop")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class KhuyenMai {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -31,6 +33,9 @@ public class KhuyenMai {
     @NotNull
     @Column(name = "ngay_ket_thuc", nullable = false)
     private LocalDate ngayKetThuc;
+
+    @OneToMany(mappedBy = "khuyenMai", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Donhang> donhangs = new LinkedHashSet<>();
 
     public Integer getId() {
         return id;

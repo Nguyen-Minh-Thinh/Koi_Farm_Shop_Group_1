@@ -1,5 +1,6 @@
 package com.example.back_end.modal;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -9,6 +10,7 @@ import java.util.Set;
 @Entity
 @Table(name = "ca_koi_nhat", schema = "koi_farm_shop")
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CaKoiNhat {
     @Id
     @Column(name = "id_of_fish", nullable = false, length = 50)
@@ -44,40 +46,6 @@ public class CaKoiNhat {
 
     @Column(name = "origin_of_fish", length = 100)
     private String originOfFish;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "type_of_fish")
-    private Loaica typeOfFish;
-
-    @OneToMany(mappedBy = "idOfFish")
-    private Set<Chitietdonhang> chitietdonhangs = new LinkedHashSet<>();
-
-//    @OneToMany(mappedBy = "idOfFish")
-//    private Set<GioHang> gioHangs = new LinkedHashSet<>();
-
-//    public Set<GioHang> getGioHangs() {
-//        return gioHangs;
-//    }
-//
-//    public void setGioHangs(Set<GioHang> gioHangs) {
-//        this.gioHangs = gioHangs;
-//    }
-
-    public Set<Chitietdonhang> getChitietdonhangs() {
-        return chitietdonhangs;
-    }
-
-    public void setChitietdonhangs(Set<Chitietdonhang> chitietdonhangs) {
-        this.chitietdonhangs = chitietdonhangs;
-    }
-
-    public Loaica getTypeOfFish() {
-        return typeOfFish;
-    }
-
-    public void setTypeOfFish(Loaica typeOfFish) {
-        this.typeOfFish = typeOfFish;
-    }
 
     // Getters and Setters
 
@@ -168,4 +136,5 @@ public class CaKoiNhat {
     public void setOriginOfFish(String originOfFish) {
         this.originOfFish = originOfFish;
     }
+
 }

@@ -26,14 +26,14 @@ loadData();
 
 // Generate the main order table row dynamically
 function generateOrderRow(order) {
-  const latestStatus = order.ttDonhangid.reduce((latest, current) => {
+  const latestStatus = order.tinhTrangDonHangs.reduce((latest, current) => {
     return current.id > latest.id ? current : latest;
-  }, order.ttDonhangid[0]);
+  }, order.tinhTrangDonHangs[0]);
   return `
     <tr>
       <td>#00${order.id}</td>
       <td>${order.deliveryTime}</td>
-      <td>${order.userName}</td>
+      <td>${order.phoneNumber.tenKhachHang}</td>
       <td><span class="status ${latestStatus.situation === 'Đã giao hàng' ? 'delivered' : latestStatus.situation === 'Đã hủy' ? 'canceled' : 'processing'}">${latestStatus.situation}</span></td>
       <td>${order.totalPrice}Đ</td>
       <td>
@@ -57,7 +57,7 @@ function populateOrderTable(orders) {
 // Generate order details dynamically
 function generateOrderDetails(order) {
   let orderItemsHtml = '';
-  order.donHangDetails.forEach(detail => {
+  order.chitietdonhangs.forEach(detail => {
     orderItemsHtml += `
       <div class="order-item">
           <img src="${detail.idOfFish.image}" alt="${detail.idOfFish.nameOfFish}">
@@ -75,7 +75,7 @@ function generateOrderDetails(order) {
       <p><strong>Ngày đặt hàng:</strong> ${order.orderDate}</p>
       <p><strong>Hình thức giao:</strong> ${order.pay}</p>
       <p><strong>Người nhận:</strong> ${order.userName}</p>
-      <p><strong>Số điện thoại:</strong> 453</p>
+      <p><strong>Số điện thoại:</strong> ${order.phoneNumber.phoneNumber}</p>
       <p><strong>Thời gian giao:</strong> ${order.deliveryTime}</p>
       <p><strong>Địa chỉ nhận:</strong> ${order.address}</p>
     </div>
@@ -118,7 +118,7 @@ function viewStatusHistory(orderId) {
       const statusTableBody = document.getElementById('status-table-body');
       let statusRowsHtml = '';
 
-      order.ttDonhangid.forEach(status => {
+      order.tinhTrangDonHangs.forEach(status => {
         statusRowsHtml += `
           <tr>
             <td>${status.times}</td>
