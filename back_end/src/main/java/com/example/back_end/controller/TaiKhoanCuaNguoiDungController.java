@@ -1,6 +1,7 @@
 package com.example.back_end.controller;
 
 import com.example.back_end.modal.TaiKhoanCuaNguoiDung;
+import com.example.back_end.repository.TaiKhoanCuaNguoiDungRepository;
 import com.example.back_end.service.TaiKhoanCuaNguoiDungServiceImple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,12 +10,16 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class TaiKhoanCuaNguoiDungController {
     @Autowired
     private TaiKhoanCuaNguoiDungServiceImple taiKhoanCuaNguoiDungServiceImple;
+    @Autowired
+    private TaiKhoanCuaNguoiDungRepository taiKhoanRepository;
 
     @CrossOrigin(origins = "*") // Co the duoc truy cap tu cac nguon cua frontend
     @PostMapping("/user/login")
@@ -82,7 +87,64 @@ public class TaiKhoanCuaNguoiDungController {
         }
     }
 
+    // Get all accounts
+    @CrossOrigin(origins = "*")
+    @GetMapping("/api/taikhoan/all")
+    public ResponseEntity<List<TaiKhoanCuaNguoiDung>> getAllAccounts() {
+        List<TaiKhoanCuaNguoiDung> accounts = taiKhoanRepository.findAll();
+        return new ResponseEntity<>(accounts, HttpStatus.OK);
+    }
 
+    // Get account by username
+    @CrossOrigin(origins = "*")
+    @GetMapping("/api/taikhoan/{userName}")
+    public ResponseEntity<TaiKhoanCuaNguoiDung> getAccountByUsername(@PathVariable String userName) {
+        Optional<TaiKhoanCuaNguoiDung> account = taiKhoanRepository.findById(userName);
+        return account.map(taikhoan -> new ResponseEntity<>(taikhoan, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    // Create new account
+    @CrossOrigin(origins = "*")
+    @PostMapping("/api/taikhoan/create")
+    public ResponseEntity<TaiKhoanCuaNguoiDung> createAccount(@RequestBody TaiKhoanCuaNguoiDung newAccount) {
+        if (taiKhoanRepository.existsById(newAccount.getUserName())) {
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
+        TaiKhoanCuaNguoiDung createdAccount = taiKhoanRepository.save(newAccount);
+        return new ResponseEntity<>(createdAccount, HttpStatus.CREATED);
+    }
+
+    // Update account
+    @CrossOrigin(origins = "*")
+    @PutMapping("/api/taikhoan/update/{userName}")
+    public ResponseEntity<TaiKhoanCuaNguoiDung> updateAccount(@PathVariable String userName, @RequestBody TaiKhoanCuaNguoiDung updatedAccount) {
+        Optional<TaiKhoanCuaNguoiDung> existingAccount = taiKhoanRepository.findById(userName);
+        if (existingAccount.isPresent()) {
+            TaiKhoanCuaNguoiDung account = existingAccount.get();
+            account.setPassWord(updatedAccount.getPassWord());
+            account.setEmail(updatedAccount.getEmail());
+            account.setPhoneNumber(updatedAccount.getPhoneNumber());
+            account.setTenKhachHang(updatedAccount.getTenKhachHang());
+            account.setDiaChi(updatedAccount.getDiaChi());
+            TaiKhoanCuaNguoiDung savedAccount = taiKhoanRepository.save(account);
+            return new ResponseEntity<>(savedAccount, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    // Delete account
+    @CrossOrigin(origins = "*")
+    @DeleteMapping("/api/taikhoan/delete/{userName}")
+    public ResponseEntity<HttpStatus> deleteAccount(@PathVariable String userName) {
+        if (taiKhoanRepository.existsById(userName)) {
+            taiKhoanRepository.deleteById(userName);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
 
 

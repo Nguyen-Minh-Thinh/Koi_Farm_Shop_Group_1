@@ -5,27 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="070c0ff4-b69d-4daa-9b35-7e651e630f3f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../admin/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/order.css" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/order.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/CaKoiNhat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/CaKoiNhat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/Chitietdonhang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/Chitietdonhang.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/Donhang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/Donhang.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/KhuyenMai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/KhuyenMai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/Loaica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/Loaica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/TaiKhoanCuaNguoiDung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/TaiKhoanCuaNguoiDung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/TinhTrangDonHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back_end/modal/TinhTrangDonHang.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/GioiThieuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/GioiThieuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/service/OrderServiceImple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/CaKoiNhat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/CaKoiNhat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/Chitietdonhang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/Chitietdonhang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/Donhang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/Donhang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/KhuyenMai.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/KhuyenMai.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/Loaica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/Loaica.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/TaiKhoanCuaNguoiDung.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/TaiKhoanCuaNguoiDung.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/TinhTrangDonHang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/TinhTrangDonHang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/repository/GioiThieuRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/repository/GioiThieuRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/service/GioiThieuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/service/GioiThieuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/service/GioiThieuServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/service/GioiThieuServiceImple.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +110,7 @@
       <workItem from="1728809945999" duration="24207000" />
       <workItem from="1729748035749" duration="857000" />
       <workItem from="1729825107185" duration="5247000" />
+      <workItem from="1729831960062" duration="3227000" />
     </task>
     <servers />
   </component>
