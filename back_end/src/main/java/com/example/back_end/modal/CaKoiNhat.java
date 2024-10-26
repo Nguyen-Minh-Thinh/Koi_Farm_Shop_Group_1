@@ -47,6 +47,17 @@ public class CaKoiNhat {
     @Column(name = "origin_of_fish", length = 100)
     private String originOfFish;
 
+    @Column(name = "type_of_fish")
+    private String typeOfFish;
+
+    public String getTypeOfFish() {
+        return typeOfFish;
+    }
+
+    public void setTypeOfFish(String typeOfFish) {
+        this.typeOfFish = typeOfFish;
+    }
+
     // Getters and Setters
 
     public String getIdOfFish() {

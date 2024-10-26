@@ -1,8 +1,8 @@
 package com.example.back_end.controller;
 
+import com.example.back_end.modal.CaKoiNhat;
 import com.example.back_end.modal.Loaica;
-import com.example.back_end.service.GioiThieuService;
-import com.example.back_end.service.GioiThieuServiceImple;
+import com.example.back_end.service.LoaiCaServiceImple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,23 +10,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
-public class GioiThieuController {
+public class LoaiCaController {
 
     @Autowired
-    GioiThieuServiceImple gioiThieuServiceImple;
+    LoaiCaServiceImple loaiCaServiceImple;
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/gioi-thieu")
+    @GetMapping("/loai-ca")
     public ArrayList<Loaica> getAllGioiThieu() {
-        return gioiThieuServiceImple.findAllGioiThieu();
+        return loaiCaServiceImple.findAllLoaiCa();
     };
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/gioi-thieu/{id}")
-    public Loaica getGioiThieuById(@PathVariable String id) {
-        return gioiThieuServiceImple.findGioiThieuById(id);
+    @GetMapping("/loai-ca/{id}")
+    public List<CaKoiNhat> getGioiThieuById(@PathVariable String id) {
+        return loaiCaServiceImple.findAllLoaiCaById(id);
     }
 
 }
