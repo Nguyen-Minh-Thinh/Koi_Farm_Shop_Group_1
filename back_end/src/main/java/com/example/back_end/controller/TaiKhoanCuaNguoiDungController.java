@@ -3,12 +3,15 @@ package com.example.back_end.controller;
 import com.example.back_end.modal.TaiKhoanCuaNguoiDung;
 import com.example.back_end.repository.TaiKhoanCuaNguoiDungRepository;
 import com.example.back_end.service.TaiKhoanCuaNguoiDungServiceImple;
+import jakarta.servlet.http.Cookie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
+import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,20 +24,52 @@ public class TaiKhoanCuaNguoiDungController {
     @Autowired
     private TaiKhoanCuaNguoiDungRepository taiKhoanRepository;
 
-    @CrossOrigin(origins = "*") // Co the duoc truy cap tu cac nguon cua frontend
+    @CrossOrigin(origins = "http://127.0.0.1:5501", allowCredentials = "true")
     @PostMapping("/user/login")
-    public Map<String, String> login(@RequestBody HashMap<String, String> map) {
+    public Map<String, String> login(@RequestBody HashMap<String, String> map, HttpSession session, HttpServletResponse response) {
         String userName = map.get("userName");
         String password = map.get("passWord");
 
         Map<String, String> account = taiKhoanCuaNguoiDungServiceImple.xacThucDangNhap(userName, password);
 
         if (account != null) {
+            session.setAttribute("userName", userName); // Lưu thông tin người dùng vào session
+
+            // Thiết lập cookie với SameSite attribute
+            Cookie cookie = new Cookie("SESSIONID", session.getId());
+            cookie.setPath("/");
+//            cookie.setHttpOnly(true);
+            cookie.setMaxAge(-1); // -1 có nghĩa là cookie sẽ tồn tại cho đến khi trình duyệt đóng
+            cookie.setAttribute("SameSite", "None"); // Hoặc "Lax" nếu bạn không cần cross-origin
+
+            response.addCookie(cookie); // Đảm bảo rằng bạn đã import đúng HttpServletResponse
             return account; // Đăng nhập thành công
         } else {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid username or password");
         }
     }
+
+    @CrossOrigin(origins = "http://127.0.0.1:5501", allowCredentials = "true")
+    @PostMapping("/user/logout")
+    public ResponseEntity<String> logout(HttpSession session) {
+        session.invalidate(); // Xóa session
+        return ResponseEntity.ok("Logout successful");
+    }
+    @CrossOrigin(origins = "*")
+    @GetMapping("/user/session")
+    public ResponseEntity<Map<String, String>> checkSession(HttpSession session) {
+        String userName = (String) session.getAttribute("userName");
+        Map<String, String> response = new HashMap<>();
+
+        if (userName != null) {
+            response.put("userName", userName);
+            return ResponseEntity.ok(response); // Trả về thông tin người dùng
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response); // Chưa đăng nhập
+        }
+    }
+
+
 
     @CrossOrigin(origins = "*") // Co the duoc truy cap tu cac nguon cua frontend
     @PostMapping("/user/register/user-name")
@@ -51,7 +86,7 @@ public class TaiKhoanCuaNguoiDungController {
 
     @CrossOrigin(origins = "*") // Có thể được truy cập từ các nguồn của frontend
     @PostMapping("/user/register")
-    public ResponseEntity<?> register(@RequestBody HashMap<String, String> request) {
+    public ResponseEntity<?> register(@RequestBody HashMap<String, String> request)         {
         TaiKhoanCuaNguoiDung newObj = new TaiKhoanCuaNguoiDung();
         newObj.setUserName(request.get("userName"));
         newObj.setPassWord(request.get("passWord"));
