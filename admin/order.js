@@ -159,41 +159,45 @@ function viewOrderDetails(orderId) {
 
 // View status history in a modal
 function viewStatusHistory(orderId) {
-  fetchOrders().then((orders) => {
-      const order = orders.find(o => o.id === orderId);
-      if (order) {
-          const statusTableBody = document.getElementById('status-table-body');
-          let statusRowsHtml = '';
-
-          order.tinhTrangDonHangs.forEach(status => {
-              statusRowsHtml += `
-                  <tr>
-                      <td>${status.times}</td>
-                      <td>${status.situation}</td>
-                      <td>${status.statusDetails}</td>
-                  </tr>
-              `;
-          });
-
-          statusTableBody.innerHTML = statusRowsHtml;
-          statusTableBody.dataset.orderId = order.id;
-
-          const statusModal = document.getElementById('statusModal');
-          statusModal.style.display = "block";
-
-          const closeStatusBtn = document.getElementsByClassName("close-status")[0];
-          closeStatusBtn.onclick = function() {
-              statusModal.style.display = "none";
-          };
-
-          window.onclick = function(event) {
-              if (event.target == statusModal) {
-                  statusModal.style.display = "none";
-              }
-          };
-      }
-  });
-}
+    fetchOrders().then((orders) => {
+        const order = orders.find(o => o.id === orderId);
+        if (order) {
+            // Sắp xếp theo thời gian tăng dần
+            order.tinhTrangDonHangs.sort((a, b) => new Date(a.times) - new Date(b.times));
+  
+            const statusTableBody = document.getElementById('status-table-body');
+            let statusRowsHtml = '';
+  
+            order.tinhTrangDonHangs.forEach(status => {
+                statusRowsHtml += `
+                    <tr>
+                        <td>${status.times}</td>
+                        <td>${status.situation}</td>
+                        <td>${status.statusDetails}</td>
+                    </tr>
+                `;
+            });
+  
+            statusTableBody.innerHTML = statusRowsHtml;
+            statusTableBody.dataset.orderId = order.id;
+  
+            const statusModal = document.getElementById('statusModal');
+            statusModal.style.display = "block";
+  
+            const closeStatusBtn = document.getElementsByClassName("close-status")[0];
+            closeStatusBtn.onclick = function() {
+                statusModal.style.display = "none";
+            };
+  
+            window.onclick = function(event) {
+                if (event.target == statusModal) {
+                    statusModal.style.display = "none";
+                }
+            };
+        }
+    });
+  }
+  
 
 document.getElementById('add-status-btn').addEventListener('click', () => {
   const orderId = document.querySelector('.status-table tbody').dataset.orderId;

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LoaiCaServiceImple implements LoaiCaService {
@@ -61,6 +62,37 @@ public class LoaiCaServiceImple implements LoaiCaService {
         }
 
         return caKoiNhatList;
+    }
+
+    @Autowired
+    private LoaiCaRepository loaicaRepository;
+
+    public List<Loaica> getAllLoaiCa() {
+        return loaicaRepository.findAll();
+    }
+
+    public Optional<Loaica> getLoaiCaById(String typeOfFish) {
+        return loaicaRepository.findById(typeOfFish);
+    }
+
+    public Loaica addLoaiCa(Loaica loaica) {
+        return loaicaRepository.save(loaica);
+    }
+
+    public Loaica updateLoaiCa(String typeOfFish, Loaica loaicaDetails) {
+        Optional<Loaica> loaicaOptional = loaicaRepository.findById(typeOfFish);
+        if (loaicaOptional.isPresent()) {
+            Loaica loaica = loaicaOptional.get();
+            loaica.setImage(loaicaDetails.getImage());
+            loaica.setVideo(loaicaDetails.getVideo());
+            return loaicaRepository.save(loaica);
+        } else {
+            return null;
+        }
+    }
+
+    public void deleteLoaiCa(String typeOfFish) {
+        loaicaRepository.deleteById(typeOfFish);
     }
 
 }

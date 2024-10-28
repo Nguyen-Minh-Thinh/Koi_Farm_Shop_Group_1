@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product.css">
+    <title>Quản lý sản phẩm</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2 style="display: flex; align-items: center;">
+                <img src="../img/logo.png" style="width: 100px; height: auto; margin-left: -20px;">
+                ADMIN
+            </h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="product.html">Quản lý sản phẩm</a></li>
+                <li><a href="order.html">Quản lý đơn hàng</a></li>
+                <li><a href="customer.html">Quản lý khách hàng</a></li>
+                <li><a href="category.html">Quản lý danh mục</a></li>
+                <li><a href="#">Quản lý khuyến mãi</a></li>
+                <li><a href="#">Thống kê</a></li>
+                <li><a href="#">Cài đặt</a></li>
+                <li><a href="#">Hỗ trợ</a></li>
+                <li><a href="#">Đăng xuất</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Danh sách sản phẩm</h1>
+                <button id="add-product-btn" class="btn add-product-btn">Thêm sản phẩm</button>
+            </div>
+            <div class="table-wrapper">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Mã sản phẩm</th>
+                            <th>Hình ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Loại</th>
+                            <th>Giá</th>
+                            <th>Kích thước</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-table-body">
+                        <!-- Rows will be dynamically generated here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content" id="product-modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2 id="modal-title">Thêm sản phẩm mới</h2>
+            <form id="product-form">
+                <label for="product-id">Mã sản phẩm:</label>
+                <input type="text" id="product-id" name="product-id" required>
+                
+                <label for="product-name">Tên sản phẩm:</label>
+                <input type="text" id="product-name" name="product-name" required>
+                
+                <label for="product-type">Loại:</label>
+                <select id="product-type" name="product-type" required></select>
+
+                <label for="product-price">Giá:</label>
+                <input type="text" id="product-price" name="product-price" required>
+                
+                <label for="product-size">Kích thước:</label>
+                <input type="text" id="product-size" name="product-size" required>
+                
+                <label for="product-status">Trạng thái:</label>
+                <input type="text" id="product-status" name="product-status" required>
+                
+                <label for="product-image">Hình ảnh (URL):</label>
+                <input type="text" id="product-image" name="product-image" required>
+                
+                <button type="submit" class="btn" id="submit-btn">Thêm</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="product.js"></script>
+</body>
+
+</html>
