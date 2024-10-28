@@ -6,8 +6,23 @@
     <title>Cart Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            height: auto;
+            width: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url("../img/background.jpg");
+            background-size: 100% 250%;
+            background-repeat: no-repeat;
+            
+        }
         .cart-container {
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         .cart-header {
@@ -28,7 +43,7 @@
         }
 
         .cart-table th {
-            background-color: #007bff;
+            background-color: #2371d6;
             color: white;
         }
 
@@ -47,11 +62,25 @@
             font-weight: bold;
         }
 
+        .clear-btn {
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #CC0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .clear-btn:hover {
+            background-color: #218838;
+        }
+
         .checkout-btn {
             margin-top: 20px;
             float: right;
             padding: 10px 25px;
-            background-color: #28a745;
+            background-color: #CC0000;
             color: white;
             border: none;
             border-radius: 5px;
@@ -61,9 +90,26 @@
         .checkout-btn:hover {
             background-color: #218838;
         }
+
+        .back-arrow {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-left: 5px solid black; /* Thân mũi tên */
+            border-bottom: 5px solid black; /* Đầu mũi tên */
+            transform: rotate(45deg); /* Xoay để tạo hình mũi tên */
+            margin-top: 20px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+
+        .back-arrow:hover {
+            border-color: #007bff; /* Đổi màu khi hover */
+        }
     </style>
 </head>
 <body>
+    <a href="#" class="back-arrow"></a>
     <div class="container cart-container">
         <div class="cart-header">
             <h2>Giỏ hàng</h2>
@@ -71,10 +117,9 @@
         <table class="cart-table" id="cart-table">
             <thead>
                 <tr>
-                    <th>Sản phẩm</th>
-                    <th>Số lượng</th>
+                    <th>Tên</th>
+                    <th>Ảnh sản phẩm</th>
                     <th>Giá</th>
-                    <th>Tổng cộng</th>
                 </tr>
             </thead>
             <tbody class="displayCart">
@@ -82,9 +127,10 @@
             </tbody>
         </table>
         <div class="cart-total-container">
-            <span class="cart-total-title">Total: </span>
+            <span class="cart-total-title">Tổng cộng: </span>
             <span class="total-cart">0 ₫</span>
         </div>
+        <button class="clear-btn" id="clear-btn">Làm mới</button>
         <button class="checkout-btn" id="checkout-btn">Thanh toán</button>
     </div>
 
