@@ -1023,7 +1023,7 @@ test|schema||newuser||grant option|G</Grants>
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
     <schema id="291" parent="1" name="koi_farm_shop">
-      <LastIntrospectionLocalTimestamp>2024-10-17.13:53:46</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-10-22.13:42:03</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="mysql">
@@ -1050,418 +1050,467 @@ test|schema||newuser||grant option|G</Grants>
     <schema id="299" parent="1" name="test_api">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="300" parent="1" name="mysql.infoschema">
+    <schema id="300" parent="1" name="voting_system">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="301" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="301" parent="1" name="mysql.session">
+    <user id="302" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="302" parent="1" name="mysql.sys">
+    <user id="303" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="303" parent="1" name="newuser"/>
-    <user id="304" parent="1" name="root">
+    <user id="304" parent="1" name="newuser"/>
+    <user id="305" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="305" parent="291" name="ca_koi_nhat">
+    <table id="306" parent="291" name="ca_koi_nhat">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="306" parent="291" name="chitietdonhang">
+    <table id="307" parent="291" name="chitietdonhang">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="307" parent="291" name="donhang">
+    <table id="308" parent="291" name="donhang">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="308" parent="291" name="gioi_thieu">
+    <table id="309" parent="291" name="gio_hang">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="309" parent="291" name="khuyen_mai">
+    <table id="310" parent="291" name="khuyen_mai">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="310" parent="291" name="tai_khoan_cua_nguoi_dung">
+    <table id="311" parent="291" name="loai_ca">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="311" parent="291" name="tai_khoan_cua_quan_ly">
+    <table id="312" parent="291" name="tai_khoan_cua_nguoi_dung">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="312" parent="291" name="tinh_trang_don_hang">
+    <table id="313" parent="291" name="tai_khoan_cua_quan_ly">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="313" parent="305" name="image">
+    <table id="314" parent="291" name="tinh_trang_don_hang">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="315" parent="306" name="image">
       <Position>1</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="314" parent="305" name="sale_status">
+    <column id="316" parent="306" name="sale_status">
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="315" parent="305" name="name_of_fish">
+    <column id="317" parent="306" name="name_of_fish">
       <Position>3</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="316" parent="305" name="id_of_fish">
+    <column id="318" parent="306" name="id_of_fish">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="317" parent="305" name="note">
+    <column id="319" parent="306" name="note">
       <Position>5</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="318" parent="305" name="price">
+    <column id="320" parent="306" name="sale_person">
       <Position>6</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <column id="319" parent="305" name="sale_person">
-      <Position>7</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="320" parent="305" name="sex_of_fish">
+    <column id="321" parent="306" name="sex_of_fish">
+      <Position>7</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="322" parent="306" name="dob_of_fish">
       <Position>8</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="321" parent="305" name="dob_of_fish">
+    <column id="323" parent="306" name="size_of_fish">
       <Position>9</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="322" parent="305" name="size_of_fish">
+    <column id="324" parent="306" name="type_of_fish">
       <Position>10</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <column id="323" parent="305" name="type_of_fish">
-      <Position>11</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="324" parent="305" name="origin_of_fish">
-      <Position>12</Position>
+    <column id="325" parent="306" name="origin_of_fish">
+      <Position>11</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <foreign-key id="325" parent="305" name="ca_koi_nhat_ibfk_1">
+    <column id="326" parent="306" name="price">
+      <Position>12</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <foreign-key id="327" parent="306" name="ca_koi_nhat_ibfk_1">
       <ColNames>type_of_fish</ColNames>
       <RefColNames>type_of_fish</RefColNames>
-      <RefTableName>gioi_thieu</RefTableName>
+      <RefTableName>loai_ca</RefTableName>
     </foreign-key>
-    <index id="326" parent="305" name="PRIMARY">
+    <index id="328" parent="306" name="PRIMARY">
       <ColNames>id_of_fish</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="327" parent="305" name="type_of_fish">
+    <index id="329" parent="306" name="type_of_fish">
       <ColNames>type_of_fish</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="328" parent="305" name="PRIMARY">
+    <key id="330" parent="306" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="329" parent="306" name="don_hang_id">
+    <column id="331" parent="307" name="don_hang_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="330" parent="306" name="id_of_fish">
+    <column id="332" parent="307" name="id_of_fish">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="331" parent="306" name="quantity">
+    <column id="333" parent="307" name="quantity">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="332" parent="306" name="don_hang_id">
+    <foreign-key id="334" parent="307" name="don_hang_id">
       <ColNames>don_hang_id</ColNames>
       <RefColNames>order_id</RefColNames>
       <RefTableName>donhang</RefTableName>
     </foreign-key>
-    <foreign-key id="333" parent="306" name="fk_fish">
+    <foreign-key id="335" parent="307" name="fk_fish">
       <ColNames>id_of_fish</ColNames>
       <RefColNames>id_of_fish</RefColNames>
       <RefTableName>ca_koi_nhat</RefTableName>
     </foreign-key>
-    <index id="334" parent="306" name="PRIMARY">
+    <index id="336" parent="307" name="PRIMARY">
       <ColNames>don_hang_id
 id_of_fish</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="335" parent="306" name="idx_DonHangId">
+    <index id="337" parent="307" name="idx_DonHangId">
       <ColNames>don_hang_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="336" parent="306" name="fk_fish">
+    <index id="338" parent="307" name="fk_fish">
       <ColNames>id_of_fish</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="337" parent="306" name="PRIMARY">
+    <key id="339" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="338" parent="307" name="order_id">
+    <column id="340" parent="308" name="order_id">
       <AutoIncrement>5</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="339" parent="307" name="address">
+    <column id="341" parent="308" name="address">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="340" parent="307" name="delivery_time">
+    <column id="342" parent="308" name="delivery_time">
       <Position>3</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="341" parent="307" name="order_date">
+    <column id="343" parent="308" name="order_date">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="342" parent="307" name="pay">
+    <column id="344" parent="308" name="pay">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="343" parent="307" name="total_price">
+    <column id="345" parent="308" name="total_price">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>decimal(10,2 digit)|0s</StoredType>
     </column>
-    <column id="344" parent="307" name="user_name">
+    <column id="346" parent="308" name="user_name">
       <Position>7</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="345" parent="307" name="phone_number">
+    <column id="347" parent="308" name="phone_number">
       <Position>8</Position>
       <StoredType>varchar(15)|0s</StoredType>
     </column>
-    <column id="346" parent="307" name="id_khuyen_mai">
+    <column id="348" parent="308" name="id_khuyen_mai">
       <Position>9</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="347" parent="307" name="don_hang_id">
+    <column id="349" parent="308" name="don_hang_id">
       <Position>10</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="348" parent="307" name="phone_number">
+    <foreign-key id="350" parent="308" name="phone_number">
       <ColNames>phone_number</ColNames>
       <RefColNames>phone_number</RefColNames>
       <RefTableName>tai_khoan_cua_nguoi_dung</RefTableName>
     </foreign-key>
-    <foreign-key id="349" parent="307" name="fk_id_khuyen_mai">
+    <foreign-key id="351" parent="308" name="fk_id_khuyen_mai">
       <ColNames>id_khuyen_mai</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>khuyen_mai</RefTableName>
     </foreign-key>
-    <foreign-key id="350" parent="307" name="FKit2ijd3rp1mi8fmdu33qe6ojc">
+    <foreign-key id="352" parent="308" name="FKit2ijd3rp1mi8fmdu33qe6ojc">
       <ColNames>don_hang_id</ColNames>
       <RefColNames>don_hang_id</RefColNames>
       <RefTableName>chitietdonhang</RefTableName>
     </foreign-key>
-    <index id="351" parent="307" name="PRIMARY">
+    <index id="353" parent="308" name="PRIMARY">
       <ColNames>order_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="352" parent="307" name="phone_number">
+    <index id="354" parent="308" name="phone_number">
       <ColNames>phone_number</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="353" parent="307" name="fk_id_khuyen_mai">
+    <index id="355" parent="308" name="fk_id_khuyen_mai">
       <ColNames>id_khuyen_mai</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="354" parent="307" name="FKit2ijd3rp1mi8fmdu33qe6ojc">
+    <index id="356" parent="308" name="FKit2ijd3rp1mi8fmdu33qe6ojc">
       <ColNames>don_hang_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="355" parent="307" name="PRIMARY">
+    <key id="357" parent="308" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="356" parent="308" name="type_of_fish">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="357" parent="308" name="image">
-      <Position>2</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="358" parent="308" name="video">
-      <Position>3</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <index id="359" parent="308" name="PRIMARY">
-      <ColNames>type_of_fish</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="360" parent="308" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="361" parent="309" name="id">
+    <column id="358" parent="309" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="362" parent="309" name="ten_khuyen_mai">
+    <column id="359" parent="309" name="id_of_fish">
       <Position>2</Position>
-      <StoredType>varchar(255)|0s</StoredType>
+      <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="363" parent="309" name="giam_gia_percent">
+    <column id="360" parent="309" name="so_luong">
       <Position>3</Position>
-      <StoredType>varchar(40)|0s</StoredType>
+      <StoredType>int|0s</StoredType>
     </column>
-    <column id="364" parent="309" name="ngay_bat_dau">
-      <NotNull>1</NotNull>
+    <column id="361" parent="309" name="tong_cong">
       <Position>4</Position>
-      <StoredType>date|0s</StoredType>
+      <StoredType>int|0s</StoredType>
     </column>
-    <column id="365" parent="309" name="ngay_ket_thuc">
-      <NotNull>1</NotNull>
+    <column id="362" parent="309" name="tai_khoan_nguoi_dung">
       <Position>5</Position>
-      <StoredType>date|0s</StoredType>
+      <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <index id="366" parent="309" name="PRIMARY">
+    <foreign-key id="363" parent="309" name="gio_hang_ibfk_1">
+      <ColNames>id_of_fish</ColNames>
+      <RefColNames>id_of_fish</RefColNames>
+      <RefTableName>ca_koi_nhat</RefTableName>
+    </foreign-key>
+    <foreign-key id="364" parent="309" name="gio_hang_ibfk_2">
+      <ColNames>tai_khoan_nguoi_dung</ColNames>
+      <RefColNames>user_name</RefColNames>
+      <RefTableName>tai_khoan_cua_nguoi_dung</RefTableName>
+    </foreign-key>
+    <index id="365" parent="309" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="367" parent="309" name="PRIMARY">
+    <index id="366" parent="309" name="id_of_fish">
+      <ColNames>id_of_fish</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="367" parent="309" name="tai_khoan_nguoi_dung">
+      <ColNames>tai_khoan_nguoi_dung</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="368" parent="309" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="368" parent="310" name="user_name">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <column id="369" parent="310" name="pass_word">
-      <Position>2</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <column id="370" parent="310" name="email">
-      <Position>3</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <column id="371" parent="310" name="phone_number">
-      <Position>4</Position>
-      <StoredType>varchar(15)|0s</StoredType>
-    </column>
-    <column id="372" parent="310" name="dia_chi">
-      <Position>5</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="373" parent="310" name="ten_khach_hang">
-      <Position>6</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <index id="374" parent="310" name="PRIMARY">
-      <ColNames>user_name</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="375" parent="310" name="phone_number">
-      <ColNames>phone_number</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="376" parent="310" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="377" parent="310" name="phone_number">
-      <UnderlyingIndexName>phone_number</UnderlyingIndexName>
-    </key>
-    <column id="378" parent="311" name="user_name">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <column id="379" parent="311" name="pass_word">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StoredType>varchar(50)|0s</StoredType>
-    </column>
-    <index id="380" parent="311" name="PRIMARY">
-      <ColNames>user_name</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="381" parent="311" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="382" parent="312" name="order_id">
+    <column id="369" parent="310" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="383" parent="312" name="situation">
+    <column id="370" parent="310" name="ten_khuyen_mai">
+      <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="371" parent="310" name="giam_gia_percent">
+      <Position>3</Position>
+      <StoredType>varchar(40)|0s</StoredType>
+    </column>
+    <column id="372" parent="310" name="ngay_bat_dau">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <column id="373" parent="310" name="ngay_ket_thuc">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>date|0s</StoredType>
+    </column>
+    <index id="374" parent="310" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="375" parent="310" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="376" parent="311" name="type_of_fish">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="377" parent="311" name="image">
+      <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="378" parent="311" name="video">
+      <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <index id="379" parent="311" name="PRIMARY">
+      <ColNames>type_of_fish</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="380" parent="311" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="381" parent="312" name="user_name">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="382" parent="312" name="pass_word">
+      <Position>2</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="383" parent="312" name="email">
+      <Position>3</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="384" parent="312" name="phone_number">
+      <Position>4</Position>
+      <StoredType>varchar(15)|0s</StoredType>
+    </column>
+    <index id="385" parent="312" name="PRIMARY">
+      <ColNames>user_name</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="386" parent="312" name="phone_number">
+      <ColNames>phone_number</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="387" parent="312" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="388" parent="312" name="phone_number">
+      <UnderlyingIndexName>phone_number</UnderlyingIndexName>
+    </key>
+    <column id="389" parent="313" name="user_name">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="390" parent="313" name="pass_word">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <index id="391" parent="313" name="PRIMARY">
+      <ColNames>user_name</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="392" parent="313" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="393" parent="314" name="order_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="394" parent="314" name="situation">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="384" parent="312" name="status_details">
+    <column id="395" parent="314" name="status_details">
       <Position>3</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="385" parent="312" name="times">
+    <column id="396" parent="314" name="times">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
-    <column id="386" parent="312" name="id">
+    <column id="397" parent="314" name="id">
       <AutoIncrement>11</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="387" parent="312" name="fk_order_id">
+    <foreign-key id="398" parent="314" name="fk_order_id">
       <ColNames>order_id</ColNames>
       <RefColNames>order_id</RefColNames>
       <RefTableName>donhang</RefTableName>
     </foreign-key>
-    <foreign-key id="388" parent="312" name="tinh_trang_don_hang_ibfk_1">
+    <foreign-key id="399" parent="314" name="tinh_trang_don_hang_ibfk_1">
       <ColNames>order_id</ColNames>
       <RefColNames>order_id</RefColNames>
       <RefTableName>donhang</RefTableName>
     </foreign-key>
-    <index id="389" parent="312" name="PRIMARY">
+    <index id="400" parent="314" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="390" parent="312" name="fk_order_id">
+    <index id="401" parent="314" name="fk_order_id">
       <ColNames>order_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="391" parent="312" name="PRIMARY">
+    <key id="402" parent="314" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

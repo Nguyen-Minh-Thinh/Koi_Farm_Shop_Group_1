@@ -56,11 +56,42 @@ backToLoginLink.onclick = function() {
 }
 
 // Gửi thông tin đăng nhập khi nhấn nút đăng nhập hoặc Enter
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const signInButton = document.querySelector(".button");
+    const loginBtn = document.getElementById("loginBtn"); // Lấy phần tử Đăng nhập/Đăng ký
+    const settingsLink = document.getElementById("settingsLink"); // Lấy phần tử Cài đặt
+    const logoutLink = document.getElementById("logoutLink"); // Lấy phần tử Đăng xuất
+
+    // Hàm để lấy giá trị cookie theo tên
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // Kiểm tra trạng thái đăng nhập khi trang được tải
+    function checkLoginStatus() {
+        const userName = getCookie("username");
+        if (userName) {
+            // Cập nhật giao diện nếu người dùng đã đăng nhập
+            loginBtn.textContent = userName;
+            loginBtn.href = "#";
+            settingsLink.style.display = "inline"; // Hiện link Cài đặt
+            logoutLink.style.display = "inline"; // Hiện link Đăng xuất
+        } else {
+            // Nếu không có tên người dùng, giữ nguyên trạng thái đăng nhập/đăng ký
+            loginBtn.textContent = "Đăng nhập/Đăng ký";
+            loginBtn.href = "#"; // Cập nhật href cho nút đăng nhập
+            settingsLink.style.display = "none"; // Ẩn link Cài đặt
+            logoutLink.style.display = "none"; // Ẩn link Đăng xuất
+        }
+    }
+
+    // Gọi hàm kiểm tra trạng thái đăng nhập
+    checkLoginStatus();
 
     // Lắng nghe sự kiện khi người dùng nhấn nút "Sign In"
-    signInButton.addEventListener("click", async function(event) {
+    signInButton.addEventListener("click", async function (event) {
         event.preventDefault(); // Ngăn không cho form tự động gửi
 
         // Lấy giá trị từ các trường input
@@ -87,33 +118,80 @@ document.addEventListener("DOMContentLoaded", function() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(loginData),
+                credentials: "include" // Thêm dòng này nếu cần thiết
             });
 
             if (response.ok) {
                 const data = await response.json();
-                alert("Đăng nhập thành công!"); // Hoặc chuyển hướng sang trang khác
+                alert("Đăng nhập thành công!");
                 console.log(data); // Xử lý dữ liệu từ response nếu cần thiết
 
-                // Chuyển hướng sau khi đăng nhập thành công
-                window.location.href = "./admin/index.html";
+                // Cập nhật nội dung phần tử Đăng nhập/Đăng ký thành tên người dùng
+                loginBtn.textContent = userName; // Thay đổi nội dung phần tử
+                loginBtn.href = "#"; // Cập nhật href nếu cần
+
+                // Hiển thị các liên kết Cài đặt và Đăng xuất
+                settingsLink.style.display = "inline"; // Hiện link Cài đặt
+                logoutLink.style.display = "inline"; // Hiện link Đăng xuất
+                
+                // Lưu thông tin người dùng vào cookie
+                document.cookie = `username=${userName}; path=/`; // Lưu cookie
+
+                // Đóng form đăng nhập
+                const loginModal = document.getElementById("loginModal"); // Giả sử form có id là "loginModal"
+                if (loginModal) {
+                    loginModal.style.display = "none"; // Ẩn form
+                }
+
+                // Kiểm tra lại trạng thái đăng nhập (không cần, nhưng có thể hữu ích)
+                checkLoginStatus(); 
+
             } else if (response.status === 401) {
-                alert("Sai tên đăng nhập hoặc mật khẩu!"); // Hiển thị thông báo khi thông tin sai
+                alert("Sai tên đăng nhập hoặc mật khẩu!");
             } else {
                 alert("Đã xảy ra lỗi. Vui lòng thử lại sau.");
             }
         } catch (error) {
             console.error("Error:", error);
-            alert("Đã xảy ra lỗi kết nối.");
+            alert("Đã xảy ra lỗi kết nối." + error.message);
         }
     });
 
-    // Lắng nghe sự kiện khi người dùng nhấn phím Enter
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "Enter") {
-            signInButton.click(); // Giả lập hành động nhấn nút "Sign In"
+    // Lắng nghe sự kiện khi người dùng nhấn Đăng xuất
+    logoutLink.addEventListener("click", async function (event) {
+        event.preventDefault(); // Ngăn không cho liên kết làm mới trang
+
+        try {
+            // Gửi yêu cầu POST đến API logout
+            const response = await fetch("http://localhost:8080/user/logout", {
+                method: "POST",
+                credentials: "include" // Thêm dòng này nếu cần thiết
+            });
+
+            if (response.ok) {
+                alert("Đăng xuất thành công!");
+                // Reset giao diện về trạng thái chưa đăng nhập
+                loginBtn.textContent = "Đăng nhập/Đăng ký";
+                loginBtn.href = "#"; // Cập nhật href cho nút đăng nhập
+                settingsLink.style.display = "none"; // Ẩn link Cài đặt
+                logoutLink.style.display = "none"; // Ẩn link Đăng xuất
+
+                // Xóa cookie username
+                document.cookie = "username=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT"; // Xóa cookie
+            } else {
+                alert("Đã xảy ra lỗi khi đăng xuất.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Đã xảy ra lỗi kết nối khi đăng xuất." + error.message);
         }
     });
 });
+
+
+
+
+
 
 // Function to check if username exists as user types
 document.getElementById('reg_username').addEventListener('input', function () {

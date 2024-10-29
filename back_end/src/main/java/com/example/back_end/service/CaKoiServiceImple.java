@@ -31,4 +31,42 @@ public class CaKoiServiceImple implements CaKoiService{
             return null;
     }
 
+    // Add new fish
+    public CaKoiNhat addFish(CaKoiNhat caKoiNhat) {
+        return caKoiNhatRepository.save(caKoiNhat);
+    }
+
+    // Update fish details
+    public CaKoiNhat updateFish(String id, CaKoiNhat updatedFish) {
+        Optional<CaKoiNhat> optionalFish = caKoiNhatRepository.findById(id);
+        if (optionalFish.isPresent()) {
+            CaKoiNhat existingFish = optionalFish.get();
+            existingFish.setImage(updatedFish.getImage());
+            existingFish.setSaleStatus(updatedFish.getSaleStatus());
+            existingFish.setNameOfFish(updatedFish.getNameOfFish());
+            existingFish.setNote(updatedFish.getNote());
+            existingFish.setPrice(updatedFish.getPrice());
+            existingFish.setSalePerson(updatedFish.getSalePerson());
+            existingFish.setSexOfFish(updatedFish.getSexOfFish());
+            existingFish.setDobOfFish(updatedFish.getDobOfFish());
+            existingFish.setSizeOfFish(updatedFish.getSizeOfFish());
+            existingFish.setOriginOfFish(updatedFish.getOriginOfFish());
+            existingFish.setTypeOfFish(updatedFish.getTypeOfFish());
+            return caKoiNhatRepository.save(existingFish);
+        } else {
+            return null;
+        }
+    }
+
+    // Delete fish by ID
+    public boolean deleteFish(String id) {
+        Optional<CaKoiNhat> optionalFish = caKoiNhatRepository.findById(id);
+        if (optionalFish.isPresent()) {
+            caKoiNhatRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

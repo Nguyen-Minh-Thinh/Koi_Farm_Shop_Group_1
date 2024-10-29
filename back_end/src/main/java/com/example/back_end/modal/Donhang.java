@@ -3,6 +3,9 @@ package com.example.back_end.modal;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -11,6 +14,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "donhang", schema = "koi_farm_shop")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Donhang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,19 +53,18 @@ public class Donhang {
     private TaiKhoanCuaNguoiDung phoneNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_khuyen_mai")
-    private KhuyenMai idKhuyenMai;
+    @JoinColumn(name = "id_khuyen_mai", referencedColumnName = "id")
+    private KhuyenMai khuyenMai;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "don_hang_id", referencedColumnName = "don_hang_id")
-    private Chitietdonhang donHang;
-
-    @OneToMany(mappedBy = "donHang")
+    @OneToMany(mappedBy = "donHang", fetch = FetchType.LAZY, cascade = CascadeType.ALL)  // Mối quan hệ với Chitietdonhang
+    @JsonManagedReference
     private Set<Chitietdonhang> chitietdonhangs = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL)  // Giả định là bạn có lớp TinhTrangDonHang
+    @JsonManagedReference
     private Set<TinhTrangDonHang> tinhTrangDonHangs = new LinkedHashSet<>();
 
+    // Getter và Setter
     public Integer getId() {
         return id;
     }
@@ -125,20 +129,14 @@ public class Donhang {
         this.phoneNumber = phoneNumber;
     }
 
-    public KhuyenMai getIdKhuyenMai() {
-        return idKhuyenMai;
+
+
+    public KhuyenMai getKhuyenMai() {
+        return khuyenMai;
     }
 
-    public void setIdKhuyenMai(KhuyenMai idKhuyenMai) {
-        this.idKhuyenMai = idKhuyenMai;
-    }
-
-    public Chitietdonhang getDonHang() {
-        return donHang;
-    }
-
-    public void setDonHang(Chitietdonhang donHang) {
-        this.donHang = donHang;
+    public void setKhuyenMai(KhuyenMai khuyenMai) {
+        this.khuyenMai = khuyenMai;
     }
 
     public Set<Chitietdonhang> getChitietdonhangs() {
@@ -156,5 +154,4 @@ public class Donhang {
     public void setTinhTrangDonHangs(Set<TinhTrangDonHang> tinhTrangDonHangs) {
         this.tinhTrangDonHangs = tinhTrangDonHangs;
     }
-
 }

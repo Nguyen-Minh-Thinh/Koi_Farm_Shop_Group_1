@@ -40,7 +40,7 @@ CREATE TABLE `tai_khoan_cua_nguoi_dung` (
 
 LOCK TABLES `tai_khoan_cua_nguoi_dung` WRITE;
 /*!40000 ALTER TABLE `tai_khoan_cua_nguoi_dung` DISABLE KEYS */;
-INSERT INTO `tai_khoan_cua_nguoi_dung` VALUES ('nguyenminhthinh','26122004','2251120114@ut.edu.vn','0123456789',NULL,NULL),('nguyenminhthinhb','0123456789','nguyenminhthinh26122004@gmail.com','0123456788',NULL,NULL),('nguyenvana','12345','nguyenminhthinh26122004@gmail.com','0123456787',NULL,NULL);
+INSERT INTO `tai_khoan_cua_nguoi_dung` VALUES ('nguyenminhthinh','26122004','2251120114@ut.edu.vn','0123456789',NULL,NULL),('nguyenminhthinh2','12345','nguyenminhthinh26122004@gmail.com','0999999999',NULL,NULL),('nguyenminhthinhb','0123456789','nguyenminhthinh26122004@gmail.com','0123456788',NULL,NULL),('nguyenvana','12345','nguyenminhthinh26122004@gmail.com','0123456787',NULL,NULL);
 /*!40000 ALTER TABLE `tai_khoan_cua_nguoi_dung` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-17 20:55:34
+-- Dump completed on 2024-10-22 23:04:13

@@ -3,9 +3,12 @@ package com.example.back_end.modal;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
 @Table(name = "tinh_trang_don_hang", schema = "koi_farm_shop")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TinhTrangDonHang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +18,7 @@ public class TinhTrangDonHang {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "order_id", nullable = false)
+    @JsonBackReference
     private Donhang order;
 
     @Size(max = 255)

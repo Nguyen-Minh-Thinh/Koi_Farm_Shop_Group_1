@@ -2,12 +2,14 @@ package com.example.back_end.modal;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "chitietdonhang", schema = "koi_farm_shop")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Chitietdonhang {
     @EmbeddedId
     private ChitietdonhangId id;
@@ -15,7 +17,8 @@ public class Chitietdonhang {
     @MapsId("donHangId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "don_hang_id", nullable = false)
-    private Donhang donHang;
+    @JsonBackReference
+    private Donhang donHang; // Đảm bảo tên thuộc tính này là "donHang"
 
     @MapsId("idOfFish")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -26,9 +29,11 @@ public class Chitietdonhang {
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-    @OneToMany(mappedBy = "donHang")
-    private Set<Donhang> donhangs = new LinkedHashSet<>();
+    // Phần này đã xóa
+    // @OneToMany(mappedBy = "donHang")
+    // private Set<Donhang> donhangs = new LinkedHashSet<>();
 
+    // Getter và Setter
     public ChitietdonhangId getId() {
         return id;
     }
@@ -60,13 +65,4 @@ public class Chitietdonhang {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
-    public Set<Donhang> getDonhangs() {
-        return donhangs;
-    }
-
-    public void setDonhangs(Set<Donhang> donhangs) {
-        this.donhangs = donhangs;
-    }
-
 }

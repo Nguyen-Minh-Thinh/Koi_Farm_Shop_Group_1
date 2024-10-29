@@ -1,5 +1,6 @@
 package com.example.back_end.modal;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -9,6 +10,7 @@ import java.util.Set;
 @Entity
 @Table(name = "ca_koi_nhat", schema = "koi_farm_shop")
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CaKoiNhat {
     @Id
     @Column(name = "id_of_fish", nullable = false, length = 50)
@@ -45,26 +47,14 @@ public class CaKoiNhat {
     @Column(name = "origin_of_fish", length = 100)
     private String originOfFish;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "type_of_fish")
-    private GioiThieu typeOfFish;
+    @Column(name = "type_of_fish")
+    private String typeOfFish;
 
-    @OneToMany(mappedBy = "idOfFish")
-    private Set<Chitietdonhang> chitietdonhangs = new LinkedHashSet<>();
-
-    public Set<Chitietdonhang> getChitietdonhangs() {
-        return chitietdonhangs;
-    }
-
-    public void setChitietdonhangs(Set<Chitietdonhang> chitietdonhangs) {
-        this.chitietdonhangs = chitietdonhangs;
-    }
-
-    public GioiThieu getTypeOfFish() {
+    public String getTypeOfFish() {
         return typeOfFish;
     }
 
-    public void setTypeOfFish(GioiThieu typeOfFish) {
+    public void setTypeOfFish(String typeOfFish) {
         this.typeOfFish = typeOfFish;
     }
 
@@ -157,4 +147,5 @@ public class CaKoiNhat {
     public void setOriginOfFish(String originOfFish) {
         this.originOfFish = originOfFish;
     }
+
 }

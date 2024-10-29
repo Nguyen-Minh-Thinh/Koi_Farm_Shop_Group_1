@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `gioi_thieu`
+-- Table structure for table `loai_ca`
 --
 
-DROP TABLE IF EXISTS `gioi_thieu`;
+DROP TABLE IF EXISTS `loai_ca`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `gioi_thieu` (
+CREATE TABLE `loai_ca` (
   `type_of_fish` varchar(255) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `video` varchar(255) DEFAULT NULL,
@@ -31,13 +31,13 @@ CREATE TABLE `gioi_thieu` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `gioi_thieu`
+-- Dumping data for table `loai_ca`
 --
 
-LOCK TABLES `gioi_thieu` WRITE;
-/*!40000 ALTER TABLE `gioi_thieu` DISABLE KEYS */;
-INSERT INTO `gioi_thieu` VALUES ('Asagi','https://onkoi.vn/wp-content/uploads/2021/01/6.jpg','https://www.youtube.com/embed/p5LS7re3124?rel=0&autoplay=1&mute=1'),('Kohaku','https://onkoi.vn/wp-content/uploads/2020/04/1920x700.jpg','https://www.youtube.com/embed/p1T9Ig0ekEs?rel=0&autoplay=1&mute=1'),('Showa','https://onkoi.vn/wp-content/uploads/2021/01/5.jpg','https://www.youtube.com/embed/jMHxuxI55CU?rel=0&autoplay=1&mute=1'),('Shusui','https://onkoi.vn/wp-content/uploads/2021/01/7.jpg','https://www.youtube.com/embed/V0eImzXYxp8?rel=0&autoplay=1&mute=1'),('Tancho','https://onkoi.vn/wp-content/uploads/2021/01/8.jpg','https://www.youtube.com/embed/30Z0hSO3at8?rel=0&autoplay=1&mute=1');
-/*!40000 ALTER TABLE `gioi_thieu` ENABLE KEYS */;
+LOCK TABLES `loai_ca` WRITE;
+/*!40000 ALTER TABLE `loai_ca` DISABLE KEYS */;
+INSERT INTO `loai_ca` VALUES ('Asagi','https://onkoi.vn/wp-content/uploads/2021/01/6.jpg','https://www.youtube.com/embed/p5LS7re3124?rel=0&autoplay=1&mute=1'),('Kohaku','https://onkoi.vn/wp-content/uploads/2020/04/1920x700.jpg','https://www.youtube.com/embed/p1T9Ig0ekEs?rel=0&autoplay=1&mute=1'),('Showa','https://onkoi.vn/wp-content/uploads/2021/01/5.jpg','https://www.youtube.com/embed/jMHxuxI55CU?rel=0&autoplay=1&mute=1'),('Shusui','https://onkoi.vn/wp-content/uploads/2021/01/7.jpg','https://www.youtube.com/embed/V0eImzXYxp8?rel=0&autoplay=1&mute=1'),('Tancho','https://onkoi.vn/wp-content/uploads/2021/01/8.jpg','https://www.youtube.com/embed/30Z0hSO3at8?rel=0&autoplay=1&mute=1');
+/*!40000 ALTER TABLE `loai_ca` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-17 20:55:34
+-- Dump completed on 2024-10-22 23:04:14
