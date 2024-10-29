@@ -7,6 +7,7 @@
     font-family: Arial, sans-serif;
 }
 
+
 /* CSS header */
 .header {
     position: sticky;
@@ -19,6 +20,7 @@
     font-family: Arial, sans-serif;
 }
 
+/* Chức năng */
 /* Chức năng */
 .top_head {
     background-color: #111;
@@ -46,6 +48,26 @@
     margin-left: 20px;
     text-align: left;
 }
+
+.function {
+    display: flex;
+    align-items: center;
+}
+
+.function a {
+    margin-left: 10px;
+    background-color: transparent;
+    transition: color 0.3s;
+}
+
+.function a:hover {
+    color: #ddd;
+}
+
+#settingsLink, #logoutLink {
+    display: none;
+}
+
 
 /* User đăng nhập, đăng ký */
 /* Modal styling */

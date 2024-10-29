@@ -59,8 +59,10 @@ backToLoginLink.onclick = function() {
 document.addEventListener("DOMContentLoaded", function () {
     const signInButton = document.querySelector(".button");
     const loginBtn = document.getElementById("loginBtn"); // Lấy phần tử Đăng nhập/Đăng ký
+    const userNameSpan = document.getElementById("userName"); // Lấy phần tử hiển thị tên người dùng
     const settingsLink = document.getElementById("settingsLink"); // Lấy phần tử Cài đặt
     const logoutLink = document.getElementById("logoutLink"); // Lấy phần tử Đăng xuất
+    const shoppingCart = document.getElementById("shoppingCart");
 
     // Hàm để lấy giá trị cookie theo tên
     function getCookie(name) {
@@ -74,16 +76,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const userName = getCookie("username");
         if (userName) {
             // Cập nhật giao diện nếu người dùng đã đăng nhập
-            loginBtn.textContent = userName;
-            loginBtn.href = "#";
+            loginBtn.style.display = "none"; // Ẩn nút Đăng nhập/Đăng ký
+            userNameSpan.textContent = userName; // Hiển thị tên người dùng
+            userNameSpan.style.display = "inline"; // Hiện tên người dùng
             settingsLink.style.display = "inline"; // Hiện link Cài đặt
             logoutLink.style.display = "inline"; // Hiện link Đăng xuất
+            shoppingCart.style.display = "inline-block"; // Hiện giỏ hàng
         } else {
             // Nếu không có tên người dùng, giữ nguyên trạng thái đăng nhập/đăng ký
-            loginBtn.textContent = "Đăng nhập/Đăng ký";
-            loginBtn.href = "#"; // Cập nhật href cho nút đăng nhập
+            loginBtn.style.display = "inline"; // Hiện nút Đăng nhập/Đăng ký
+            userNameSpan.style.display = "none"; // Ẩn tên người dùng
             settingsLink.style.display = "none"; // Ẩn link Cài đặt
             logoutLink.style.display = "none"; // Ẩn link Đăng xuất
+            shoppingCart.style.display = "none"; // Ẩn giỏ hàng
         }
     }
 
@@ -127,12 +132,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(data); // Xử lý dữ liệu từ response nếu cần thiết
 
                 // Cập nhật nội dung phần tử Đăng nhập/Đăng ký thành tên người dùng
-                loginBtn.textContent = userName; // Thay đổi nội dung phần tử
-                loginBtn.href = "#"; // Cập nhật href nếu cần
+                // loginBtn.textContent = userName; // Thay đổi nội dung phần tử
+                // loginBtn.href = "#"; // Cập nhật href nếu cần
 
                 // Hiển thị các liên kết Cài đặt và Đăng xuất
-                settingsLink.style.display = "inline"; // Hiện link Cài đặt
-                logoutLink.style.display = "inline"; // Hiện link Đăng xuất
+                // settingsLink.style.display = "inline"; // Hiện link Cài đặt
+                // logoutLink.style.display = "inline"; // Hiện link Đăng xuất
                 
                 // Lưu thông tin người dùng vào cookie
                 document.cookie = `username=${userName}; path=/`; // Lưu cookie
@@ -171,10 +176,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 alert("Đăng xuất thành công!");
                 // Reset giao diện về trạng thái chưa đăng nhập
-                loginBtn.textContent = "Đăng nhập/Đăng ký";
-                loginBtn.href = "#"; // Cập nhật href cho nút đăng nhập
+                loginBtn.style.display = "inline"; // Hiện nút Đăng nhập/Đăng ký
+                userNameSpan.style.display = "none"; // Ẩn tên người dùng
                 settingsLink.style.display = "none"; // Ẩn link Cài đặt
                 logoutLink.style.display = "none"; // Ẩn link Đăng xuất
+                shoppingCart.style.display = "none"; // Ẩn giỏ hàng
 
                 // Xóa cookie username
                 document.cookie = "username=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT"; // Xóa cookie

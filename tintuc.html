@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang trại cá Koi</title>
     <link rel="stylesheet" href="css/tintuc.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
     <!-- Header -->
@@ -14,14 +15,25 @@
         <span>0123456789</span>
       </div>
       <div class="function">
-        <a href="#" id="loginBtn" style="margin-right: 20px">Đăng nhập/Đăng ký</a>
-        <a href="#" id="settingsLink" style="margin-right: 20px; display: none;">Cài đặt</a>
-        <a href="#" id="logoutLink" style="display: none;">Đăng xuất</a>
-
-        <!-- <a href="cart.html">Giỏ hàng</a> -->
-
+          <a href="cart.html" id="shoppingCart" style="display: none; margin-right: 20px;">
+          <img
+            src="./img/shopping-cart2.png"
+            alt="Giỏ hàng"
+            style="height: 40px; width: 40px;"
+          />
+        </a>
+        <a href="#" id="loginBtn" style="margin-right: 20px"
+          >Đăng nhập/Đăng ký</a
+        >
+        <span id="userName" style="display: none; margin-right: 20px"></span>
+        <!-- Thêm thẻ span cho tên người dùng -->
+        <a href="#" id="settingsLink" style="margin-right: 10px; display: none"
+          >Cài đặt</a
+        >
+        <a href="#" id="logoutLink" style="display: none">Đăng xuất</a>
       </div>
     </div>
+  <!-- /Chức năng -->
 
     <!--Thịnh bố sung thêm đăng nhập, đăng ký cho user-->
     <!-- Modal for Login/Register -->
@@ -136,7 +148,7 @@
         </li>
 
         <li class="menu">
-          <a href="#">Giới Thiệu</a>
+          <a href="gioithieu.html">Giới Thiệu</a>
           <ul class="sub_menu">
             <li><a href="#">Giới thiệu</a></li>
             <li><a href="#">Giới thiệu sàn ký gửi</a></li>
