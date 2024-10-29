@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: 00CCDD;
+    background-color: #00CCDD;
     color: #111;
     font-family: Arial, sans-serif;
 }
@@ -298,7 +298,7 @@ a:hover {
 /* Tên shop */
 h1 {
     text-align: center;
-    background-color: 7CF5FF;
+    background-color: #7CF5FF;
 }
 /* /CSS header */
 
@@ -307,7 +307,7 @@ h1 {
     min-height: 400px;
     padding: 20px;
     flex: 1;
-    background-color: 7CF5FF;
+    background-color: #7CF5FF;
 }
 
 /* Sản phẩm */
