@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="category.css">
+    <title>Quản Lý Danh Mục Cá</title>
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
+    <script defer src="category.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2 style="display: flex; align-items: center;">
+                <img src="../img/logo.png" style="width: 100px; height: auto; margin-left: -20px;">
+                ADMIN
+            </h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="product.html">Quản lý sản phẩm</a></li>
+                <li><a href="order.html">Quản lý đơn hàng</a></li>
+                <li><a href="customer.html">Quản lý khách hàng</a></li>
+                <li><a href="category.html">Quản lý danh mục</a></li>
+                <li><a href="#">Quản lý khuyến mãi</a></li>
+                <li><a href="#">Thống kê</a></li>
+                <li><a href="#">Cài đặt</a></li>
+                <li><a href="#">Hỗ trợ</a></li>
+                <li><a href="#">Đăng xuất</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <h1>Quản Lý Danh Mục Cá</h1>
+            <div class="category-actions">
+                <button id="add-category">Thêm Danh Mục</button>
+            </div>
+            <div class="category-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên loại cá</th>
+                            <th>Hình ảnh</th>
+                            <th>Video</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="category-table-body">
+                        <!-- Dữ liệu sẽ được tải từ API vào đây -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal for Adding/Editing Categories -->
+            <div id="category-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="close-modal">&times;</span>
+                    <h2 id="modal-title">Thêm/Sửa Danh Mục</h2>
+                    <form id="category-form">
+                        <label for="category-name">Tên loại cá:</label>
+                        <input type="text" id="category-name" name="category-name" required>
+
+                        <label for="category-image">Hình ảnh (URL):</label>
+                        <input type="text" id="category-image" name="category-image" required>
+
+                        <label for="category-video">Video (URL):</label>
+                        <input type="text" id="category-video" name="category-video" required>
+
+                        <button type="submit" id="save-category">Lưu</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("category-modal");
+            const addCategoryButton = document.getElementById("add-category");
+            const closeModalButton = document.getElementById("close-modal");
+            const categoryForm = document.getElementById("category-form");
+
+            // Open modal for adding category
+            addCategoryButton.addEventListener("click", function() {
+                modal.style.display = "block";
+                document.getElementById("modal-title").innerText = "Thêm Danh Mục";
+                categoryForm.reset();
+            });
+
+            // Close modal
+            closeModalButton.addEventListener("click", function() {
+                modal.style.display = "none";
+            });
+
+            // Close modal when clicking outside of it
+            window.addEventListener("click", function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
