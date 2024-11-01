@@ -1,0 +1,27 @@
+[
+  {
+    "typeOfFish": "Asagi",
+    "image": "https://onkoi.vn/wp-content/uploads/2021/01/6.jpg",
+    "video": "https://www.youtube.com/embed/p5LS7re3124?rel=0&autoplay=1&mute=1"
+  },
+  {
+    "typeOfFish": "Kohaku",
+    "image": "https://onkoi.vn/wp-content/uploads/2020/04/1920x700.jpg",
+    "video": "https://www.youtube.com/embed/p1T9Ig0ekEs?rel=0&autoplay=1&mute=1"
+  },
+  {
+    "typeOfFish": "Showa",
+    "image": "https://onkoi.vn/wp-content/uploads/2021/01/5.jpg",
+    "video": "https://www.youtube.com/embed/jMHxuxI55CU?rel=0&autoplay=1&mute=1"
+  },
+  {
+    "typeOfFish": "Shusui",
+    "image": "https://onkoi.vn/wp-content/uploads/2021/01/7.jpg",
+    "video": "https://www.youtube.com/embed/V0eImzXYxp8?rel=0&autoplay=1&mute=1"
+  },
+  {
+    "typeOfFish": "Tancho",
+    "image": "https://onkoi.vn/wp-content/uploads/2021/01/8.jpg",
+    "video": "https://www.youtube.com/embed/30Z0hSO3at8?rel=0&autoplay=1&mute=1"
+  }
+]

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="promotion.css"> <!-- Đổi từ category.css sang promotion.css -->
+    <title>Quản Lý Khuyến Mãi</title>
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
+    <script defer src="promotion.js"></script> <!-- Đổi từ category.js sang promotion.js -->
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2 style="display: flex; align-items: center;">
+                <img src="../img/logo.png" style="width: 100px; height: auto; margin-left: -20px;">
+                ADMIN
+            </h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="product.html">Quản lý sản phẩm</a></li>
+                <li><a href="order.html">Quản lý đơn hàng</a></li>
+                <li><a href="customer.html">Quản lý khách hàng</a></li>
+                <li><a href="category.html">Quản lý danh mục</a></li>
+                <li><a href="promotion.html">Quản lý khuyến mãi</a></li> <!-- Đổi từ category.html sang promotion.html -->
+                <li><a href="#">Thống kê</a></li>
+                <li><a href="#">Cài đặt</a></li>
+                <li><a href="#">Hỗ trợ</a></li>
+                <li><a href="#">Đăng xuất</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <h1>Quản Lý Khuyến Mãi</h1>
+            <div class="promotion-actions"> <!-- Đổi từ category-actions sang promotion-actions -->
+                <button id="add-promotion">Thêm Khuyến Mãi</button> <!-- Đổi id từ add-category sang add-promotion -->
+            </div>
+            <div class="promotion-list"> <!-- Đổi từ category-list sang promotion-list -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên Khuyến Mãi</th>
+                            <th>Giảm Giá</th>
+                            <th>Ngày bắt đầu</th>
+                            <th>Ngày kết thúc</th>
+                            <th>Chỉnh Sửa</th>
+                        </tr>
+                    </thead>
+                    <tbody id="promotion-table-body"> <!-- Đổi id từ category-table-body sang promotion-table-body -->
+                        <!-- Dữ liệu sẽ được tải từ API vào đây -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal for Adding/Editing Promotions -->
+            <div id="promotion-modal" class="modal"> <!-- Đổi id từ category-modal sang promotion-modal -->
+                <div class="modal-content">
+                    <span class="close" id="close-modal">&times;</span>
+                    <h2 id="modal-title">Thêm/Sửa Khuyến Mãi</h2>
+                    <form id="promotion-form"> <!-- Đổi id từ category-form sang promotion-form -->
+                        <label for="promotion-name">Tên Khuyến Mãi:</label> <!-- Đổi từ category-name sang promotion-name -->
+                        <input type="text" id="promotion-name" name="promotion-name" required>
+
+                        <label for="promotion-discount">Giảm Giá (%):</label> <!-- Cập nhật cho phù hợp với khuyến mãi -->
+                        <input type="number" id="promotion-discount" name="promotion-discount" required>
+
+                        <label for="promotion-start-date">Ngày bắt đầu:</label> <!-- Cập nhật thêm ngày bắt đầu và kết thúc -->
+                        <input type="date" id="promotion-start-date" name="promotion-start-date" required>
+
+                        <label for="promotion-end-date">Ngày kết thúc:</label>
+                        <input type="date" id="promotion-end-date" name="promotion-end-date" required>
+
+                        <button type="submit" id="save-promotion">Lưu</button> <!-- Đổi id từ save-category sang save-promotion -->
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("promotion-modal"); // Đổi id từ category-modal sang promotion-modal
+            const addPromotionButton = document.getElementById("add-promotion"); // Đổi id từ add-category sang add-promotion
+            const closeModalButton = document.getElementById("close-modal");
+            const promotionForm = document.getElementById("promotion-form"); // Đổi id từ category-form sang promotion-form
+
+            // Open modal for adding promotion
+            addPromotionButton.addEventListener("click", function() {
+                modal.style.display = "block";
+                document.getElementById("modal-title").innerText = "Thêm Khuyến Mãi";
+                promotionForm.reset();
+            });
+
+            // Close modal
+            closeModalButton.addEventListener("click", function() {
+                modal.style.display = "none";
+            });
+
+            // Close modal when clicking outside of it
+            window.addEventListener("click", function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

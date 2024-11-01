@@ -1,0 +1,42 @@
+[
+  {
+    "userName": "nguyenminhthinh",
+    "passWord": "26122004",
+    "email": "2251120114@ut.edu.vn",
+    "phoneNumber": "0123456789",
+    "tenKhachHang": null,
+    "diaChi": null
+  },
+  {
+    "userName": "nguyenminhthinh2",
+    "passWord": "12345",
+    "email": "nguyenminhthinh26122004@gmail.com",
+    "phoneNumber": "0999999999",
+    "tenKhachHang": null,
+    "diaChi": null
+  },
+  {
+    "userName": "nguyenminhthinhb",
+    "passWord": "0123456789",
+    "email": "nguyenminhthinh26122004@gmail.com",
+    "phoneNumber": "0123456788",
+    "tenKhachHang": null,
+    "diaChi": null
+  },
+  {
+    "userName": "nguyenvana",
+    "passWord": "12345",
+    "email": "nguyenminhthinh26122004@gmail.com",
+    "phoneNumber": "0123456787",
+    "tenKhachHang": null,
+    "diaChi": null
+  },
+  {
+    "userName": "vovansau",
+    "passWord": "12345",
+    "email": "angitaocung@gmailcom",
+    "phoneNumber": "0987899876",
+    "tenKhachHang": "Võ Văn Sáu",
+    "diaChi": "abc, bcd, def"
+  }
+]
