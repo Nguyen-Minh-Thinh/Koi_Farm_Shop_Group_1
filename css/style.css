@@ -293,7 +293,7 @@ a:hover {
 }
 
 .banner {
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.327);
+    /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.327); */
     margin-bottom: 30px;
 }
 
@@ -316,11 +316,23 @@ h1 {
     background-size: cover;
     text-align: center;
     display: flex;
+    box-shadow: 5px 5px 14px #111;
+    border-radius: 20px;
+}
+
+.kind img {
+    border-radius: 20px;
+    height: 300px;
+    width: 300px;
 }
 
 .text {
     margin-left: 100px;
     font-size: large;
+}
+
+.text iframe {
+    margin: 20px;
 }
 
 .products {
