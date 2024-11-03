@@ -199,34 +199,41 @@ function viewStatusHistory(orderId) {
   }
   
 
-document.getElementById('add-status-btn').addEventListener('click', () => {
-  const orderId = document.querySelector('.status-table tbody').dataset.orderId;
-  const newStatus = {
-      times: document.getElementById('new-time').value,
-      situation: document.getElementById('new-situation').value,
-      statusDetails: document.getElementById('new-details').value
-  };
-  postOrderStatus(orderId, newStatus);
-});
-
-async function postOrderStatus(orderId, newStatus) {
-  try {
-      const response = await fetch(`http://localhost:8080/api/orders/${orderId}/status`, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(newStatus),
-      });
-      if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      console.log("Status added: ", await response.json());
-      alert("Status added successfully!");
-  } catch (error) {
-      console.error("Error posting new status: ", error);
-      alert("Không thêm được trạng thái. Vui lòng thử lại.");
-      window.location.href = "./order.html";
+  document.getElementById('add-status-btn').addEventListener('click', () => {
+    const orderId = document.querySelector('.status-table tbody').dataset.orderId;
+    const selectElement = document.getElementById('new-situation');
+    
+    const newStatus = {
+        times: document.getElementById('new-time').value,
+        // Use selected option's text instead of value
+        situation: selectElement.selectedOptions[0].textContent,
+        statusDetails: document.getElementById('new-details').value
+    };
+    
+    postOrderStatus(orderId, newStatus);
+  });
+  
+  async function postOrderStatus(orderId, newStatus) {
+    try {
+        const response = await fetch(`http://localhost:8080/api/orders/${orderId}/status`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newStatus),
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        console.log("Status added: ", await response.json());
+        alert("Status added successfully!");
+        
+    } catch (error) {
+        console.error("Error posting new status: ", error);
+        alert("Không thêm được trạng thái. Vui lòng thử lại.");
+        window.location.href = "./order.html";
+    }
   }
-}
+      
 

@@ -21,7 +21,7 @@
                 <li><a href="order.html">Quản lý đơn hàng</a></li>
                 <li><a href="customer.html">Quản lý khách hàng</a></li>
                 <li><a href="category.html">Quản lý danh mục</a></li>
-                <li><a href="#">Quản lý khuyến mãi</a></li>
+                <li><a href="promotion.html">Quản lý khuyến mãi</a></li>
                 <li><a href="#">Thống kê</a></li>
                 <li><a href="#">Cài đặt</a></li>
                 <li><a href="#">Hỗ trợ</a></li>
@@ -102,10 +102,16 @@
             <h3>Thêm tình trạng mới</h3>
             <div class="add-status-form">
                 <input type="text" id="new-time" placeholder="Thời gian (VD: 13/10/2024 20h00)">
-                <input type="text" id="new-situation" placeholder="Tình trạng (VD: Đang giao)">
+                <label for="new-situation">Tình trạng:</label>
+                <select id="new-situation">
+                  <option value="cho-xac-nhan">Đang xử lý</option>
+                  <option value="dang-giao">Đang vận chuyển</option>
+                  <option value="da-giao">Đã giao hàng</option>
+                  <option value="da-huy">Đã hủy</option>
+                </select>
                 <input type="text" id="new-details" placeholder="Chi tiết (VD: Shipper đang giao)">
                 <button id="add-status-btn" class="btn add-status-btn">Thêm tình trạng</button>
-            </div>
+              </div>
         </div>
     </div>
 

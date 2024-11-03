@@ -5,13 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/order.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/order.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/BackEndApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/BackEndApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gioithieu.html" beforeDir="false" afterPath="$PROJECT_DIR$/gioithieu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/user_login_register.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/user_login_register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tintuc.html" beforeDir="false" afterPath="$PROJECT_DIR$/tintuc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaQuanLyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaQuanLyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/exception/ResourceNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/exception/ResourceNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/CaKoiNhat.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/CaKoiNhat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Chitietdonhang.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Chitietdonhang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/ChitietdonhangId.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/ChitietdonhangId.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Donhang.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Donhang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHang.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHangDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHangDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/KhuyenMai.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/KhuyenMai.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Loaica.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Loaica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/TaiKhoanCuaNguoiDung.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/TaiKhoanCuaNguoiDung.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/TaiKhoanCuaQuanLy.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/TaiKhoanCuaQuanLy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/TinhTrangDonHang.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/TinhTrangDonHang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/CaKoiNhatRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/CaKoiNhatRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/DonHangRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/DonHangRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/GioHangRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/GioHangRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/LoaiCaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/LoaiCaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TaiKhoanCuaQuanLyRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TaiKhoanCuaQuanLyRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TinhTrangDonHangRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TinhTrangDonHangRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/CaKoiService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/CaKoiService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangServiceImple.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/LoaiCaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/LoaiCaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaNguoiDungService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaNguoiDungService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaQuanLyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaQuanLyService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaQuanLyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaQuanLyServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/test-classes/com/example/back_end/BackEndApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/test-classes/com/example/back_end/BackEndApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +62,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="com.intellij.jpb.JpaEntity" />
+        <option value="HTTP Public Environment File" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -33,16 +71,62 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk-23/lib/src.zip!/java.base/java/lang/ClassNotFoundException.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2nOHcNrb3F3CpNsDUF8HNgsjS1n" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #20.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #21.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #22.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #23.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #24.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #25.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #26.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #27.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #28.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #29.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #30.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #31.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #32.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #33.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #34.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #35.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #36.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #37.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #38.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #39.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #4.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #40.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #42.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #43.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #44.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #5.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #6.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in back_end (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in back_end (2).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in back_end (3).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in back_end.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in bai_tap_cuoi_ky (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in bai_tap_cuoi_ky.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.homepage.html.executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -53,12 +137,16 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java/bai_tap_cuoi_ky&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/HK5/LTJV/Project_Java/Koi_Farm_Shop_Group_1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -67,7 +155,22 @@
     ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.BackEndApplication">
+    <configuration name="generated-requests | #39" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="39" requestIdentifier="#39" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #40" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="40" requestIdentifier="#40" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #42" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="42" requestIdentifier="#42" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #43" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="43" requestIdentifier="#43" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #44" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="44" requestIdentifier="#44" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="BackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="back_end" />
@@ -76,12 +179,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #44" />
+        <item itemvalue="HTTP Request.generated-requests | #43" />
+        <item itemvalue="HTTP Request.generated-requests | #42" />
+        <item itemvalue="HTTP Request.generated-requests | #39" />
+        <item itemvalue="HTTP Request.generated-requests | #40" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
@@ -114,6 +226,25 @@
       <workItem from="1730035270307" duration="8907000" />
       <workItem from="1730085572098" duration="3849000" />
       <workItem from="1730195393675" duration="2193000" />
+      <workItem from="1730212491554" duration="941000" />
+      <workItem from="1730213797562" duration="609000" />
+      <workItem from="1730222714826" duration="5963000" />
+      <workItem from="1730256897855" duration="1245000" />
+      <workItem from="1730259016365" duration="731000" />
+      <workItem from="1730264356349" duration="4000" />
+      <workItem from="1730270804266" duration="1358000" />
+      <workItem from="1730320164634" duration="70000" />
+      <workItem from="1730320244616" duration="259000" />
+      <workItem from="1730322305692" duration="2194000" />
+      <workItem from="1730324712516" duration="796000" />
+      <workItem from="1730326894678" duration="414000" />
+      <workItem from="1730327320355" duration="2117000" />
+      <workItem from="1730344682448" duration="675000" />
+      <workItem from="1730350503892" duration="631000" />
+      <workItem from="1730378644783" duration="11158000" />
+      <workItem from="1730447072111" duration="639000" />
+      <workItem from="1730464434301" duration="2180000" />
+      <workItem from="1730469864465" duration="124000" />
     </task>
     <servers />
   </component>

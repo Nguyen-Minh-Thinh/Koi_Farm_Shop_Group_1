@@ -265,13 +265,15 @@
 /* Add Status Form Styles */
 .add-status-form {
     margin-top: 20px;
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
 }
 
-.add-status-form input {
-    width: 30%;
+.add-status-form input,
+.add-status-form select {
+    width: 30%; /* Adjust width as needed */
     padding: 10px;
     margin-right: 10px;
-    margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }

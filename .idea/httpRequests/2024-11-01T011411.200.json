@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "tenKhuyenMai": "Khuyến mãi mùa hè",
+    "giamGiaPercent": "20",
+    "ngayBatDau": "2024-11-01",
+    "ngayKetThuc": "2024-11-30"
+  },
+  {
+    "id": 2,
+    "tenKhuyenMai": "Khuyến mãi mùa hè",
+    "giamGiaPercent": "20",
+    "ngayBatDau": "2024-11-01",
+    "ngayKetThuc": "2024-11-30"
+  },
+  {
+    "id": 3,
+    "tenKhuyenMai": "Khuyến mãi mùa hè",
+    "giamGiaPercent": "20",
+    "ngayBatDau": "2024-11-01",
+    "ngayKetThuc": "2024-11-30"
+  }
+]
