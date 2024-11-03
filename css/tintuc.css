@@ -276,14 +276,12 @@ a:hover {
 /* Tên shop */
 h1 {
     text-align: center;
-    background-color: 7CF5FF;
 }
 
 /* Điều hướng */
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
-    background-color: #eee;
 }
   
 /* Display list items side by side */
@@ -317,13 +315,11 @@ ul.breadcrumb li a:hover {
     min-height: 400px;
     padding: 20px;
     flex: 1;
-    background-color: 7CF5FF;
     display: flex;
 }
 
 .container {
     display: flex;
-    background-color: 7CF5FF;
 }
 
 /* Sidebar container */
@@ -363,8 +359,7 @@ ul.breadcrumb li a:hover {
   
 
 /* Container for the news section */
-#news {
-    background-color: 7CF5FF; /* Light background for the news section */
+#news { /* Light background for the news section */
     padding: 20px;
 }
   
