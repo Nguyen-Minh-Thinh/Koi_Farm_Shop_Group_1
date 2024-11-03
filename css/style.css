@@ -192,8 +192,6 @@ a:hover {
 .menu_bar {
     display: flex;
     list-style-type: none;
-    
-    
 }
 
 .menu_bar .menu {
@@ -202,9 +200,9 @@ a:hover {
 }
 
 .menu_bar .menu a {
-    color: #111;
+    color: white;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 23px 30px;
     display: block;
     font-weight: bold;
 }
@@ -218,8 +216,7 @@ a:hover {
 .sub_menu {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #111;
     z-index: 999;
     list-style-type: none;
     top: 100%;
@@ -295,10 +292,14 @@ a:hover {
     .sidenav a {font-size: 18px;}
 }
 
+.banner {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.327);
+    margin-bottom: 30px;
+}
+
 /* Tên shop */
 h1 {
     text-align: center;
-    background-color: #7CF5FF;
 }
 /* /CSS header */
 
@@ -307,7 +308,6 @@ h1 {
     min-height: 400px;
     padding: 20px;
     flex: 1;
-    background-color: #7CF5FF;
 }
 
 /* Sản phẩm */
@@ -482,13 +482,16 @@ h1 {
     font-family: Arial, sans-serif; 
     clear:both;
     position: relative;
+    align-items: center;
 }
 
 .social {
     font-size: 20px;
+    margin: auto;
 }
 
 .text {
+    padding-left: 130px;
     text-align: center;
 }
 

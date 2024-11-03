@@ -180,7 +180,7 @@ a:hover {
 }
 
 .menu_bar .menu a {
-    color: #111;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 15px 20px;
     display: block;
@@ -196,7 +196,7 @@ a:hover {
 .sub_menu {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: black;
     min-width: 160px;
     z-index: 999;
     list-style-type: none;
@@ -214,14 +214,14 @@ a:hover {
 }
 
 .sub_menu li a {
-    color: #111;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .sub_menu li a:hover {
-    background-color: #ddd;
+    background-color: white;
 }
 
 .menu:hover .sub_menu {
@@ -276,7 +276,6 @@ a:hover {
 /* Tên shop */
 h1 {
     text-align: center;
-    background-color: 7CF5FF;
 }
 /* /CSS header */
 
@@ -285,7 +284,6 @@ h1 {
     min-height: 400px;
     padding: 20px;
     flex: 1;
-    background-color: 7CF5FF;
 }
 
 /* Sản phẩm */
@@ -449,7 +447,6 @@ h1 {
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
-    background-color: #eee;
 }
   
 /* Display list items side by side */
@@ -481,7 +478,6 @@ ul.breadcrumb li a:hover {
     max-height: 30px; /* Chiều cao mặc định khi thu gọn */
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-    background-color: 7CF5FF;
 }
 
 .introduce p {
@@ -512,13 +508,12 @@ ul.breadcrumb li a:hover {
     margin-bottom: 50px;
     margin-left: 200px;
     margin-right: 200px;
-    background-color: 7CF5FF;
+    
 }
 
 .container {
     margin: 0;
     padding: 0;
-    background-color: 7CF5FF;
 }
 
 /* /CSS main */
