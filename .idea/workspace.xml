@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/QuenMatKhau.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/service/EmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/GioHangController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/GioHangController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/CaKoiNhatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/CaKoiNhatController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/GioHangController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/GioHangController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/CaKoiNhat.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/CaKoiNhat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Loaica.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Loaica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/LoaiCaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/LoaiCaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/CaKoiServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/CaKoiServiceImple.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/LoaiCaServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/LoaiCaServiceImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gioithieu.html" beforeDir="false" afterPath="$PROJECT_DIR$/gioithieu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/user_login_register.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/user_login_register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +53,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.RunWithEnvironmentVariables.executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -117,6 +126,14 @@
       <workItem from="1730085572098" duration="3849000" />
       <workItem from="1730195393675" duration="2193000" />
       <workItem from="1730208948668" duration="3230000" />
+      <workItem from="1730261843091" duration="129000" />
+      <workItem from="1730281149344" duration="279000" />
+      <workItem from="1730292125628" duration="161000" />
+      <workItem from="1730455080919" duration="1844000" />
+      <workItem from="1730467301712" duration="10311000" />
+      <workItem from="1730518710116" duration="1208000" />
+      <workItem from="1730535776331" duration="160000" />
+      <workItem from="1730732440258" duration="1866000" />
     </task>
     <servers />
   </component>
@@ -133,5 +150,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

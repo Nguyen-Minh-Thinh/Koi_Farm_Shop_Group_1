@@ -161,7 +161,7 @@ public class TaiKhoanCuaNguoiDungController {
             account.setEmail(updatedAccount.getEmail());
             account.setPhoneNumber(updatedAccount.getPhoneNumber());
             account.setTenKhachHang(updatedAccount.getTenKhachHang());
-            account.setDiaChi(updatedAccount.getDiaChi());
+//            account.setDiaChi(updatedAccount.getDiaChi());
             TaiKhoanCuaNguoiDung savedAccount = taiKhoanRepository.save(account);
             return new ResponseEntity<>(savedAccount, HttpStatus.OK);
         } else {

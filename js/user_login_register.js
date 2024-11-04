@@ -288,7 +288,7 @@ document.querySelector('#registerForm form').addEventListener('submit', function
         if (response.ok) {
             alert("Đăng ký thành công!");
             // Chuyển hướng đến trang ...
-            window.location.href = 'admin/index.html';
+            window.location.href = 'homepage.html';
         } else {
             throw new Error('Đăng ký không thành công.');
         }
@@ -360,50 +360,205 @@ document.getElementById('forgot_email').addEventListener('input', function () {
         errorMessage_2.textContent = '*Vui lòng sửa tên đăng nhập.';
         errorMessage_2.style.display = 'block'; // Hiện thông báo lỗi
     } 
-    // else {
-    //     // Xóa thông báo trước nếu có
-    //     errorMessage_2.style.display = 'none'; // Ẩn thông báo lỗi
-    //     // Tạo body cho yêu cầu POST
-    //     const email = document.getElementById('forgot_email').value;
-    //     const requestBody = {
-    //         userName: userName,
-    //         email: email
-    //     };
-
-    //     // Gửi yêu cầu POST để kiểm tra email
-    //     fetch('http://localhost:8080/user/register/email', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(requestBody),
-    //     })
-    //     .then(response => {
-    //         if (response.status === 200) {
-    //             // Nếu trạng thái là 200, xử lý thành công
-    //             console.log('Email khớp, yêu cầu thành công.');
-    //             // Bạn có thể thêm mã ở đây để thực hiện hành động khác
-    //         } else if (response.status === 400) {
-    //             // Nếu trạng thái là 400, xử lý lỗi
-    //             console.log('Email không khớp, vui lòng kiểm tra lại.');
-    //             // Hiển thị thông báo lỗi hoặc thực hiện hành động khác
-    //         } else {
-    //             console.log('Có lỗi xảy ra:', response.status);
-    //         }
-    //     })
-    //     .catch(error => {
-    //         console.error('Error:', error);
-    //     });
-    // }
 });
 
 
+// Gửi mail để lấy lại mật khẩu khi người dùng quên
+// Kiểm tra xem tên đăng nhập có tồn tại không
+function checkUsernameExists(username) {
+    return fetch('http://localhost:8080/user/register/user-name', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userName: username })
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Tên đăng nhập không tồn tại.');
+        }
+        return true; // Tên đăng nhập tồn tại
+    });
+}
 
-// Test
-// const usernameInput = document.getElementById('reg_username'); // Giả sử bạn có một input với id là 'username'
+// Kiểm tra xem email có tương ứng với tên đăng nhập không
+function checkEmailForUsername(username, email) {
+    return fetch('http://localhost:8080/user/register/email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userName: username, email: email })
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error('Email không hợp lệ.'); // Ném lỗi để dừng chuỗi Promise
+        }
+        // Nếu email hợp lệ, ẩn thông báo lỗi
+        document.getElementById('error-message-4').style.display = 'none';
+        return true; // Email hợp lệ
+    });
+}
 
-// usernameInput.addEventListener('input', function() {
-//     const username = this.value;
-//     console.log(username); // In ra giá trị của username
-// });
+// Yêu cầu đặt lại mật khẩu
+function requestPasswordReset(username, email) {
+    return fetch('http://localhost:8080/api/auth/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userName: username, email: email })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Không thể gửi yêu cầu đặt lại mật khẩu.');
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log(data);
+        alert("Đã gửi mã xác minh. Vui lòng kiểm tra email.");
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('error-message-3').textContent = error.message;
+        document.getElementById('error-message-3').style.display = 'block';
+    });
+}
+
+// Bắt đầu đếm ngược 60 giây
+function startCountdown() {
+    let countdown = 60;
+    const timerElement = document.getElementById('timer');
+    const countdownElement = document.getElementById('countdown');
+
+    timerElement.style.display = 'block';
+    countdownElement.textContent = countdown;
+
+    const intervalId = setInterval(() => {
+        countdown -= 1;
+        countdownElement.textContent = countdown;
+
+        if (countdown <= 0) {
+            clearInterval(intervalId);
+            timerElement.style.display = 'none';
+            alert('Mã xác minh đã hết hạn. Vui lòng quay trở lại!');
+            location.reload();
+        }
+    }, 1000);
+}
+
+// Xử lý sự kiện submit của form quên mật khẩu
+document.getElementById('forgotPasswordFormElement').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('forgot_user_name').value;
+    const email = document.getElementById('forgot_email').value;
+
+    // Kiểm tra xem tên đăng nhập có tồn tại không
+    checkUsernameExists(username)
+        .then(() => {
+            // Kiểm tra xem email có tương ứng với tên đăng nhập không
+            return checkEmailForUsername(username, email);
+        })
+        .then(() => {
+            // Gửi yêu cầu reset password nếu tên đăng nhập và email đều hợp lệ
+            return requestPasswordReset(username, email);
+        })
+        .then(() => {
+            document.getElementById('forgotPasswordForm').style.display = 'none';
+            document.getElementById('verifyCodeForm').style.display = 'block';
+            startCountdown(); // Bắt đầu đếm ngược 60 giây
+        })
+        .catch(error => {
+            const errorMessage = document.getElementById('error-message-4');
+            errorMessage.textContent = error.message; // Hiển thị thông báo lỗi
+            errorMessage.style.display = 'block';
+        });
+});
+
+// Xác minh mã reset code
+document.getElementById('verifyCodeButton').addEventListener('click', function() {
+    const resetCode = document.getElementById('reset_code').value;
+    const username = document.getElementById('forgot_user_name').value;
+
+    // Gửi yêu cầu xác minh mã
+    fetch('http://localhost:8080/api/auth/verify-reset-code', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userName: username, resetCode: resetCode })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('*Mã xác minh không hợp lệ.');
+        }
+        return response.text();
+    })
+    .then(data => {
+        alert(data);
+        document.getElementById('verifyCodeForm').style.display = 'none';
+        document.getElementById('resetPasswordForm').style.display = 'block'; // Hiện form nhập mật khẩu mới
+    })
+    .catch(error => {
+        const errorMessage = document.getElementById('error-message-verify');
+        errorMessage.textContent = error.message;
+        errorMessage.style.display = 'block';
+    });
+});
+
+// Xử lý sự kiện nhấn nút đặt lại mật khẩu
+document.getElementById('resetPasswordButton').addEventListener('click', function(event) {
+    const newPassword = document.getElementById('new_password').value;
+    const confirmPassword = document.getElementById('confirm_password_new').value;
+    const username = document.getElementById('forgot_user_name').value;
+    const errorMessageNewPassword = document.getElementById('error-message-new-password');
+    const errorMessageConfirmPassword = document.getElementById('error-message-confirm-password');
+    const errorMessageReset = document.getElementById('error-message-reset');
+
+    // Ẩn tất cả các thông báo lỗi trước khi kiểm tra
+    errorMessageNewPassword.style.display = 'none';
+    errorMessageConfirmPassword.style.display = 'none';
+    errorMessageReset.style.display = 'none';
+
+    // Kiểm tra xem trường tên đăng nhập có để trống hay không
+    if (!username) {
+        errorMessageReset.textContent = "*Vui lòng nhập tên đăng nhập.";
+        errorMessageReset.style.display = 'block';
+        return;
+    }
+
+    // Kiểm tra xem trường mật khẩu mới có để trống hay không
+    if (!newPassword) {
+        errorMessageNewPassword.textContent = "*Vui lòng nhập mật khẩu mới.";
+        errorMessageNewPassword.style.display = 'block';
+        return;
+    }
+
+    // Kiểm tra xem trường xác nhận mật khẩu có để trống hay không
+    if (!confirmPassword) {
+        errorMessageConfirmPassword.textContent = "*Vui lòng nhập xác nhận mật khẩu.";
+        errorMessageConfirmPassword.style.display = 'block';
+        return;
+    }
+
+    // Kiểm tra mật khẩu mới và xác nhận mật khẩu có giống nhau hay không
+    if (newPassword !== confirmPassword) {
+        errorMessageConfirmPassword.textContent = "Mật khẩu mới và xác nhận mật khẩu không khớp.";
+        errorMessageConfirmPassword.style.display = 'block';
+        return;
+    }
+
+    // Gửi yêu cầu đặt lại mật khẩu với tên đăng nhập và mật khẩu mới
+    fetch('http://localhost:8080/api/auth/reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            userName: username,
+            newPassword: newPassword
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Không thể đặt lại mật khẩu.');
+        }
+        return response.text();
+    })
+    .then(data => {
+        alert("Mật khẩu của bạn đã được đặt lại thành công!");
+        // Tải lại trang sau khi đặt lại mật khẩu thành công
+        location.reload();
+    })
+    .catch(error => console.error('Error:', error));
+});
 
