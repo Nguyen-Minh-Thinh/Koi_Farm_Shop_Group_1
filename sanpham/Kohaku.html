@@ -3,36 +3,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang trại cá Koi</title>
-    <link rel="stylesheet" href="css/tintuc.css"/>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <!-- Header -->
     <!-- Chức năng -->
     <div class="top_head">
       <div class="tele">
-        <img src="img/telephone.png" style="height: 15px; width: 15px" />
+        <img src="../img/telephone.png" style="height: 15px; width: 15px" />
         <span>0123456789</span>
       </div>
       <div class="function">
-          <a href="cart.html" id="shoppingCart" style="display: none; margin-right: 20px;">
-          <img
-            src="./img/shopping-cart2.png"
-            alt="Giỏ hàng"
-            style="height: 40px; width: 40px;"
-          />
-        </a>
-        <a href="#" id="loginBtn" style="margin-right: 20px"
-          >Đăng nhập/Đăng ký</a
-        >
-        <span id="userName" style="display: none; margin-right: 20px"></span>
-        <!-- Thêm thẻ span cho tên người dùng -->
-        <a href="#" id="settingsLink" style="margin-right: 10px; display: none"
-          >Cài đặt</a
-        >
-        <a href="#" id="logoutLink" style="display: none">Đăng xuất</a>
+        <a href="#" id="loginBtn" style="margin-right: 20px">Đăng nhập/Đăng ký</a>
+        <a href="#" id="settingsLink" style="margin-right: 20px; display: none;">Cài đặt</a>
+        <a href="#" id="logoutLink" style="display: none;">Đăng xuất</a>
+
+        <!-- <a href="cart.html">Giỏ hàng</a> -->
+
       </div>
     </div>
-  <!-- /Chức năng -->
 
     <!--Thịnh bố sung thêm đăng nhập, đăng ký cho user-->
     <!-- Modal for Login/Register -->
@@ -115,6 +104,16 @@
           <h2 style="text-align: center;">Quên mật khẩu</h2>
           <form action="/forgot-password" method="POST">
             <div class="form-group">
+              <label for="forgot_user_name">Nhập tên đăng nhập:</label>
+              <input
+                type="text"
+                id="forgot_user_name"
+                name="forgot_user_name"
+                required
+              />
+            </div>
+            <p id="error-message-3" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <div class="form-group">
               <label for="forgot_email">Nhập email của bạn:</label>
               <input
                 type="email"
@@ -123,10 +122,12 @@
                 required
               />
             </div>
+            <p id="error-message-4" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
             <button type="submit" style="width: 30%; margin-left: 35%;">Lấy lại mật khẩu</button>
             <p>Quay lại <a href="#" id="backToLogin">Đăng nhập</a></p>
           </form>
         </div>
+
       </div>
     </div>
 
@@ -136,18 +137,18 @@
     <div class="header">
       <!-- logo -->
       <div class="logo">
-        <a href="homepage.html"><img src="img/logo.png" alt="#" /></a>
+        <a href="../homepage.html"><img src="../img/logo.png" alt="#" /></a>
       </div>
       <!-- /logo -->
 
       <!-- Menu trang chủ -->
       <div class="menu_bar">
         <li class="menu">
-          <a href="homepage.html">Trang chủ</a>
+          <a href="../homepage.html">Trang chủ</a>
         </li>
 
         <li class="menu">
-          <a href="gioithieu.html">Giới Thiệu</a>
+          <a href="#">Giới Thiệu</a>
           <ul class="sub_menu">
             <li><a href="#">Giới thiệu</a></li>
             <li><a href="#">Giới thiệu sàn ký gửi</a></li>
@@ -188,144 +189,81 @@
           <a href="#">Liên hệ</a>
         </li>
 
-        <!-- navi -->
-        <!-- <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-            >&times;</a
-          >
-          <a href="#kohaku">Koi Kohaku</a>
-          <a href="#karashi">Koi Karashi</a>
-          <a href="#showa">Koi Showa</a>
-          <a href="#asagi">Koi Asagi</a>
-          <a href="#news">Tin tức</a>
-        </div>
-        <span
-          style="font-size: 30px; cursor: pointer; margin-right: 10px"
-          onclick="openNav()"
-          >&#9776;
-        </span> -->
-        <!-- /navi -->
       </div>
       <!-- /Menu trang chủ -->
     </div>
-
-    <!-- Banner -->
-    <!-- <div class="banner">
-      <img src="img\banner.png" style="width: 100%" />
-    </div> -->
-    <!-- /Banner -->
-
-    <ul class="breadcrumb">
-        <li><a href="../homepage.html"><img src="../img/home.png" style="width: 13px; height: 13px; margin-right: 5px;" alt="home">Trang chủ</a></li>
-        <li>Tin tức</li>
-      </ul>
-
     <!-- /Header -->
+     
+    <ul class="breadcrumb">
+      <li><a href="../homepage.html"><img src="../img/home.png" style="width: 13px; height: 13px; margin-right: 5px;" alt="home">Trang chủ</a></li>
+      <li>Koi Kohaku</li>
+    </ul>
 
-    <h1>Tin tức</h1>
+    <div class="container">
 
-    <!-- Main -->
-<div class="container">
-  
-    <div id="news" class="news">
-
-      <div class="cards">
-          <div class="card">
-              <div class="card-content">
-                  <a href="news-page/benhKoi.html"><img src="img/benh-Tail-rot-o-ca-koi.jpg.jpg" alt="Koi Farm" />
-                  <h2>Các bệnh cá koi kèm dấu hiệu và cách phòng, chữa bệnh</h2></a>
-                  <p>Tổng hợp các bệnh phổ biến nhất mà cá Koi thường gặp</p>
-              </div>
-          </div>
-
-          <div class="card">
-              <div class="card-content">
-                  <a href="news-page/chamSoc.html"><img src="img/ca-koi.jpg" alt="Koi Farm" />
-                  <h2>Hướng dẫn kỹ thuật nuôi và chăm sóc cá koi</h2></a>
-                  <p>TCung cấp thức ăn đầy đủ chất dinh dưỡng, đặc biệt là protein trong giai đoạn cá phát triển. Hãy cho ăn theo lượng vừa đủ để tránh..</p>
-              </div>
-          </div>
-
-          <div class="card">
-              <div class="card-content">
-                  <a href="news-page/veSinh.html"><img src="img/ve-sinh-ho-ca-koi-dinh-ky.jpg" alt="Koi Farm" />
-                  <h2>Quy trình vệ sinh hồ cá koi chuẩn chỉ</h2></a>
-                  <p>Việc vệ sinh hồ cá Koi đúng cách sẽ giúp giảm thiểu nguy cơ mắc bệnh và tạo môi trường sống khỏe mạnh cho cá.</p>
-              </div>
-          </div>
-
-          <div class="card">
-              <div class="card-content">
-                  <a href="news-page/benhKoi.html"><img src="img/new.jpg" alt="Koi Farm" />
-                  <h2>Các bệnh cá koi kèm dấu hiệu và cách phòng, chữa bệnh</h2></a>
-                  <p>Tổng hợp các bệnh phổ biến nhất mà cá Koi thường gặp</p>
-              </div>
-          </div>
-
-          <div class="card">
-              <div class="card-content">
-                  <a href="news-page/benhKoi.html"><img src="img/new.jpg" alt="Koi Farm" />
-                  <h2>Các bệnh cá koi kèm dấu hiệu và cách phòng, chữa bệnh</h2></a>
-                  <p>Tổng hợp các bệnh phổ biến nhất mà cá Koi thường gặp</p>
-              </div>
-          </div>
-
-          <div class="card">
-              <a href="news-page/benhKoi.html"><img src="img/new.jpg" alt="Koi Farm" />
-              <div class="card-content">
-                  <h2>Các bệnh cá koi kèm dấu hiệu và cách phòng, chữa bệnh</h2></a>
-                  <p>Tổng hợp các bệnh phổ biến nhất mà cá Koi thường gặp</p>
-              </div>
-          </div>
-
+      <div class="profile">
+        <div class="introduce" id="introduce">
+          <h1>Koi Kohaku</h1>
+          <p>Cá Koi thân đỏ trắng Kohaku là dòng cá tiêu biểu, đại diện cho khả năng sinh sôi nảy nở cực tốt và cũng là 1 trong những dòng cá có tuổi thọ cao. Vì thế còn được gọi 
+            là “Cá Phúc Thọ”. Ở Nhật, người ta coi đó mới được gọi là dòng cá Koi chính thống. Họ thường có câu: “Khởi nguồn là đỏ trắng, mà kết thúc cũng là đỏ trắng” 
+            tức là người ta vốn thấy màu sắc đỏ trắng trên 1 con cá quả là 1 vẻ đẹp lạ lẫm chưa này chưa từng có và tuyệt đẹp nên họ bắt đầu nuôi dưỡng nó, sau 1 thời gian người ta nhận thấy rằng
+            chủng loài này cũng không tồi.</p>
         </div>
-    </div>
-
-    <div class="sidebar">
-      <h2>Bạn có thể quan tâm:</h2>
-      <ul>
-        <li>Cá koi bị trùng mỏ neo</li>
-        <li>Cá Koi bị nấm mang</li>
-        <li>Cá koi bị lồi mắt</li>
-        <li>Cá koi bị xuất huyết</li>
-        <li>Cá Koi thối miệng</li>
-      </ul>
-    </div>
-
-</div>
-    <!-- /Main -->
-
-    <!-- Footer -->
-    <div class="footer" id="footer">
-
-      <a href="#"><img src="img/logo.png" alt="#" style="right: 20px; height: 30%; margin: auto" /></a>
-
-      <div class="text">
-        <h3>Thông tin liên hệ:</h3>
-        <p>
-          Địa chỉ: 70 Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh, Việt Nam
-        </p>
-        <p>
-          Tele: 0123456789
-        </p>
-        <p>
-          gmail: ShopkoiFish@gmail.com
-        </p>
+        <span class="btn-toggle" id="toggleBtn">Xem thêm</span>
       </div>
 
+        <div class="products">
+        <div class="product_img">
+          <img src="../img/tancho.png" alt="Tancho Kohaku" />
+        </div>
+        <div class="product_status">
+          <button class="status_button">Đang bán</button>
+          <h3>Tancho Kohaku</h3>
+        </div>
+        <div class="product_details">
+          <p>
+            Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể
+            đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn
+            rất ấn tượng.
+          </p>
+          <div class="price">
+            <span>Giá mua ngay:</span>
+            <strong>300.000 ₫</strong>
+          </div>
+          <button class="buy_button">ĐẶT HÀNG NGAY</button>
+        </div>
+        <div class="product_meta">
+          <p>Người bán: <strong>OnKoi Quang Minh</strong></p>
+          <p>Năm sinh: <strong>2017</strong></p>
+          <p>Kích thước: <strong>84 cm</strong></p>
+          <p>
+            Giống: <a href="#">Cá koi Kohaku</a>,
+            <a href="#">Cá koi Tancho</a>
+          </p>
+          <p>Nguồn gốc: <a href="#">Dainichi Koi Farm</a></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
       <div class="social">
         <p>Mạng xã hội:</p>
         <a href="#"
-          ><img src="img/facebook.png" style="height: 30px; width: 30px"
+          ><img src="../img/facebook.png" style="height: 30px; width: 30px"
         /></a>
         <a href="#"
-          ><img src="img/youtube.png" style="height: 30px; width: 30px"
+          ><img src="../img/youtube.png" style="height: 30px; width: 30px"
         /></a>
         <a href="#"
-          ><img src="img/insta.png" style="height: 30px; width: 30px"
+          ><img src="../img/insta.png" style="height: 30px; width: 30px"
         /></a>
       </div>
-      
+      <img src="../img/logo.png" alt="#" style="right: 20px" />
+      <div class="text">
+      </div>
+
       <!-- back to top -->
       <!-- <div class="btntop">
             <a href="#" class="top"></a>
@@ -335,6 +273,7 @@
     <!-- /Footer -->
 
     <!--Scripts-->
+    <script src="thugon.js"></script>
     <script src="js/user_login_register.js"></script>
     <script src="js/sidenav.js"></script>
     <script src="js/cart.js"></script>

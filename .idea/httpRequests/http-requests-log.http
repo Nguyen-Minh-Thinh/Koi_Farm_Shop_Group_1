@@ -1,0 +1,303 @@
+GET http://localhost:8080/api/khuyenmai
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-01T011411.200.json
+
+###
+
+GET http://localhost:8080/api/taikhoan/all
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-11-01T003415.200.json
+
+###
+
+POST http://localhost:8080/admin/login
+Content-Type: application/json
+Content-Length: 2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+""
+
+<> 2024-10-31T102852.400.json
+
+###
+
+POST http://localhost:8080/user/register/email
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T102836.400.json
+
+###
+
+GET http://localhost:8080/ca-koi-nhat
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T102051.200.json
+
+###
+
+POST http://localhost:8080/api/fish/create
+Content-Type: application/json
+Content-Length: 224
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "idOfFish": "",
+  "image": "",
+  "saleStatus": "",
+  "nameOfFish": "",
+  "note": "",
+  "price": "",
+  "salePerson": "",
+  "sexOfFish": "",
+  "dobOfFish": "",
+  "sizeOfFish": "",
+  "originOfFish": "",
+  "typeOfFish": ""
+}
+
+<> 2024-10-31T102040.500.json
+
+###
+
+POST http://localhost:8080/admin/login
+Content-Type: application/json
+Content-Length: 2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+""
+
+<> 2024-10-31T102027.400.json
+
+###
+
+GET http://localhost:8080/api/loaica
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T102013.200.json
+
+###
+
+GET http://localhost:8080/api/loaica
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T102003.200.json
+
+###
+
+POST http://localhost:8080/admin/login
+Content-Type: application/json
+Content-Length: 2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+""
+
+<> 2024-10-31T101919.400.json
+
+###
+
+POST http://localhost:8080/admin/login
+Content-Type: application/json
+Content-Length: 2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+""
+
+<> 2024-10-31T055314.400.json
+
+###
+
+POST http://localhost:8080/admin/login
+Content-Type: application/json
+Content-Length: 2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+""
+
+<> 2024-10-31T055311.400.json
+
+###
+
+POST http://localhost:8080/admin/login
+Content-Type: application/json
+Content-Length: 2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+""
+
+<> 2024-10-31T055310.400.json
+
+###
+
+POST http://localhost:8080/admin/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T055308.400.json
+
+###
+
+POST http://localhost:8080/admin/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T055243.400.json
+
+###
+
+POST http://localhost:8080/admin/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T055242.400.json
+
+###
+
+POST http://localhost:8080/admin/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T055238.400.json
+
+###
+
+POST http://localhost:8080/api/fish/create
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T054851.400.json
+
+###
+
+GET http://localhost:8080/ca-koi-nhat
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T054741.200.json
+
+###
+
+POST http://localhost:8080/admin/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T054508.400.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+""
+
+<> 2024-10-31T054314.400.json
+
+###
+
+POST http://127.0.0.1:8080/admin/login
+Content-Type: application/json
+Content-Length: 2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+""
+
+<> 2024-10-31T053712.400.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+""
+
+<> 2024-10-31T053659.400.json
+
+###
+
+GET http://localhost:8080/ca-koi-nhat
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T053412.200.json
+
+###
+
+POST http://localhost:8080/admin/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T053356.400.json
+
+###
+
+POST http://localhost:8080/user/login
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-10-31T053348.400.json
+
+###
+
