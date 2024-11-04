@@ -432,6 +432,7 @@ ul.breadcrumb li a:hover {
 
 /* CSS footer */
 .footer {
+    display: flex;
     color: white;
     line-height:50px; 
     background-color:#111; 
@@ -439,13 +440,16 @@ ul.breadcrumb li a:hover {
     font-family: Arial, sans-serif; 
     clear:both;
     position: relative;
+    align-items: center;
 }
 
 .social {
     font-size: 20px;
+    margin: auto;
 }
 
 .text {
+    padding-left: 130px;
     text-align: center;
 }
 
