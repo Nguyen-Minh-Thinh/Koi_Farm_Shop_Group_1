@@ -1,4 +1,4 @@
-package com.example.back_end.service.impl;
+package com.example.back_end.service;
 
 import com.example.back_end.modal.KhuyenMai;
 import com.example.back_end.repository.KhuyenMaiRepository;
