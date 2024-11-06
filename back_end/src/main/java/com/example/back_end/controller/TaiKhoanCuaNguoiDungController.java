@@ -23,6 +23,8 @@ public class TaiKhoanCuaNguoiDungController {
     private TaiKhoanCuaNguoiDungServiceImple taiKhoanCuaNguoiDungServiceImple;
     @Autowired
     private TaiKhoanCuaNguoiDungRepository taiKhoanRepository;
+    @Autowired
+    private TaiKhoanCuaNguoiDungRepository taiKhoanCuaNguoiDungRepository;
 
     @CrossOrigin(origins = "http://127.0.0.1:5501", allowCredentials = "true")
     @PostMapping("/user/login")
@@ -167,6 +169,30 @@ public class TaiKhoanCuaNguoiDungController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping("/api/taikhoan/change/{userName}")
+    // Change account
+    public Map<String, String> changeAccount(@PathVariable String userName,@RequestBody HashMap<String, String> map) {
+
+        Map<String, String> response = new HashMap<>();
+
+        // Lấy thông tin từ request body
+        String tenKhachHang = map.get("tenKhachHang");
+        String email = map.get("email");
+        String password = map.get("passWord");
+        // Gọi phương thức repository để cập nhật thông tin tài khoản
+        int result = taiKhoanCuaNguoiDungRepository.changeAccount(userName, tenKhachHang, email, password);
+        if (result > 0) {
+            response.put("status", "success");
+            response.put("message", "Account updated successfully.");
+        } else {
+            response.put("status", "error");
+            response.put("message", "Account update failed.");
+        }
+
+        return response;
     }
 
     // Delete account

@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box; /* Thêm box-sizing để kiểm soát kích thước */
+    font-family: Arial, sans-serif;
+}
+
+/* CSS header */
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00CCDD;
+    color: #111;
+}
+
+/* Chức năng */
+.top_head {
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+.top_head .tele {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.top_head .tele img {
+    margin-right: 8px;
+}
+
+.top_head a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.function {
+    display: flex;
+    align-items: center;
+}
+
+.function a {
+    margin-left: 10px;
+    background-color: transparent;
+    transition: color 0.3s;
+}
+
+.function a:hover {
+    color: #ddd;
+}
+
+#settingsLink, #logoutLink {
+    display: none;
+}
+
+/* Logo */
+.logo img {
+    margin-left: 150px;
+    height: 60px;
+    width: 100px;
+}
+
+/* Menu bar */
+.menu_bar {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu_bar .menu {
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu_bar .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 23px 30px;
+    display: block;
+    font-weight: bold;
+}
+
+.menu_bar .menu a:hover {
+    background-color: #CC0000;
+    color: #fff;
+}
+
+/* Submenu */
+.sub_menu {
+    display: none;
+    position: absolute;
+    background-color: #111;
+    z-index: 999;
+    list-style-type: none;
+    top: 100%;
+    left: 0;
+    padding: 0;
+}
+
+.sub_menu li {
+    text-align: left;
+    display: block;
+    padding: 0;
+}
+
+.sub_menu li a {
+    color: #111;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.sub_menu li a:hover {
+    background-color: #ddd;
+}
+
+.menu:hover .sub_menu {
+    display: block;
+}
+
+.menu {
+    padding: 0;
+}
+
+/* nav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #CC0000;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+#loginModal {
+    display: none;
+  }
+  
+
+
+
+/* Main */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Đảm bảo body chiếm toàn bộ chiều cao */
+}
+
+#main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1; /* Cho phép main chiếm toàn bộ không gian còn lại */
+    padding-bottom: 0; /* Đảm bảo không có padding bên dưới */
+}
+
+/* Định dạng cho thanh điều hướng bên */
+.aside-nav {
+    display: flex; /* Sử dụng flexbox */
+    flex-direction: column; /* Đặt chiều hướng là cột */
+    padding: 20px; /* Khoảng cách xung quanh nav */
+    background-color: #00CCDD; /* Màu nền cho nav */
+    border: 1px solid #ddd; /* Đường viền cho nav */
+    border-radius: 5px; /* Bo tròn góc cho nav */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho nav */
+    width: 220px; /* Đặt chiều rộng cho nav */
+    margin-top: 50px; /* Khoảng cách từ trên cùng */
+    margin-left: 10px; /* Khoảng cách từ bên trái */
+    position: fixed; /* Giữ nav cố định */
+}
+
+/* Định dạng cho nội dung chính */
+.content {
+    flex: 1; /* Chiếm không gian còn lại */
+    margin-left: 300px; /* Để tránh chồng lên thanh nav (220px + margin) */
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 80px);
+}
+
+/* Định dạng cho các mục của nav */
+.aside-nav a {
+    text-decoration: none; /* Không có gạch chân */
+    color: #333; /* Màu chữ */
+    padding: 10px 15px; /* Khoảng cách cho các mục */
+    margin: 5px 0; /* Khoảng cách giữa các mục */
+    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển đổi cho nền và màu chữ */
+}
+
+/* Hiệu ứng khi hover */
+.aside-nav a:hover {
+    background-color: #007bff; /* Nền khi hover */
+    color: white; /* Màu chữ khi hover */
+    border-radius: 5px; /* Bo tròn góc */
+}
+
+/* Định dạng cho các mục mới */
+.aside-nav a.new-item {
+    color: white; /* Màu sắc cho các mục mới */
+    font-weight: bold; /* Độ đậm cho các mục mới */
+}
+
+.aside-nav a.new-item:hover {
+    color: white; /* Màu chữ khi hover trên mục mới */
+    background-color: #007bff; /* Nền khi hover trên mục mới */
+}
+
+/* Input styling */
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: border 0.3s;
+}
+input:focus {
+    border-color: #F07334;
+    outline: none;
+}
+
+/* Định dạng cho tiêu đề */
+.content h2 {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Định dạng cho form */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Định dạng cho các input section */
+.left-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mb-3 {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.mb-3 label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Input styling in mb-3 */
+.mb-3 input {
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Button styling */
+button {
+    padding: 5px;
+    width: 130px;
+    background-color: #F07334;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #D95C2A;
+}
+
+/* CSS footer */
+.footer {
+    display: flex;
+    color: white;
+    line-height: 50px; 
+    background-color: #111; 
+    text-align: center; 
+    font-family: Arial, sans-serif; 
+    clear: both;
+    position: relative;
+    align-items: center;
+    margin: 0; /* Đặt margin là 0 */
+    padding: 0; /* Đặt padding là 0 */
+}
+
+.social {
+    font-size: 20px;
+    margin: auto;
+}
+
+.text {
+    padding-left: 130px;
+    text-align: center;
+}

@@ -20,7 +20,7 @@
     font-family: Arial, sans-serif;
 }
 
-/* Chức năng */
+
 /* Chức năng */
 .top_head {
     background-color: #111;
@@ -305,10 +305,17 @@ h1 {
 
 /* CSS main */
 .main {
-    min-height: 400px;
+    min-height: 450px;
     padding: 20px;
     flex: 1;
 }
+
+
+
+
+
+
+
 
 /* Sản phẩm */
 .kind {

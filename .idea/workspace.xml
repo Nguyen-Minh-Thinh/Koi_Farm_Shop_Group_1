@@ -5,69 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T053348.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T053356.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T053412.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T053659.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T053712.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T054314.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T054508.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T054741.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T054851.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T055238.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T055242.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T055243.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T055308.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T055310.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T055311.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T055314.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T101919.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T102003.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T102013.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T102027.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T102040.500.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T102051.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T102836.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-10-31T102852.400.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-11-01T003415.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2024-11-01T011411.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/promotion.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/promotion.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/promotion.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/KhuyenMaiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/repository/KhuyenMaiRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/service/KhuyenMaiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/service/KhuyenMaiServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/KhuyenMaiController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/KhuyenMaiRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/KhuyenMaiService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/KhuyenMaiServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanpham/Kohaku.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanpham/getdata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanpham/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanpham/thugon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/customer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/order.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/order.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/modal/TaiKhoanCuaNguoiDung.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/modal/TaiKhoanCuaNguoiDung.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/service/TaiKhoanCuaNguoiDungServiceImple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/TaiKhoanCuaNguoiDung.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/TaiKhoanCuaNguoiDung.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/TaiKhoanCuaNguoiDungRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caidat.html" beforeDir="false" afterPath="$PROJECT_DIR$/caidat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/tintuc.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/tintuc.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/banner.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tintuc.html" beforeDir="false" afterPath="$PROJECT_DIR$/tintuc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/user_login_register.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/user_login_register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,33 +48,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.RunWithEnvironmentVariables.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.BackEndApplication.executor": "Run",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Merging main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Java/bai_tap_cuoi_ky",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.RunWithEnvironmentVariables.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BackEndApplication.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java/bai_tap_cuoi_ky&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="BackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -180,6 +131,9 @@
       <workItem from="1730518710116" duration="1208000" />
       <workItem from="1730535776331" duration="160000" />
       <workItem from="1730732440258" duration="1866000" />
+      <workItem from="1730779631325" duration="1433000" />
+      <workItem from="1730795419866" duration="4788000" />
+      <workItem from="1730813541000" duration="2995000" />
     </task>
     <servers />
   </component>

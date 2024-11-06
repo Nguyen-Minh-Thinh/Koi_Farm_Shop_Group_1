@@ -75,13 +75,38 @@ document.addEventListener("DOMContentLoaded", function () {
     function checkLoginStatus() {
         const userName = getCookie("username");
         if (userName) {
-            // Cập nhật giao diện nếu người dùng đã đăng nhập
-            loginBtn.style.display = "none"; // Ẩn nút Đăng nhập/Đăng ký
-            userNameSpan.textContent = userName; // Hiển thị tên người dùng
-            userNameSpan.style.display = "inline"; // Hiện tên người dùng
-            settingsLink.style.display = "inline"; // Hiện link Cài đặt
-            logoutLink.style.display = "inline"; // Hiện link Đăng xuất
-            shoppingCart.style.display = "inline-block"; // Hiện giỏ hàng
+            // Gửi yêu cầu GET đến server để lấy thông tin tài khoản
+            fetch(`http://localhost:8080/api/taikhoan/${userName}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Kiểm tra nếu "tenKhachHang" có giá trị khác null
+                    if (data.tenKhachHang !== "") {
+                        userNameSpan.textContent = data.tenKhachHang;
+                    } else {
+                        userNameSpan.textContent = data.userName;
+                    }
+                    
+                    // Cập nhật giao diện nếu người dùng đã đăng nhập
+                    loginBtn.style.display = "none"; // Ẩn nút Đăng nhập/Đăng ký
+                    userNameSpan.style.display = "inline"; // Hiện tên người dùng
+                    settingsLink.style.display = "inline"; // Hiện link Cài đặt
+                    logoutLink.style.display = "inline"; // Hiện link Đăng xuất
+                    shoppingCart.style.display = "inline-block"; // Hiện giỏ hàng
+                })
+                .catch(error => {
+                    console.error("There was a problem with the fetch operation:", error);
+                    // Nếu có lỗi, giữ nguyên trạng thái đăng nhập/đăng ký
+                    loginBtn.style.display = "inline";
+                    userNameSpan.style.display = "none";
+                    settingsLink.style.display = "none";
+                    logoutLink.style.display = "none";
+                    shoppingCart.style.display = "none";
+                });
         } else {
             // Nếu không có tên người dùng, giữ nguyên trạng thái đăng nhập/đăng ký
             loginBtn.style.display = "inline"; // Hiện nút Đăng nhập/Đăng ký
@@ -184,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Xóa cookie username
                 document.cookie = "username=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT"; // Xóa cookie
+                window.location.href = "./homepage.html";
             } else {
                 alert("Đã xảy ra lỗi khi đăng xuất.");
             }

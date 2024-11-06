@@ -26,9 +26,9 @@ import java.util.Set;
     @Column(name = "ten_khach_hang")
     private String tenKhachHang;
 
-    @Size(max = 255)
-    @Column(name = "dia_chi")
-    private String diaChi;
+//    @Size(max = 255)
+//    @Column(name = "dia_chi")
+//    private String diaChi;
 
 //    @OneToMany(mappedBy = "phoneNumber")
 //    private Set<Donhang> donhangs = new LinkedHashSet<>();
@@ -52,13 +52,13 @@ import java.util.Set;
 //        this.donhangs = donhangs;
 //    }
 
-    public String getDiaChi() {
-        return diaChi;
-    }
-
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
-    }
+//    public String getDiaChi() {
+//        return diaChi;
+//    }
+//
+//    public void setDiaChi(String diaChi) {
+//        this.diaChi = diaChi;
+//    }
 
     public String getTenKhachHang() {
         return tenKhachHang;

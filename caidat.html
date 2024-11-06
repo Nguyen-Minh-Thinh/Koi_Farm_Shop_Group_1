@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang trại cá Koi</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/caidat.css" />
   </head>
   <body>
     <!-- Header -->
@@ -27,15 +27,91 @@
         >
         <span id="userName" style="display: none; margin-right: 20px"></span>
         <!-- Thêm thẻ span cho tên người dùng -->
-        <a href="#" id="settingsLink" style="margin-right: 10px; display: none"
+        <a href="./caidat.html" id="settingsLink" style="margin-right: 10px; display: none"
           >Cài đặt</a
         >
         <a href="#" id="logoutLink" style="display: none">Đăng xuất</a>
-      </div>
+      </div>  
     </div>
+    
+    <!--Thạch-->
+    <!-- /Chức năng -->
 
-    <!--Thịnh bố sung thêm đăng nhập, đăng ký cho user-->
-    <!-- Modal for Login/Register -->
+    <div class="header">
+      <!-- logo -->
+      <div class="logo">
+        <a href="homepage.html"><img src="img/logo.png" alt="#" /></a>
+      </div>
+      <!-- /logo -->
+
+      <!-- Menu trang chủ -->
+      <div class="menu_bar">
+        <li class="menu">
+          <a href="homepage.html">Trang chủ</a>
+        </li>
+
+        <li class="menu">
+          <a href="gioithieu.html">Giới Thiệu</a>
+          <ul class="sub_menu">
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Giới thiệu sàn ký gửi</a></li>
+            <li><a href="#">Giới thiệu sàn đấu giá</a></li>
+            <li><a href="#">Các đơn vị bán koi</a></li>
+            <li><a href="#">Nguồn Koi của OnKoi</a></li>
+            <li><a href="#">Hướng dẫn</a></li>
+          </ul>
+        </li>
+
+        <li class="menu">
+          <a href="#">Các loại cá</a>
+          <ul class="sub_menu">
+            <li><a href="#">Koi Kohaku</a></li>
+            <li><a href="#">koi Ogon</a></li>
+            <li><a href="#">Koi Showa</a></li>
+            <li><a href="#">Koi Tancho</a></li>
+          </ul>
+        </li>
+
+        <li class="menu">
+          <a href="#">Sản phẩm</a>
+          <ul class="sub_menu">
+            <li><a href="#">Hệ thống lọc hồ</a></li>
+            <li><a href="#">Phụ kiện trang trí</a></li>
+          </ul>
+        </li>
+
+        <li class="menu">
+          <a href="tintuc.html">Tin tức</a>
+        </li>
+
+        <li class="menu">
+          <a href="#">Thức ăn cho cá</a>
+        </li>
+
+        <li class="menu">
+          <a href="#">Liên hệ</a>
+        </li>
+
+        <!-- navi -->
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >&times;</a
+          >
+          <a href="#kohaku">Koi Kohaku</a>
+          <a href="#karashi">Koi Karashi</a>
+          <a href="#showa">Koi Showa</a>
+          <a href="#asagi">Koi Asagi</a>
+          <a href="#news">Tin tức</a>
+        </div>
+        <span
+          style="font-size: 30px; cursor: pointer; margin-right: 10px"
+          onclick="openNav()"
+          >&#9776;
+        </span>
+        <!-- /navi -->
+      </div>
+      <!-- /Menu trang chủ -->
+    </div>
     <div id="loginModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -189,132 +265,87 @@
       
           <p id="error-message-reset" style="color: red; display: none; margin-top: 10px; font-size: 0.8em;"></p>
         </div>
-      
-
-      
-      
-
-
-
       </div>
     </div>
+    <!-- Main -->
+    <div id="main-content">
+      <nav class="aside-nav">
+        <a href="./caidat.html" class="new-item">Tài khoản của tôi</a>
+        <a href="#" class="new-item">Đơn mua</a>
+      </nav>
 
-    <!--Thạch-->
-    <!-- /Chức năng -->
-
-    <div class="header">
-      <!-- logo -->
-      <div class="logo">
-        <a href="homepage.html"><img src="img/logo.png" alt="#" /></a>
+      <div class="content">
+        <h2>Cài đặt tài khoản</h2>
+        <form id="updateForm" action="#" method="post" enctype="multipart/form-data">
+          <div class="left-section">
+            <div class="mb-3">
+              <label for="main-username">Tên người dùng</label>
+              <input
+                type="text"
+                id="main-username"
+                name="username"
+                placeholder="Nhập tên người dùng"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="main-email">Email</label>
+              <input
+                type="email"
+                id="main-email"
+                name="email"
+                placeholder="Nhập email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="userNewPassword">Mật khẩu mới</label>
+              <input
+                type="password"
+                id="userNewPassword"
+                name="password"
+                placeholder="Nhập mật khẩu mới"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="main-password">Xác nhận mật khẩu mới</label>
+              <input
+                type="password"
+                id="main-password"
+                name="confirm-password"
+                placeholder="Nhập lại mật khẩu mới"
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+        </form>
       </div>
-      <!-- /logo -->
-
-      <!-- Menu trang chủ -->
-      <div class="menu_bar">
-        <li class="menu">
-          <a href="homepage.html">Trang chủ</a>
-        </li>
-
-        <li class="menu">
-          <a href="gioithieu.html">Giới Thiệu</a>
-          <ul class="sub_menu">
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#">Giới thiệu sàn ký gửi</a></li>
-            <li><a href="#">Giới thiệu sàn đấu giá</a></li>
-            <li><a href="#">Các đơn vị bán koi</a></li>
-            <li><a href="#">Nguồn Koi của OnKoi</a></li>
-            <li><a href="#">Hướng dẫn</a></li>
-          </ul>
-        </li>
-
-        <li class="menu">
-          <a href="#">Các loại cá</a>
-          <ul class="sub_menu">
-            <li><a href="#">Koi Kohaku</a></li>
-            <li><a href="#">koi Ogon</a></li>
-            <li><a href="#">Koi Showa</a></li>
-            <li><a href="#">Koi Tancho</a></li>
-          </ul>
-        </li>
-
-        <li class="menu">
-          <a href="#">Sản phẩm</a>
-          <ul class="sub_menu">
-            <li><a href="#">Hệ thống lọc hồ</a></li>
-            <li><a href="#">Phụ kiện trang trí</a></li>
-          </ul>
-        </li>
-
-        <li class="menu">
-          <a href="tintuc.html">Tin tức</a>
-        </li>
-
-        <li class="menu">
-          <a href="#">Thức ăn cho cá</a>
-        </li>
-
-        <li class="menu">
-          <a href="#">Liên hệ</a>
-        </li>
-
-        <!-- navi -->
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-            >&times;</a
-          >
-          <a href="#kohaku">Koi Kohaku</a>
-          <a href="#karashi">Koi Karashi</a>
-          <a href="#showa">Koi Showa</a>
-          <a href="#asagi">Koi Asagi</a>
-          <a href="#news">Tin tức</a>
-        </div>
-        <span
-          style="font-size: 30px; cursor: pointer; margin-right: 10px"
-          onclick="openNav()"
-          >&#9776;
-        </span>
-        <!-- /navi -->
-      </div>
-      <!-- /Menu trang chủ -->
-    </div>
-
-    <!-- Banner -->
-    <div class="banner">
-      <img src="img\banner.png" style="width: 100%" />
-    </div>
-    <!-- /Banner -->
-
-    <h1>Trang trại cá Koi</h1>
+      
+    <!-- Main -->
 
     <!-- Footer -->
     <div class="footer">
-        <div class="social">
-          <p>Mạng xã hội:</p>
-          <a href="#"
-            ><img src="img/facebook.png" style="height: 30px; width: 30px"
-          /></a>
-          <a href="#"
-            ><img src="img/youtube.png" style="height: 30px; width: 30px"
-          /></a>
-          <a href="#"
-            ><img src="img/insta.png" style="height: 30px; width: 30px"
-          /></a>
-        </div>
-        <img src="img/logo.png" alt="#" style="right: 20px" />
-        <div class="text"></div>
-  
-        <!-- back to top -->
-        <!-- <div class="btntop">
-              <a href="#" class="top"></a>
-          </div> -->
-        <!-- back to top -->
+      <div class="social">
+        <p>Mạng xã hội:</p>
+        <a href="#"
+          ><img src="img/facebook.png" style="height: 30px; width: 30px"
+        /></a>
+        <a href="#"
+          ><img src="img/youtube.png" style="height: 30px; width: 30px"
+        /></a>
+        <a href="#"
+          ><img src="img/insta.png" style="height: 30px; width: 30px"
+        /></a>
       </div>
-      <!-- /Footer -->
-  
-      <!--Scripts-->
-      <script src="js/user_login_register.js"></script>
-      <script src="js/sidenav.js"></script>
-      <script src="js/cart.js"></script>
-    </body>
+      <img src="img/logo.png" alt="#" style="right: 20px" />
+      <div class="text"></div>
+    </div>
+    <!-- /Footer -->
+
+    <!--Scripts-->
+    <script src="js/user_login_register.js"></script>
+    <script src="js/caidat.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
 </html>
-  

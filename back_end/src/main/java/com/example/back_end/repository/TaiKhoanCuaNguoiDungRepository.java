@@ -14,4 +14,13 @@ public interface TaiKhoanCuaNguoiDungRepository extends JpaRepository<TaiKhoanCu
     @Query(value = "UPDATE tai_khoan_cua_nguoi_dung SET pass_word = :newPassword WHERE user_name = :username", nativeQuery = true)
     int updatePassword(@Param("username") String username, @Param("newPassword") String newPassword);
 
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE tai_khoan_cua_nguoi_dung SET ten_khach_hang = :tenKhachHang, email = :email, pass_word = :password WHERE user_name = :userName", nativeQuery = true)
+    int changeAccount(@Param("userName") String userName,
+                      @Param("tenKhachHang") String tenKhachHang,
+                      @Param("email") String email,
+                      @Param("password") String password);
+
+
 }
