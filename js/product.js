@@ -32,7 +32,7 @@ kindElements.forEach(element => {
                             <span>Giá mua ngay:</span>
                             <strong>${product.price} ₫</strong>
                         </div>
-                        <button class="buy_button">ĐẶT HÀNG NGAY</button>
+                        <button id="buyButton-${product.id_of_fish}" class="buy_button">ĐẶT HÀNG NGAY</button>
                     </div>
                     <div class="product_meta">
                         <p>Người bán: <strong>${product.sale_person}</strong></p>
