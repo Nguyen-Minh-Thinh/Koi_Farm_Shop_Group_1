@@ -1,17 +1,23 @@
 package com.example.back_end.controller;
 
 import com.example.back_end.modal.CaKoiNhat;
+import com.example.back_end.repository.CaKoiNhatRepository;
 import com.example.back_end.service.CaKoiServiceImple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 public class CaKoiNhatController {
 
     @Autowired
     CaKoiServiceImple caKoiServiceImple;
+    @Autowired
+    CaKoiNhatRepository caKoiNhatRepository;
 
     @CrossOrigin(origins = "*")
     @GetMapping("/ca-koi-nhat")
@@ -24,6 +30,37 @@ public class CaKoiNhatController {
     public CaKoiNhat getCaKoiNhatById(@PathVariable String id) {
         return caKoiServiceImple.findCaKoiNhatById(id);
     }
+
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/ca-koi-nhat/loai_ca/{type_of_fish}")
+    public List<Map<String, Object>> getCaKoiNhatByType(@PathVariable String type_of_fish) {
+        List<Object[]> results = caKoiNhatRepository.getCaKoiNhatByType(type_of_fish);
+
+        List<Map<String, Object>> mappedResults = new ArrayList<>();
+
+        for (Object[] result : results) {
+            Map<String, Object> rowMap = new HashMap<>();
+            rowMap.put("image", result[0]);
+            rowMap.put("sale_status", result[1]);
+            rowMap.put("name_of_fish", result[2]);
+            rowMap.put("id_of_fish", result[3]);
+            rowMap.put("note", result[4]);
+            rowMap.put("sale_person", result[5]);
+            rowMap.put("sex_of_fish", result[6]);
+            rowMap.put("dob_of_fish", result[7]);
+            rowMap.put("size_of_fish", result[8]);
+            rowMap.put("type_of_fish", result[9]);
+            rowMap.put("origin_of_fish", result[10]);
+            rowMap.put("price", result[11]);
+
+            mappedResults.add(rowMap);
+        }
+
+        return mappedResults;
+    }
+
+
 
     @Autowired
     private CaKoiServiceImple caKoiNhatService;

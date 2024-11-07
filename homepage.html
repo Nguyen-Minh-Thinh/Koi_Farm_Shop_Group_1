@@ -284,124 +284,53 @@
       <!-- sản phẩm -->
       <div class="sanpham">
 
+
+
         <!-- Giới thiệu loài -->
         <div id="kohaku" class="kind">
+          <!-- Thông tin giới thiệu -->
           <img src="img/kohaku.png" alt="#" style="width: 50%" />
           <div class="text">
-            <h2>Koi Kohaku</h2>
-            <h3>
-              Cá koi kohaku thân đỏ trắng là dòng cá tiểu biểu, khả năng sinh
-              tồn nảy nở cực tốt và cũng là 1 trong những dòng cá có tuổi thọ
-              cao
-            </h3>
-            <iframe
-              width="600"
-              height="350"
-              src="https://www.youtube.com/embed/3qB7Vl2mVjU?autoplay=1&mute=1"
-            >
-            </iframe>
+              <h2>Koi Kohaku</h2>
+              <h3>Cá koi kohaku thân đỏ trắng là dòng cá tiểu biểu, khả năng sinh
+                tồn nảy nở cực tốt và cũng là 1 trong những dòng cá có tuổi thọ
+                cao</h3>
+              <iframe width="600" height="350" src="https://www.youtube.com/embed/3qB7Vl2mVjU?autoplay=1&mute=1"></iframe>
+          </div>
+      
+          <!-- Container cho các sản phẩm của loại Kohaku -->
+          <div id="products-container-kohaku" class="products-container-wrapper">
+            <div id="products-kohaku" class="products-container">
+              <div class="product_img">
+                <img id="productImage" src="" alt="Product Image" />
+              </div>
+              <div class="product_status">
+                <button id="statusButton" class="status_button"></button>
+                <h3 id="productName"></h3>
+              </div>
+              <div class="product_details">
+                <p id="productNote"></p>
+                <div class="price">
+                  <span>Giá mua ngay:</span>
+                  <strong id="productPrice"></strong>
+                </div>
+                <button id="buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+              </div>
+              <div class="product_meta">
+                <p>Người bán: <strong id="salePerson"></strong></p>
+                <p>Năm sinh: <strong id="dobOfFish"></strong></p>
+                <p>Kích thước: <strong id="sizeOfFish"></strong></p>
+                <p>Giống: <span id="typeOfFish"></span></p>
+                <p>Nguồn gốc: <a id="originOfFish" href="#"></a></p>
+              </div>
+            </div>
           </div>
         </div>
         <!-- /Giới thiệu loài -->
 
-        <!--thẻ sản phẩm -->
-        <div class="products">
-          <div class="product_img">
-            <img src="img/tancho.png" alt="Tancho Kohaku" />
-          </div>
-          <div class="product_status">
-            <button class="status_button">Đang bán</button>
-            <h3>Tancho Kohaku</h3>
-          </div>
-          <div class="product_details">
-            <p>
-              Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể
-              đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn
-              rất ấn tượng.
-            </p>
-            <div class="price">
-              <span>Giá mua ngay:</span>
-              <strong>300.000 ₫</strong>
-            </div>
-            <button class="buy_button">ĐẶT HÀNG NGAY</button>
-          </div>
-          <div class="product_meta">
-            <p>Người bán: <strong>OnKoi Quang Minh</strong></p>
-            <p>Năm sinh: <strong>2017</strong></p>
-            <p>Kích thước: <strong>84 cm</strong></p>
-            <p>
-              Giống: <a href="#">Cá koi Kohaku</a>,
-              <a href="#">Cá koi Tancho</a>
-            </p>
-            <p>Nguồn gốc: <a href="#">Dainichi Koi Farm</a></p>
-          </div>
-        </div>
-        <!-- /thẻ sản phẩm -->
-
-        <!-- Giới thiệu loài -->
-        <div id="karashi" class="kind">
-          <img
-            src="img/karashi.png"
-            alt="#"
-            style="width: 50%; max-height: 450px"
-          />
-          <div class="text">
-            <h2>Koi Karashi</h2>
-            <h3>
-              Koi Korashi là loại cá Koi có da trơn và màu sắc cá từ màu vàng
-              nhạt đến màu vàng đậm toàn thân, rất đẹp và tươi tắn
-            </h3>
-            <iframe
-              width="600"
-              height="350"
-              src="https://www.youtube.com/embed/3qB7Vl2mVjU?autoplay=1&mute=1"
-            >
-            </iframe>
-          </div>
-        </div>
-        <!-- /Giới thiệu loài -->
-
-        <!--thẻ sản phẩm -->
-        <div class="products">
-          <div class="product_img">
-            <img src="img/tancho.png" alt="Tancho Kohaku" />
-          </div>
-          <div class="product_status">
-            <button class="status_button">Đang bán</button>
-            <h3>Tancho Kohaku</h3>
-          </div>
-          <div class="product_details">
-            <p>
-              Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể
-              đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn
-              rất ấn tượng.
-            </p>
-            <div class="price">
-              <span>Giá mua ngay:</span>
-              <strong>300.000 ₫</strong>
-            </div>
-            <button class="buy_button">ĐẶT HÀNG NGAY</button>
-          </div>
-          <div class="product_meta">
-            <p>Người bán: <strong>OnKoi Quang Minh</strong></p>
-            <p>Năm sinh: <strong>2017</strong></p>
-            <p>Kích thước: <strong>84 cm</strong></p>
-            <p>
-              Giống: <a href="#">Cá koi Kohaku</a>,
-              <a href="#">Cá koi Tancho</a>
-            </p>
-            <p>Nguồn gốc: <a href="#">Dainichi Koi Farm</a></p>
-          </div>
-        </div>
-        <!-- /thẻ sản phẩm -->
-
-        <!-- Giới thiệu loài -->
         <div id="showa" class="kind">
-          <img
-            src="img/showa.png"
-            alt="#"
-            style="width: 50%; max-height: 450px"
-          />
+          <!-- Thông tin giới thiệu -->
+          <img src="img/showa.png" alt="#" style="width: 50%" />
           <div class="text">
             <h2>Koi Showa</h2>
             <h3>
@@ -416,50 +345,41 @@
             >
             </iframe>
           </div>
-        </div>
-        <!-- /Giới thiệu loài -->
-
-        <!--thẻ sản phẩm -->
-        <div class="products">
-          <div class="product_img">
-            <img src="img/tancho.png" alt="Tancho Kohaku" />
-          </div>
-          <div class="product_status">
-            <button class="status_button">Đang bán</button>
-            <h3>Tancho Kohaku</h3>
-          </div>
-          <div class="product_details">
-            <p>
-              Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể
-              đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn
-              rất ấn tượng.
-            </p>
-            <div class="price">
-              <span>Giá mua ngay:</span>
-              <strong>300.000 ₫</strong>
+      
+          <!-- Container cho các sản phẩm của loại Kohaku -->
+          <div id="products-container-showa" class="products-container-wrapper">
+            <div id="products-showa" class="products-container">
+              <div class="product_img">
+                <img id="showa-productImage" src="" alt="Showa Product Image" />
+              </div>
+              <div class="product_status">
+                <button id="showa-statusButton" class="status_button"></button>
+                <h3 id="showa-productName"></h3>
+              </div>
+              <div class="product_details">
+                <p id="showa-productNote"></p>
+                <div class="price">
+                  <span>Giá mua ngay:</span>
+                  <strong id="showa-productPrice"></strong>
+                </div>
+                <button id="showa-buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+              </div>
+              <div class="product_meta">
+                <p>Người bán: <strong id="showa-salePerson"></strong></p>
+                <p>Năm sinh: <strong id="showa-dobOfFish"></strong></p>
+                <p>Kích thước: <strong id="showa-sizeOfFish"></strong></p>
+                <p>Giống: <span id="showa-typeOfFish"></span></p>
+                <p>Nguồn gốc: <a id="showa-originOfFish" href="#">Link Nguồn gốc</a></p>
+              </div>
             </div>
-            <button class="buy_button">ĐẶT HÀNG NGAY</button>
-          </div>
-          <div class="product_meta">
-            <p>Người bán: <strong>OnKoi Quang Minh</strong></p>
-            <p>Năm sinh: <strong>2017</strong></p>
-            <p>Kích thước: <strong>84 cm</strong></p>
-            <p>
-              Giống: <a href="#">Cá koi Kohaku</a>,
-              <a href="#">Cá koi Tancho</a>
-            </p>
-            <p>Nguồn gốc: <a href="#">Dainichi Koi Farm</a></p>
           </div>
         </div>
+
         <!-- /thẻ sản phẩm -->
 
-        <!-- Giới thiệu loài -->
         <div id="asagi" class="kind">
-          <img
-            src="img/asagi.png"
-            alt="#"
-            style="width: 50%; max-height: 450px"
-          />
+          <!-- Thông tin giới thiệu -->
+          <img src="img/asagi.png" alt="#" style="width: 50%" />
           <div class="text">
             <h2>Koi Asagi</h2>
             <h3>
@@ -474,43 +394,126 @@
             >
             </iframe>
           </div>
-        </div>
-        <!-- /Giới thiệu loài -->
-
-        <!--thẻ sản phẩm -->
-        <div class="products">
-          <div class="product_img">
-            <img src="img/tancho.png" alt="Tancho Kohaku" />
-          </div>
-          <div class="product_status">
-            <button class="status_button">Đang bán</button>
-            <h3>Tancho Kohaku</h3>
-          </div>
-          <div class="product_details">
-            <p>
-              Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể
-              đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn
-              rất ấn tượng.
-            </p>
-            <div class="price">
-              <span>Giá mua ngay:</span>
-              <strong>300.000 ₫</strong>
+      
+          <!-- Container cho các sản phẩm của loại Kohaku -->
+          <div id="products-container-asagi" class="products-container-wrapper">
+            <div id="products-asagi" class="products-container">
+              <div class="product_img">
+                <img id="asagi-productImage" src="" alt="Asagi Product Image" />
+              </div>
+              <div class="product_status">
+                <button id="asagi-statusButton" class="status_button"></button>
+                <h3 id="asagi-productName"></h3>
+              </div>
+              <div class="product_details">
+                <p id="asagi-productNote"></p>
+                <div class="price">
+                  <span>Giá mua ngay:</span>
+                  <strong id="asagi-productPrice"></strong>
+                </div>
+                <button id="asagi-buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+              </div>
+              <div class="product_meta">
+                <p>Người bán: <strong id="asagi-salePerson"></strong></p>
+                <p>Năm sinh: <strong id="asagi-dobOfFish"></strong></p>
+                <p>Kích thước: <strong id="asagi-sizeOfFish"></strong></p>
+                <p>Giống: <span id="asagi-typeOfFish"></span></p>
+                <p>Nguồn gốc: <a id="asagi-originOfFish" href="#">Link Nguồn gốc</a></p>
+              </div>
             </div>
-            <button class="buy_button">ĐẶT HÀNG NGAY</button>
-          </div>
-          <div class="product_meta">
-            <p>Người bán: <strong>OnKoi Quang Minh</strong></p>
-            <p>Năm sinh: <strong>2017</strong></p>
-            <p>Kích thước: <strong>84 cm</strong></p>
-            <p>
-              Giống: <a href="#">Cá koi Kohaku</a>,
-              <a href="#">Cá koi Tancho</a>
-            </p>
-            <p>Nguồn gốc: <a href="#">Dainichi Koi Farm</a></p>
           </div>
         </div>
-        <!-- /thẻ sản phẩm -->
-      </div>
+
+        <div id="shusui" class="kind">
+          <!-- Thông tin giới thiệu -->
+          <img src="img/asagi.png" alt="#" style="width: 50%" />
+          <div class="text">
+            <h2>Koi Shusui</h2>
+            <h3>
+              Koi Shusui tạo cảm giác mạnh từ 3 màu đen, đỏ, trắng tương phản cùng với 2 dải vảy đen nháy cùng màu đối xứng "lợp mái" ấn tượng trên sống lưng.
+            </h3>
+            <iframe
+              width="600"
+              height="350"
+              src="https://www.youtube.com/embed/3qB7Vl2mVjU?autoplay=1&mute=1"
+            >
+            </iframe>
+          </div>
+      
+          <!-- Container cho các sản phẩm của loại Kohaku -->
+          <div id="products-container-shusui" class="products-container-wrapper">
+            <div id="products-shusui" class="products-container">
+              <div class="product_img">
+                <img id="shusui-productImage" src="" alt="Shusui Product Image" />
+              </div>
+              <div class="product_status">
+                <button id="shusui-statusButton" class="status_button"></button>
+                <h3 id="shusui-productName"></h3>
+              </div>
+              <div class="product_details">
+                <p id="shusui-productNote"></p>
+                <div class="price">
+                  <span>Giá mua ngay:</span>
+                  <strong id="shusui-productPrice"></strong>
+                </div>
+                <button id="shusui-buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+              </div>
+              <div class="product_meta">
+                <p>Người bán: <strong id="shusui-salePerson"></strong></p>
+                <p>Năm sinh: <strong id="shusui-dobOfFish"></strong></p>
+                <p>Kích thước: <strong id="shusui-sizeOfFish"></strong></p>
+                <p>Giống: <span id="shusui-typeOfFish"></span></p>
+                <p>Nguồn gốc: <a id="shusui-originOfFish" href="#">Link Nguồn gốc</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+        <div id="tancho" class="kind">
+          <!-- Thông tin giới thiệu -->
+          <img src="img/tancho.png" alt="#" style="width: 50%" />
+          <div class="text">
+            <h2>Koi Tancho</h2>
+            <h3>
+              Tancho là giống cá koi có chấm tròn màu đỏ nằm chính giữa trung tâm phần đầu của chúng.
+            </h3>
+            <iframe
+              width="600"
+              height="350"
+              src="https://www.youtube.com/embed/30Z0hSO3at8?rel=0&autoplay=1&mute=1"
+            >
+            </iframe>
+          </div>
+      
+          <!-- Container cho các sản phẩm của loại Kohaku -->
+          <div id="products-container-tancho" class="products-container-wrapper">
+            <div id="products-tancho" class="products-container">
+              <div class="product_img">
+                <img id="tancho-productImage" src="" alt="Tancho Product Image" />
+              </div>
+              <div class="product_status">
+                <button id="tancho-statusButton" class="status_button"></button>
+                <h3 id="tancho-productName"></h3>
+              </div>
+              <div class="product_details">
+                <p id="tancho-productNote"></p>
+                <div class="price">
+                  <span>Giá mua ngay:</span>
+                  <strong id="tancho-productPrice"></strong>
+                </div>
+                <button id="tancho-buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+              </div>
+              <div class="product_meta">
+                <p>Người bán: <strong id="tancho-salePerson"></strong></p>
+                <p>Năm sinh: <strong id="tancho-dobOfFish"></strong></p>
+                <p>Kích thước: <strong id="tancho-sizeOfFish"></strong></p>
+                <p>Giống: <span id="tancho-typeOfFish"></span></p>
+                <p>Nguồn gốc: <a id="tancho-originOfFish" href="#">Link Nguồn gốc</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
       <!-- /sản phẩm -->
 
       <!-- tin tức -->
@@ -561,6 +564,7 @@
 
     <!--Scripts-->
     <script src="js/user_login_register.js"></script>
+    <script src="js/product.js"></script>
     <script src="js/sidenav.js"></script>
     <script src="js/cart.js"></script>
   </body>
