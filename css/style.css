@@ -312,7 +312,7 @@ h1 {
 
 /* Sản phẩm */
 /* Container cho mỗi loại cá */
-.kind {
+.loai {
     background-image: url("../img/background.jpg");
     background-size: cover;
     text-align: center;
@@ -325,17 +325,20 @@ h1 {
 }
 
 /* Hình ảnh và khung mô tả */
-.kind img {
+.loai img {
     border-radius: 20px;
     height: 300px;
     width: 300px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .text {
+    margin-left: 500px;
+    width: 700px;
     font-size: large;
-    padding: 20px;
+    padding: 0;
     text-align: left;
+    text-align: center;
 }
 
 .text iframe {
@@ -360,7 +363,7 @@ h1 {
 }
 
 /* Thẻ sản phẩm */
-.product {
+.products {
     border-radius: 8px;
     width: calc(25% - 15px); /* Mỗi sản phẩm chiếm 1/4 chiều rộng container */
     background-color: white;
@@ -368,7 +371,7 @@ h1 {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s;
-    margin-bottom: 20px; /* Thêm margin dưới mỗi sản phẩm */
+    margin: 20px; /* Thêm margin dưới mỗi sản phẩm */
 }
 
 .product:hover {
@@ -376,9 +379,9 @@ h1 {
 }
 
 /* Hình ảnh sản phẩm */
-.product_img img {
-    width: 100%;
-    height: auto;
+.product_img img{
+    width: 250;
+    height: 208px;
     object-fit: cover;
 }
 
@@ -397,7 +400,6 @@ h1 {
     border-radius: 5px;
     font-size: 12px;
     margin-bottom: 10px;
-    cursor: pointer;
 }
 
 .product_status h3 {
@@ -538,7 +540,7 @@ h1 {
     margin: auto;
 }
 
-.text {
+.text2 {
     padding-left: 130px;
     text-align: center;
 }
