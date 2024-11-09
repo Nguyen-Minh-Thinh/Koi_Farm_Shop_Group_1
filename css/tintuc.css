@@ -170,8 +170,6 @@ a:hover {
 .menu_bar {
     display: flex;
     list-style-type: none;
-    
-    
 }
 
 .menu_bar .menu {
@@ -180,9 +178,9 @@ a:hover {
 }
 
 .menu_bar .menu a {
-    color: #111;
+    color: white;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 23px 30px;
     display: block;
     font-weight: bold;
 }
@@ -196,8 +194,7 @@ a:hover {
 .sub_menu {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #111;
     z-index: 999;
     list-style-type: none;
     top: 100%;
@@ -449,7 +446,7 @@ ul.breadcrumb li a:hover {
 }
 
 .text {
-    padding-left: 130px;
+    padding-left: 250px;
     text-align: center;
 }
 

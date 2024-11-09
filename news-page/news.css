@@ -170,8 +170,6 @@ a:hover {
 .menu_bar {
     display: flex;
     list-style-type: none;
-    
-    
 }
 
 .menu_bar .menu {
@@ -180,9 +178,9 @@ a:hover {
 }
 
 .menu_bar .menu a {
-    color: #111;
+    color: white;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 23px 30px;
     display: block;
     font-weight: bold;
 }
@@ -196,8 +194,7 @@ a:hover {
 .sub_menu {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #111;
     z-index: 999;
     list-style-type: none;
     top: 100%;
@@ -451,6 +448,7 @@ h1 {
 
 /* CSS footer */
 .footer {
+    display: flex;
     color: white;
     line-height:50px; 
     background-color:#111; 
@@ -458,13 +456,16 @@ h1 {
     font-family: Arial, sans-serif; 
     clear:both;
     position: relative;
+    align-items: center;
 }
 
 .social {
     font-size: 20px;
+    margin: auto;
 }
 
 .text {
+    padding-left: 130px;
     text-align: center;
 }
 
@@ -503,7 +504,6 @@ h1 {
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
-    background-color: #eee;
 }
   
 /* Display list items side by side */
@@ -534,9 +534,11 @@ ul.breadcrumb li a:hover {
 .news-container{
     justify-content: left;
     padding: 10px;
-    background-color: #008CBA;
 }
 .content-box {
+    border-radius: 5px;
+    position: sticky;
+    top: 100px;
     float: right;
     margin-top: 5rem;
     margin-right: 100px;
@@ -545,7 +547,7 @@ ul.breadcrumb li a:hover {
     background-color: #414ec7;
     width: 300px;
     height: 300px;
-    color: #e1c8a0;
+    color: #e3961b;
     font-family: Arial, sans-serif;
 }
 
@@ -578,12 +580,7 @@ ul.breadcrumb li a:hover {
     margin-top: 50px; /* Tạo khoảng cách để khi cuộn đến phần không bị che khuất */
 }
 
-.news-main {
-    background-color: #008CBA;
-}
-
 .news-container .p-title{
-    color: yellow;
     text-align: left;
     font-size: 25px;
     font-variant: small-caps;
@@ -593,10 +590,10 @@ ul.breadcrumb li a:hover {
     display: flex;
     flex-direction: column;
     list-style-type:decimal;
-    color: whitesmoke;
+    color: black;
     padding-left: 170px;
     padding-right: 100px;
-    font-family: 'times new roman', times, serif; font-size: 14pt;
+    font-family: Arial, sans-serif;
 }
 .news-container p{
     text-align: left;
@@ -610,15 +607,15 @@ ul.breadcrumb li a:hover {
 
 .news-container .em-title{
     font-size: 22px;
-    color: rgb(221, 190, 15);
-    font-family: 'times new roman', times, serif;
+    font-family: Arial, sans-serif;
 
 }
 .news-container li img{
     padding-top: 20px;
     padding-left: 170px;
     align-items: center;
-    width: auto;
+    margin: 10px;
+    width: auto; 
     height: 400px;
     padding-bottom: 20px;
 }
