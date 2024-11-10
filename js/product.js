@@ -18,12 +18,18 @@ kindElements.forEach(element => {
 
             // Duyệt qua các sản phẩm và hiển thị chúng
             products.forEach(product => {
+                const isSold = product.sale_status === " Đã bán"; // Kiểm tra nếu sản phẩm đã bán
+
                 const productHTML = `
                     <div class="product_img">
                         <img src="${product.image}" alt="Product Image" />
                     </div>
                     <div class="product_status">
-                        <button class="status_button">${product.sale_status}</button>
+                        <button class="status_button" 
+                            style="background-color: ${isSold ? 'gray' : ''};" 
+                            ${isSold ? 'disabled' : ''}>
+                            ${product.sale_status}
+                        </button>
                         <h3>${product.name_of_fish}</h3>
                     </div>
                     <div class="product_details">
@@ -32,7 +38,13 @@ kindElements.forEach(element => {
                             <span>Giá mua ngay:</span>
                             <strong>${product.price} ₫</strong>
                         </div>
-                        <button id="buyButton-${product.id_of_fish}" class="buy_button">ĐẶT HÀNG NGAY</button>
+                        <button id="buyButton-${product.id_of_fish}" 
+                                class="buy_button"
+                                style="${isSold ? 'background-color: gray;' : ''}" 
+                                ${isSold ? 'disabled' : ''}>
+                            ĐẶT HÀNG NGAY
+                        </button>
+
                     </div>
                     <div class="product_meta">
                         <p>Người bán: <strong>${product.sale_person}</strong></p>
