@@ -212,6 +212,16 @@
         <span class="btn-toggle" id="toggleBtn">Xem thêm</span>
       </div>
 
+      <div class="filter-container">
+        <label for="statusFilter">Lọc sản phẩm:</label>
+        <select id="statusFilter">
+            <option value="all">Tất cả</option>
+            <option value="Đang bán">Đang bán</option>
+            <option value="Đã bán">Đã bán</option>
+        </select>
+    </div>
+    
+
       <div id="kohaku" class="kind">
         <!-- Container cho các sản phẩm của loại Kohaku -->
         <div id="products-container-kohaku" class="products-container-wrapper">
@@ -245,7 +255,23 @@
     </div>
 
     <!-- Footer -->
-    <div class="footer">
+    <div class="footer" id="footer">
+
+      <a href="#"><img src="../img/logo.png" alt="#" style="right: 20px; height: 30%; margin: auto" /></a>
+
+      <div class="text2">
+        <h3>Thông tin liên hệ:</h3>
+        <p>
+          Địa chỉ: 70 Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh, Việt Nam
+        </p>
+        <p>
+          Tele: 0123456789
+        </p>
+        <p>
+          gmail: ShopkoiFish@gmail.com
+        </p>
+      </div>
+
       <div class="social">
         <p>Mạng xã hội:</p>
         <a href="#"
@@ -258,10 +284,7 @@
           ><img src="../img/insta.png" style="height: 30px; width: 30px"
         /></a>
       </div>
-      <img src="../img/logo.png" alt="#" style="right: 20px" />
-      <div class="text">
-      </div>
-
+      
       <!-- back to top -->
       <!-- <div class="btntop">
             <a href="#" class="top"></a>
@@ -271,7 +294,8 @@
     <!-- /Footer -->
 
     <!--Scripts-->
-    <script src="../js/product.js"></script>
+    <script src="change.js"></script>
+    <script src="product.js"></script>
     <script src="thugon.js"></script>
     <script src="../js/user_login_register.js"></script>
     <script src="../js/sidenav.js"></script>
