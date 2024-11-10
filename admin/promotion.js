@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("promotion-modal"); // Thay đổi id để phù hợp
     const closeModalButton = document.getElementById("close-modal");
     const promotionForm = document.getElementById("promotion-form"); // Thay đổi id để phù hợp
+    const promotionCodeInput = document.getElementById("promotion-code");
     const promotionNameInput = document.getElementById("promotion-name"); // Thay đổi id để phù hợp
     const promotionDiscountInput = document.getElementById("promotion-discount"); // Thay đổi id để phù hợp
     const promotionStartDateInput = document.getElementById("promotion-start-date"); // Thay đổi id để phù hợp
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 data.forEach(promotion => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
+                        <td>${promotion.maKhuyenMai}</td>
                         <td>${promotion.tenKhuyenMai}</td>
                         <td>${promotion.giamGiaPercent}%</td>
                         <td>${promotion.ngayBatDau}</td>
@@ -58,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Handle form submission for adding/editing promotion
     promotionForm.addEventListener("submit", function(event) {
         event.preventDefault();
+        const promotionCode = promotionCodeInput.value;
         const promotionName = promotionNameInput.value;
         const promotionDiscount = promotionDiscountInput.value;
         const promotionStartDate = promotionStartDateInput.value;
@@ -66,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (editingPromotionId) {
             // Edit existing promotion
             const updatedPromotion = {
+                maKhuyenMai: promotionCode,
                 tenKhuyenMai: promotionName,
                 giamGiaPercent: promotionDiscount,
                 ngayBatDau: promotionStartDate,
@@ -90,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             // Add new promotion
             const newPromotion = {
+                maKhuyenMai: promotionCode,
                 tenKhuyenMai: promotionName,
                 giamGiaPercent: promotionDiscount,
                 ngayBatDau: promotionStartDate,
@@ -115,9 +120,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Edit a promotion
-    window.editPromotion = function(id, tenKhuyenMai, giamGiaPercent, ngayBatDau, ngayKetThuc) {
+    window.editPromotion = function(id,maKhuyenMai, tenKhuyenMai, giamGiaPercent, ngayBatDau, ngayKetThuc) {
         modal.style.display = "block";
         document.getElementById("modal-title").innerText = "Sửa Khuyến Mãi";
+        promotionCodeInput.value = maKhuyenMai;
         promotionNameInput.value = tenKhuyenMai;
         promotionDiscountInput.value = giamGiaPercent;
         promotionStartDateInput.value = ngayBatDau;

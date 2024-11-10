@@ -19,6 +19,10 @@ public class KhuyenMai {
     private Integer id;
 
     @Size(max = 255)
+    @Column(name = "ma_khuyen_mai")
+    private String maKhuyenMai;
+
+    @Size(max = 255)
     @Column(name = "ten_khuyen_mai")
     private String tenKhuyenMai;
 
@@ -44,6 +48,9 @@ public class KhuyenMai {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public String getMaKhuyenMai() {return maKhuyenMai;}
+    public void setMaKhuyenMai(String maKhuyenMai) {this.maKhuyenMai = maKhuyenMai;}
 
     public String getTenKhuyenMai() {
         return tenKhuyenMai;

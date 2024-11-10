@@ -86,6 +86,24 @@ public class OrderController {
             return new ResponseEntity<>("Error saving status: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    @CrossOrigin(origins = "*")
+    @PostMapping
+    public ResponseEntity<?> createOrder(@RequestBody Donhang newOrder) {
+        if (newOrder == null) {
+            return new ResponseEntity<>("Order data is null", HttpStatus.BAD_REQUEST);
+        }
 
+        try {
+            // Kiểm tra lại dữ liệu nhận được
+            Donhang savedOrder = donhangRepository.save(newOrder);
+            System.out.println("Received Order: " + savedOrder); // Kiểm tra nội dung đơn hàng đã lưu
+
+            return new ResponseEntity<>(savedOrder, HttpStatus.CREATED);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Trả về thông báo lỗi với thông tin chi tiết
+            return new ResponseEntity<>("Error creating order: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 }
