@@ -1,11 +1,12 @@
 package com.example.back_end.service;
 
-import com.example.back_end.modal.TaiKhoanCuaQuanLy;
-import com.example.back_end.repository.TaiKhoanCuaQuanLyRepository;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import com.example.back_end.modal.TaiKhoanCuaQuanLy;
+import com.example.back_end.repository.TaiKhoanCuaQuanLyRepository;
 
 @Service
 public class TaiKhoanCuaQuanLyServiceImpl implements TaiKhoanCuaQuanLyService {
@@ -23,5 +24,9 @@ public class TaiKhoanCuaQuanLyServiceImpl implements TaiKhoanCuaQuanLyService {
             }
         }
         return null; // Hoặc ném ngoại lệ tùy theo yêu cầu
+    }
+
+    public Optional<TaiKhoanCuaQuanLy> findById(String userName) {
+        return taiKhoanCuaQuanLyRepository.findById(userName);
     }
 }
