@@ -38,6 +38,7 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
     public KhuyenMai updateKhuyenMai(Integer id, KhuyenMai updatedKhuyenMai) {
         return khuyenMaiRepository.findById(id)
                 .map(khuyenMai -> {
+                    khuyenMai.setMaKhuyenMai(updatedKhuyenMai.getMaKhuyenMai());
                     khuyenMai.setTenKhuyenMai(updatedKhuyenMai.getTenKhuyenMai());
                     khuyenMai.setGiamGiaPercent(updatedKhuyenMai.getGiamGiaPercent());
                     khuyenMai.setNgayBatDau(updatedKhuyenMai.getNgayBatDau());

@@ -13,11 +13,12 @@
             <!-- Tên -->
             <label for="name">Tên khách hàng:</label>
             <input type="text" id="name" name="name" required>
-
             <!-- Địa chỉ -->
             <label for="address">Địa chỉ giao hàng:</label>
             <input type="text" id="address" name="address" required>
-
+            <!-- Số điện thoại -->
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" id="phone" name="address" required>
             <!-- Thời gian giao hàng -->
             <label for="deliveryTime">Thời gian dự kiến giao hàng:</label>
             <input type="text" id="deliveryTime" name="deliveryTime" readonly>
@@ -33,6 +34,7 @@
             <!-- Mã khuyến mãi -->
             <label for="promoCode">Mã khuyến mãi (nếu có):</label>
             <input type="text" id="promoCode" name="promoCode">
+            <button type="button" id="submitPromoCode" onclick="applyPromoCode()">Áp dụng</button>
 
             <!-- Tổng tiền -->
             <label for="totalAmount">Tổng tiền (VND):</label>

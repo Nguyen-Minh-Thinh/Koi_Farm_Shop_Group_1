@@ -212,42 +212,66 @@
         <span class="btn-toggle" id="toggleBtn">Xem thêm</span>
       </div>
 
-        <div class="products">
-        <div class="product_img">
-          <img src="../img/tancho.png" alt="Tancho Kohaku" />
-        </div>
-        <div class="product_status">
-          <button class="status_button">Đang bán</button>
-          <h3>Tancho Kohaku</h3>
-        </div>
-        <div class="product_details">
-          <p>
-            Tancho kohaku 84 cm 4 tuổi có nguồn gốc từ Dainichi có hình thể
-            đẹp mắt, dù mới 4 tuổi nhưng kích thước đã lên đến 84cm. Hoa văn
-            rất ấn tượng.
-          </p>
-          <div class="price">
-            <span>Giá mua ngay:</span>
-            <strong>300.000 ₫</strong>
+      <div class="filter-container">
+        <label for="statusFilter">Lọc sản phẩm:</label>
+        <select id="statusFilter">
+            <option value="all">Tất cả</option>
+            <option value="Đang bán">Đang bán</option>
+            <option value="Đã bán">Đã bán</option>
+        </select>
+    </div>
+    
+
+      <div id="kohaku" class="kind">
+        <!-- Container cho các sản phẩm của loại Kohaku -->
+        <div id="products-container-kohaku" class="products-container-wrapper">
+          <div id="products-kohaku" class="products-container">
+            <div class="product_img">
+              <img id="productImage" src="" alt="Product Image" />
+            </div>
+            <div class="product_status">
+              <button id="statusButton" class="status_button"></button>
+              <h3 id="productName"></h3>
+            </div>
+            <div class="product_details">
+              <p id="productNote"></p>
+              <div class="price">
+                <span>Giá mua ngay:</span>
+                <strong id="productPrice"></strong>
+              </div>
+              <button id="buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+            </div>
+            <div class="product_meta">
+              <p>Người bán: <strong id="salePerson"></strong></p>
+              <p>Năm sinh: <strong id="dobOfFish"></strong></p>
+              <p>Kích thước: <strong id="sizeOfFish"></strong></p>
+              <p>Giống: <span id="typeOfFish"></span></p>
+              <p>Nguồn gốc: <a id="originOfFish" href="#"></a></p>
+            </div>
           </div>
-          <button class="buy_button">ĐẶT HÀNG NGAY</button>
-        </div>
-        <div class="product_meta">
-          <p>Người bán: <strong>OnKoi Quang Minh</strong></p>
-          <p>Năm sinh: <strong>2017</strong></p>
-          <p>Kích thước: <strong>84 cm</strong></p>
-          <p>
-            Giống: <a href="#">Cá koi Kohaku</a>,
-            <a href="#">Cá koi Tancho</a>
-          </p>
-          <p>Nguồn gốc: <a href="#">Dainichi Koi Farm</a></p>
         </div>
       </div>
 
     </div>
 
     <!-- Footer -->
-    <div class="footer">
+    <div class="footer" id="footer">
+
+      <a href="#"><img src="../img/logo.png" alt="#" style="right: 20px; height: 30%; margin: auto" /></a>
+
+      <div class="text2">
+        <h3>Thông tin liên hệ:</h3>
+        <p>
+          Địa chỉ: 70 Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh, Việt Nam
+        </p>
+        <p>
+          Tele: 0123456789
+        </p>
+        <p>
+          gmail: ShopkoiFish@gmail.com
+        </p>
+      </div>
+
       <div class="social">
         <p>Mạng xã hội:</p>
         <a href="#"
@@ -260,10 +284,7 @@
           ><img src="../img/insta.png" style="height: 30px; width: 30px"
         /></a>
       </div>
-      <img src="../img/logo.png" alt="#" style="right: 20px" />
-      <div class="text">
-      </div>
-
+      
       <!-- back to top -->
       <!-- <div class="btntop">
             <a href="#" class="top"></a>
@@ -273,9 +294,11 @@
     <!-- /Footer -->
 
     <!--Scripts-->
+    <script src="change.js"></script>
+    <script src="product.js"></script>
     <script src="thugon.js"></script>
-    <script src="js/user_login_register.js"></script>
-    <script src="js/sidenav.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="../js/user_login_register.js"></script>
+    <script src="../js/sidenav.js"></script>
+    <script src="../js/cart.js"></script>
   </body>
 </html>

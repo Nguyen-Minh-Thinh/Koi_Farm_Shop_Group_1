@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="promotion.css"> <!-- Đổi từ category.css sang promotion.css -->
     <title>Quản Lý Khuyến Mãi</title>
@@ -56,6 +57,9 @@
                     <span class="close" id="close-modal">&times;</span>
                     <h2 id="modal-title">Thêm/Sửa Khuyến Mãi</h2>
                     <form id="promotion-form"> <!-- Đổi id từ category-form sang promotion-form -->
+                        <label for="promotion-code">Mã Khuyến Mãi:</label> <!-- Đổi từ category-name sang promotion-name -->
+                        <input type="text" id="promotion-code" name="promotion-code" required>
+
                         <label for="promotion-name">Tên Khuyến Mãi:</label> <!-- Đổi từ category-name sang promotion-name -->
                         <input type="text" id="promotion-name" name="promotion-name" required>
 
