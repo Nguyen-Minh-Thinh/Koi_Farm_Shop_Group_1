@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang trại cá Koi</title>
+    <link rel="stylesheet" href="admin/order.css">
     <link rel="stylesheet" href="css/caidat.css" />
   </head>
   <body>
@@ -270,10 +271,11 @@
     <!-- Main -->
     <div id="main-content">
       <nav class="aside-nav">
-        <a href="./caidat.html" class="new-item">Tài khoản của tôi</a>
-        <a href="#" class="new-item">Đơn mua</a>
+        <a href="#" id="accountLink" class="new-item">Tài khoản của tôi</a>
+        <a href="#" id="ordersLink" class="new-item">Đơn mua</a>
       </nav>
 
+      <div id="accountSection">
       <div class="content">
         <h2>Cài đặt tài khoản</h2>
         <form id="updateForm" action="#" method="post" enctype="multipart/form-data">
@@ -320,8 +322,65 @@
           <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
         </form>
       </div>
-      
+      </div>
+      <!-- Thêm vào trong <body> của caidat.html -->
+      <div id="ordersSection" style="display: none;">
+        <div class="content">
+          <h2>Danh Sách Đơn Hàng</h2>
+            <table class="order-table">
+              <thead>
+                  <tr>
+                      <th>Mã đơn hàng</th>
+                      <th>Ngày đặt hàng</th>
+                      <th>Khách hàng</th>
+                      <th>Trạng thái</th>
+                      <th>Tổng tiền</th>
+                      <th>Hành động</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Rows will be dynamically generated here -->
+              </tbody>
+          </table>
+        </div>
+      </div>
+
     <!-- Main -->
+
+    <!-- Order Details Modal -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+      <span class="closes">&times;</span>
+      <h2>CHI TIẾT ĐƠN HÀNG</h2>
+      <div class="order-details-container">
+          <div id="order-items" class="order-items"></div>
+          <div id="order-info-container" class="order-info"></div>
+      </div>
+      <div id="order-total" class="order-total">
+          <p><strong>Thành tiền:</strong> <span id="total-price"></span></p>
+      </div>
+  </div>
+</div>
+
+<!-- Status History Modal -->
+<div id="statusModal" class="modal">
+  <div class="modal-content">
+      <span class="close-status">&times;</span>
+      <h2>Tình Trạng Đơn Hàng</h2>
+      <table class="status-table">
+          <thead>
+              <tr>
+                  <th>Thời gian</th>
+                  <th>Tình trạng</th>
+                  <th>Chi tiết</th>
+              </tr>
+          </thead>
+          <tbody id="status-table-body">
+              <!-- Status history will be dynamically populated here -->
+          </tbody>
+      </table>
+  </div>
+</div>
 
     <!-- Footer -->
     <div class="footer">
