@@ -20,8 +20,11 @@ public class GioHangController {
     public List<GioHangDTO> getGioHangByUserName(@PathVariable String userName) {
         return gioHangServiceImple.getGioHangByUserName(userName);
     }
-
-
+    @CrossOrigin(origins = "*")
+    @DeleteMapping("/giohang/{userName}")
+    public void deleteGioHang(@PathVariable String userName) {
+        gioHangServiceImple.deleteGioHang(userName);
+    }
 
 
 }

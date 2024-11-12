@@ -39,5 +39,9 @@ public class GioHangServiceImple implements GioHangService {
 
         return gioHangDTOList;
     }
-
+    @Override
+    public void deleteGioHang(String userName) {
+        // Xóa tất cả sản phẩm trong giỏ hàng của người dùng
+        gioHangRepository.deleteByUserName(userName);
+    }
 }

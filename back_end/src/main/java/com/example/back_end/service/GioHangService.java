@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface GioHangService {
     // Tìm các giỏ hàng dựa trên tên tài khoản người dùng (userName)
     List<GioHangDTO> getGioHangByUserName(String userName);
-
+    void deleteGioHang(String userName);
 }

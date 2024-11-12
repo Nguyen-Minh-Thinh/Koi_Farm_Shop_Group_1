@@ -229,6 +229,18 @@ async function submitPayment() {
 
         const result = await response.json();
         alert(`Thanh toán thành công! Đơn hàng ID: ${result.id}`);
+        const deleteCartResponse = await fetch(`http://localhost:8080/giohang/${userName}`, {
+            method: 'DELETE',
+        });
+
+        if (!deleteCartResponse.ok) {
+            throw new Error('Không thể xóa giỏ hàng.');
+        }
+
+        console.log("Giỏ hàng đã được xóa");
+        setTimeout(() => {
+            window.location.href = '../gioithieu.html';
+        }, 0);
     } catch (error) {
         console.error('Lỗi khi gửi yêu cầu thanh toán:', error);
         alert("Đã xảy ra lỗi khi thanh toán. Vui lòng thử lại.");
