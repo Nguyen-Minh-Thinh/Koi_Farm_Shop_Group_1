@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Kiểm tra xem có cookie tên người dùng không
-    const userNameCookie = getCookie("username");
+    const userNameCookie = getCookie("admin");
     if (userNameCookie) {
         // Nếu cookie tồn tại, tự động chuyển hướng đến trang index.html
         window.location.href = "./index.html";
