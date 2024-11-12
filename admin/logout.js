@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 alert("Đăng xuất thành công!");
                 // Xóa cookie username
-                document.cookie = "username=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT"; // Xóa cookie
+                document.cookie = "admin=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT"; // Xóa cookie
                 window.location.href = "./login.html"; // Chuyển hướng về trang đăng nhập
             } else {
                 alert("Đã xảy ra lỗi khi đăng xuất.");

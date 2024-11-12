@@ -7,7 +7,7 @@ function getCookie(name) {
 
 // Hàm kiểm tra trạng thái đăng nhập
 function checkLoginStatus() {
-    const userName = getCookie("username");
+    const userName = getCookie("admin");
     if (!userName) {
         // Nếu không có tên người dùng trong cookie, chuyển hướng đến trang đăng nhập
         window.location.href = "login.html"; // Đường dẫn đến trang đăng nhập
