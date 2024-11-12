@@ -55,8 +55,23 @@ backToLoginLink.onclick = function() {
     loginForm.style.display = "block"; // Hiển thị lại form đăng nhập
 }
 
+// Hàm băm mật khẩu bằng SHA-256
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password); // Mã hóa chuỗi thành dạng bytes
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data); // Tính toán hash SHA-256
+
+    // Chuyển đổi từ buffer sang chuỗi hexadecimal
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+    
+    return hashHex;
+}
+
 // Gửi thông tin đăng nhập khi nhấn nút đăng nhập hoặc Enter
 document.addEventListener("DOMContentLoaded", function () {
+    
+
     const signInButton = document.querySelector(".button");
     const loginBtn = document.getElementById("loginBtn"); // Lấy phần tử Đăng nhập/Đăng ký
     const userNameSpan = document.getElementById("userName"); // Lấy phần tử hiển thị tên người dùng
@@ -85,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
                 .then(data => {
                     // Kiểm tra nếu "tenKhachHang" có giá trị khác null
-                    if (data.tenKhachHang !== "") {
+                    if (data.tenKhachHang !== null && data.tenKhachHang !== "") {
                         userNameSpan.textContent = data.tenKhachHang;
                     } else {
                         userNameSpan.textContent = data.userName;
@@ -134,10 +149,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Băm mật khẩu trước khi gửi
+        const hashedPassword = await hashPassword(password);
         // Tạo object để gửi trong request
         const loginData = {
             userName: userName,
-            passWord: password
+            passWord: hashedPassword
         };
 
         try {
@@ -155,14 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 const data = await response.json();
                 alert("Đăng nhập thành công!");
                 console.log(data); // Xử lý dữ liệu từ response nếu cần thiết
-
-                // Cập nhật nội dung phần tử Đăng nhập/Đăng ký thành tên người dùng
-                // loginBtn.textContent = userName; // Thay đổi nội dung phần tử
-                // loginBtn.href = "#"; // Cập nhật href nếu cần
-
-                // Hiển thị các liên kết Cài đặt và Đăng xuất
-                // settingsLink.style.display = "inline"; // Hiện link Cài đặt
-                // logoutLink.style.display = "inline"; // Hiện link Đăng xuất
                 
                 // Lưu thông tin người dùng vào cookie
                 document.cookie = `username=${userName}; path=/`; // Lưu cookie
@@ -186,6 +195,8 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Đã xảy ra lỗi kết nối." + error.message);
         }
     });
+
+    
 
     // Lắng nghe sự kiện khi người dùng nhấn Đăng xuất
     logoutLink.addEventListener("click", async function (event) {
@@ -279,7 +290,7 @@ document.getElementById('confirm_password').addEventListener('input', function (
 });
 
 // Thêm sự kiện cho nút đăng ký
-document.querySelector('#registerForm form').addEventListener('submit', function (event) {
+document.querySelector('#registerForm form').addEventListener('submit', async function (event) {
     event.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
     // Lấy thông tin từ các trường nhập liệu
@@ -297,6 +308,8 @@ document.querySelector('#registerForm form').addEventListener('submit', function
         return; // Ngừng lại nếu có thông báo lỗi
     }
 
+    // Hash mật khẩu trước khi gửi
+    const hashedPassword = await hashPassword(password);
     // Gửi yêu cầu đăng ký trực tiếp
     fetch('http://localhost:8080/user/register', {
         method: 'POST',
@@ -305,7 +318,7 @@ document.querySelector('#registerForm form').addEventListener('submit', function
         },
         body: JSON.stringify({
             userName: username,
-            passWord: password,
+            passWord: hashedPassword,
             email: email,
             phoneNumber: phoneNumber
         }),
@@ -344,8 +357,6 @@ document.getElementById('forgot_user_name').addEventListener('input', function (
         .then(response => response.json()) // Chuyển đổi phản hồi thành JSON
         .then(data => {
             const exists = data.exists; // Lấy giá trị exists từ phản hồi
-
-            
 
             // Xóa thông báo trước nếu có
             errorMessage.style.display = 'none'; // Ẩn thông báo lỗi
@@ -390,6 +401,7 @@ document.getElementById('forgot_email').addEventListener('input', function () {
 
 
 // Gửi mail để lấy lại mật khẩu khi người dùng quên
+
 // Kiểm tra xem tên đăng nhập có tồn tại không
 function checkUsernameExists(username) {
     return fetch('http://localhost:8080/user/register/user-name', {
@@ -461,7 +473,7 @@ function startCountdown() {
             clearInterval(intervalId);
             timerElement.style.display = 'none';
             alert('Mã xác minh đã hết hạn. Vui lòng quay trở lại!');
-            location.reload();
+            location.reload(); // Tải lại trang khi mã hết hạn
         }
     }, 1000);
 }
@@ -494,6 +506,7 @@ document.getElementById('forgotPasswordFormElement').addEventListener('submit', 
         });
 });
 
+
 // Xác minh mã reset code
 document.getElementById('verifyCodeButton').addEventListener('click', function() {
     const resetCode = document.getElementById('reset_code').value;
@@ -524,7 +537,7 @@ document.getElementById('verifyCodeButton').addEventListener('click', function()
 });
 
 // Xử lý sự kiện nhấn nút đặt lại mật khẩu
-document.getElementById('resetPasswordButton').addEventListener('click', function(event) {
+document.getElementById('resetPasswordButton').addEventListener('click', async function(event) {
     const newPassword = document.getElementById('new_password').value;
     const confirmPassword = document.getElementById('confirm_password_new').value;
     const username = document.getElementById('forgot_user_name').value;
@@ -565,13 +578,16 @@ document.getElementById('resetPasswordButton').addEventListener('click', functio
         return;
     }
 
-    // Gửi yêu cầu đặt lại mật khẩu với tên đăng nhập và mật khẩu mới
+    // Băm mật khẩu mới trước khi gửi yêu cầu
+    const hashedPassword = await hashPassword(newPassword);
+
+    // Gửi yêu cầu đặt lại mật khẩu với tên đăng nhập và mật khẩu mới đã băm
     fetch('http://localhost:8080/api/auth/reset-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             userName: username,
-            newPassword: newPassword
+            newPassword: hashedPassword // Gửi mật khẩu đã băm
         })
     })
     .then(response => {
@@ -585,6 +601,8 @@ document.getElementById('resetPasswordButton').addEventListener('click', functio
         // Tải lại trang sau khi đặt lại mật khẩu thành công
         location.reload();
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+    });
 });
 

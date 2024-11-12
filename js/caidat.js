@@ -5,7 +5,20 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-document.getElementById("updateForm").addEventListener("submit", function(event) {
+// Hàm băm mật khẩu bằng SHA-256
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password); // Mã hóa chuỗi thành dạng bytes
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data); // Tính toán hash SHA-256
+
+    // Chuyển đổi từ buffer sang chuỗi hexadecimal
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+    
+    return hashHex;
+}
+
+document.getElementById("updateForm").addEventListener("submit", async function(event) {
     event.preventDefault(); // Ngăn chặn form gửi đi ngay lập tức
 
     const userName = getCookie("username"); // Lấy userName từ cookie
@@ -25,6 +38,8 @@ document.getElementById("updateForm").addEventListener("submit", function(event)
         return;
     }
 
+    // Băm mật khẩu trước khi gửi
+    const hashedPassword = await hashPassword(password);
     // Gửi yêu cầu cập nhật tài khoản
     fetch(`http://localhost:8080/api/taikhoan/change/${userName}`, {
         method: "POST",
@@ -34,7 +49,7 @@ document.getElementById("updateForm").addEventListener("submit", function(event)
         body: JSON.stringify({
             tenKhachHang: tenKhachHang,
             email: email,
-            passWord: password
+            passWord: hashedPassword
         })
     })
     .then(response => response.json())
