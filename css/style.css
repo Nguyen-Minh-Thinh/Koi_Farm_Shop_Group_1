@@ -317,7 +317,7 @@ h1 {
     background-size: cover;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     box-shadow: 5px 5px 14px #111;
     border-radius: 20px;
     padding: 20px;
@@ -333,11 +333,11 @@ h1 {
 }
 
 .text {
-    margin-left: 500px;
+    margin-left: 300px;
     width: 700px;
     font-size: large;
     padding: 0;
-    text-align: left;
+    text-align: right;
     text-align: center;
 }
 

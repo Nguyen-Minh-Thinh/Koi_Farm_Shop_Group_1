@@ -150,7 +150,7 @@
         <li class="menu">
           <a href="#">Giới Thiệu</a>
           <ul class="sub_menu">
-            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="../gioithieu.html">Giới thiệu</a></li>
             <li><a href="#">Giới thiệu sàn ký gửi</a></li>
             <li><a href="#">Giới thiệu sàn đấu giá</a></li>
             <li><a href="#">Các đơn vị bán koi</a></li>
@@ -162,7 +162,7 @@
         <li class="menu">
           <a href="#">Các loại cá</a>
           <ul class="sub_menu">
-            <li><a href="#">Koi Kohaku</a></li>
+            <li><a href="../sanpham/Kohaku.html">Koi Kohaku</a></li>
             <li><a href="#">koi Ogon</a></li>
             <li><a href="#">Koi Showa</a></li>
             <li><a href="#">Koi Tancho</a></li>
@@ -178,7 +178,7 @@
         </li>
 
         <li class="menu">
-          <a href="tintuc.html">Tin tức</a>
+          <a href="../tintuc.html">Tin tức</a>
         </li>
 
         <li class="menu">
@@ -186,7 +186,7 @@
         </li>
 
         <li class="menu">
-          <a href="#">Liên hệ</a>
+          <a href="#footer">Liên hệ</a>
         </li>
 
       </div>
@@ -204,22 +204,40 @@
       <div class="profile">
         <div class="introduce" id="introduce">
           <h1>Koi Kohaku</h1>
-          <p>Cá Koi thân đỏ trắng Kohaku là dòng cá tiêu biểu, đại diện cho khả năng sinh sôi nảy nở cực tốt và cũng là 1 trong những dòng cá có tuổi thọ cao. Vì thế còn được gọi 
-            là “Cá Phúc Thọ”. Ở Nhật, người ta coi đó mới được gọi là dòng cá Koi chính thống. Họ thường có câu: “Khởi nguồn là đỏ trắng, mà kết thúc cũng là đỏ trắng” 
-            tức là người ta vốn thấy màu sắc đỏ trắng trên 1 con cá quả là 1 vẻ đẹp lạ lẫm chưa này chưa từng có và tuyệt đẹp nên họ bắt đầu nuôi dưỡng nó, sau 1 thời gian người ta nhận thấy rằng
-            chủng loài này cũng không tồi.</p>
+          <p>
+            Cá Koi thân đỏ trắng Kohaku là dòng cá tiêu biểu, đại diện cho khả năng sinh sôi nảy nở cực tốt và cũng
+            là 1 trong những dòng cá có tuổi thọ cao. Vì thế còn được gọi là “Cá Phúc Thọ”. Ở Nhật, người ta coi đó mới được gọi là dòng cá Koi chính thống. Họ thường có câu: “Khởi nguồn là đỏ trắng, mà kết thúc cũng là đỏ trắng” 
+            tức là người ta vốn thấy màu sắc đỏ trắng trên 1 con cá quả là 1 vẻ đẹp lạ lẫm chưa này chưa từng có
+            và tuyệt đẹp nên họ bắt đầu nuôi dưỡng nó, sau 1 thời gian người ta nhận thấy rằng chủng loài này cũng không tồi.
+          </p>
+          <img src="../img/sp1.jpg">
+          <p>
+            Sau đó còn có thêm các loại khác như asagi, shusui, shiro utsuri…nhưng rốt cục đến cuối cùng người 
+            ta vẫn cảm thấy rằng loại cá Koi thân đỏ trắng Kohaku vẫn là loài tốt nhất. 
+            Đây cũng là dòng Koi phổ biến nhất và nhiều con giá trị nhất và hay thắng giải trong các show triển lãm quốc tế và 
+            làm nên tên tuổi nhiều thương hiệu Koi..
+          </p>
         </div>
         <span class="btn-toggle" id="toggleBtn">Xem thêm</span>
       </div>
-
-      <div class="filter-container">
-        <label for="statusFilter">Lọc sản phẩm:</label>
-        <select id="statusFilter">
-            <option value="all">Tất cả</option>
-            <option value="Đang bán">Đang bán</option>
-            <option value="Đã bán">Đã bán</option>
-        </select>
-    </div>
+      
+      
+      <div class="search">
+        <label class="filter_container">Tất cả
+          <input type="radio" name="filter" value="all" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        
+        <label class="filter_container">Đang Bán
+          <input type="radio" name="filter" value="onsale">
+          <span class="checkmark"></span>
+        </label>
+        
+        <label class="filter_container">Đã bán
+          <input type="radio" name="filter" value="offsale">
+          <span class="checkmark"></span>
+        </label>
+      </div>
     
 
       <div id="kohaku" class="kind">
@@ -252,6 +270,7 @@
         </div>
       </div>
 
+
     </div>
 
     <!-- Footer -->
@@ -268,7 +287,7 @@
           Tele: 0123456789
         </p>
         <p>
-          gmail: ShopkoiFish@gmail.com
+          Email: ShopkoiFish@gmail.com
         </p>
       </div>
 

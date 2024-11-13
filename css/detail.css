@@ -7,6 +7,7 @@
     font-family: Arial, sans-serif;
 }
 
+
 /* CSS header */
 .header {
     position: sticky;
@@ -291,120 +292,93 @@ a:hover {
     .sidenav a {font-size: 18px;}
 }
 
+.banner {
+    /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.327); */
+    margin-bottom: 30px;
+}
+
 /* Tên shop */
 h1 {
     text-align: center;
 }
 /* /CSS header */
 
-/* CSS main */
-
-.search {
-    margin-left:100px;
-}
-
-.filter_container {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 15px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.filter_container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-
-.filter_container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-.filter_container input:checked ~ .checkmark {
-    background-color: #e00000;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.filter_container input:checked ~ .checkmark:after {
-    display: block;
-}
-  
-
-.filter_container input:checked ~ .checkmark:after {
-    display: block;
+/* Main container */
+.main {
+    min-height: 450px;
+    padding: 20px;
+    flex: 1;
 }
 
 /* Sản phẩm */
+/* Container cho mỗi loại cá */
+.loai {
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 14px #111;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 3em;
+}
+
+/* Hình ảnh và khung mô tả */
+.loai img {
+    border-radius: 20px;
+    height: 300px;
+    width: 300px;
+    margin: 0;
+}
+
+.text {
+    margin-left: 500px;
+    width: 700px;
+    font-size: large;
+    padding: 0;
+    text-align: left;
+    text-align: center;
+}
+
+.text iframe {
+    margin: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
 /* Container cho danh sách sản phẩm */
-.products-container-wrapper {
+.product-detail-container {
     display: flex;
     justify-content: space-between; /* Căn đều các sản phẩm */
+    gap: 50px;
     margin-top: 20px;
     max-width: 1200px; /* Giới hạn độ rộng của container */
     margin: 0 auto; /* Căn giữa */
     padding: 0 10px; /* Thêm padding cho container */
 }
 
-/* Thẻ sản phẩm */
-.products-container {
+.product_img {
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    gap: 100px;
-    width: 100%;
-}
-
-/* Thẻ sản phẩm */
-.products {
-    border-radius: 8px;
-    width: calc(25% - 15px); /* Mỗi sản phẩm chiếm 1/4 chiều rộng container */
-    background-color: white;
-    border: 1px solid #ddd;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s;
-    margin: 20px; /* Thêm margin dưới mỗi sản phẩm */
-}
-
-.product:hover {
-    transform: scale(1.05);
+    flex-direction: column;
 }
 
 /* Hình ảnh sản phẩm */
 .product_img img{
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 12px rgb(42, 42, 42);
     border-radius: 10px;
-    width: 280;
-    height: 280px;
+    width: 300;
+    height: 300px;
     object-fit: cover;
 }
 
 /* Thông tin trạng thái sản phẩm */
 .product_status {
     padding: 10px;
-    background-color: #f2f2f2;
-    border-bottom: 1px solid #ddd;
 }
 
 .status_button {
@@ -421,12 +395,6 @@ h1 {
     margin: 5px 0;
     font-size: 18px;
     color: #333;
-}
-
-/* Chi tiết sản phẩm */
-.product_details {
-    padding: 15px;
-    text-align: left;
 }
 
 .product_details p {
@@ -465,9 +433,8 @@ h1 {
 
 /* Thông tin bổ sung về sản phẩm */
 .product_meta {
+    width: 700px;
     padding: 10px;
-    background-color: #f9f9f9;
-    border-top: 1px solid #ddd;
     font-size: 13px;
 }
 
@@ -483,6 +450,49 @@ h1 {
 /* Định dạng sản phẩm giới hạn */
 .products-container .product:nth-child(n+5) {
     display: none;
+}
+
+#videoFrame {
+    justify-content: center;
+}
+
+.sidebar {
+    border-radius: 2px;
+    margin-left: 50px;
+    background-color: #4d59c8;
+    padding: 20px;
+    width: 500px;
+    
+    font-family: Arial, sans-serif;
+    max-height: 300px;
+}
+  
+/* Sidebar title */
+.sidebar h2 {
+    color: #ffcc00; /* Yellow color for the title */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+  
+/* List styling */
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+  
+.sidebar ul li {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+  
+/* Icon styling (optional) */
+.sidebar h2::before {
+    content: "\2630"; /* Menu icon (hamburger icon) */
+    margin-right: 10px;
+}
+
+.sidebar a {
+    color: #f3bda0;
 }
 
 /* tin tức */
@@ -529,86 +539,6 @@ h1 {
 
 .card a:hover {
     text-decoration: underline;
-}
-
-ul.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
-}
-  
-/* Display list items side by side */
-ul.breadcrumb li {
-    display: inline;
-    font-size: 18px;
-}
-  
-/* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-  
-/* Add a color to all links inside the list */
-ul.breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-  
-/* Add a color on mouse-over */
-ul.breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-}
-
-.introduce {
-    max-height: 40px; /* Chiều cao mặc định khi thu gọn */
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
-
-.introduce p {
-    font-size: 20px;
-    color: #c1784b;
-}
-
-.introduce.show {
-    max-height: 100%; /* Chiều cao tối đa khi mở rộng */
-}
-
-.introduce img {
-    margin: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-}
-
-.btn-toggle {
-    margin-top: 10px;
-    color: #F07334;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.btn-toggle:hover {
-   
-    color: #b25527;
-}
-
-.profile {
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
-    
-}
-
-.container {
-    margin: 0;
-    padding: 0;
 }
 
 /* /CSS main */

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang trại cá Koi</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/detail.css" />
   </head>
   <body>
     <!-- Header -->
@@ -318,58 +318,62 @@
           <a href="#footer">Liên hệ</a>
         </li>
 
-        <!-- navi -->
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-            >&times;</a
-          >
-          <a href="#kohaku">Koi Kohaku</a>
-          <a href="#karashi">Koi Karashi</a>
-          <a href="#showa">Koi Showa</a>
-          <a href="#asagi">Koi Asagi</a>
-          <a href="#news">Tin tức</a>
-        </div>
-        <span
-          style="font-size: 30px; cursor: pointer; margin: 10px"
-          onclick="openNav()"
-          >&#9776;
-        </span>
-        <!-- /navi -->
       </div>
       <!-- /Menu trang chủ -->
     </div>
 
+
     <!-- Main -->
     <div class="main">
+
+
         <div class="product-detail-container">
+
+
             <div class="product_img">
-                <img id="detailProductImage" src="" alt="Product Image" />
-                <iframe id="videoFrame" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <img id="detailProductImage" src="" alt="Product Image" />
+                  <iframe id="videoFrame" width="300" height="100" src="" title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
             </div>
-            
-            
-            <div class="product_status">
+
+
+            <div class="product_meta">
+              <div class="product_status">
                 <button id="detailStatusButton" class="status_button"></button>
                 <h3 id="detailProductName"></h3>
-            </div>
-            <div class="product_details">
+              </div>
+              <p>Người bán: <strong id="detailSalePerson"></strong></p>
+              <p>Năm sinh: <strong id="detailDobOfFish"></strong></p>
+              <p>Giới tính: <strong id="detailSexOfFish"></strong></p>
+              <p>Kích thước: <strong id="detailSizeOfFish"></strong></p>
+              <p>Giống: <span id="detailTypeOfFish"></span></p>
+              <p>Nguồn gốc: <a id="detailOriginOfFish" href="#"></a></p>
+              <div class="product_details">
                 <p id="detailProductNote"></p>
                 <div class="price">
                     <span>Giá mua ngay:</span>
                     <strong id="detailProductPrice"></strong>
                 </div>
                 <button id="buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+              </div>
             </div>
-            <div class="product_meta">
-                <p>Người bán: <strong id="detailSalePerson"></strong></p>
-                <p>Năm sinh: <strong id="detailDobOfFish"></strong></p>
-                <p>Giới tính: <strong id="detailSexOfFish"></strong></p>
-                <p>Kích thước: <strong id="detailSizeOfFish"></strong></p>
-                <p>Giống: <span id="detailTypeOfFish"></span></p>
-                <p>Nguồn gốc: <a id="detailOriginOfFish" href="#"></a></p>
-                
+
+
+            <div class="sidebar">
+              <h2>Bạn có thể quan tâm:</h2>
+              <ul>
+                <li><a href="news-page/benhKoi.html">Các bệnh thường gặp ở cá Koi</a></li>
+                <li><a href="news-page/chamSoc.html">Kỹ thuật nuôi cá Koi</a></li>
+                <li><a href="news-page/veSinh.html">Quy trình vệ sinh hồ cá Koi</a></li>
+                <li><a href="news-page/tincay.html">Trại cá Koi Nhật Bản đáng tin cậy</a></li>
+                <li><a href="news-page/phongthuy.html">Ý nghĩa nuôi cá Koi</a></li>
+              </ul>
             </div>
+
+
         </div>
+
+
     </div>
 
     <!-- Main -->

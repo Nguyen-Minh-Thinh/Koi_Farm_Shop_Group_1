@@ -118,7 +118,7 @@ async function submitPayment() {
     const paymentMethod = document.getElementById('paymentMethod').value;
     const totalAmount = document.getElementById('totalAmount').value;
     const promoCodeId = appliedPromoCode || null; // ID của mã khuyến mãi đã áp dụng
-    const orderDate = new Date().toISOString().split("T")[0]; // Ngày hiện tại dạng YYYY-MM-DD
+    const orderDate = getFormattedDateTime(); // Ngày hiện tại dạng YYYY-MM-DD
 
     // Kiểm tra các thông tin nhập vào
     if (!name || !address || !paymentMethod || !totalAmount) {
