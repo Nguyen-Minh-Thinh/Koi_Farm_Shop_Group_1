@@ -6,19 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/GioHangController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/GioHangController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaQuanLyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaQuanLyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/GioHangRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/GioHangRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangServiceImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaQuanLyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaQuanLyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaQuanLyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/TaiKhoanCuaQuanLyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/test-classes/com/example/back_end/BackEndApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/test-classes/com/example/back_end/BackEndApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +58,9 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.BackEndApplication.executor": "Run",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Java/bai_tap_cuoi_ky",
+    "last_opened_file_path": "D:/Java/tuan8/test_selenium",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -100,8 +87,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -156,6 +143,7 @@
       <workItem from="1731222028907" duration="6072000" />
       <workItem from="1731260704650" duration="1161000" />
       <workItem from="1731406067579" duration="5997000" />
+      <workItem from="1731487440704" duration="113000" />
     </task>
     <servers />
   </component>
