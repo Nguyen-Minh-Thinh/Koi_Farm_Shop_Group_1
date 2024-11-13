@@ -16,10 +16,6 @@ public class GioHang {
 //    @JoinColumn(name = "id_of_fish")
 //    private CaKoiNhat idOfFish;
 
-
-    @Column(name = "so_luong")
-    private Integer soLuong;
-
     @Column(name = "tong_cong")
     private Integer tongCong;
 
@@ -56,14 +52,6 @@ public class GioHang {
         this.idOfFish = idOfFish;
     }
 
-
-    public Integer getSoLuong() {
-        return soLuong;
-    }
-
-    public void setSoLuong(Integer soLuong) {
-        this.soLuong = soLuong;
-    }
 
     public Integer getTongCong() {
         return tongCong;

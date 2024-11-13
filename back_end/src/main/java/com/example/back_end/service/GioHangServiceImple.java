@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -25,23 +26,37 @@ public class GioHangServiceImple implements GioHangService {
             // Chuyển đổi các giá trị trong Object[] thành các trường trong DTO
             Integer id = (Integer) row[0];           // id
             String idOfFish = (String) row[1];       // id_of_fish
-            Integer soLuong = (Integer) row[2];      // soLuong
-            Integer tongCong = (Integer) row[3];     // tongCong
-            String taiKhoanNguoiDung = (String) row[4]; // tai_khoan_nguoi_dung
-            String tenSanPham = (String) row[5];     // tenSanPham
-            String image = (String) row[6];          // image
+            Integer tongCong = (Integer) row[2];     // tongCong
+            String taiKhoanNguoiDung = (String) row[3]; // tai_khoan_nguoi_dung
+            String tenSanPham = (String) row[4];     // tenSanPham
+            String image = (String) row[5];          // image
 
             // Tạo đối tượng GioHangDTO và thêm vào danh sách
-            GioHangDTO dto = new GioHangDTO(id, idOfFish, soLuong, tongCong, taiKhoanNguoiDung,tenSanPham, image);
+            GioHangDTO dto = new GioHangDTO(id, idOfFish, tongCong, taiKhoanNguoiDung,tenSanPham, image);
             gioHangDTOList.add(dto);
 
         }
 
         return gioHangDTOList;
     }
+
     @Override
-    public void deleteGioHang(String userName) {
+    public boolean deleteByUserNameAndItemID(HashMap<String, String> body){
+        String userName = body.get("username");
+        String itemID = body.get("id_of_fish");
+
+        // Thực hiện xóa và lấy số lượng bản ghi bị xóa
+        int deletedCount = gioHangRepository.deleteByUserNameAndItemID(userName, itemID);
+
+        // Trả về true nếu ít nhất một bản ghi bị xóa, ngược lại trả về false
+        return deletedCount > 0;
+    };
+
+    @Override
+    public boolean deleteGioHang(String userName) {
         // Xóa tất cả sản phẩm trong giỏ hàng của người dùng
-        gioHangRepository.deleteByUserName(userName);
+        return gioHangRepository.deleteByUserName(userName) > 0;
     }
+
+
 }
