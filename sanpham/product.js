@@ -16,7 +16,7 @@ kindElements.forEach(element => {
 
                 const productHTML = `
                     <div class="product_img">
-                        <a href="chitietsanpham.html?id=${product.id_of_fish}">
+                        <a href="../chitietsanpham.html?id=${product.id_of_fish}">
                             <img src="${product.image}" alt="Product Image" />
                         </a>
                     </div>
