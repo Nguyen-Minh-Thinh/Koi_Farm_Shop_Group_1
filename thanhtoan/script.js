@@ -118,7 +118,7 @@ async function submitPayment() {
     const paymentMethod = document.getElementById('paymentMethod').value;
     const totalAmount = document.getElementById('totalAmount').value;
     const promoCodeId = appliedPromoCode || null; // ID của mã khuyến mãi đã áp dụng
-    const orderDate = new Date().toISOString().split("T")[0]; // Ngày hiện tại dạng YYYY-MM-DD
+    const orderDate = getFormattedDateTime(); // Ngày hiện tại dạng YYYY-MM-DD
 
     // Kiểm tra các thông tin nhập vào
     if (!name || !address || !paymentMethod || !totalAmount) {
@@ -229,6 +229,18 @@ async function submitPayment() {
 
         const result = await response.json();
         alert(`Thanh toán thành công! Đơn hàng ID: ${result.id}`);
+        const deleteCartResponse = await fetch(`http://localhost:8080/giohang/${userName}`, {
+            method: 'DELETE',
+        });
+
+        if (!deleteCartResponse.ok) {
+            throw new Error('Không thể xóa giỏ hàng.');
+        }
+
+        console.log("Giỏ hàng đã được xóa");
+        setTimeout(() => {
+            window.location.href = '../gioithieu.html';
+        }, 0);
     } catch (error) {
         console.error('Lỗi khi gửi yêu cầu thanh toán:', error);
         alert("Đã xảy ra lỗi khi thanh toán. Vui lòng thử lại.");

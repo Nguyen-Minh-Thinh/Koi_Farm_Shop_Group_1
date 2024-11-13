@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Kiểm tra xem có cookie tên người dùng không
-    const userNameCookie = getCookie("username");
+    const userNameCookie = getCookie("admin");
     if (userNameCookie) {
         // Nếu cookie tồn tại, tự động chuyển hướng đến trang index.html
         window.location.href = "./index.html";
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(data); // Xử lý dữ liệu từ response nếu cần thiết
 
                 // Lưu thông tin người dùng vào cookie
-                document.cookie = `username=${data.userName}; path=/`; // Lưu tên đăng nhập
+                document.cookie = `admin=${data.userName}; path=/`; // Lưu tên đăng nhập
 
                 // Gửi yêu cầu GET để lấy thông tin tài khoản
                 const accountResponse = await fetch(`http://localhost:8080/api/taikhoan/${data.userName}`);
