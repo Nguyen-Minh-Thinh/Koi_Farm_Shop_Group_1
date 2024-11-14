@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `koi_farm_shop` /*!40100 DEFAULT CHARACTER SET ut
 USE `koi_farm_shop`;
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
--- Host: localhost    Database: koi_farm_shop
+-- Host: 127.0.0.1    Database: koi_farm_shop
 -- ------------------------------------------------------
 -- Server version	8.0.39
 
@@ -237,7 +237,7 @@ DROP TABLE IF EXISTS `tai_khoan_cua_quan_ly`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tai_khoan_cua_quan_ly` (
   `user_name` varchar(50) NOT NULL,
-  `pass_word` varchar(50) NOT NULL,
+  `pass_word` text,
   PRIMARY KEY (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -248,7 +248,7 @@ CREATE TABLE `tai_khoan_cua_quan_ly` (
 
 LOCK TABLES `tai_khoan_cua_quan_ly` WRITE;
 /*!40000 ALTER TABLE `tai_khoan_cua_quan_ly` DISABLE KEYS */;
-INSERT INTO `tai_khoan_cua_quan_ly` VALUES ('nguyenminhthinh','26122004');
+INSERT INTO `tai_khoan_cua_quan_ly` VALUES ('nguyenminhthinh','8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92');
 /*!40000 ALTER TABLE `tai_khoan_cua_quan_ly` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -324,4 +324,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-14 18:27:33
+-- Dump completed on 2024-11-14 19:41:42

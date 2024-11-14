@@ -22,10 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
+        // Băm mật khẩu trước khi gửi
+        const hashedPassword = await hashPassword(password);
         // Tạo object để gửi trong request
         const loginData = {
             userName: userName,
-            passWord: password
+            passWord: hashedPassword // Sử dụng mật khẩu đã băm
         };
 
         try {
@@ -77,6 +79,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// Hàm băm mật khẩu bằng SHA-256
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password); // Mã hóa chuỗi thành dạng bytes
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data); // Tính toán hash SHA-256
+
+    // Chuyển đổi từ buffer sang chuỗi hexadecimal
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+    
+    return hashHex;
+}
 
 // Hàm để lấy giá trị cookie theo tên
 function getCookie(name) {
