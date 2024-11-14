@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="" />
+    <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chitietsanpham.html" beforeDir="false" afterPath="$PROJECT_DIR$/chitietsanpham.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Asagi.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Asagi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Food.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Food.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Kohaku.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Kohaku.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Showa.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Showa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Shusui.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Shusui.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Tancho.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Tancho.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,8 +97,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
@@ -144,7 +156,12 @@
       <workItem from="1731487440704" duration="113000" />
       <workItem from="1731509689390" duration="14000" />
       <workItem from="1731551075247" duration="1455000" />
+<<<<<<< HEAD
       <workItem from="1731574009567" duration="4471000" />
+=======
+      <workItem from="1731574009567" duration="3684000" />
+      <workItem from="1731584492863" duration="1469000" />
+>>>>>>> e9ccc77cf8b964746fb352986fb7243e90932012
     </task>
     <servers />
   </component>
