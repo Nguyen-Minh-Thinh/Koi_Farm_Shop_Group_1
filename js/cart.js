@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const clearButton = document.querySelector('#clear-btn');
+    const clearButton = document.querySelector('#clear-btn');    
     const cartTableBody = document.querySelector('.displayCart');
     const totalCartElement = document.querySelector('.total-cart');
 
