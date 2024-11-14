@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `koi_farm_shop` /*!40100 DEFAULT CHARACTER SET ut
 USE `koi_farm_shop`;
 -- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: koi_farm_shop
+-- Host: localhost    Database: koi_farm_shop
 -- ------------------------------------------------------
 -- Server version	8.0.39
 
@@ -67,8 +67,7 @@ CREATE TABLE `chitietdonhang` (
   PRIMARY KEY (`don_hang_id`,`id_of_fish`),
   KEY `fk_fish` (`id_of_fish`),
   KEY `idx_DonHangId` (`don_hang_id`),
-  CONSTRAINT `don_hang_id` FOREIGN KEY (`don_hang_id`) REFERENCES `donhang` (`order_id`),
-  CONSTRAINT `fk_fish` FOREIGN KEY (`id_of_fish`) REFERENCES `ca_koi_nhat` (`id_of_fish`)
+  CONSTRAINT `don_hang_id` FOREIGN KEY (`don_hang_id`) REFERENCES `donhang` (`order_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -132,7 +131,6 @@ CREATE TABLE `gio_hang` (
   PRIMARY KEY (`id`),
   KEY `id_of_fish` (`id_of_fish`),
   KEY `tai_khoan_nguoi_dung` (`tai_khoan_nguoi_dung`),
-  CONSTRAINT `gio_hang_ibfk_1` FOREIGN KEY (`id_of_fish`) REFERENCES `ca_koi_nhat` (`id_of_fish`),
   CONSTRAINT `gio_hang_ibfk_2` FOREIGN KEY (`tai_khoan_nguoi_dung`) REFERENCES `tai_khoan_cua_nguoi_dung` (`user_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -260,7 +258,7 @@ DROP TABLE IF EXISTS `thuc_an_cho_ca`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `thuc_an_cho_ca` (
-  `Id` varchar(10) NOT NULL,
+  `id` varchar(50) NOT NULL,
   `image` tinytext,
   `caption` tinytext,
   `Note` text,
@@ -271,7 +269,7 @@ CREATE TABLE `thuc_an_cho_ca` (
   `Origin` varchar(50) DEFAULT NULL,
   `Weight` varchar(20) DEFAULT NULL,
   `sale_status` varchar(20) DEFAULT ' Đang bán',
-  PRIMARY KEY (`Id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -300,8 +298,7 @@ CREATE TABLE `tinh_trang_don_hang` (
   `id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `fk_order_id` (`order_id`),
-  CONSTRAINT `fk_order_id` FOREIGN KEY (`order_id`) REFERENCES `donhang` (`order_id`),
-  CONSTRAINT `tinh_trang_don_hang_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `donhang` (`order_id`)
+  CONSTRAINT `fk_order_id` FOREIGN KEY (`order_id`) REFERENCES `donhang` (`order_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -324,4 +321,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-14 19:41:42
+-- Dump completed on 2024-11-14 20:58:16
