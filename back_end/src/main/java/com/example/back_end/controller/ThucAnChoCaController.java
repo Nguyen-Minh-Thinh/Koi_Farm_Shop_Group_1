@@ -5,15 +5,11 @@ import com.example.back_end.modal.CaKoiNhat;
 import com.example.back_end.modal.ThucAnChoCa;
 import com.example.back_end.repository.ThucAnChoCaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class ThucAnChoCaController {
@@ -49,5 +45,53 @@ public class ThucAnChoCaController {
     @GetMapping("/thuc-an-cho-ca/{id}")
     public ThucAnChoCa getCaKoiNhatById(@PathVariable String id) {
         return thucAnChoCaRepository.findById(id).get();
+    }
+
+    // Add new food item
+    @CrossOrigin(origins = "*")
+    @PostMapping("/thuc-an-cho-ca/create")
+    public ResponseEntity<ThucAnChoCa> createFoodItem(@RequestBody ThucAnChoCa foodItem) {
+        try {
+            ThucAnChoCa newFoodItem = thucAnChoCaRepository.save(foodItem);
+            return new ResponseEntity<>(newFoodItem, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // Update existing food item
+    @CrossOrigin(origins = "*")
+    @PutMapping("/thuc-an-cho-ca/update/{id}")
+    public ResponseEntity<ThucAnChoCa> updateFoodItem(@PathVariable("id") String id, @RequestBody ThucAnChoCa foodItem) {
+        Optional<ThucAnChoCa> existingFoodItem = thucAnChoCaRepository.findById(id);
+
+        if (existingFoodItem.isPresent()) {
+            ThucAnChoCa updatedFood = existingFoodItem.get();
+            updatedFood.setCaption(foodItem.getCaption());
+            updatedFood.setTypeOfFood(foodItem.getTypeOfFood());
+            updatedFood.setPrice(foodItem.getPrice());
+            updatedFood.setWeight(foodItem.getWeight());
+            updatedFood.setSaleStatus(foodItem.getSaleStatus());
+            updatedFood.setImage(foodItem.getImage());
+            updatedFood.setNote(foodItem.getNote());
+            updatedFood.setSalePerson(foodItem.getSalePerson());
+            updatedFood.setBrand(foodItem.getBrand());
+            updatedFood.setOrigin(foodItem.getOrigin());
+            return new ResponseEntity<>(thucAnChoCaRepository.save(updatedFood), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    // Delete a food item
+    @CrossOrigin(origins = "*")
+    @DeleteMapping("/thuc-an-cho-ca/{id}")
+    public ResponseEntity<HttpStatus> deleteFoodItem(@PathVariable("id") String id) {
+        try {
+            thucAnChoCaRepository.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

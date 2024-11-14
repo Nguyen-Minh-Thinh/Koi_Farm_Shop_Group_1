@@ -21,6 +21,7 @@
             <ul class="sidebar-menu">
                 <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Thống kê</a></li>
                 <li><a href="product.html"><i class="fas fa-box"></i> Quản lý sản phẩm</a></li>
+                <li><a href="food.html"><i class="fas fa-fish"></i> Quản lý thức ăn</a></li> <!-- New link -->
                 <li><a href="order.html"><i class="fas fa-shopping-cart"></i> Quản lý đơn hàng</a></li>
                 <li><a href="customer.html"><i class="fas fa-user"></i> Quản lý khách hàng</a></li>
                 <li><a href="category.html"><i class="fas fa-list"></i> Quản lý danh mục</a></li>
@@ -75,9 +76,10 @@
                 
                 <label for="product-size">Kích thước:</label>
                 <input type="text" id="product-size" name="product-size" required>
-                
-                <label for="product-status">Trạng thái:</label>
-                <input type="text" id="product-status" name="product-status" required>
+
+                <select id="product-status" name="product-status" hidden>
+                    <option value="Đang bán" selected>Đang bán</option>
+                </select>
                 
                 <label for="product-image">Hình ảnh (URL):</label>
                 <input type="text" id="product-image" name="product-image" required>
