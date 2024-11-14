@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="070c0ff4-b69d-4daa-9b35-7e651e630f3f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/GioHangController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/GioHangController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/GioHang.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/GioHang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/GioHangDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/modal/GioHangDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/repository/GioHangRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/repository/GioHangRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/service/GioHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/service/GioHangService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/service/GioHangServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/service/GioHangServiceImple.class" afterDir="false" />
-    </list>
+    <list default="true" id="070c0ff4-b69d-4daa-9b35-7e651e630f3f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +108,7 @@
       <workItem from="1730712419380" duration="5614000" />
       <workItem from="1731341783749" duration="2327000" />
       <workItem from="1731423634467" duration="2214000" />
-      <workItem from="1731584106509" duration="1196000" />
+      <workItem from="1731584106509" duration="1854000" />
     </task>
     <servers />
   </component>
