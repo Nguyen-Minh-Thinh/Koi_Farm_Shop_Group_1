@@ -16,7 +16,19 @@ if (idOfFish) {
             document.getElementById("detailProductName").innerText = data.nameOfFish;
             document.getElementById("detailProductNote").innerText = data.note;
             document.getElementById("detailProductPrice").innerText = `${data.price} ₫`;
-            document.getElementById("detailStatusButton").innerText = data.saleStatus;
+            const statusButton = document.getElementById("detailStatusButton");
+            statusButton.innerText = data.saleStatus;
+
+            // Kiểm tra nếu trạng thái là "đã bán"
+            if (data.saleStatus === " Đã bán") {
+                statusButton.disabled = true;
+                statusButton.style.backgroundColor = "gray";
+
+                // Cập nhật trạng thái và màu sắc cho buyButton
+                const buyButton = document.getElementById("buyButton");
+                buyButton.disabled = true;
+                buyButton.style.backgroundColor = "gray";
+            }
             document.getElementById("detailSalePerson").innerText = data.salePerson;
             document.getElementById("detailDobOfFish").innerText = data.dobOfFish;
             document.getElementById("detailSexOfFish").innerText = data.sexOfFish;

@@ -44,9 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
             // Tạo các cột cho bảng
             const nameCell = document.createElement('td');
             nameCell.textContent = item.tenSanPham;
+            nameCell.style.width = '20%';
             
             const imageCell = document.createElement('td');
-            imageCell.innerHTML = `<img src="${item.image}" alt="${item.tenSanPham}" style="width: 100px; height: auto;">`;
+            imageCell.innerHTML = `<img src="${item.image}" alt="${item.tenSanPham}" style="width: 200px; height: 100px;">`;
+            imageCell.style.width = '40%';
             
             // const quantityCell = document.createElement('td');
             // quantityCell.textContent = item.soLuong;
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             deleteButton.textContent = 'x';
             deleteButton.style.color = 'red'; // Style the "x" as desired
             deleteButton.style.fontSize = '30px';
-            deleteButton.style.border = '0';
+            deleteButton.style.border = 'none';
             deleteButton.style.backgroundColor = 'white';
             deleteButton.addEventListener('click', () => {
                 removeItem(item.id_of_fish); // Use item ID for deletion
