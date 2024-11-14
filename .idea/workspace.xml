@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/GioHangController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/GioHangController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHang.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHangDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHangDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/GioHangRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/GioHangRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangServiceImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/tancho.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/tancho.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/chitietsanpham.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/chitietsanpham.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanpham/Kohaku.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Kohaku.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanpham/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,6 +145,7 @@
       <workItem from="1731509689390" duration="14000" />
       <workItem from="1731551075247" duration="1455000" />
       <workItem from="1731553244361" duration="5078000" />
+      <workItem from="1731572563613" duration="318000" />
     </task>
     <servers />
   </component>

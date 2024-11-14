@@ -1,0 +1,318 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang trại cá Koi</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!-- Header -->
+    <!-- Chức năng -->
+    <div class="top_head">
+      <div class="tele">
+        <img src="../img/telephone.png" style="height: 15px; width: 15px" />
+        <span>0123456789</span>
+      </div>
+      <div class="function">
+        <a href="#" id="loginBtn" style="margin-right: 20px">Đăng nhập/Đăng ký</a>
+        <a href="#" id="settingsLink" style="margin-right: 20px; display: none;">Cài đặt</a>
+        <a href="#" id="logoutLink" style="display: none;">Đăng xuất</a>
+
+        <!-- <a href="cart.html">Giỏ hàng</a> -->
+
+      </div>
+    </div>
+
+    <!--Thịnh bố sung thêm đăng nhập, đăng ký cho user-->
+    <!-- Modal for Login/Register -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+          <h2 style="text-align: center;">Đăng nhập</h2>
+          <form id="loginFormElement" action="/login" method="POST">
+            <div class="form-group">
+              <label for="username">Tên đăng nhập:</label>
+              <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Mật khẩu:</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <button type="submit" class="button" style="width: 20%; margin-left: 40%;">Đăng nhập</button>
+            <p><a href="#" id="forgotPassword">Quên mật khẩu?</a></p>
+            <p>Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký</a></p>
+          </form>
+        </div>
+
+        <!-- Register Form (hidden initially) -->
+        <div id="registerForm" style="display: none">
+          <h2 style="text-align: center;">Đăng ký</h2>
+          <form action="/register" method="POST">
+            <div class="form-group">
+              <label for="reg_username">Tên đăng nhập:</label>
+              <input
+                type="text"
+                id="reg_username"
+                name="reg_username"
+                required
+              />
+            </div>
+            <p id="error-message-1" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="reg_password">Mật khẩu:</label>
+              <input
+                type="password"
+                id="reg_password"
+                name="reg_password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirm_password">Xác nhận mật khẩu:</label>
+              <input
+                type="password"
+                id="confirm_password"
+                name="confirm_password"
+                required
+              />
+            </div>
+            <p id="error-message-2" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <div class="form-group">
+              <label for="phone">Số điện thoại:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{10}"
+                required
+              />
+            </div>
+            <button type="submit" style="width: 20%; margin-left: 40%;">Đăng ký</button>
+            <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
+          </form>
+        </div>
+
+        <!-- Forgot Password Form (hidden initially) -->
+        <div id="forgotPasswordForm" style="display: none">
+          <h2 style="text-align: center;">Quên mật khẩu</h2>
+          <form action="/forgot-password" method="POST">
+            <div class="form-group">
+              <label for="forgot_user_name">Nhập tên đăng nhập:</label>
+              <input
+                type="text"
+                id="forgot_user_name"
+                name="forgot_user_name"
+                required
+              />
+            </div>
+            <p id="error-message-3" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <div class="form-group">
+              <label for="forgot_email">Nhập email của bạn:</label>
+              <input
+                type="email"
+                id="forgot_email"
+                name="forgot_email"
+                required
+              />
+            </div>
+            <p id="error-message-4" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <button type="submit" style="width: 30%; margin-left: 35%;">Lấy lại mật khẩu</button>
+            <p>Quay lại <a href="#" id="backToLogin">Đăng nhập</a></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!--Thạch-->
+    <!-- /Chức năng -->
+
+    <div class="header">
+      <!-- logo -->
+      <div class="logo">
+        <a href="../homepage.html"><img src="../img/logo.png" alt="#" /></a>
+      </div>
+      <!-- /logo -->
+
+      <!-- Menu trang chủ -->
+      <div class="menu_bar">
+        <li class="menu">
+          <a href="../homepage.html">Trang chủ</a>
+        </li>
+
+        <li class="menu">
+          <a href="#">Giới Thiệu</a>
+          <ul class="sub_menu">
+            <li><a href="../gioithieu.html">Giới thiệu</a></li>
+            <li><a href="#">Giới thiệu sàn ký gửi</a></li>
+            <li><a href="#">Giới thiệu sàn đấu giá</a></li>
+            <li><a href="#">Các đơn vị bán koi</a></li>
+            <li><a href="#">Nguồn Koi của OnKoi</a></li>
+            <li><a href="#">Hướng dẫn</a></li>
+          </ul>
+        </li>
+
+        <li class="menu">
+          <a href="#">Các loại cá</a>
+          <ul class="sub_menu">
+            <li><a href="Kohaku.html">Koi Kohaku</a></li>
+            <li><a href="Showa.html">Koi Showa</a></li>
+            <li><a href="Asagi.html">Koi Asagi</a></li>
+            <li><a href="Shusui.html">Koi Shusui</a></li>
+            <li><a href="Tancho.html">Koi Tancho</a></li>
+          </ul>
+        </li>
+
+        <li class="menu">
+          <a href="#">Sản phẩm</a>
+          <ul class="sub_menu">
+            <li><a href="#">Hệ thống lọc hồ</a></li>
+            <li><a href="#">Phụ kiện trang trí</a></li>
+          </ul>
+        </li>
+
+        <li class="menu">
+          <a href="../tintuc.html">Tin tức</a>
+        </li>
+
+        <li class="menu">
+          <a href="Food.html">Thức ăn cho cá</a>
+        </li>
+
+        <li class="menu">
+          <a href="#footer">Liên hệ</a>
+        </li>
+
+      </div>
+      <!-- /Menu trang chủ -->
+    </div>
+    <!-- /Header -->
+     
+    <ul class="breadcrumb">
+      <li><a href="../homepage.html"><img src="../img/home.png" style="width: 13px; height: 13px; margin-right: 5px;" alt="home">Trang chủ</a></li>
+      <li>Thức ăn cho cá</li>
+    </ul>
+
+    <div class="container">
+
+      <div class="profile">
+        <div class="introduce" id="introduce">
+          <p>
+            Nuôi cá koi thông thường thì dễ ai cũng có thể nuôi được.Tuy nhiên nuôi cá koi theo tiêu chuẩn Nhật 
+            body siêu tăng tăng trưởng, hình thể đẹp, màu lên đẹp không phải ai cũng biết kỹ thuật nuôi. 
+            Trong đó, thức ăn cho koi là yếu tố quan trọng nhất quyết định 2 vấn đề này. Vì vậy, với sự tỉ mỉ, 
+            cầu toàn của mình người Nhật đã sớm nghiên cứu thành công những công thức thức ăn cá koi theo các tiêu chuẩn khác nhau. 
+            Dưới đây là tổng hợp các loại thức ăn cho cá koi nhanh lớn và tăng mầu hiện được ưa chuộng nhất tại Việt Nam.
+          </p>
+          <img src="../img/food.jpg" style="height: 50%;">
+        </div>
+        <!-- <span class="btn-toggle" id="toggleBtn">Xem thêm</span> -->
+      </div>
+      
+      
+      <div class="search">
+        <label class="filter_container">Tất cả
+          <input type="radio" name="filter" value="all" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        
+        <label class="filter_container">Đang Bán
+          <input type="radio" name="filter" value="onsale">
+          <span class="checkmark"></span>
+        </label>
+        
+        <label class="filter_container">Đã bán
+          <input type="radio" name="filter" value="offsale">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    
+
+      <div id="kohaku" class="kind">
+        <!-- Container cho các sản phẩm của loại Kohaku -->
+        <div id="products-container-kohaku" class="products-container-wrapper">
+          <div id="products-kohaku" class="products-container">
+            <div class="product_img">
+              <img id="productImage" src="" alt="Product Image" />
+            </div>
+            <div class="product_status">
+              <button id="statusButton" class="status_button"></button>
+              <h3 id="productName"></h3>
+            </div>
+            <div class="product_details">
+              <p id="productNote"></p>
+              <div class="price">
+                <span>Giá mua ngay:</span>
+                <strong id="productPrice"></strong>
+              </div>
+              <button id="buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+            </div>
+            <div class="product_meta">
+              <p>Người bán: <strong id="salePerson"></strong></p>
+              <p>Năm sinh: <strong id="dobOfFish"></strong></p>
+              <p>Kích thước: <strong id="sizeOfFish"></strong></p>
+              <p>Giống: <span id="typeOfFish"></span></p>
+              <p>Nguồn gốc: <a id="originOfFish" href="#"></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" id="footer">
+
+      <a href="#"><img src="../img/logo.png" alt="#" style="right: 20px; height: 30%; margin: auto" /></a>
+
+      <div class="text2">
+        <h3>Thông tin liên hệ:</h3>
+        <p>
+          Địa chỉ: 70 Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh, Việt Nam
+        </p>
+        <p>
+          Tele: 0123456789
+        </p>
+        <p>
+          Email: ShopkoiFish@gmail.com
+        </p>
+      </div>
+
+      <div class="social">
+        <p>Mạng xã hội:</p>
+        <a href="#"
+          ><img src="../img/facebook.png" style="height: 30px; width: 30px"
+        /></a>
+        <a href="#"
+          ><img src="../img/youtube.png" style="height: 30px; width: 30px"
+        /></a>
+        <a href="#"
+          ><img src="../img/insta.png" style="height: 30px; width: 30px"
+        /></a>
+      </div>
+      
+      <!-- back to top -->
+      <!-- <div class="btntop">
+            <a href="#" class="top"></a>
+        </div> -->
+      <!-- back to top -->
+    </div>
+    <!-- /Footer -->
+
+    <!--Scripts-->
+    <script src="change.js"></script>
+    <script src="Food.js"></script>
+    <script src="thugon.js"></script>
+    <script src="../js/user_login_register.js"></script>
+    <script src="../js/sidenav.js"></script>
+    <script src="../js/cart.js"></script>
+  </body>
+</html>
