@@ -328,12 +328,16 @@ h1 {
 .loai img {
     border-radius: 20px;
     height: 300px;
-    width: 300px;
+    width: 700px;
     margin: 0;
 }
 
+.text h2 {
+    text-decoration: underline;
+}
+
 .text {
-    margin-left: 300px;
+    margin-left: 100px;
     width: 700px;
     font-size: large;
     padding: 0;
