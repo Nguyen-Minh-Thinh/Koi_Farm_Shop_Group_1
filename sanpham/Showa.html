@@ -14,12 +14,29 @@
         <span>0123456789</span>
       </div>
       <div class="function">
-        <a href="#" id="loginBtn" style="margin-right: 20px">Đăng nhập/Đăng ký</a>
-        <a href="#" id="settingsLink" style="margin-right: 20px; display: none;">Cài đặt</a>
-        <a href="#" id="logoutLink" style="display: none;">Đăng xuất</a>
-
-        <!-- <a href="cart.html">Giỏ hàng</a> -->
-
+        <a
+          href="../cart.html"
+          id="shoppingCart"
+          style="display: none; margin-right: 20px"
+        >
+          <img
+            src="../img/shopping-cart2.png"
+            alt="Giỏ hàng"
+            style="height: 40px; width: 40px"
+          />
+        </a>
+        <a href="#" id="loginBtn" style="margin-right: 20px"
+          >Đăng nhập/Đăng ký</a
+        >
+        <span id="userName" style="display: none; margin-right: 20px"></span>
+        <!-- Thêm thẻ span cho tên người dùng -->
+        <a
+          href="../caidat.html"
+          id="settingsLink"
+          style="margin-right: 10px; display: none"
+          >Cài đặt</a
+        >
+        <a href="#" id="logoutLink" style="display: none">Đăng xuất</a>
       </div>
     </div>
 
@@ -31,7 +48,7 @@
 
         <!-- Login Form -->
         <div id="loginForm">
-          <h2 style="text-align: center;">Đăng nhập</h2>
+          <h2 style="text-align: center">Đăng nhập</h2>
           <form id="loginFormElement" action="/login" method="POST">
             <div class="form-group">
               <label for="username">Tên đăng nhập:</label>
@@ -41,7 +58,13 @@
               <label for="password">Mật khẩu:</label>
               <input type="password" id="password" name="password" required />
             </div>
-            <button type="submit" class="button" style="width: 20%; margin-left: 40%;">Đăng nhập</button>
+            <button
+              type="submit"
+              class="button"
+              style="width: 20%; margin-left: 40%"
+            >
+              Đăng nhập
+            </button>
             <p><a href="#" id="forgotPassword">Quên mật khẩu?</a></p>
             <p>Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký</a></p>
           </form>
@@ -49,7 +72,7 @@
 
         <!-- Register Form (hidden initially) -->
         <div id="registerForm" style="display: none">
-          <h2 style="text-align: center;">Đăng ký</h2>
+          <h2 style="text-align: center">Đăng ký</h2>
           <form action="/register" method="POST">
             <div class="form-group">
               <label for="reg_username">Tên đăng nhập:</label>
@@ -60,7 +83,15 @@
                 required
               />
             </div>
-            <p id="error-message-1" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <p
+              id="error-message-1"
+              style="
+                display: none;
+                font-size: 0.8em;
+                color: red;
+                margin-left: -100px;
+              "
+            ></p>
             <div class="form-group">
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required />
@@ -83,7 +114,15 @@
                 required
               />
             </div>
-            <p id="error-message-2" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <p
+              id="error-message-2"
+              style="
+                display: none;
+                font-size: 0.8em;
+                color: red;
+                margin-left: -100px;
+              "
+            ></p>
             <div class="form-group">
               <label for="phone">Số điện thoại:</label>
               <input
@@ -94,15 +133,21 @@
                 required
               />
             </div>
-            <button type="submit" style="width: 20%; margin-left: 40%;">Đăng ký</button>
+            <button type="submit" style="width: 20%; margin-left: 40%">
+              Đăng ký
+            </button>
             <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
           </form>
         </div>
 
         <!-- Forgot Password Form (hidden initially) -->
         <div id="forgotPasswordForm" style="display: none">
-          <h2 style="text-align: center;">Quên mật khẩu</h2>
-          <form action="/forgot-password" method="POST">
+          <h2 style="text-align: center">Quên mật khẩu</h2>
+          <form
+            id="forgotPasswordFormElement"
+            action="/forgot-password"
+            method="POST"
+          >
             <div class="form-group">
               <label for="forgot_user_name">Nhập tên đăng nhập:</label>
               <input
@@ -112,7 +157,10 @@
                 required
               />
             </div>
-            <p id="error-message-3" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <p
+              id="error-message-3"
+              style="display: none; font-size: 0.8em; color: red"
+            ></p>
             <div class="form-group">
               <label for="forgot_email">Nhập email của bạn:</label>
               <input
@@ -122,12 +170,94 @@
                 required
               />
             </div>
-            <p id="error-message-4" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
-            <button type="submit" style="width: 30%; margin-left: 35%;">Lấy lại mật khẩu</button>
+            <p
+              id="error-message-4"
+              style="display: none; font-size: 0.8em; color: red"
+            ></p>
+            <button type="submit" style="width: 30%; margin-left: 35%">
+              Lấy lại mật khẩu
+            </button>
             <p>Quay lại <a href="#" id="backToLogin">Đăng nhập</a></p>
           </form>
         </div>
 
+        <!-- Form xác minh mã -->
+        <!-- Form nhập mã xác minh -->
+        <div id="verifyCodeForm" style="display: none">
+          <label for="reset_code">Mã xác minh:</label>
+          <input type="text" id="reset_code" required />
+          <p
+            id="error-message-verify"
+            style="color: red; display: none; font-size: 0.8em"
+          ></p>
+          <div style="margin-top: 10px; display: flex; justify-content: center">
+            <!-- Sử dụng flexbox để căn giữa -->
+            <button id="verifyCodeButton" style="width: 150px">
+              Xác minh mã
+            </button>
+          </div>
+
+          <div id="timer" style="display: none">
+            Thời gian còn lại: <span id="countdown">60</span>s
+          </div>
+        </div>
+
+        <!-- Đặt lại mật khẩu-->
+        <div id="resetPasswordForm" style="display: none; height: 200px">
+          <div style="margin-top: 10px">
+            <label for="new_password">Mật khẩu mới:</label>
+            <input
+              type="password"
+              id="new_password"
+              style="margin-top: 10px"
+              required
+            />
+            <p
+              id="error-message-new-password"
+              style="
+                color: red;
+                display: none;
+                margin-top: 5px;
+                font-size: 0.8em;
+              "
+            ></p>
+          </div>
+
+          <div style="margin-top: 10px">
+            <label for="confirm_password_new">Xác nhận lại mật khẩu:</label>
+            <input
+              type="password"
+              id="confirm_password_new"
+              style="margin-top: 10px"
+              required
+            />
+            <p
+              id="error-message-confirm-password"
+              style="
+                color: red;
+                display: none;
+                margin-top: 5px;
+                font-size: 0.8em;
+              "
+            ></p>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; justify-content: center">
+            <button id="resetPasswordButton" style="width: 180px">
+              Đặt lại mật khẩu
+            </button>
+          </div>
+
+          <p
+            id="error-message-reset"
+            style="
+              color: red;
+              display: none;
+              margin-top: 10px;
+              font-size: 0.8em;
+            "
+          ></p>
+        </div>
       </div>
     </div>
 
@@ -148,11 +278,9 @@
         </li>
 
         <li class="menu">
-          <a href="#">Giới Thiệu</a>
+          <a href="../gioithieu.html">Giới Thiệu</a>
           <ul class="sub_menu">
-            <li><a href="../gioithieu.html">Giới thiệu</a></li>
-            <li><a href="#">Giới thiệu sàn ký gửi</a></li>
-            <li><a href="#">Giới thiệu sàn đấu giá</a></li>
+            <li><a href="#">Giới thiệu</a></li>
             <li><a href="#">Các đơn vị bán koi</a></li>
             <li><a href="#">Nguồn Koi của OnKoi</a></li>
             <li><a href="#">Hướng dẫn</a></li>
@@ -162,11 +290,10 @@
         <li class="menu">
           <a href="#">Các loại cá</a>
           <ul class="sub_menu">
-            <li><a href="Kohaku.html">Koi Kohaku</a></li>
-            <li><a href="Showa.html">Koi Showa</a></li>
-            <li><a href="Asagi.html">Koi Asagi</a></li>
-            <li><a href="Shusui.html">Koi Shusui</a></li>
-            <li><a href="Tancho.html">Koi Tancho</a></li>
+            <li><a href="#">Koi Kohaku</a></li>
+            <li><a href="#">koi Ogon</a></li>
+            <li><a href="#">Koi Showa</a></li>
+            <li><a href="#">Koi Tancho</a></li>
           </ul>
         </li>
 

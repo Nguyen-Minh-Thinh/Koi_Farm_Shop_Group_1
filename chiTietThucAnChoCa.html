@@ -1,26 +1,27 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang trại cá Koi</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="css/detail.css" />
   </head>
   <body>
     <!-- Header -->
     <!-- Chức năng -->
     <div class="top_head">
       <div class="tele">
-        <img src="../img/telephone.png" style="height: 15px; width: 15px" />
+        <img src="img/telephone.png" style="height: 15px; width: 15px" />
         <span>0123456789</span>
       </div>
       <div class="function">
         <a
-          href="../cart.html"
+          href="cart.html"
           id="shoppingCart"
           style="display: none; margin-right: 20px"
         >
           <img
-            src="../img/shopping-cart2.png"
+            src="./img/shopping-cart2.png"
             alt="Giỏ hàng"
             style="height: 40px; width: 40px"
           />
@@ -31,7 +32,7 @@
         <span id="userName" style="display: none; margin-right: 20px"></span>
         <!-- Thêm thẻ span cho tên người dùng -->
         <a
-          href="../caidat.html"
+          href="./caidat.html"
           id="settingsLink"
           style="margin-right: 10px; display: none"
           >Cài đặt</a
@@ -267,18 +268,18 @@
     <div class="header">
       <!-- logo -->
       <div class="logo">
-        <a href="../homepage.html"><img src="../img/logo.png" alt="#" /></a>
+        <a href="homepage.html"><img src="img/logo.png" alt="#" /></a>
       </div>
       <!-- /logo -->
 
       <!-- Menu trang chủ -->
       <div class="menu_bar">
         <li class="menu">
-          <a href="../homepage.html">Trang chủ</a>
+          <a href="homepage.html">Trang chủ</a>
         </li>
 
         <li class="menu">
-          <a href="../gioithieu.html">Giới Thiệu</a>
+          <a href="gioithieu.html">Giới Thiệu</a>
           <ul class="sub_menu">
             <li><a href="#">Giới thiệu</a></li>
             <li><a href="#">Các đơn vị bán koi</a></li>
@@ -306,7 +307,7 @@
         </li>
 
         <li class="menu">
-          <a href="../tintuc.html">Tin tức</a>
+          <a href="tintuc.html">Tin tức</a>
         </li>
 
         <li class="menu">
@@ -320,132 +321,105 @@
       </div>
       <!-- /Menu trang chủ -->
     </div>
-    <!-- /Header -->
-     
-    <ul class="breadcrumb">
-      <li><a href="../homepage.html"><img src="../img/home.png" style="width: 13px; height: 13px; margin-right: 5px;" alt="home">Trang chủ</a></li>
-      <li>Koi Kohaku</li>
-    </ul>
 
-    <div class="container">
 
-      <div class="profile">
-        <div class="introduce" id="introduce">
-          <h1>Koi Kohaku</h1>
-          <p>
-            Cá Koi thân đỏ trắng Kohaku là dòng cá tiêu biểu, đại diện cho khả năng sinh sôi nảy nở cực tốt và cũng
-            là 1 trong những dòng cá có tuổi thọ cao. Vì thế còn được gọi là “Cá Phúc Thọ”. Ở Nhật, người ta coi đó mới được gọi là dòng cá Koi chính thống. Họ thường có câu: “Khởi nguồn là đỏ trắng, mà kết thúc cũng là đỏ trắng” 
-            tức là người ta vốn thấy màu sắc đỏ trắng trên 1 con cá quả là 1 vẻ đẹp lạ lẫm chưa này chưa từng có
-            và tuyệt đẹp nên họ bắt đầu nuôi dưỡng nó, sau 1 thời gian người ta nhận thấy rằng chủng loài này cũng không tồi.
-          </p>
-          <img src="../img/sp1.jpg">
-          <p>
-            Sau đó còn có thêm các loại khác như asagi, shusui, shiro utsuri…nhưng rốt cục đến cuối cùng người 
-            ta vẫn cảm thấy rằng loại cá Koi thân đỏ trắng Kohaku vẫn là loài tốt nhất. 
-            Đây cũng là dòng Koi phổ biến nhất và nhiều con giá trị nhất và hay thắng giải trong các show triển lãm quốc tế và 
-            làm nên tên tuổi nhiều thương hiệu Koi..
-          </p>
-        </div>
-        <!-- <span class="btn-toggle" id="toggleBtn">Xem thêm</span> -->
-      </div>
-      
-      
-      <div class="search">
-        <label class="filter_container">Tất cả
-          <input type="radio" name="filter" value="all" checked="checked">
-          <span class="checkmark"></span>
-        </label>
-        
-        <label class="filter_container">Đang Bán
-          <input type="radio" name="filter" value="onsale">
-          <span class="checkmark"></span>
-        </label>
-        
-        <label class="filter_container">Đã bán
-          <input type="radio" name="filter" value="offsale">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-    
+    <!-- Main -->
+    <div class="main">
 
-      <div id="kohaku" class="kind">
-        <!-- Container cho các sản phẩm của loại Kohaku -->
-        <div id="products-container-kohaku" class="products-container-wrapper">
-          <div id="products-kohaku" class="products-container">
+
+        <div class="product-detail-container">
+
+
             <div class="product_img">
-              <img id="productImage" src="" alt="Product Image" />
+                  <img id="detailProductImage" src="" alt="Product Image" />
             </div>
-            <div class="product_status">
-              <button id="statusButton" class="status_button"></button>
-              <h3 id="productName"></h3>
-            </div>
-            <div class="product_details">
-              <p id="productNote"></p>
-              <div class="price">
-                <span>Giá mua ngay:</span>
-                <strong id="productPrice"></strong>
-              </div>
-              <button id="buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
-            </div>
+
+
             <div class="product_meta">
+              <div class="product_status">
+                <button id="detailStatusButton" class="status_button"></button>
+                <h3 id="productName"></h3>
+              </div>
               <p>Người bán: <strong id="salePerson"></strong></p>
-              <p>Năm sinh: <strong id="dobOfFish"></strong></p>
-              <p>Kích thước: <strong id="sizeOfFish"></strong></p>
-              <p>Giống: <span id="typeOfFish"></span></p>
-              <p>Nguồn gốc: <a id="originOfFish" href="#"></a></p>
+              <p>Thương hiệu: <strong id="brand"></strong></p>
+              <p>Loại thức ăn: <strong id="typeOfFood"></strong></p>
+              <p>Xuất xứ: <strong id="origin"></strong></p>
+              <p>Trọng lượng: <strong id="weight"></strong></p>
+              <div class="product_details">
+                <p id="detailProductNote"></p>
+                <div class="price">
+                    <span>Giá mua ngay:</span>
+                    <strong id="detailProductPrice"></strong>
+                </div>
+                <button id="buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+              </div>
             </div>
-          </div>
+
+
+            <div class="sidebar">
+              <h2>Bạn có thể quan tâm:</h2>
+              <ul>
+                <li><a href="news-page/benhKoi.html">Các bệnh thường gặp ở cá Koi</a></li>
+                <li><a href="news-page/chamSoc.html">Kỹ thuật nuôi cá Koi</a></li>
+                <li><a href="news-page/veSinh.html">Quy trình vệ sinh hồ cá Koi</a></li>
+                <li><a href="news-page/tincay.html">Trại cá Koi Nhật Bản đáng tin cậy</a></li>
+                <li><a href="news-page/phongthuy.html">Ý nghĩa nuôi cá Koi</a></li>
+              </ul>
+            </div>
+
+
         </div>
-      </div>
 
 
     </div>
 
-    <!-- Footer -->
-    <div class="footer" id="footer">
+    <!-- Main -->
 
-      <a href="#"><img src="../img/logo.png" alt="#" style="right: 20px; height: 30%; margin: auto" /></a>
+
+    <!-- Footer-->
+    <div class="footer" id="footer">
+      <a href="#"
+        ><img
+          src="img/logo.png"
+          alt="#"
+          style="right: 20px; height: 30%; margin: auto"
+      /></a>
 
       <div class="text2">
         <h3>Thông tin liên hệ:</h3>
         <p>
           Địa chỉ: 70 Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh, Việt Nam
         </p>
-        <p>
-          Tele: 0123456789
-        </p>
-        <p>
-          Email: ShopkoiFish@gmail.com
-        </p>
+        <p>Tele: 0123456789</p>
+        <p>gmail: ShopkoiFish@gmail.com</p>
       </div>
 
       <div class="social">
         <p>Mạng xã hội:</p>
         <a href="#"
-          ><img src="../img/facebook.png" style="height: 30px; width: 30px"
+          ><img src="img/facebook.png" style="height: 30px; width: 30px"
         /></a>
         <a href="#"
-          ><img src="../img/youtube.png" style="height: 30px; width: 30px"
+          ><img src="img/youtube.png" style="height: 30px; width: 30px"
         /></a>
         <a href="#"
-          ><img src="../img/insta.png" style="height: 30px; width: 30px"
+          ><img src="img/insta.png" style="height: 30px; width: 30px"
         /></a>
       </div>
-      
+
       <!-- back to top -->
       <!-- <div class="btntop">
-            <a href="#" class="top"></a>
-        </div> -->
+              <a href="#" class="top"></a>
+          </div> -->
       <!-- back to top -->
     </div>
     <!-- /Footer -->
 
     <!--Scripts-->
-    <script src="change.js"></script>
-    <script src="product.js"></script>
-    <script src="thugon.js"></script>
-    <script src="../js/user_login_register.js"></script>
-    <script src="../js/sidenav.js"></script>
-    <script src="../js/cart.js"></script>
+    <script src="js/user_login_register.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/chiTietThucAnChoCa.js"></script>
   </body>
 </html>

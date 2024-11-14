@@ -1,8 +1,8 @@
-// Function to fetch and display fish food products based on the selected type and status
-function fetchAndDisplayFishFood(typeOfFood, statusFilter) {
-    const productsContainer = document.querySelector(`#products-${typeOfFood}`);
+// Function to fetch and display fish food products
+function fetchAndDisplayFishFood(statusFilter) {
+    const productsContainer = document.querySelector(`#products-thuc-an-cho-ca`);
 
-    fetch(`http://localhost:8080/fish-food/type/${typeOfFood}`)
+    fetch(`http://localhost:8080/thuc-an-cho-ca`)
         .then(response => response.json())
         .then(data => {
             const products = data;
@@ -10,13 +10,14 @@ function fetchAndDisplayFishFood(typeOfFood, statusFilter) {
 
             // Filter products based on `statusFilter`
             const filteredProducts = statusFilter 
-                ? products.filter(product => product.sale_status.trim() === statusFilter)
+                ? products.filter(product => product.saleStatus && product.saleStatus.trim() === statusFilter)
                 : products;
 
             filteredProducts.forEach(product => {
+                const isSold = product.saleStatus.trim() === "Đã bán"; 
                 const productHTML = `
                     <div class="product_img">
-                        <a href="../chitietsanpham.html?id=${product.id}">
+                        <a href="../chiTietThucAnChoCa.html?id=${product.id}">
                             <img src="${product.image}" alt="Product Image" />
                         </a>
                     </div>
@@ -24,7 +25,7 @@ function fetchAndDisplayFishFood(typeOfFood, statusFilter) {
                         <button class="status_button" 
                             style="background-color: ${isSold ? 'gray' : ''};" 
                             ${isSold ? 'disabled' : ''}>
-                            ${product.sale_status}
+                            ${product.saleStatus}
                         </button>
                         <h3>${product.caption}</h3>
                     </div>
@@ -42,10 +43,11 @@ function fetchAndDisplayFishFood(typeOfFood, statusFilter) {
                         </button>
                     </div>
                     <div class="product_meta">
-                        <p>Người bán: <strong>${product.sale_person}</strong></p>
+                        <p>Người bán: <strong>${product.salePerson}</strong></p>
                         <p>Thương hiệu: <strong>${product.brand}</strong></p>
-                        <p>Loại thức ăn: <span>${product.type_of_food}</span></p>
-                        <p>Xuất xứ: <a href="#">${product.origin}</a></p>
+                        <p>Loại thức ăn: <strong>${product.typeOfFood}</strong></p>
+                        <p>Xuất xứ: <strong>${product.origin}</strong></p>
+                        <p>Trọng lượng: <strong>${product.weight}</strong></p>
                     </div>
                 `;
 
@@ -60,7 +62,7 @@ function fetchAndDisplayFishFood(typeOfFood, statusFilter) {
         });
 }
 
-// Event listener for radio button filter change
+// Event listeners for filter radio buttons
 document.querySelectorAll('input[name="filter"]').forEach(radio => {
     radio.addEventListener('change', handleFilterChange);
 });
@@ -69,35 +71,28 @@ function handleFilterChange() {
     const selectedFilter = document.querySelector('input[name="filter"]:checked').value;
     let statusFilter = null;
 
-    // Set the filter status based on selected radio button and save it to localStorage
+    // Determine filter status based on radio button selection
     if (selectedFilter === 'onsale') statusFilter = "Đang bán";
     else if (selectedFilter === 'offsale') statusFilter = "Đã bán";
-    
-    // Save the filter value to localStorage
+
+    // Save filter to localStorage
     localStorage.setItem('selectedFilter', selectedFilter);
 
-    const kindElements = document.querySelectorAll('.kind');
-    kindElements.forEach(element => {
-        const typeOfFood = element.id.toLowerCase();
-        fetchAndDisplayFishFood(typeOfFood, statusFilter);
-    });
+    // Fetch and display products with the selected filter
+    fetchAndDisplayFishFood(statusFilter);
 }
 
-// Initialize display of products based on saved filter status or default
+// Initialize product display based on saved filter or default
 document.addEventListener('DOMContentLoaded', () => {
     const savedFilter = localStorage.getItem('selectedFilter') || 'all';
     let statusFilter = null;
 
-    // Update radio button state from localStorage
+    // Update radio button status from localStorage
     document.querySelector(`input[name="filter"][value="${savedFilter}"]`).checked = true;
 
-    // Set the filter status based on saved value
+    // Determine filter status based on saved value
     if (savedFilter === 'onsale') statusFilter = "Đang bán";
     else if (savedFilter === 'offsale') statusFilter = "Đã bán";
 
-    const kindElements = document.querySelectorAll('.kind');
-    kindElements.forEach(element => {
-        const typeOfFood = element.id.toLowerCase();
-        fetchAndDisplayFishFood(typeOfFood, statusFilter);
-    });
+    fetchAndDisplayFishFood(statusFilter);
 });
