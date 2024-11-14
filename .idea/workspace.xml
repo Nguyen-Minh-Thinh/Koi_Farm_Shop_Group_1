@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/GioHangController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/GioHangController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHang.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHangDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/GioHangDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/GioHangRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/repository/GioHangRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangService.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangServiceImple.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/service/GioHangServiceImple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanpham/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +145,7 @@
       <workItem from="1731406067579" duration="5997000" />
       <workItem from="1731487440704" duration="113000" />
       <workItem from="1731509689390" duration="14000" />
-      <workItem from="1731551075247" duration="1455000" />
+      <workItem from="1731551075247" duration="4857000" />
     </task>
     <servers />
   </component>
