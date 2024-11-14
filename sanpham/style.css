@@ -14,10 +14,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: 00CCDD;
+    background-color: #00CCDD;
     color: #111;
     font-family: Arial, sans-serif;
 }
+
 
 /* Chức năng */
 .top_head {
@@ -46,6 +47,26 @@
     margin-left: 20px;
     text-align: left;
 }
+
+.function {
+    display: flex;
+    align-items: center;
+}
+
+.function a {
+    margin-left: 10px;
+    background-color: transparent;
+    transition: color 0.3s;
+}
+
+.function a:hover {
+    color: #ddd;
+}
+
+#settingsLink, #logoutLink {
+    display: none;
+}
+
 
 /* User đăng nhập, đăng ký */
 /* Modal styling */
@@ -170,8 +191,6 @@ a:hover {
 .menu_bar {
     display: flex;
     list-style-type: none;
-    
-    
 }
 
 .menu_bar .menu {
@@ -180,9 +199,9 @@ a:hover {
 }
 
 .menu_bar .menu a {
-    color: rgb(255, 255, 255);
+    color: white;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 23px 30px;
     display: block;
     font-weight: bold;
 }
@@ -196,8 +215,7 @@ a:hover {
 .sub_menu {
     display: none;
     position: absolute;
-    background-color: black;
-    min-width: 160px;
+    background-color: #111;
     z-index: 999;
     list-style-type: none;
     top: 100%;
@@ -214,14 +232,14 @@ a:hover {
 }
 
 .sub_menu li a {
-    color: white;
+    color: #111;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .sub_menu li a:hover {
-    background-color: white;
+    background-color: #ddd;
 }
 
 .menu:hover .sub_menu {
@@ -281,6 +299,63 @@ h1 {
 
 /* CSS main */
 
+.search {
+    margin-left:100px;
+}
+
+.filter_container {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.filter_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.filter_container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.filter_container input:checked ~ .checkmark {
+    background-color: #e00000;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.filter_container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+
+.filter_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
 /* Sản phẩm */
 /* Container cho danh sách sản phẩm */
 .products-container-wrapper {
@@ -296,6 +371,8 @@ h1 {
 .products-container {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 100px;
     width: 100%;
 }
 
@@ -485,17 +562,24 @@ ul.breadcrumb li a:hover {
 }
 
 .introduce {
-    max-height: 30px; /* Chiều cao mặc định khi thu gọn */
+    max-height: 100%; /* Chiều cao mặc định khi thu gọn */
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
 }
 
 .introduce p {
+    font-size: 20px;
     color: #c1784b;
 }
 
 .introduce.show {
-    max-height: 500px; /* Chiều cao tối đa khi mở rộng */
+    max-height: 100%; /* Chiều cao tối đa khi mở rộng */
+}
+
+.introduce img {
+    margin: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
 }
 
 .btn-toggle {
@@ -515,9 +599,10 @@ ul.breadcrumb li a:hover {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
+    margin-top: 20px;
     margin-bottom: 50px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
     
 }
 
@@ -549,6 +634,98 @@ ul.breadcrumb li a:hover {
 .text2 {
     padding-left: 250px;
     text-align: center;
+}
+
+/* Phần include */
+.c {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #e8e8e8;
+}
+
+.c1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+.grid-item a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 20px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.grid-item h3 {
+    margin: 15px 0 10px;
+    font-size: 1.2rem;
+}
+
+.grid-item p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.grid-item button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.grid-item button:hover {
+    background-color: #b71c1c;
+}
+
+.intro, .process {
+    margin:auto;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.intro p, .process p {
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: #333; 
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+strong {
+    color: #006699;
 }
 
 /* .btntop {

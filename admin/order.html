@@ -21,6 +21,7 @@
             <ul class="sidebar-menu">
                 <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Thống kê</a></li>
                 <li><a href="product.html"><i class="fas fa-box"></i> Quản lý sản phẩm</a></li>
+                <li><a href="food.html"><i class="fas fa-fish"></i> Quản lý thức ăn</a></li> <!-- New link -->
                 <li><a href="order.html"><i class="fas fa-shopping-cart"></i> Quản lý đơn hàng</a></li>
                 <li><a href="customer.html"><i class="fas fa-user"></i> Quản lý khách hàng</a></li>
                 <li><a href="category.html"><i class="fas fa-list"></i> Quản lý danh mục</a></li>
@@ -69,16 +70,15 @@
     <!-- Order Details Modal -->
     <div id="orderModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="closes">&times;</span>
             <h2>CHI TIẾT ĐƠN HÀNG</h2>
             <div class="order-details-container">
                 <div id="order-items" class="order-items"></div>
                 <div id="order-info-container" class="order-info"></div>
             </div>
             <div id="order-total" class="order-total">
-                <p><strong>Thành tiền:</strong> <span id="total-price"></span></p>
+                <p><strong>Thành tiền:</strong> <span id="total-price"></span> ₫</p>
             </div>
-            <button class="btn cancel-btn">Chưa xử lý</button>
         </div>
     </div>
 
@@ -102,7 +102,6 @@
             <h3>Thêm tình trạng mới</h3>
             <div class="add-status-form">
                 <input type="text" id="new-time" placeholder="Thời gian (VD: 13/10/2024 20h00)">
-                <label for="new-situation">Tình trạng:</label>
                 <select id="new-situation">
                   <option value="cho-xac-nhan">Đang xử lý</option>
                   <option value="dang-giao">Đang vận chuyển</option>
@@ -115,7 +114,24 @@
         </div>
     </div>
 
+
     <!-- Include the order.js script -->
+    <script>
+        // Hàm để định dạng thời gian hiện tại
+        function getCurrentTimeFormatted() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        }
+
+        // Tự động điền thời gian hiện tại vào trường nhập liệu
+        document.getElementById('new-time').value = getCurrentTimeFormatted();
+    </script>
     <script src="order.js"></script>
 </body>
 

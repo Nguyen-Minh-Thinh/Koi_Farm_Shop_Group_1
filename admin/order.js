@@ -14,11 +14,15 @@ async function fetchOrders() {
 
 // Load data when the page is loaded
 async function loadData() {
-  const orders = await fetchOrders();
+    const orders = await fetchOrders();
 
-  if (orders) {
-      populateOrderTable(orders);  // Display order data in the table
-  }
+    if (orders) {
+        // Sắp xếp đơn hàng theo order.id giảm dần
+        orders.sort((a, b) => b.id - a.id);
+        
+        // Hiển thị dữ liệu đơn hàng trong bảng
+        populateOrderTable(orders);
+    }
 }
 
 loadData();
@@ -32,9 +36,9 @@ function generateOrderRow(order) {
       <tr>
           <td>${order.id}</td>
           <td>${order.deliveryTime}</td>
-          <td>${order.phoneNumber.tenKhachHang}</td>
+          <td>${order.userName}</td>
           <td><span class="status ${latestStatus.situation === 'Đã giao hàng' ? 'delivered' : latestStatus.situation === 'Đã hủy' ? 'canceled' : 'processing'}">${latestStatus.situation}</span></td>
-          <td>${order.totalPrice}Đ</td>
+          <td>${order.totalPrice} ₫</td>
           <td>
               <button class="btn view-btn" onclick="viewOrderDetails(${order.id})">Xem</button>
               <button class="btn view-btn" onclick="viewStatusHistory(${order.id})">Tình trạng</button>
@@ -111,7 +115,6 @@ function generateOrderDetails(order) {
               <div class="order-item-details">
                   <h4>${detail.idOfFish.nameOfFish}</h4>
                   <p><i>${detail.idOfFish.originOfFish}</i></p>
-                  <p>SL: ${detail.quantity}</p>
               </div>
           </div>
       `;
@@ -121,7 +124,7 @@ function generateOrderDetails(order) {
       <div class="order-info">
           <p><strong>Ngày đặt hàng:</strong> ${order.orderDate}</p>
           <p><strong>Hình thức giao:</strong> ${order.pay}</p>
-          <p><strong>Người nhận:</strong> ${order.userName}</p>
+          <p><strong>Tài khoản đặt hàng:</strong> ${order.phoneNumber.tenKhachHang}</p>
           <p><strong>Số điện thoại:</strong> ${order.phoneNumber.phoneNumber}</p>
           <p><strong>Thời gian giao:</strong> ${order.deliveryTime}</p>
           <p><strong>Địa chỉ nhận:</strong> ${order.address}</p>
@@ -143,7 +146,7 @@ function viewOrderDetails(orderId) {
           const modal = document.getElementById('orderModal');
           modal.style.display = "block";
 
-          const closeBtn = document.getElementsByClassName("close")[0];
+          const closeBtn = document.getElementsByClassName("closes")[0];
           closeBtn.onclick = function() {
               modal.style.display = "none";
           };
@@ -162,12 +165,12 @@ function viewStatusHistory(orderId) {
     fetchOrders().then((orders) => {
         const order = orders.find(o => o.id === orderId);
         if (order) {
-            // Sắp xếp theo thời gian tăng dần
-            order.tinhTrangDonHangs.sort((a, b) => new Date(a.times) - new Date(b.times));
-  
+            // Sắp xếp trạng thái theo id tăng dần
+            order.tinhTrangDonHangs.sort((a, b) => a.id - b.id);
+    
             const statusTableBody = document.getElementById('status-table-body');
             let statusRowsHtml = '';
-  
+    
             order.tinhTrangDonHangs.forEach(status => {
                 statusRowsHtml += `
                     <tr>
@@ -177,18 +180,18 @@ function viewStatusHistory(orderId) {
                     </tr>
                 `;
             });
-  
+    
             statusTableBody.innerHTML = statusRowsHtml;
             statusTableBody.dataset.orderId = order.id;
-  
+    
             const statusModal = document.getElementById('statusModal');
             statusModal.style.display = "block";
-  
+    
             const closeStatusBtn = document.getElementsByClassName("close-status")[0];
             closeStatusBtn.onclick = function() {
                 statusModal.style.display = "none";
             };
-  
+    
             window.onclick = function(event) {
                 if (event.target == statusModal) {
                     statusModal.style.display = "none";
@@ -227,7 +230,8 @@ function viewStatusHistory(orderId) {
         }
         
         console.log("Status added: ", await response.json());
-        alert("Status added successfully!");
+        alert("Đã thêm trạng thái thành công!");
+        window.location.href = "./order.html";
         
     } catch (error) {
         console.error("Error posting new status: ", error);

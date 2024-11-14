@@ -12,15 +12,20 @@
             scroll-behavior: smooth;
             height: auto;
             width: auto;
+            font-size: 12px;
             font-family: Arial, sans-serif;
         }
 
         body {
-            background-image: url("../img/background.jpg");
             background-size: 100% 250%;
             background-repeat: no-repeat;
             
         }
+
+        .none {
+            width: 40px;
+        }
+
         .cart-container {
             margin-top: 20px;
         }
@@ -32,12 +37,13 @@
         }
 
         .cart-table {
+            height: 50%;
             width: 100%;
             border-collapse: collapse;
         }
 
         .cart-table th, .cart-table td {
-            padding: 15px;
+            padding: 8px;
             text-align: center;
             border: 1px solid #dee2e6;
         }
@@ -112,7 +118,7 @@
     <a href="homepage.html" class="back-arrow"></a>
     <div class="container cart-container">
         <div class="cart-header">
-            <h2>Giỏ hàng</h2>
+            <h2>Giỏ hàng của bạn:</h2>
         </div>
         <table class="cart-table" id="cart-table">
             <thead>
@@ -120,6 +126,7 @@
                     <th>Tên</th>
                     <th>Ảnh sản phẩm</th>
                     <th>Giá</th>
+                    <th class="none">Xóa sản phẩm</th>
                 </tr>
             </thead>
             <tbody class="displayCart">

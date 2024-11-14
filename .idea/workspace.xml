@@ -7,8 +7,20 @@
     <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+HEAD
       <change beforePath="$PROJECT_DIR$/admin/promotion.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/promotion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chitietsanpham.html" beforeDir="false" afterPath="$PROJECT_DIR$/chitietsanpham.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Asagi.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Asagi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Food.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Food.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Kohaku.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Kohaku.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Showa.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Showa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Shusui.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Shusui.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Tancho.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Tancho.html" afterDir="false" />
+5d39fc91dd9357620470bcf8eccbdd676fa688f9
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="com.intellij.jpb.JpaEntity" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -146,7 +158,19 @@
       <workItem from="1731222028907" duration="6072000" />
       <workItem from="1731260704650" duration="1161000" />
       <workItem from="1731406067579" duration="5997000" />
+HEAD
       <workItem from="1731420579320" duration="1201000" />
+
+      <workItem from="1731487440704" duration="113000" />
+      <workItem from="1731509689390" duration="14000" />
+      <workItem from="1731551075247" duration="1455000" />
+HEAD
+      <workItem from="1731574009567" duration="4471000" />
+
+      <workItem from="1731574009567" duration="3684000" />
+      <workItem from="1731584492863" duration="1469000" />
+e9ccc77cf8b964746fb352986fb7243e90932012
+5d39fc91dd9357620470bcf8eccbdd676fa688f9
     </task>
     <servers />
   </component>

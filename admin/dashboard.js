@@ -185,7 +185,7 @@ async function fetchData() {
         // Vẽ biểu đồ số lượng loại cá koi
         const fishTypeCtx = document.getElementById('fishTypeChart').getContext('2d');
         new Chart(fishTypeCtx, {
-            type: 'doughnut',
+            type: 'bar', // Biểu đồ cột
             data: {
                 labels: fishTypeLabels,
                 datasets: [{
@@ -217,6 +217,69 @@ async function fetchData() {
                 plugins: {
                     legend: {
                         position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Lấy dữ liệu từ API cho thức ăn cá koi
+        const foodResponse = await fetch("http://localhost:8080/thuc-an-cho-ca");
+        const foodData = await foodResponse.json();
+
+        // Nhóm và đếm số lượng từng loại thức ăn cá koi
+        const foodTypeCounts = foodData.reduce((acc, food) => {
+            acc[food.typeOfFood] = (acc[food.typeOfFood] || 0) + 1;
+            return acc;
+        }, {});
+
+        const foodTypeLabels = Object.keys(foodTypeCounts);
+        const foodTypeDataValues = Object.values(foodTypeCounts);
+
+        // Vẽ biểu đồ số lượng loại thức ăn cá koi
+        const foodTypeCtx = document.getElementById('foodTypeChart').getContext('2d');
+        new Chart(foodTypeCtx, {
+            type: 'bar', // Sử dụng biểu đồ cột cho loại thức ăn cá koi
+            data: {
+                labels: foodTypeLabels,
+                datasets: [{
+                    label: 'Số lượng loại thức ăn cá koi',
+                    data: foodTypeDataValues,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(199, 199, 199, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(199, 199, 199, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
                     }
                 }
             }

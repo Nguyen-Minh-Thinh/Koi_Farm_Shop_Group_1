@@ -14,12 +14,29 @@
         <span>0123456789</span>
       </div>
       <div class="function">
-        <a href="#" id="loginBtn" style="margin-right: 20px">Đăng nhập/Đăng ký</a>
-        <a href="#" id="settingsLink" style="margin-right: 20px; display: none;">Cài đặt</a>
-        <a href="#" id="logoutLink" style="display: none;">Đăng xuất</a>
-
-        <!-- <a href="cart.html">Giỏ hàng</a> -->
-
+        <a
+          href="../cart.html"
+          id="shoppingCart"
+          style="display: none; margin-right: 20px"
+        >
+          <img
+            src="../img/shopping-cart2.png"
+            alt="Giỏ hàng"
+            style="height: 40px; width: 40px"
+          />
+        </a>
+        <a href="#" id="loginBtn" style="margin-right: 20px"
+          >Đăng nhập/Đăng ký</a
+        >
+        <span id="userName" style="display: none; margin-right: 20px"></span>
+        <!-- Thêm thẻ span cho tên người dùng -->
+        <a
+          href="../caidat.html"
+          id="settingsLink"
+          style="margin-right: 10px; display: none"
+          >Cài đặt</a
+        >
+        <a href="#" id="logoutLink" style="display: none">Đăng xuất</a>
       </div>
     </div>
 
@@ -31,7 +48,7 @@
 
         <!-- Login Form -->
         <div id="loginForm">
-          <h2 style="text-align: center;">Đăng nhập</h2>
+          <h2 style="text-align: center">Đăng nhập</h2>
           <form id="loginFormElement" action="/login" method="POST">
             <div class="form-group">
               <label for="username">Tên đăng nhập:</label>
@@ -41,7 +58,13 @@
               <label for="password">Mật khẩu:</label>
               <input type="password" id="password" name="password" required />
             </div>
-            <button type="submit" class="button" style="width: 20%; margin-left: 40%;">Đăng nhập</button>
+            <button
+              type="submit"
+              class="button"
+              style="width: 20%; margin-left: 40%"
+            >
+              Đăng nhập
+            </button>
             <p><a href="#" id="forgotPassword">Quên mật khẩu?</a></p>
             <p>Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký</a></p>
           </form>
@@ -49,7 +72,7 @@
 
         <!-- Register Form (hidden initially) -->
         <div id="registerForm" style="display: none">
-          <h2 style="text-align: center;">Đăng ký</h2>
+          <h2 style="text-align: center">Đăng ký</h2>
           <form action="/register" method="POST">
             <div class="form-group">
               <label for="reg_username">Tên đăng nhập:</label>
@@ -60,7 +83,15 @@
                 required
               />
             </div>
-            <p id="error-message-1" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <p
+              id="error-message-1"
+              style="
+                display: none;
+                font-size: 0.8em;
+                color: red;
+                margin-left: -100px;
+              "
+            ></p>
             <div class="form-group">
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required />
@@ -83,7 +114,15 @@
                 required
               />
             </div>
-            <p id="error-message-2" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <p
+              id="error-message-2"
+              style="
+                display: none;
+                font-size: 0.8em;
+                color: red;
+                margin-left: -100px;
+              "
+            ></p>
             <div class="form-group">
               <label for="phone">Số điện thoại:</label>
               <input
@@ -94,15 +133,21 @@
                 required
               />
             </div>
-            <button type="submit" style="width: 20%; margin-left: 40%;">Đăng ký</button>
+            <button type="submit" style="width: 20%; margin-left: 40%">
+              Đăng ký
+            </button>
             <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
           </form>
         </div>
 
         <!-- Forgot Password Form (hidden initially) -->
         <div id="forgotPasswordForm" style="display: none">
-          <h2 style="text-align: center;">Quên mật khẩu</h2>
-          <form action="/forgot-password" method="POST">
+          <h2 style="text-align: center">Quên mật khẩu</h2>
+          <form
+            id="forgotPasswordFormElement"
+            action="/forgot-password"
+            method="POST"
+          >
             <div class="form-group">
               <label for="forgot_user_name">Nhập tên đăng nhập:</label>
               <input
@@ -112,7 +157,10 @@
                 required
               />
             </div>
-            <p id="error-message-3" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+            <p
+              id="error-message-3"
+              style="display: none; font-size: 0.8em; color: red"
+            ></p>
             <div class="form-group">
               <label for="forgot_email">Nhập email của bạn:</label>
               <input
@@ -122,12 +170,94 @@
                 required
               />
             </div>
-            <p id="error-message-4" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
-            <button type="submit" style="width: 30%; margin-left: 35%;">Lấy lại mật khẩu</button>
+            <p
+              id="error-message-4"
+              style="display: none; font-size: 0.8em; color: red"
+            ></p>
+            <button type="submit" style="width: 30%; margin-left: 35%">
+              Lấy lại mật khẩu
+            </button>
             <p>Quay lại <a href="#" id="backToLogin">Đăng nhập</a></p>
           </form>
         </div>
 
+        <!-- Form xác minh mã -->
+        <!-- Form nhập mã xác minh -->
+        <div id="verifyCodeForm" style="display: none">
+          <label for="reset_code">Mã xác minh:</label>
+          <input type="text" id="reset_code" required />
+          <p
+            id="error-message-verify"
+            style="color: red; display: none; font-size: 0.8em"
+          ></p>
+          <div style="margin-top: 10px; display: flex; justify-content: center">
+            <!-- Sử dụng flexbox để căn giữa -->
+            <button id="verifyCodeButton" style="width: 150px">
+              Xác minh mã
+            </button>
+          </div>
+
+          <div id="timer" style="display: none">
+            Thời gian còn lại: <span id="countdown">60</span>s
+          </div>
+        </div>
+
+        <!-- Đặt lại mật khẩu-->
+        <div id="resetPasswordForm" style="display: none; height: 200px">
+          <div style="margin-top: 10px">
+            <label for="new_password">Mật khẩu mới:</label>
+            <input
+              type="password"
+              id="new_password"
+              style="margin-top: 10px"
+              required
+            />
+            <p
+              id="error-message-new-password"
+              style="
+                color: red;
+                display: none;
+                margin-top: 5px;
+                font-size: 0.8em;
+              "
+            ></p>
+          </div>
+
+          <div style="margin-top: 10px">
+            <label for="confirm_password_new">Xác nhận lại mật khẩu:</label>
+            <input
+              type="password"
+              id="confirm_password_new"
+              style="margin-top: 10px"
+              required
+            />
+            <p
+              id="error-message-confirm-password"
+              style="
+                color: red;
+                display: none;
+                margin-top: 5px;
+                font-size: 0.8em;
+              "
+            ></p>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; justify-content: center">
+            <button id="resetPasswordButton" style="width: 180px">
+              Đặt lại mật khẩu
+            </button>
+          </div>
+
+          <p
+            id="error-message-reset"
+            style="
+              color: red;
+              display: none;
+              margin-top: 10px;
+              font-size: 0.8em;
+            "
+          ></p>
+        </div>
       </div>
     </div>
 
@@ -148,45 +278,30 @@
         </li>
 
         <li class="menu">
-          <a href="#">Giới Thiệu</a>
-          <ul class="sub_menu">
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#">Giới thiệu sàn ký gửi</a></li>
-            <li><a href="#">Giới thiệu sàn đấu giá</a></li>
-            <li><a href="#">Các đơn vị bán koi</a></li>
-            <li><a href="#">Nguồn Koi của OnKoi</a></li>
-            <li><a href="#">Hướng dẫn</a></li>
-          </ul>
+          <a href="../gioithieu.html">Giới Thiệu</a>
         </li>
 
         <li class="menu">
           <a href="#">Các loại cá</a>
           <ul class="sub_menu">
-            <li><a href="#">Koi Kohaku</a></li>
-            <li><a href="#">koi Ogon</a></li>
-            <li><a href="#">Koi Showa</a></li>
-            <li><a href="#">Koi Tancho</a></li>
+            <li><a href="Kohaku.html">Koi Kohaku</a></li>
+            <li><a href="Shusui.html">koi Shusui</a></li>
+            <li><a href="Showa.html">Koi Showa</a></li>
+            <li><a href="Tancho.html">Koi Tancho</a></li>
+            <li><a href="Asagi.html">Koi Asagi</a></li>
           </ul>
         </li>
 
         <li class="menu">
-          <a href="#">Sản phẩm</a>
-          <ul class="sub_menu">
-            <li><a href="#">Hệ thống lọc hồ</a></li>
-            <li><a href="#">Phụ kiện trang trí</a></li>
-          </ul>
+          <a href="../tintuc.html">Tin tức</a>
         </li>
 
         <li class="menu">
-          <a href="tintuc.html">Tin tức</a>
+          <a href="Food.html">Thức ăn cho cá</a>
         </li>
 
         <li class="menu">
-          <a href="#">Thức ăn cho cá</a>
-        </li>
-
-        <li class="menu">
-          <a href="#">Liên hệ</a>
+          <a href="#footer">Liên hệ</a>
         </li>
 
       </div>
@@ -204,22 +319,40 @@
       <div class="profile">
         <div class="introduce" id="introduce">
           <h1>Koi Kohaku</h1>
-          <p>Cá Koi thân đỏ trắng Kohaku là dòng cá tiêu biểu, đại diện cho khả năng sinh sôi nảy nở cực tốt và cũng là 1 trong những dòng cá có tuổi thọ cao. Vì thế còn được gọi 
-            là “Cá Phúc Thọ”. Ở Nhật, người ta coi đó mới được gọi là dòng cá Koi chính thống. Họ thường có câu: “Khởi nguồn là đỏ trắng, mà kết thúc cũng là đỏ trắng” 
-            tức là người ta vốn thấy màu sắc đỏ trắng trên 1 con cá quả là 1 vẻ đẹp lạ lẫm chưa này chưa từng có và tuyệt đẹp nên họ bắt đầu nuôi dưỡng nó, sau 1 thời gian người ta nhận thấy rằng
-            chủng loài này cũng không tồi.</p>
+          <p>
+            Cá Koi thân đỏ trắng Kohaku là dòng cá tiêu biểu, đại diện cho khả năng sinh sôi nảy nở cực tốt và cũng
+            là 1 trong những dòng cá có tuổi thọ cao. Vì thế còn được gọi là “Cá Phúc Thọ”. Ở Nhật, người ta coi đó mới được gọi là dòng cá Koi chính thống. Họ thường có câu: “Khởi nguồn là đỏ trắng, mà kết thúc cũng là đỏ trắng” 
+            tức là người ta vốn thấy màu sắc đỏ trắng trên 1 con cá quả là 1 vẻ đẹp lạ lẫm chưa này chưa từng có
+            và tuyệt đẹp nên họ bắt đầu nuôi dưỡng nó, sau 1 thời gian người ta nhận thấy rằng chủng loài này cũng không tồi.
+          </p>
+          <img src="../img/sp1.jpg">
+          <p>
+            Sau đó còn có thêm các loại khác như asagi, shusui, shiro utsuri…nhưng rốt cục đến cuối cùng người 
+            ta vẫn cảm thấy rằng loại cá Koi thân đỏ trắng Kohaku vẫn là loài tốt nhất. 
+            Đây cũng là dòng Koi phổ biến nhất và nhiều con giá trị nhất và hay thắng giải trong các show triển lãm quốc tế và 
+            làm nên tên tuổi nhiều thương hiệu Koi..
+          </p>
         </div>
-        <span class="btn-toggle" id="toggleBtn">Xem thêm</span>
+        <!-- <span class="btn-toggle" id="toggleBtn">Xem thêm</span> -->
       </div>
-
-      <div class="filter-container">
-        <label for="statusFilter">Lọc sản phẩm:</label>
-        <select id="statusFilter">
-            <option value="all">Tất cả</option>
-            <option value="Đang bán">Đang bán</option>
-            <option value="Đã bán">Đã bán</option>
-        </select>
-    </div>
+      
+      
+      <div class="search">
+        <label class="filter_container">Tất cả
+          <input type="radio" name="filter" value="all" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        
+        <label class="filter_container">Đang Bán
+          <input type="radio" name="filter" value="onsale">
+          <span class="checkmark"></span>
+        </label>
+        
+        <label class="filter_container">Đã bán
+          <input type="radio" name="filter" value="offsale">
+          <span class="checkmark"></span>
+        </label>
+      </div>
     
 
       <div id="kohaku" class="kind">
@@ -252,8 +385,61 @@
         </div>
       </div>
 
-    </div>
 
+    </div>
+    <div class="c">
+      <h1>Blog Koi Nhật Bản & Tin tức</h1>
+      <div class="c1">
+          <div class="grid-item">
+              <a href="../news-page/tincay.html">
+                  <img src="https://onkoi.vn/wp-content/uploads/2020/05/mino-koi-farm-300x182.jpg" alt="#">
+                  <h3>Nguồn gốc cá Koi của trang trại</h3>
+                  <p>Xuất phát từ tình yêu với cá Koi Nhật Bản...</p>
+                  <button>Xem thêm</button>
+              </a>
+          </div>
+          <div class="grid-item">
+              <a href="../news-page/phongthuy.html">
+                  <img src="https://onkoi.vn/wp-content/uploads/2020/04/quy-trinh-ve-sinh-ho-ca-koi-chuan-chi-300x225.jpg" alt="#">
+                  <h3>Ý nghĩa của việc nuôi cá koi</h3>
+                  <p>Từ lâu, trong văn hóa phương Đông...</p>
+                  <button>Xem thêm</button>
+              </a>
+          </div>
+          <div class="grid-item">
+              <a href="../news-page/giaca.html">
+                  <img src="https://onkoi.vn/wp-content/uploads/2022/04/thuc-an-koi-40-protein-aquamaster-hi-growth-15-kg-CA16_02-300x300.jpg" alt="#">
+                  <h3>Giá cá koi chuẩn nhật</h3>
+                  <p>Giá cá koi chuẩn nhật f0 + f1 70 cm...</p>
+                  <button>Xem thêm</button>
+              </a>
+          </div>
+          <div class="grid-item">
+              <a href="../news-page/benhKoi.html">
+                  <img src="https://onkoi.vn/wp-content/uploads/2020/04/5dc3dd7495ce6e9037df-300x266.jpg" alt="#">
+                  <h3>Các bệnh cá koi</h3>
+                  <p>Các bệnh cá koi kèm dấu hiệu và cách phòng, chữa bệnh...</p>
+                  <button>Xem thêm</button>
+              </a>
+          </div>
+          <div class="grid-item">
+              <a href="../news-page/veSinh.html">
+                  <img src="https://onkoi.vn/wp-content/uploads/2020/04/quy-trinh-ve-sinh-ho-ca-koi-chuan-chi-300x225.jpg" alt="#">
+                  <h3>Quy trình vệ sinh hồ cá koi chuẩn chỉ</h3>
+                  <p>Quy trình vệ sinh hồ cá Koi đơn giản...</p>
+                  <button>Xem thêm</button>
+              </a>
+          </div>
+          <div class="grid-item">
+              <a href="../news-page/chamSoc.html">
+                  <img src="https://onkoi.vn/wp-content/uploads/2020/04/ca_koi_nhat_8-300x169.jpg" alt="#">
+                  <h3>Hướng dẫn kỹ thuật nuôi cá koi</h3>
+                  <p>Cá Koi có thể sống lên tới hơn 225 tuổi...</p>
+                  <button>Xem thêm</button>
+              </a>
+          </div>
+      </div>
+  </div>
     <!-- Footer -->
     <div class="footer" id="footer">
 
@@ -268,7 +454,7 @@
           Tele: 0123456789
         </p>
         <p>
-          gmail: ShopkoiFish@gmail.com
+          Email: ShopkoiFish@gmail.com
         </p>
       </div>
 

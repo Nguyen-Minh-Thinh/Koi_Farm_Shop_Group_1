@@ -18,5 +18,11 @@ public interface GioHangRepository extends JpaRepository<GioHang, Integer> {
     @Modifying
     @Transactional
     @Query("DELETE FROM GioHang g WHERE g.taiKhoanNguoiDung = :userName")
-    void deleteByUserName(@Param("userName") String userName);
+    int deleteByUserName(@Param("userName") String userName);
+
+    @Modifying
+    @Transactional
+    @Query("DELETE FROM GioHang g WHERE g.taiKhoanNguoiDung = :tai_khoan_nguoi_dung AND g.idOfFish = :id_of_fish")
+    int deleteByUserNameAndItemID(@Param("tai_khoan_nguoi_dung") String userName, @Param("id_of_fish") String itemID);
+
 }

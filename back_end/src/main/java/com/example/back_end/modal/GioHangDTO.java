@@ -4,17 +4,15 @@ public class GioHangDTO{
     private Integer id;
     private String id_of_fish;
 
-    private Integer soLuong;
     private Integer tongCong;
     private String tai_khoan_nguoi_dung;
     private String tenSanPham;
     private String image;
 
-    public GioHangDTO(Integer id, String id_of_fish, Integer soLuong, Integer tongCong, String tai_khoan_nguoi_dung, String tenSanPham, String image) {
+    public GioHangDTO(Integer id, String id_of_fish, Integer tongCong, String tai_khoan_nguoi_dung, String tenSanPham, String image) {
         this.id = id;
         this.id_of_fish = id_of_fish;
 
-        this.soLuong = soLuong;
         this.tongCong = tongCong;
         this.tai_khoan_nguoi_dung = tai_khoan_nguoi_dung;
         this.tenSanPham = tenSanPham;
@@ -51,14 +49,6 @@ public class GioHangDTO{
 
     public void setTenSanPham(String tenSanPham) {
         this.tenSanPham = tenSanPham;
-    }
-
-    public Integer getSoLuong() {
-        return soLuong;
-    }
-
-    public void setSoLuong(Integer soLuong) {
-        this.soLuong = soLuong;
     }
 
     public Integer getTongCong() {

@@ -144,15 +144,15 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.close {
+.closes {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.closes:hover,
+.closes:focus {
     color: black;
     cursor: pointer;
 }
@@ -232,15 +232,15 @@
 }
 
 /* The Close Button */
-.close, .close-status {
+.closes, .close-status {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover, .close-status:hover,
-.close:focus, .close-status:focus {
+.closes:hover, .close-status:hover,
+.closes:focus, .close-status:focus {
     color: black;
     cursor: pointer;
 }
@@ -366,14 +366,14 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.close {
+.closes {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover, .close:focus {
+.closes:hover, .closes:focus {
     color: black;
     cursor: pointer;
 }

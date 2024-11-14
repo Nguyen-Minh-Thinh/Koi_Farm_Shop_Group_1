@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang trại cá Koi</title>
+    <link rel="stylesheet" href="css/detail.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <!-- Chức năng -->
+    <div class="top_head">
+      <div class="tele">
+        <img src="img/telephone.png" style="height: 15px; width: 15px" />
+        <span>0123456789</span>
+      </div>
+      <div class="function">
+        <a
+          href="cart.html"
+          id="shoppingCart"
+          style="display: none; margin-right: 20px"
+        >
+          <img
+            src="./img/shopping-cart2.png"
+            alt="Giỏ hàng"
+            style="height: 40px; width: 40px"
+          />
+        </a>
+        <a href="#" id="loginBtn" style="margin-right: 20px"
+          >Đăng nhập/Đăng ký</a
+        >
+        <span id="userName" style="display: none; margin-right: 20px"></span>
+        <!-- Thêm thẻ span cho tên người dùng -->
+        <a
+          href="./caidat.html"
+          id="settingsLink"
+          style="margin-right: 10px; display: none"
+          >Cài đặt</a
+        >
+        <a href="#" id="logoutLink" style="display: none">Đăng xuất</a>
+      </div>
+    </div>
+
+    <!--Thịnh bố sung thêm đăng nhập, đăng ký cho user-->
+    <!-- Modal for Login/Register -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+          <h2 style="text-align: center">Đăng nhập</h2>
+          <form id="loginFormElement" action="/login" method="POST">
+            <div class="form-group">
+              <label for="username">Tên đăng nhập:</label>
+              <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Mật khẩu:</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <button
+              type="submit"
+              class="button"
+              style="width: 20%; margin-left: 40%"
+            >
+              Đăng nhập
+            </button>
+            <p><a href="#" id="forgotPassword">Quên mật khẩu?</a></p>
+            <p>Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký</a></p>
+          </form>
+        </div>
+
+        <!-- Register Form (hidden initially) -->
+        <div id="registerForm" style="display: none">
+          <h2 style="text-align: center">Đăng ký</h2>
+          <form action="/register" method="POST">
+            <div class="form-group">
+              <label for="reg_username">Tên đăng nhập:</label>
+              <input
+                type="text"
+                id="reg_username"
+                name="reg_username"
+                required
+              />
+            </div>
+            <p
+              id="error-message-1"
+              style="
+                display: none;
+                font-size: 0.8em;
+                color: red;
+                margin-left: -100px;
+              "
+            ></p>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="reg_password">Mật khẩu:</label>
+              <input
+                type="password"
+                id="reg_password"
+                name="reg_password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirm_password">Xác nhận mật khẩu:</label>
+              <input
+                type="password"
+                id="confirm_password"
+                name="confirm_password"
+                required
+              />
+            </div>
+            <p
+              id="error-message-2"
+              style="
+                display: none;
+                font-size: 0.8em;
+                color: red;
+                margin-left: -100px;
+              "
+            ></p>
+            <div class="form-group">
+              <label for="phone">Số điện thoại:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{10}"
+                required
+              />
+            </div>
+            <button type="submit" style="width: 20%; margin-left: 40%">
+              Đăng ký
+            </button>
+            <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
+          </form>
+        </div>
+
+        <!-- Forgot Password Form (hidden initially) -->
+        <div id="forgotPasswordForm" style="display: none">
+          <h2 style="text-align: center">Quên mật khẩu</h2>
+          <form
+            id="forgotPasswordFormElement"
+            action="/forgot-password"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="forgot_user_name">Nhập tên đăng nhập:</label>
+              <input
+                type="text"
+                id="forgot_user_name"
+                name="forgot_user_name"
+                required
+              />
+            </div>
+            <p
+              id="error-message-3"
+              style="display: none; font-size: 0.8em; color: red"
+            ></p>
+            <div class="form-group">
+              <label for="forgot_email">Nhập email của bạn:</label>
+              <input
+                type="email"
+                id="forgot_email"
+                name="forgot_email"
+                required
+              />
+            </div>
+            <p
+              id="error-message-4"
+              style="display: none; font-size: 0.8em; color: red"
+            ></p>
+            <button type="submit" style="width: 30%; margin-left: 35%">
+              Lấy lại mật khẩu
+            </button>
+            <p>Quay lại <a href="#" id="backToLogin">Đăng nhập</a></p>
+          </form>
+        </div>
+
+        <!-- Form xác minh mã -->
+        <!-- Form nhập mã xác minh -->
+        <div id="verifyCodeForm" style="display: none">
+          <label for="reset_code">Mã xác minh:</label>
+          <input type="text" id="reset_code" required />
+          <p
+            id="error-message-verify"
+            style="color: red; display: none; font-size: 0.8em"
+          ></p>
+          <div style="margin-top: 10px; display: flex; justify-content: center">
+            <!-- Sử dụng flexbox để căn giữa -->
+            <button id="verifyCodeButton" style="width: 150px">
+              Xác minh mã
+            </button>
+          </div>
+
+          <div id="timer" style="display: none">
+            Thời gian còn lại: <span id="countdown">60</span>s
+          </div>
+        </div>
+
+        <!-- Đặt lại mật khẩu-->
+        <div id="resetPasswordForm" style="display: none; height: 200px">
+          <div style="margin-top: 10px">
+            <label for="new_password">Mật khẩu mới:</label>
+            <input
+              type="password"
+              id="new_password"
+              style="margin-top: 10px"
+              required
+            />
+            <p
+              id="error-message-new-password"
+              style="
+                color: red;
+                display: none;
+                margin-top: 5px;
+                font-size: 0.8em;
+              "
+            ></p>
+          </div>
+
+          <div style="margin-top: 10px">
+            <label for="confirm_password_new">Xác nhận lại mật khẩu:</label>
+            <input
+              type="password"
+              id="confirm_password_new"
+              style="margin-top: 10px"
+              required
+            />
+            <p
+              id="error-message-confirm-password"
+              style="
+                color: red;
+                display: none;
+                margin-top: 5px;
+                font-size: 0.8em;
+              "
+            ></p>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; justify-content: center">
+            <button id="resetPasswordButton" style="width: 180px">
+              Đặt lại mật khẩu
+            </button>
+          </div>
+
+          <p
+            id="error-message-reset"
+            style="
+              color: red;
+              display: none;
+              margin-top: 10px;
+              font-size: 0.8em;
+            "
+          ></p>
+        </div>
+      </div>
+    </div>
+
+    <!--Thạch-->
+    <!-- /Chức năng -->
+
+    <div class="header">
+      <!-- logo -->
+      <div class="logo">
+        <a href="homepage.html"><img src="img/logo.png" alt="#" /></a>
+      </div>
+      <!-- /logo -->
+
+      <!-- Menu trang chủ -->
+      <div class="menu_bar">
+        <li class="menu">
+          <a href="homepage.html">Trang chủ</a>
+        </li>
+
+        <li class="menu">
+          <a href="gioithieu.html">Giới Thiệu</a>
+        </li>
+
+        <li class="menu">
+          <a href="#">Các loại cá</a>
+          <ul class="sub_menu">
+            <li><a href="sanpham/Kohaku.html">Koi Kohaku</a></li>
+            <li><a href="sanpham/Showa.html">Koi Showa</a></li>
+            <li><a href="sanpham/Asagi.html">Koi Asagi</a></li>
+            <li><a href="sanpham/Shusui.html">Koi Shusui</a></li>
+            <li><a href="sanpham/Tancho.html">Koi Tancho</a></li>
+          </ul>
+        </li>
+
+        <li class="menu">
+          <a href="tintuc.html">Tin tức</a>
+        </li>
+
+        <li class="menu">
+          <a href="sanpham/Food.html">Thức ăn cho cá</a>
+        </li>
+
+        <li class="menu">
+          <a href="#footer">Liên hệ</a>
+        </li>
+
+      </div>
+      <!-- /Menu trang chủ -->
+    </div>
+
+
+    <!-- Main -->
+    <div class="main">
+
+
+        <div class="product-detail-container">
+
+
+            <div class="product_img">
+                  <img id="detailProductImage" src="" alt="Product Image" />
+            </div>
+
+
+            <div class="product_meta">
+              <div class="product_status">
+                <button id="detailStatusButton" class="status_button"></button>
+                <h3 id="productName"></h3>
+              </div>
+              <p>Người bán: <strong id="salePerson"></strong></p>
+              <p>Thương hiệu: <strong id="brand"></strong></p>
+              <p>Loại thức ăn: <strong id="typeOfFood"></strong></p>
+              <p>Xuất xứ: <strong id="origin"></strong></p>
+              <p>Trọng lượng: <strong id="weight"></strong></p>
+              <div class="product_details">
+                <p id="detailProductNote"></p>
+                <div class="price">
+                    <span>Giá mua ngay:</span>
+                    <strong id="detailProductPrice"></strong>
+                </div>
+                <button id="buyButton" class="buy_button">ĐẶT HÀNG NGAY</button>
+              </div>
+            </div>
+
+
+            <div class="sidebar">
+              <h2>Bạn có thể quan tâm:</h2>
+              <ul>
+                <li><a href="news-page/benhKoi.html">Các bệnh thường gặp ở cá Koi</a></li>
+                <li><a href="news-page/chamSoc.html">Kỹ thuật nuôi cá Koi</a></li>
+                <li><a href="news-page/veSinh.html">Quy trình vệ sinh hồ cá Koi</a></li>
+                <li><a href="news-page/tincay.html">Trại cá Koi Nhật Bản đáng tin cậy</a></li>
+                <li><a href="news-page/phongthuy.html">Ý nghĩa nuôi cá Koi</a></li>
+              </ul>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- Main -->
+
+
+    <!-- Footer-->
+    <div class="footer" id="footer">
+      <a href="#"
+        ><img
+          src="img/logo.png"
+          alt="#"
+          style="right: 20px; height: 30%; margin: auto"
+      /></a>
+
+      <div class="text2">
+        <h3>Thông tin liên hệ:</h3>
+        <p>
+          Địa chỉ: 70 Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh, Việt Nam
+        </p>
+        <p>Tele: 0123456789</p>
+        <p>gmail: ShopkoiFish@gmail.com</p>
+      </div>
+
+      <div class="social">
+        <p>Mạng xã hội:</p>
+        <a href="#"
+          ><img src="img/facebook.png" style="height: 30px; width: 30px"
+        /></a>
+        <a href="#"
+          ><img src="img/youtube.png" style="height: 30px; width: 30px"
+        /></a>
+        <a href="#"
+          ><img src="img/insta.png" style="height: 30px; width: 30px"
+        /></a>
+      </div>
+
+      <!-- back to top -->
+      <!-- <div class="btntop">
+              <a href="#" class="top"></a>
+          </div> -->
+      <!-- back to top -->
+    </div>
+    <!-- /Footer -->
+
+    <!--Scripts-->
+    <script src="js/user_login_register.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/sidenav.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/chiTietThucAnChoCa.js"></script>
+  </body>
+</html>
