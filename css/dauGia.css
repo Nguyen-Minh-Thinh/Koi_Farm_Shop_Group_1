@@ -4,7 +4,7 @@
     scroll-behavior: smooth;
     height: auto;
     width: auto;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; 
 }
 
 /* CSS header */
@@ -14,11 +14,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #00CCDD;
+    background-color: 00CCDD;
     color: #111;
     font-family: Arial, sans-serif;
 }
-
 
 /* Chức năng */
 .top_head {
@@ -47,26 +46,6 @@
     margin-left: 20px;
     text-align: left;
 }
-
-.function {
-    display: flex;
-    align-items: center;
-}
-
-.function a {
-    margin-left: 10px;
-    background-color: transparent;
-    transition: color 0.3s;
-}
-
-.function a:hover {
-    color: #ddd;
-}
-
-#settingsLink, #logoutLink {
-    display: none;
-}
-
 
 /* User đăng nhập, đăng ký */
 /* Modal styling */
@@ -128,7 +107,7 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="tel"]{
+input[type="tel"] {
     width: 100%; /* Chiều rộng 100% */
     padding: 10px; /* Padding cho input */
     border: 1px solid #ddd; /* Đường viền cho input */
@@ -191,6 +170,8 @@ a:hover {
 .menu_bar {
     display: flex;
     list-style-type: none;
+    
+    
 }
 
 .menu_bar .menu {
@@ -199,9 +180,9 @@ a:hover {
 }
 
 .menu_bar .menu a {
-    color: white;
+    color: #111;
     text-decoration: none;
-    padding: 23px 30px;
+    padding: 15px 20px;
     display: block;
     font-weight: bold;
 }
@@ -215,7 +196,8 @@ a:hover {
 .sub_menu {
     display: none;
     position: absolute;
-    background-color: #111;
+    background-color: #f9f9f9;
+    min-width: 160px;
     z-index: 999;
     list-style-type: none;
     top: 100%;
@@ -294,113 +276,49 @@ a:hover {
 /* Tên shop */
 h1 {
     text-align: center;
+    background-color: 7CF5FF;
 }
 /* /CSS header */
 
 /* CSS main */
-
-.search {
-    margin-left:100px;
-}
-
-.filter_container {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 15px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.filter_container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: #eee;
-    border-radius: 50%;
-}
-
-.filter_container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-
-.filter_container input:checked ~ .checkmark {
-    background-color: #e00000;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.filter_container input:checked ~ .checkmark:after {
-    display: block;
-}
-  
-
-.filter_container input:checked ~ .checkmark:after {
-    display: block;
+.main {
+    min-height: 400px;
+    padding: 20px;
+    flex: 1;
+    background-color: 7CF5FF;
 }
 
 /* Sản phẩm */
-/* Container cho danh sách sản phẩm */
-.products-container-wrapper {
+.kind {
+    background-image: url("../img/background.jpg"); 
+    text-align: center;
     display: flex;
-    justify-content: space-between; /* Căn đều các sản phẩm */
-    margin-top: 20px;
-    max-width: 1200px; /* Giới hạn độ rộng của container */
-    margin: 0 auto; /* Căn giữa */
-    padding: 0 10px; /* Thêm padding cho container */
 }
 
-/* Thẻ sản phẩm */
-.products-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    gap: 100px;
-    width: 100%;
+.text {
+    margin-left: 100px;
+    font-size: large;
 }
 
-/* Thẻ sản phẩm */
 .products {
     border-radius: 8px;
-    width: calc(25% - 15px); /* Mỗi sản phẩm chiếm 1/4 chiều rộng container */
+    margin-bottom: 3em;
+    margin-top: 3em;
+    width: 300px;
     background-color: white;
     border: 1px solid #ddd;
+    overflow: hidden;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s;
-    margin: 20px; /* Thêm margin dưới mỗi sản phẩm */
 }
 
-.product:hover {
-    transform: scale(1.05);
-}
-
-/* Hình ảnh sản phẩm */
-.product_img img{
-    border-radius: 10px;
-    width: 280;
-    height: 280px;
+.product_img img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
 }
 
-/* Thông tin trạng thái sản phẩm */
 .product_status {
     padding: 10px;
     background-color: #f2f2f2;
@@ -423,8 +341,13 @@ h1 {
     color: #333;
 }
 
-/* Chi tiết sản phẩm */
-.product_details {
+.product_status p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.product_sdetails {
     padding: 15px;
     text-align: left;
 }
@@ -450,8 +373,7 @@ h1 {
     margin-top: 5px;
 }
 
-/* Nút đặt hàng */
-.buy_button {
+.buy-button {
     width: 100%;
     padding: 10px;
     background-color: #e00000;
@@ -463,26 +385,20 @@ h1 {
     cursor: pointer;
 }
 
-/* Thông tin bổ sung về sản phẩm */
-.product_meta {
+.product-meta {
     padding: 10px;
     background-color: #f9f9f9;
     border-top: 1px solid #ddd;
     font-size: 13px;
 }
 
-.product_meta a {
+.product-meta a {
     color: #007bff;
     text-decoration: none;
 }
 
-.product_meta a:hover {
+.product-meta a:hover {
     text-decoration: underline;
-}
-
-/* Định dạng sản phẩm giới hạn */
-.products-container .product:nth-child(n+5) {
-    display: none;
 }
 
 /* tin tức */
@@ -531,91 +447,10 @@ h1 {
     text-decoration: underline;
 }
 
-ul.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
-}
-  
-/* Display list items side by side */
-ul.breadcrumb li {
-    display: inline;
-    font-size: 18px;
-}
-  
-/* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-  
-/* Add a color to all links inside the list */
-ul.breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-  
-/* Add a color on mouse-over */
-ul.breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
-}
-
-.introduce {
-    max-height: 100%; /* Chiều cao mặc định khi thu gọn */
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-}
-
-.introduce p {
-    font-size: 20px;
-    color: #c1784b;
-}
-
-.introduce.show {
-    max-height: 100%; /* Chiều cao tối đa khi mở rộng */
-}
-
-.introduce img {
-    margin: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-}
-
-.btn-toggle {
-    margin-top: 10px;
-    color: #F07334;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.btn-toggle:hover {
-   
-    color: #b25527;
-}
-
-.profile {
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
-    
-}
-
-.container {
-    margin: 0;
-    padding: 0;
-}
-
 /* /CSS main */
 
 /* CSS footer */
 .footer {
-    display: flex;
     color: white;
     line-height:50px; 
     background-color:#111; 
@@ -623,109 +458,14 @@ ul.breadcrumb li a:hover {
     font-family: Arial, sans-serif; 
     clear:both;
     position: relative;
-    align-items: center;
 }
 
 .social {
     font-size: 20px;
-    margin: auto;
 }
 
-.text2 {
-    padding-left: 250px;
+.text {
     text-align: center;
-}
-
-/* Phần include */
-.c {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    background-color: #e8e8e8;
-}
-
-.c1 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
-
-.grid-item {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.grid-item:hover {
-    transform: translateY(-5px);
-}
-
-.grid-item a {
-    text-decoration: none;
-    color: black;
-    display: block;
-    padding: 20px;
-}
-
-.grid-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.grid-item h3 {
-    margin: 15px 0 10px;
-    font-size: 1.2rem;
-}
-
-.grid-item p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    color: #666;
-}
-
-.grid-item button {
-    background-color: #d32f2f;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.grid-item button:hover {
-    background-color: #b71c1c;
-}
-
-.intro, .process {
-    margin:auto;
-    padding: 20px;
-    max-width: 1000px;
-}
-
-.intro p, .process p {
-    font-size: 18px; 
-    line-height: 1.6; 
-    color: #333; 
-}
-
-ul, ol {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-}
-
-strong {
-    color: #006699;
 }
 
 /* .btntop {
@@ -756,3 +496,174 @@ strong {
 } */
  
 /* /CSS footer */
+
+/* news */
+
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+  
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+  
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+  
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+  
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.news-container{
+    justify-content: left;
+    padding: 10px;
+    background-color: #008CBA;
+    font-family: Arial, sans-serif;
+}
+.content-box {
+    float: right;
+    margin-top: 5rem;
+    margin-right: 100px;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    background-color: #414ec7;
+    width: 300px;
+    height: 350px;
+    color: #e1c8a0;
+    font-family: Arial, sans-serif;
+}
+
+.content-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffb100;
+    margin-bottom: 10px;
+}
+
+.content-list {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+.content-list li {
+    margin-bottom: 10px;
+}
+
+.content-list a {
+    text-decoration: none;
+    color: #e1c8a0;
+}
+
+.content-list a:hover {
+    color: #ffffff;
+}
+
+#section1, #section2, #section3, #section4, #section5 {
+    margin-top: 50px; /* Tạo khoảng cách để khi cuộn đến phần không bị che khuất */
+}
+
+.news-main {
+    background-color: #008CBA;
+}
+
+.news-container .p-title{
+    color: yellow;
+    text-align: left;
+    font-size: 25px;
+    font-variant: small-caps;
+    font-weight: bold; /* Bold text */
+
+}
+.news-container{
+    display: flex;
+    flex-direction: column;
+    list-style-type:decimal;
+    color: whitesmoke;
+    padding-left: 170px;
+    padding-right: 100px;
+    font-family: 'times new roman', times, serif; font-size: 14pt;
+}
+.news-container p{
+    text-align: left;
+    font-size: 20px;
+}
+.news-container li{
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.news-container .em-title{
+    font-size: 22px;
+    color: rgb(221, 190, 15);
+    font-family: 'times new roman', times, serif;
+
+}
+.news-container li img{
+    padding-top: 20px;
+    padding-left: 170px;
+    align-items: center;
+    width: auto;
+    height: 400px;
+    padding-bottom: 20px;
+}
+.instructions{
+    justify-items: left;
+    list-style-type: disc; /* Sử dụng dấu chấm tròn cho danh sách */
+    margin-left: 30px;     /* Tạo khoảng cách lề cho danh sách */
+}
+
+.instructions ul {
+    list-style-type: none; /* Loại bỏ kiểu danh sách mặc định cho danh sách con */
+    padding-left: 20px;    /* Tạo khoảng cách bên trái cho danh sách con */
+}
+
+.instructions ul li {
+    position: relative;
+    padding-left: 15px;    /* Tạo khoảng trống cho dấu cộng */
+}
+
+.instructions ul li:before {
+    content: "+";          /* Thêm dấu cộng trước mỗi mục */
+    position: absolute;
+    left: 0;               /* Căn dấu cộng ở đầu dòng */
+    color: #ffffff;        /* Màu dấu cộng (có thể thay đổi theo ý thích) */
+}
+.news-video {
+    width: 750px;
+    height: 420px;
+    grid-column: 1 / 2;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.news-p{
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.news-container a{
+    text-decoration: none;
+    color: yellow;
+}
+.li-title{
+    color: #f5e1c0; /* Light beige/gold text color */
+    font-family: Arial, sans-serif; /* Example font */
+    font-weight: bold; /* Bold text */
+    padding: 5px 10px; /* Add some padding */
+}
