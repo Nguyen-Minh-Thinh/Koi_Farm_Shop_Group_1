@@ -500,6 +500,10 @@ h1 {
 
 /* news */
 
+body {
+    background-color: #7CF5FF;
+}
+
 /* Style the list */
 ul.breadcrumb {
     padding: 10px 16px;
@@ -584,7 +588,7 @@ ul.breadcrumb li a:hover {
     text-align: left;
     font-size: 25px;
     font-variant: small-caps;
-
+    font-weight: bold;
 }
 .news-container{
     display: flex;
@@ -608,13 +612,14 @@ ul.breadcrumb li a:hover {
 .news-container .em-title{
     font-size: 22px;
     font-family: Arial, sans-serif;
-
+    font-weight: bold;
 }
+
 .news-container li img{
     padding-top: 20px;
     padding-left: 170px;
     align-items: center;
-    margin: 10px;
+    margin: 10px auto;
     width: auto; 
     height: 400px;
     padding-bottom: 20px;

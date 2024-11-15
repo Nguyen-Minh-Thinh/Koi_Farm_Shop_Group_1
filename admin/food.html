@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product.css"> <!-- Reuse existing styles -->
+    <title>Quản lý thức ăn cho cá Koi</title>
+    <script src="auth.js" defer></script>
+    <script src="logout.js" defer></script>
+    <script src="food.js" defer></script> <!-- Separate JavaScript file for food management -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2 class="sidebar-header">
+                <img src="../img/logo.png" alt="Logo" class="sidebar-logo">
+                ADMIN PANEL
+            </h2>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Thống kê</a></li>
+                <li><a href="product.html"><i class="fas fa-box"></i> Quản lý sản phẩm</a></li>
+                <li><a href="food.html"><i class="fas fa-fish"></i> Quản lý thức ăn</a></li>
+                <li><a href="order.html"><i class="fas fa-shopping-cart"></i> Quản lý đơn hàng</a></li>
+                <li><a href="customer.html"><i class="fas fa-user"></i> Quản lý khách hàng</a></li>
+                <li><a href="category.html"><i class="fas fa-list"></i> Quản lý danh mục</a></li>
+                <li><a href="promotion.html"><i class="fas fa-tags"></i> Quản lý khuyến mãi</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Danh sách thức ăn cho cá Koi</h1>
+                <button id="add-food-btn" class="btn add-product-btn">Thêm thức ăn</button>
+            </div>
+            <div class="table-wrapper">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Mã sản phẩm</th>
+                            <th>Hình ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Loại</th>
+                            <th>Giá</th>
+                            <th>Khối lượng</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="food-table-body">
+                        <!-- Rows will be dynamically generated here -->
+                    </tbody>
+                </table>
+                <!-- Pagination Controls -->
+                <div id="pagination-controls" class="pagination-controls"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Food Modal -->
+    <div id="foodModal" class="modal">
+        <div class="modal-content" id="food-modal-content">
+            <span class="close" id="close-food-modal">&times;</span>
+            <h2 id="food-modal-title">Thêm thức ăn mới</h2>
+            <form id="food-form">
+                <label for="food-id">Mã sản phẩm:</label>
+                <input type="text" id="food-id" name="food-id" required>
+                
+                <label for="food-name">Tên sản phẩm:</label>
+                <input type="text" id="food-name" name="food-name" required>
+                
+                <label for="food-type">Loại:</label>
+                <select id="food-type" name="food-type" required>
+                    <option value="Hạt chìm">Hạt chìm</option>
+                    <option value="Hạt nổi">Hạt nổi</option>
+                </select>
+
+                <label for="food-price">Giá:</label>
+                <input type="text" id="food-price" name="food-price" required>
+                
+                <label for="food-weight">Khối lượng:</label>
+                <input type="text" id="food-weight" name="food-weight" required>
+                
+                <label for="food-image">Hình ảnh (URL):</label>
+                <input type="text" id="food-image" name="food-image" required>
+
+                <label for="food-note">Ghi chú:</label>
+                <textarea id="food-note" name="food-note" required></textarea>
+                
+                <select id="food-status" name="food-status" hidden>
+                    <option value="Đang bán" selected>Đang bán</option>
+                </select>
+
+                <select id="food-salePerson" name="food-salePerson" hidden>
+                    <option value="OnKoi Quang Minh" selected>OnKoi Quang Minh</option>
+                </select>
+
+                <label for="food-brand">Thương hiệu:</label>
+                <select id="food-brand" name="food-brand" required>
+                    <option value="Hikari">Hikari</option>
+                    <option value="Sakura">Sakura</option>
+                    <option value="Aqua Master">Aqua Master</option>
+                </select>
+                
+                <label for="food-origin">Xuất xứ:</label>
+                <select id="food-origin" name="food-origin" required>
+                    <option value="Nhật Bản">Nhật Bản</option>
+                    <option value="Thái Lan">Thái Lan</option>
+                    <option value="Đài Loan">Đài Loan</option>
+                </select>
+                
+                <button type="submit" class="btn" id="food-submit-btn">Thêm</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

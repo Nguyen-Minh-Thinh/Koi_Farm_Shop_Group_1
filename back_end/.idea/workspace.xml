@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="070c0ff4-b69d-4daa-9b35-7e651e630f3f" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
@@ -42,6 +43,12 @@
       <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/service/UserService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/service/UserServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../shopkoi/target/test-classes/ut/edu/shopkoi/ShopkoiApplicationTests.class" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../admin/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/product.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/ThucAnChoCaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/ThucAnChoCaController.class" afterDir="false" />
+>>>>>>> a9b40424405c7c687932a0c23b87631f27b0362e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,11 +153,7 @@
       <workItem from="1730712419380" duration="5614000" />
       <workItem from="1731341783749" duration="2327000" />
       <workItem from="1731423634467" duration="2214000" />
-      <workItem from="1731584106509" duration="2704000" />
-      <workItem from="1731593147117" duration="759000" />
-      <workItem from="1731640970395" duration="3719000" />
-      <workItem from="1731659685650" duration="1581000" />
-      <workItem from="1731672245367" duration="205000" />
+      <workItem from="1731584106509" duration="7017000" />
     </task>
     <servers />
   </component>
