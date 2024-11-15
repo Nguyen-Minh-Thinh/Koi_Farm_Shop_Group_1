@@ -325,7 +325,7 @@ ul.breadcrumb li a:hover {
     background-color: #414ec7;
     padding: 20px;
     width: 500px;
-    color: rgb(228, 255, 91);
+    
     font-family: Arial, sans-serif;
     max-height: 300px;
   }
@@ -346,6 +346,10 @@ ul.breadcrumb li a:hover {
 .sidebar ul li {
     font-size: 1.2rem;
     margin: 10px 0;
+}
+
+.sidebar a {
+    color: rgb(228, 255, 91);
 }
   
 /* Icon styling (optional) */
