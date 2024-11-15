@@ -9,6 +9,7 @@
 
 /* CSS header */
 .header {
+    z-index: 10;
     position: sticky;
     top: 0;
     display: flex;
@@ -532,6 +533,7 @@ h1 {
 }
 
 ul.breadcrumb {
+    margin: 20px;
     padding: 10px 16px;
     list-style: none;
 }
@@ -546,7 +548,7 @@ ul.breadcrumb li {
 ul.breadcrumb li+li:before {
     padding: 8px;
     color: black;
-    content: "/\00a0";
+    content: ">";
 }
   
 /* Add a color to all links inside the list */
@@ -721,7 +723,6 @@ ul, ol {
 
 li {
     margin-bottom: 10px;
-    font-size: 1.1em;
 }
 
 strong {

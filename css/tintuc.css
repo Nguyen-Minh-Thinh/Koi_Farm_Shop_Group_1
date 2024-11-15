@@ -151,13 +151,9 @@ a {
     color: #4CAF50; /* Màu chữ cho liên kết */
     text-decoration: none; /* Không gạch chân */
 }
-
-a:hover {
-    text-decoration: underline; /* Gạch chân khi hover */
+.function a:hover {
+    text-decoration: underline;
 }
-
-
-
 
 /* Logo */
 .logo img {
@@ -277,6 +273,7 @@ h1 {
 
 /* Điều hướng */
 ul.breadcrumb {
+    margin:20px;
     padding: 10px 16px;
     list-style: none;
 }
@@ -291,7 +288,7 @@ ul.breadcrumb li {
 ul.breadcrumb li+li:before {
     padding: 8px;
     color: black;
-    content: "/\00a0";
+    content: ">";
 }
   
 /* Add a color to all links inside the list */
@@ -325,16 +322,18 @@ ul.breadcrumb li a:hover {
     background-color: #414ec7;
     padding: 20px;
     width: 500px;
-    
+    border-radius: 5px;
     font-family: Arial, sans-serif;
     max-height: 300px;
   }
   
 /* Sidebar title */
 .sidebar h2 {
-    color: #ffcc00; /* Yellow color for the title */
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    color: #FFA500;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #FFA500;
 }
   
 /* List styling */
@@ -344,12 +343,17 @@ ul.breadcrumb li a:hover {
 }
   
 .sidebar ul li {
+    padding: 10px 0;
     font-size: 1.2rem;
     margin: 10px 0;
 }
 
 .sidebar a {
-    color: rgb(228, 255, 91);
+    color: white;
+}
+
+.sidebar a:hover {
+    color: rgb(162, 144, 144);
 }
   
 /* Icon styling (optional) */
@@ -357,7 +361,12 @@ ul.breadcrumb li a:hover {
     content: "\2630"; /* Menu icon (hamburger icon) */
     margin-right: 10px;
 }
-  
+
+.sidebar a::before{
+    content: ">";
+    margin-right: 5px;
+    color: white;
+}
 
 /* Container for the news section */
 #news { /* Light background for the news section */
@@ -373,6 +382,7 @@ ul.breadcrumb li a:hover {
   
 /* Styling for the cards container */
 .cards {
+    margin-bottom: 50px;
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
@@ -428,8 +438,10 @@ ul.breadcrumb li a:hover {
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
-  
+
 .card-content a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(5, 150, 180);
     background-color: rgba(162, 161, 161, 0.529); /* Darken the button on hover */
 }
   

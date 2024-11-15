@@ -9,6 +9,7 @@
 
 /* CSS header */
 .header {
+    z-index: 10;
     position: sticky;
     top: 0;
     display: flex;
@@ -170,8 +171,6 @@ a:hover {
 .menu_bar {
     display: flex;
     list-style-type: none;
-    
-    
 }
 
 .menu_bar .menu {
@@ -180,9 +179,9 @@ a:hover {
 }
 
 .menu_bar .menu a {
-    color: #111;
+    color: white;
     text-decoration: none;
-    padding: 15px 20px;
+    padding: 23px 30px;
     display: block;
     font-weight: bold;
 }
@@ -196,8 +195,7 @@ a:hover {
 .sub_menu {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #111;
     z-index: 999;
     list-style-type: none;
     top: 100%;
@@ -276,7 +274,6 @@ a:hover {
 /* Tên shop */
 h1 {
     text-align: center;
-    background-color: 7CF5FF;
 }
 /* /CSS header */
 
@@ -285,7 +282,6 @@ h1 {
     min-height: 400px;
     padding: 20px;
     flex: 1;
-    background-color: 7CF5FF;
 }
 
 /* Sản phẩm */
@@ -534,14 +530,16 @@ ul.breadcrumb li a:hover {
 .news-container{
     justify-content: left;
     padding: 10px;
-    background-color: #008CBA;
     font-family: Arial, sans-serif;
 }
 .content-box {
+    border-radius: 5px;
+    z-index: 1;
+    position: sticky;
+    top: 200px;
     float: right;
     margin-top: 5rem;
     margin-right: 100px;
-    border: 1px solid #ffffff;
     padding: 10px;
     background-color: #414ec7;
     width: 300px;
@@ -579,12 +577,8 @@ ul.breadcrumb li a:hover {
     margin-top: 50px; /* Tạo khoảng cách để khi cuộn đến phần không bị che khuất */
 }
 
-.news-main {
-    background-color: #008CBA;
-}
-
 .news-container .p-title{
-    color: yellow;
+    color: #FA4032;
     text-align: left;
     font-size: 25px;
     font-variant: small-caps;
@@ -595,10 +589,9 @@ ul.breadcrumb li a:hover {
     display: flex;
     flex-direction: column;
     list-style-type:decimal;
-    color: whitesmoke;
     padding-left: 170px;
     padding-right: 100px;
-    font-family: 'times new roman', times, serif; font-size: 14pt;
+    font-family: Arial, sans-serif; 
 }
 .news-container p{
     text-align: left;
@@ -662,7 +655,7 @@ ul.breadcrumb li a:hover {
     color: yellow;
 }
 .li-title{
-    color: #f5e1c0; /* Light beige/gold text color */
+    color: #FA812F; /* Light beige/gold text color */
     font-family: Arial, sans-serif; /* Example font */
     font-weight: bold; /* Bold text */
     padding: 5px 10px; /* Add some padding */

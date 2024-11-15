@@ -1,5 +1,4 @@
 body {
-    background-color: #7CF5FF;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -22,7 +21,7 @@ body {
 }
 
 .dh a:visited {
-    color: #000; 
+    color: #0275d8; 
 }
 
 .dh a:hover {
@@ -32,10 +31,6 @@ body {
 .dh span {
     margin: 0 5px;
     color: #666;
-}
-
-.dh a:visited {
-    color: #000; 
 }
 
 .dh a:hover {
@@ -116,9 +111,13 @@ body {
     max-width: 450px;
     margin: 10px auto;
     padding: 20px;
-    background-color: #0000FF;
-    border: 2px solid #00FFFF;
+    background-color: #414ec7;
     border-radius: 5px;
+}
+
+.bangtin h2::before {
+    content: "\2630"; /* Menu icon (hamburger icon) */
+    margin-right: 10px;
 }
 
 .bangtin table {
