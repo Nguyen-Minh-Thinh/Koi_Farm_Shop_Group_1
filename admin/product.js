@@ -1,5 +1,3 @@
-// JavaScript to fetch product data from API and display in product table
-
 document.addEventListener("DOMContentLoaded", function () {
     const apiUrl = "http://localhost:8080/ca-koi-nhat"; // Replace with your API URL
     const productTableBody = document.getElementById("product-table-body");
@@ -10,17 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalTitle = document.getElementById("modal-title");
     const submitBtn = document.getElementById("submit-btn");
     const productTypeSelect = document.getElementById("product-type");
+    const paginationControls = document.getElementById("pagination-controls");
+
+    let currentPage = 1;
+    const productsPerPage = 5;
 
     // Fetch product types from API and populate options
     function fetchProductTypes() {
         fetch("http://localhost:8080/api/loaica")
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error("Error fetching product types");
-                }
-            })
+            .then(response => response.json())
             .then(types => {
                 productTypeSelect.innerHTML = "";
                 types.forEach(type => {
@@ -33,50 +29,62 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error("Error fetching product types:", error));
     }
 
-    // Fetch and display product data
-    function fetchProducts() {
+    // Fetch and display product data with pagination
+    function fetchProducts(page = 1) {
         fetch(apiUrl)
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error("Error fetching products");
-                }
-            })
+            .then(response => response.json())
             .then(products => {
-                if (productTableBody) {
-                    productTableBody.innerHTML = "";
-                    products.forEach(product => {
-                        const row = document.createElement("tr");
-                        row.innerHTML = `
-                            <td>${product.idOfFish}</td>
-                            <td><img src="${product.image}" alt="${product.nameOfFish}" width="80"></td>
-                            <td>${product.nameOfFish}</td>
-                            <td>${product.typeOfFish}</td>
-                            <td>${product.price} VND</td>
-                            <td>${product.sizeOfFish}</td>
-                            <td>${product.saleStatus}</td>
-                            <td class="action-buttons">
-                                <button class="btn edit-btn" data-id="${product.idOfFish}">Sửa</button>
-                                <button class="btn delete-btn" data-id="${product.idOfFish}">Xóa</button>
-                            </td>
-                        `;
-                        productTableBody.appendChild(row);
-                    });
-                    attachEventListeners();
-                }
+                const start = (page - 1) * productsPerPage;
+                const end = start + productsPerPage;
+                const paginatedProducts = products.slice(start, end);
+                productTableBody.innerHTML = "";
+                
+                paginatedProducts.forEach(product => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${product.idOfFish}</td>
+                        <td><img src="${product.image}" alt="${product.nameOfFish}" width="80"></td>
+                        <td>${product.nameOfFish}</td>
+                        <td>${product.typeOfFish}</td>
+                        <td>${product.price} VND</td>
+                        <td>${product.sizeOfFish}</td>
+                        <td>${product.saleStatus}</td>
+                        <td class="action-buttons">
+                            <button class="btn edit-btn" data-id="${product.idOfFish}">Sửa</button>
+                            <button class="btn delete-btn" data-id="${product.idOfFish}">Xóa</button>
+                        </td>
+                    `;
+                    productTableBody.appendChild(row);
+                });
+
+                attachEventListeners();
+                renderPaginationControls(products.length, page);
             })
             .catch(error => console.error("Error fetching products:", error));
     }
 
-    // Attach event listeners to view, edit, and delete buttons
-    function attachEventListeners() {
-        document.querySelectorAll(".view-btn").forEach(button => {
-            button.addEventListener("click", () => {
-                viewProduct(button.dataset.id);
-            });
-        });
+    // Render pagination controls
+    function renderPaginationControls(totalProducts, currentPage) {
+        const totalPages = Math.ceil(totalProducts / productsPerPage);
+        paginationControls.innerHTML = "";
 
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            pageButton.classList.add("page-btn");
+            if (i === currentPage) {
+                pageButton.classList.add("active");
+            }
+            pageButton.addEventListener("click", () => {
+                currentPage = i;
+                fetchProducts(currentPage);
+            });
+            paginationControls.appendChild(pageButton);
+        }
+    }
+
+    // Attach event listeners to edit and delete buttons
+    function attachEventListeners() {
         document.querySelectorAll(".edit-btn").forEach(button => {
             button.addEventListener("click", () => {
                 editProduct(button.dataset.id);
@@ -88,12 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 deleteProduct(button.dataset.id);
             });
         });
-    }
-
-    // View product details
-    function viewProduct(id) {
-        console.log("View product with ID:", id);
-        // You can add modal logic here to display product details in a modal
     }
 
     // Edit product
@@ -125,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
                 .then(response => {
                     if (response.ok) {
-                        fetchProducts();
+                        fetchProducts(currentPage);
                     } else {
                         throw new Error("Error deleting product");
                     }
@@ -181,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => {
                 if (response.ok) {
                     productModal.classList.remove("show-modal");
-                    fetchProducts();
+                    fetchProducts(currentPage);
                 } else {
                     throw new Error("Error saving product");
                 }
@@ -189,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error("Error saving product:", error));
     });
 
-    // Initial fetch of product data
-    fetchProducts();
+    // Initial fetch of product data and types
+    fetchProducts(currentPage);
     fetchProductTypes();
 });

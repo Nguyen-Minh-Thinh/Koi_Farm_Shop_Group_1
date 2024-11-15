@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const foodForm = document.getElementById("food-form");
     const foodModalTitle = document.getElementById("food-modal-title");
     const foodSubmitBtn = document.getElementById("food-submit-btn");
+    const paginationControls = document.getElementById("pagination-controls");
+
+    let currentPage = 1;
+    const itemsPerPage = 5;
 
     // Notification element
     const notification = document.createElement("div");
@@ -16,19 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
     function showNotification(message, type = "success") {
         notification.innerText = message;
         notification.classList.add("show", type);
-
         setTimeout(() => {
             notification.classList.remove("show", type);
         }, 3000);
     }
 
-    // Fetch and display food data
-    function fetchFoods() {
+    // Fetch and display paginated food data
+    function fetchFoods(page = 1) {
         fetch(foodApiUrl)
             .then(response => response.json())
             .then(foods => {
+                const start = (page - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const paginatedFoods = foods.slice(start, end);
+
                 foodTableBody.innerHTML = "";
-                foods.forEach(food => {
+                paginatedFoods.forEach(food => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
                         <td>${food.id}</td>
@@ -45,9 +52,31 @@ document.addEventListener("DOMContentLoaded", function () {
                     `;
                     foodTableBody.appendChild(row);
                 });
+
                 attachFoodEventListeners();
+                renderPaginationControls(foods.length, page);
             })
             .catch(error => console.error("Error fetching foods:", error));
+    }
+
+    // Render pagination controls
+    function renderPaginationControls(totalItems, currentPage) {
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        paginationControls.innerHTML = "";
+
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            pageButton.classList.add("page-btn");
+            if (i === currentPage) {
+                pageButton.classList.add("active");
+            }
+            pageButton.addEventListener("click", () => {
+                currentPage = i;
+                fetchFoods(currentPage);
+            });
+            paginationControls.appendChild(pageButton);
+        }
     }
 
     // Attach event listeners for edit and delete buttons
@@ -101,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("food-status").value = food.saleStatus;
                 document.getElementById("food-image").value = food.image;
                 document.getElementById("food-note").value = food.note;
-                document.getElementById("food-salePerson").value = food.salePerson; // This field is hidden but still required
+                document.getElementById("food-salePerson").value = food.salePerson;
                 document.getElementById("food-brand").value = food.brand;
                 document.getElementById("food-origin").value = food.origin;
             })
@@ -114,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch(`${foodApiUrl}/${id}`, { method: "DELETE" })
                 .then(response => {
                     if (response.ok) {
-                        fetchFoods();
+                        fetchFoods(currentPage);
                         showNotification("Xóa thức ăn thành công!", "success");
                     }
                 })
@@ -135,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
             saleStatus: document.getElementById("food-status").value,
             image: document.getElementById("food-image").value,
             note: document.getElementById("food-note").value,
-            salePerson: "OnKoi Quang Minh", // Set default value here for hidden field
+            salePerson: "OnKoi Quang Minh",
             brand: document.getElementById("food-brand").value,
             origin: document.getElementById("food-origin").value
         };
@@ -151,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => {
                 if (response.ok) {
                     foodModal.classList.remove("show-modal");
-                    fetchFoods();
+                    fetchFoods(currentPage);
                     const action = method === "POST" ? "Thêm" : "Cập nhật";
                     showNotification(`${action} thức ăn thành công!`, "success");
                 } else {
@@ -162,5 +191,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Initial fetch of food data
-    fetchFoods();
+    fetchFoods(currentPage);
 });
