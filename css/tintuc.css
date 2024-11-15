@@ -325,7 +325,7 @@ ul.breadcrumb li a:hover {
     background-color: #414ec7;
     padding: 20px;
     width: 500px;
-    color: rgb(228, 255, 91);
+    
     font-family: Arial, sans-serif;
     max-height: 300px;
   }
@@ -346,6 +346,10 @@ ul.breadcrumb li a:hover {
 .sidebar ul li {
     font-size: 1.2rem;
     margin: 10px 0;
+}
+
+.sidebar a {
+    color: rgb(228, 255, 91);
 }
   
 /* Icon styling (optional) */
@@ -385,6 +389,7 @@ ul.breadcrumb li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
     transition: transform 0.3s ease-in-out;
+    overflow: hidden;
 }
   
 /* Image in the card */
@@ -411,6 +416,10 @@ ul.breadcrumb li a:hover {
     margin-bottom: 10px;
     color: #666;
     line-height: 1.5;
+    max-height: 45px; /* Giới hạn chiều cao của đoạn văn */
+    overflow: hidden; /* Ẩn nội dung vượt quá */
+    text-overflow: ellipsis; /* Thêm dấu "..." ở cuối nếu nội dung bị cắt */
+    display: -webkit-box;
 }
   
 .card-content a {
