@@ -1,0 +1,669 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    height: auto;
+    width: auto;
+    font-family: Arial, sans-serif; 
+}
+
+/* CSS header */
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: 00CCDD;
+    color: #111;
+    font-family: Arial, sans-serif;
+}
+
+/* Chức năng */
+.top_head {
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.top_head .tele {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.top_head .tele img {
+    margin-right: 8px;
+}
+
+.top_head a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    text-align: left;
+}
+
+/* User đăng nhập, đăng ký */
+/* Modal styling */
+.modal {
+    display: none; /* Ẩn modal mặc định */
+    position: fixed; /* Định vị modal */
+    z-index: 1; /* Nằm trên tất cả các phần khác */
+    left: 0; /* Đặt từ bên trái */
+    top: 0; /* Đặt từ trên cùng */
+    width: 100%; /* Chiều rộng 100% */
+    height: 100%; /* Chiều cao 100% */
+    background-color: rgba(0, 0, 0, 0.4); /* Nền trong suốt */
+}
+
+.modal-content {
+    background-color: white; /* Nền trắng cho nội dung */
+    margin: 5% auto; /* Căn giữa */
+    padding: 30px; /* Padding cho nội dung */
+    border-radius: 10px; /* Bo góc cho modal */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng cho modal */
+    width: 500px; /* Chiều rộng tối đa của modal */
+    text-align: left; /* Căn trái nội dung */
+}
+
+/* Đóng icon */
+.close {
+    color: #aaa; /* Màu cho icon đóng */
+    float: right; /* Đặt ở góc trên bên phải */
+    font-size: 28px; /* Kích thước chữ cho icon */
+    font-weight: bold; /* Đậm chữ */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Màu khi hover */
+    text-decoration: none; /* Không gạch chân */
+    cursor: pointer; /* Con trỏ khi hover */
+}
+
+/* Style cho tiêu đề */
+h2 {
+    color: #333; /* Màu chữ cho tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* Style cho input */
+.form-group {
+    display: flex; /* Sử dụng flexbox để đặt label và input nằm ngang */
+    align-items: center; /* Căn giữa dọc */
+    margin-bottom: 15px; /* Khoảng cách giữa các nhóm */
+}
+
+label {
+    width: 150px; /* Chiều rộng cố định cho label */
+    margin-right: 10px; /* Khoảng cách giữa label và input */
+    color: #333; /* Màu chữ cho label */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%; /* Chiều rộng 100% */
+    padding: 10px; /* Padding cho input */
+    border: 1px solid #ddd; /* Đường viền cho input */
+    border-radius: 5px; /* Bo góc cho input */
+    background-color: #f9f9f9; /* Màu nền cho input */
+    transition: border 0.3s; /* Hiệu ứng khi focus */
+}
+
+input:focus {
+    border-color: #F07334; /* Màu viền khi focus */
+    outline: none; /* Ẩn outline khi focus */
+}
+
+
+
+
+/* Style cho button */
+button {
+    padding: 5px; /* Giảm padding cho button */
+    width: 100%; /* Chiều rộng 100% */
+    background-color: #F07334; /* Màu nền cho button */
+    color: white; /* Màu chữ cho button */
+    border: none; /* Ẩn viền cho button */
+    cursor: pointer; /* Con trỏ khi hover */
+    border-radius: 5px; /* Bo góc cho button */
+    transition: background-color 0.3s; /* Hiệu ứng khi hover */
+    font-size: 16px; /* Kích thước chữ cho button */
+}
+
+button:hover {
+    background-color: #D95C2A; /* Màu nền khi hover */
+}
+
+/* Style cho liên kết trong modal */
+p {
+    margin: 10px 0; /* Khoảng cách cho các đoạn văn */
+    text-align: center; /* Căn giữa văn bản */
+}
+
+a {
+    color: #4CAF50; /* Màu chữ cho liên kết */
+    text-decoration: none; /* Không gạch chân */
+}
+
+a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+
+
+
+/* Logo */
+.logo img {
+    margin-left: 150px;
+    height: 60px;
+    width: 100px;
+}
+
+/* Menu bar */
+.menu_bar {
+    display: flex;
+    list-style-type: none;
+    
+    
+}
+
+.menu_bar .menu {
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu_bar .menu a {
+    color: #111;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-weight: bold;
+}
+
+.menu_bar .menu a:hover {
+    background-color: #CC0000;
+    color: #fff;
+}
+
+/* Submenu */
+.sub_menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 999;
+    list-style-type: none;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.sub_menu li {
+    text-align: left;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.sub_menu li a {
+    color: #111;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.sub_menu li a:hover {
+    background-color: #ddd;
+}
+
+.menu:hover .sub_menu {
+    display: block;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+}
+
+/* nav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #CC0000;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* Tên shop */
+h1 {
+    text-align: center;
+    background-color: 7CF5FF;
+}
+/* /CSS header */
+
+/* CSS main */
+.main {
+    min-height: 400px;
+    padding: 20px;
+    flex: 1;
+    background-color: 7CF5FF;
+}
+
+/* Sản phẩm */
+.kind {
+    background-image: url("../img/background.jpg"); 
+    text-align: center;
+    display: flex;
+}
+
+.text {
+    margin-left: 100px;
+    font-size: large;
+}
+
+.products {
+    border-radius: 8px;
+    margin-bottom: 3em;
+    margin-top: 3em;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product_img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product_status {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+}
+
+.status_button {
+    background-color: #e00000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.product_status h3 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.product_status p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.product_sdetails {
+    padding: 15px;
+    text-align: left;
+}
+
+.product_details p {
+    font-size: 14px;
+    color: #666;
+}
+
+.price {
+    margin-top: 10px;
+}
+
+.price span {
+    font-size: 14px;
+    color: #555;
+}
+
+.price strong {
+    display: block;
+    font-size: 20px;
+    color: #e00000;
+    margin-top: 5px;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e00000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.product-meta {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    font-size: 13px;
+}
+
+.product-meta a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.product-meta a:hover {
+    text-decoration: underline;
+}
+
+/* tin tức */
+.news {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+
+.card {
+    background-color: white;
+    color: #111;
+    overflow: hidden;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h2 {
+    font-size: 1.2em;
+    color: #b30000; /* Dark red for headers */
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.card a {
+    color: #008CBA;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* /CSS main */
+
+/* CSS footer */
+.footer {
+    color: white;
+    line-height:50px; 
+    background-color:#111; 
+    text-align:center; 
+    font-family: Arial, sans-serif; 
+    clear:both;
+    position: relative;
+}
+
+.social {
+    font-size: 20px;
+}
+
+.text {
+    text-align: center;
+}
+
+/* .btntop {
+    display: flex;
+    align-items: flex-end;
+    width: 60px;
+    mask:linear-gradient(#0000 100vh,#000 0)
+} */
+  
+/* .top {
+    position: sticky;
+    bottom: 20px;      
+    margin-right:10px; 
+    
+    width:100%;
+    aspect-ratio:1;
+    background:#ff8b24;
+    border-radius:10px;
+} */
+
+/* .top:before {
+    content:"";
+    position:absolute;
+    inset:30%;
+    transform:translateY(20%) rotate(-45deg);
+    border-top:5px solid #fff;
+    border-right:5px solid #fff;
+} */
+ 
+/* /CSS footer */
+
+/* news */
+
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+  
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+  
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+  
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+  
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.news-container{
+    justify-content: left;
+    padding: 10px;
+    background-color: #008CBA;
+    font-family: Arial, sans-serif;
+}
+.content-box {
+    float: right;
+    margin-top: 5rem;
+    margin-right: 100px;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    background-color: #414ec7;
+    width: 300px;
+    height: 350px;
+    color: #e1c8a0;
+    font-family: Arial, sans-serif;
+}
+
+.content-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffb100;
+    margin-bottom: 10px;
+}
+
+.content-list {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+.content-list li {
+    margin-bottom: 10px;
+}
+
+.content-list a {
+    text-decoration: none;
+    color: #e1c8a0;
+}
+
+.content-list a:hover {
+    color: #ffffff;
+}
+
+#section1, #section2, #section3, #section4, #section5 {
+    margin-top: 50px; /* Tạo khoảng cách để khi cuộn đến phần không bị che khuất */
+}
+
+.news-main {
+    background-color: #008CBA;
+}
+
+.news-container .p-title{
+    color: yellow;
+    text-align: left;
+    font-size: 25px;
+    font-variant: small-caps;
+    font-weight: bold; /* Bold text */
+
+}
+.news-container{
+    display: flex;
+    flex-direction: column;
+    list-style-type:decimal;
+    color: whitesmoke;
+    padding-left: 170px;
+    padding-right: 100px;
+    font-family: 'times new roman', times, serif; font-size: 14pt;
+}
+.news-container p{
+    text-align: left;
+    font-size: 20px;
+}
+.news-container li{
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.news-container .em-title{
+    font-size: 22px;
+    color: rgb(221, 190, 15);
+    font-family: 'times new roman', times, serif;
+
+}
+.news-container li img{
+    padding-top: 20px;
+    padding-left: 170px;
+    align-items: center;
+    width: auto;
+    height: 400px;
+    padding-bottom: 20px;
+}
+.instructions{
+    justify-items: left;
+    list-style-type: disc; /* Sử dụng dấu chấm tròn cho danh sách */
+    margin-left: 30px;     /* Tạo khoảng cách lề cho danh sách */
+}
+
+.instructions ul {
+    list-style-type: none; /* Loại bỏ kiểu danh sách mặc định cho danh sách con */
+    padding-left: 20px;    /* Tạo khoảng cách bên trái cho danh sách con */
+}
+
+.instructions ul li {
+    position: relative;
+    padding-left: 15px;    /* Tạo khoảng trống cho dấu cộng */
+}
+
+.instructions ul li:before {
+    content: "+";          /* Thêm dấu cộng trước mỗi mục */
+    position: absolute;
+    left: 0;               /* Căn dấu cộng ở đầu dòng */
+    color: #ffffff;        /* Màu dấu cộng (có thể thay đổi theo ý thích) */
+}
+.news-video {
+    width: 750px;
+    height: 420px;
+    grid-column: 1 / 2;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.news-p{
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.news-container a{
+    text-decoration: none;
+    color: yellow;
+}
+.li-title{
+    color: #f5e1c0; /* Light beige/gold text color */
+    font-family: Arial, sans-serif; /* Example font */
+    font-weight: bold; /* Bold text */
+    padding: 5px 10px; /* Add some padding */
+}

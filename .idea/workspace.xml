@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="" />
+    <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gioithieu.html" beforeDir="false" afterPath="$PROJECT_DIR$/gioithieu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include-news.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kygui.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-page/benhKoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/benhKoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-page/chamSoc.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/chamSoc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-page/giaca.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/giaca.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-page/phongthuy.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/phongthuy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-page/tincay.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/tincay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-page/veSinh.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/veSinh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Asagi.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Asagi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Food.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Food.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Kohaku.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Kohaku.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Showa.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Showa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Shusui.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Shusui.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/Tancho.html" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/Tancho.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tintuc.html" beforeDir="false" afterPath="$PROJECT_DIR$/tintuc.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,6 +167,7 @@
       <workItem from="1731574009567" duration="4471000" />
       <workItem from="1731574009567" duration="3684000" />
       <workItem from="1731584492863" duration="1469000" />
+      <workItem from="1731668223560" duration="2674000" />
     </task>
     <servers />
   </component>
