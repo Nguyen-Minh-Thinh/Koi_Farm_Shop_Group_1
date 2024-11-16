@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/modal/Donhang.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/modal/Donhang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" afterDir="false" />
@@ -22,6 +23,8 @@
       <change beforePath="$PROJECT_DIR$/news-page/chamSoc.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/chamSoc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news-page/veSinh.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/veSinh.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thanhtoan/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/thanhtoan/script.js" afterDir="false" />
+=======
+>>>>>>> 9b5e3f008685cf89478429571f513a55c1a6ec72
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,8 +172,12 @@
       <workItem from="1731668223560" duration="2674000" />
       <workItem from="1731676318830" duration="2197000" />
       <workItem from="1731684928410" duration="3893000" />
+<<<<<<< HEAD
       <workItem from="1731765345510" duration="3555000" />
       <workItem from="1731743655429" duration="4415000" />
+=======
+      <workItem from="1731743655429" duration="5015000" />
+>>>>>>> 9b5e3f008685cf89478429571f513a55c1a6ec72
     </task>
     <servers />
   </component>
