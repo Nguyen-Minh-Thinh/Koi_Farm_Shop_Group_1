@@ -304,6 +304,23 @@ h1 {
 }
 /* /CSS header */
 
+.slmenu {
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.slmenu img{
+    margin-top: 30px;
+    border-style: solid;
+    border-color: #e00000;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 20px;
+    width: 250px;
+    height: 500px;
+}
+
 /* Main container */
 .main {
     min-height: 450px;
