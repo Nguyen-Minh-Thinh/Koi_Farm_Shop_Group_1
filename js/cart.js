@@ -85,7 +85,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Cập nhật tổng giá
         totalCartElement.textContent = `${total.toLocaleString()} ₫`;
     }
-
+    const checkoutButton = document.querySelector('#checkout-btn');
+    checkoutButton.addEventListener('click', function (event) {
+        const cartItems = cartTableBody.children; // Lấy các hàng trong giỏ hàng
+        if (cartItems.length === 0) {
+            event.preventDefault(); // Ngăn chặn chuyển hướng
+            alert('Giỏ hàng của bạn đang trống! Vui lòng thêm sản phẩm trước khi thanh toán.');
+        }
+    });
     // Hàm xóa một mục trong giỏ hàng
     function removeItem(itemId) {
         const username = getCookie('username'); 
