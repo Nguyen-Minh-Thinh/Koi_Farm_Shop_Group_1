@@ -112,6 +112,28 @@ function getFormattedDateTime() {
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
     // ${hours}:${minutes}:${seconds}
 }
+async function updateFishStatus(fishId) {
+    try {
+        const response = await fetch(`http://localhost:8080/api/ca-koi-nhat/${fishId}`, {
+            method: 'PUT',  // Cập nhật thông tin cá
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                saleStatus: 'Đã bán'  // Cập nhật trạng thái thành 'Đã bán'
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Không thể cập nhật trạng thái cá');
+        }
+
+        const updatedFish = await response.json();
+        console.log(`Cá với ID ${fishId} đã được cập nhật trạng thái thành: ${updatedFish.saleStatus}`);
+    } catch (error) {
+        console.error('Lỗi khi cập nhật trạng thái cá:', error);
+    }
+}
 
 async function submitPayment() {
     const name = document.getElementById('name').value;
@@ -235,7 +257,43 @@ async function submitPayment() {
         }
 
         const result = await response.json();
+        
         alert(`Thanh toán thành công! Đơn hàng ID: ${result.id}`);
+        const fishUpdatePromises = chitietdonhangs.map(async (item) => {
+            const fishId = item.idOfFish.idOfFish;
+        
+            try {
+                // Bước 1: Lấy dữ liệu của cá từ API
+                const response = await fetch(`http://localhost:8080/ca-koi-nhat/${fishId}`);
+                const data = await response.json();
+                
+                // Bước 2: Chỉnh sửa trường saleStatus
+                const updatedFishData = {
+                    ...data,  // Sao chép dữ liệu cũ
+                    saleStatus: "Đã bán"  // Chỉ thay đổi saleStatus
+                };
+        
+                // Bước 3: Gửi yêu cầu PUT để cập nhật cá
+                const updateResponse = await fetch(`http://localhost:8080/api/fish/update/${fishId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedFishData)
+                });
+        
+                // Xử lý phản hồi của yêu cầu PUT
+                const updatedData = await updateResponse.json();
+                console.log('Cập nhật trạng thái cá thành công:', updatedData);
+        
+            } catch (error) {
+                console.error('Lỗi khi lấy dữ liệu hoặc cập nhật trạng thái cá:', error);
+            }
+        });
+        
+        // Chờ tất cả các yêu cầu cập nhật trạng thái cá hoàn thành
+        await Promise.all(fishUpdatePromises);
+        
         const deleteCartResponse = await fetch(`http://localhost:8080/giohang/${userName}`, {
             method: 'DELETE',
         });
@@ -246,6 +304,7 @@ async function submitPayment() {
         }
 
         console.log("Giỏ hàng đã được xóa");
+        
         setTimeout(() => {
             window.location.href = '../caidat.html';
         }, 0);
