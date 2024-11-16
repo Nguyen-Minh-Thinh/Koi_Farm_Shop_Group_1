@@ -6,25 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/modal/Donhang.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/modal/Donhang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Donhang.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/modal/Donhang.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gioithieu/kygui.html" beforeDir="false" afterPath="$PROJECT_DIR$/gioithieu/kygui.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-page/benhKoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/benhKoi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thanhtoan/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/thanhtoan/script.js" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/caidat.html" beforeDir="false" afterPath="$PROJECT_DIR$/caidat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gioithieu/kygui.html" beforeDir="false" afterPath="$PROJECT_DIR$/gioithieu/kygui.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/K.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/K.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-page/benhKoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/benhKoi.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news-page/chamSoc.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/chamSoc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news-page/veSinh.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/veSinh.html" afterDir="false" />
->>>>>>> e39befd340e718e2a4c827d357c0a18b0ae6ac8c
+      <change beforePath="$PROJECT_DIR$/thanhtoan/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/thanhtoan/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,11 +169,8 @@
       <workItem from="1731668223560" duration="2674000" />
       <workItem from="1731676318830" duration="2197000" />
       <workItem from="1731684928410" duration="3893000" />
-<<<<<<< HEAD
       <workItem from="1731765345510" duration="3555000" />
-=======
       <workItem from="1731743655429" duration="4415000" />
->>>>>>> e39befd340e718e2a4c827d357c0a18b0ae6ac8c
     </task>
     <servers />
   </component>
