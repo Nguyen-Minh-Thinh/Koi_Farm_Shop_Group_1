@@ -24,22 +24,31 @@ public class GioHangServiceImple implements GioHangService {
         // Chuyển đổi từng Object[] thành GioHangDTO
         List<GioHangDTO> gioHangDTOList = new ArrayList<>();
         for (Object[] row : result) {
-            // Chuyển đổi các giá trị trong Object[] thành các trường trong DTO
-            Integer id = (Integer) row[0];           // id
-            String idOfFish = (String) row[1];       // id_of_fish
-            Integer tongCong = (Integer) row[2];     // tongCong
-            String taiKhoanNguoiDung = (String) row[3]; // tai_khoan_nguoi_dung
-            String tenSanPham = (String) row[4];     // tenSanPham
-            String image = (String) row[5];          // image
+            Integer id = (Integer) row[0];               // id
+            String idOfFish = (String) row[1];           // id_of_fish
+            Integer tongCong = (Integer) row[2];         // Giá (tongCong)
+            String taiKhoanNguoiDung = (String) row[3];  // tai_khoan_nguoi_dung
 
-            // Tạo đối tượng GioHangDTO và thêm vào danh sách
-            GioHangDTO dto = new GioHangDTO(id, idOfFish, tongCong, taiKhoanNguoiDung,tenSanPham, image);
+            // Kiểm tra dữ liệu để xác định loại sản phẩm
+            String tenSanPham = null;
+            String image = null;
+
+            if (row[4] != null) { // Sản phẩm từ bảng ca_koi_nhat
+                tenSanPham = (String) row[4];
+                image = (String) row[5];
+            } else if (row[6] != null) { // Sản phẩm từ bảng thuc_an_cho_ca
+                tenSanPham = (String) row[6];
+                image = (String) row[7]; // Bảng thuc_an_cho_ca có thể không có cột image
+            }
+
+            // Tạo đối tượng GioHangDTO
+            GioHangDTO dto = new GioHangDTO(id, idOfFish, tongCong, taiKhoanNguoiDung, tenSanPham, image);
             gioHangDTOList.add(dto);
-
         }
 
         return gioHangDTOList;
     }
+
 
     @Override
     public boolean deleteByUserNameAndItemID(HashMap<String, String> body){
