@@ -31,7 +31,6 @@ function fetchProductDetails(id) {
                 buyButton.style.backgroundColor = "gray";
             }
 
-
             document.getElementById("salePerson").textContent = data.salePerson;
             document.getElementById("brand").textContent = data.brand;
             document.getElementById("typeOfFood").textContent = data.typeOfFood;
@@ -39,10 +38,58 @@ function fetchProductDetails(id) {
             document.getElementById("weight").textContent = data.weight;
             // Cập nhật trạng thái bán hàng
             document.getElementById("detailStatusButton").textContent = data.saleStatus;
+
+            // Gắn sự kiện cho nút "Đặt hàng ngay"
+            const buyButton = document.getElementById("buyButton");
+            buyButton.addEventListener('click', () => {
+                // Lấy username từ cookie (hoặc sessionStorage nếu cần)
+                const username = getCookie('username'); // Hàm này cần được định nghĩa để lấy cookie
+
+                if (username) {
+                    // Gửi POST request để thêm sản phẩm vào giỏ hàng
+                    fetch(`http://localhost:8080/giohang/${username}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            idOfFish: data.id,
+                            tenSanPham: data.caption,
+                            tongCong: data.price,
+                            image: data.image
+                        })
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Chuyển hướng đến cart.html sau khi thêm thành công
+                            window.location.href = '../cart.html';
+                        } else {
+                            console.error('Failed to add to cart');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error adding product to cart:', error);
+                    });
+                } else {
+                    alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!');
+                }
+            });
         })
         .catch(error => {
             console.error("Error fetching product details:", error);
         });
+}
+
+// Lấy cookie theo tên
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+        const [key, value] = cookie.trim().split('=');
+        if (key === name) {
+            return decodeURIComponent(value);
+        }
+    }
+    return null;
 }
 
 // Gọi hàm fetch để lấy thông tin sản phẩm
