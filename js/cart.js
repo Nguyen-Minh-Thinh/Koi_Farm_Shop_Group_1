@@ -9,15 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
     }
-
-    // Hàm để gửi request và lấy dữ liệu giỏ hàng
+    
     function fetchCartData() {
         const username = getCookie('username'); // Lấy username từ cookie
         if (!username) {
             console.error('Không tìm thấy cookie cho user!');
             return;
         }
-        
         fetch(`http://localhost:8080/giohang/${username}`)
             .then(response => {
                 if (!response.ok) {
@@ -86,7 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
         totalCartElement.textContent = `${total.toLocaleString()} ₫`;
     }
 
-    // Hàm xóa một mục trong giỏ hàng
+ 
+    
     function removeItem(itemId) {
         const username = getCookie('username'); 
         fetch('http://localhost:8080/giohang/delete', {
@@ -109,7 +108,15 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error:', error));
     }
-
+    // const checkoutButton = document.querySelector('#checkout-btn');
+    // checkoutButton.addEventListener('click', function (event) {
+    //     const cartItems = cartTableBody.children; // Lấy các hàng trong giỏ hàng
+    //     if (cartItems.length === 0) {
+    //         event.preventDefault(); // Ngăn chặn chuyển hướng
+    //         alert('Giỏ hàng của bạn đang trống! Vui lòng thêm sản phẩm trước khi thanh toán.');
+    //     }
+        
+    // });
     // Lắng nghe sự kiện nhấn vào nút "Làm mới"
     clearButton.addEventListener('click', function () {
         const username = getCookie('username'); // Lấy username từ cookie

@@ -15,7 +15,7 @@
 }
 
 .dh a:visited {
-    color: #000; 
+    color: #0275d8; 
 }
 
 .dh a:hover {
@@ -35,7 +35,6 @@
 }
 
 body {
-    background-color: #7CF5FF;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -108,7 +107,6 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    background-color: #e8e8e8;
 }
 
 .c1 {
@@ -119,15 +117,9 @@ body {
 }
 
 .grid-item {
-    background-color: white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.grid-item:hover {
-    transform: translateY(-5px);
 }
 
 .grid-item a {
@@ -187,7 +179,6 @@ ul, ol {
 
 li {
     margin-bottom: 10px;
-    font-size: 1.1em;
 }
 
 strong {

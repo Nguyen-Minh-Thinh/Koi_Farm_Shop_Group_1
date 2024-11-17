@@ -1,4 +1,4 @@
-// Hàm lấy và hiển thị sản phẩm dựa trên loại và trạng thái được chọn
+//Hàm lấy và hiển thị sản phẩm dựa trên loại và trạng thái được chọn
 function fetchAndDisplayProducts(typeOfFish, statusFilter) {
     const productsContainer = document.querySelector(`#products-${typeOfFish}`);
 

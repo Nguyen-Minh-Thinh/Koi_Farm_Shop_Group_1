@@ -1,0 +1,365 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu và chính sách đấu giá</title>
+    <link rel="stylesheet" href="../stylegt.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dauGia.css">
+    <script src="../js/sidenav.js"></script>
+</head>
+<body>
+    <!-- Header -->
+        <!-- Chức năng -->
+        <div class="top_head">
+          <div class="tele">
+            <img src="../img/telephone.png" style="height: 15px; width: 15px" />
+            <span>0123456789</span>
+          </div>
+          <div class="function">
+              <a href="../cart.html" id="shoppingCart" style="display: none; margin-right: 20px;">
+              <img
+                src="../img/shopping-cart2.png"
+                alt="Giỏ hàng"
+                style="height: 40px; width: 40px;"
+              />
+            </a>
+            <a href="#" id="loginBtn" style="margin-right: 20px"
+              >Đăng nhập/Đăng ký</a
+            >
+            <span id="userName" style="display: none; margin-right: 20px"></span>
+            <!-- Thêm thẻ span cho tên người dùng -->
+            <a href="../caidat.html" id="settingsLink" style="margin-right: 10px; display: none"
+              >Cài đặt</a
+            >
+            <a href="#" id="logoutLink" style="display: none">Đăng xuất</a>
+          </div>
+        </div>
+      <!-- /Chức năng -->
+      
+        <!--Thịnh bố sung thêm đăng nhập, đăng ký cho user-->
+        <!-- Modal for Login/Register -->
+        <div id="loginModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+      
+            <!-- Login Form -->
+            <div id="loginForm">
+              <h2 style="text-align: center;">Đăng nhập</h2>
+              <form id="loginFormElement" action="/login" method="POST">
+                <div class="form-group">
+                  <label for="username">Tên đăng nhập:</label>
+                  <input type="text" id="username" name="username" required />
+                </div>
+                <div class="form-group">
+                  <label for="password">Mật khẩu:</label>
+                  <input type="password" id="password" name="password" required />
+                </div>
+                <button type="submit" class="button" style="width: 20%; margin-left: 40%;">Đăng nhập</button>
+                <p><a href="#" id="forgotPassword">Quên mật khẩu?</a></p>
+                <p>Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký</a></p>
+              </form>
+            </div>
+      
+            <!-- Register Form (hidden initially) -->
+            <div id="registerForm" style="display: none">
+              <h2 style="text-align: center;">Đăng ký</h2>
+              <form action="/register" method="POST">
+                <div class="form-group">
+                  <label for="reg_username">Tên đăng nhập:</label>
+                  <input
+                    type="text"
+                    id="reg_username"
+                    name="reg_username"
+                    required
+                  />
+                </div>
+                <p id="error-message-1" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="reg_password">Mật khẩu:</label>
+                  <input
+                    type="password"
+                    id="reg_password"
+                    name="reg_password"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="confirm_password">Xác nhận mật khẩu:</label>
+                  <input
+                    type="password"
+                    id="confirm_password"
+                    name="confirm_password"
+                    required
+                  />
+                </div>
+                <p id="error-message-2" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+                <div class="form-group">
+                  <label for="phone">Số điện thoại:</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    pattern="[0-9]{10}"
+                    required
+                  />
+                </div>
+                <button type="submit" style="width: 20%; margin-left: 40%;">Đăng ký</button>
+                <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
+              </form>
+            </div>
+      
+            <!-- Forgot Password Form (hidden initially) -->
+            <div id="forgotPasswordForm" style="display: none">
+              <h2 style="text-align: center;">Quên mật khẩu</h2>
+              <form action="/forgot-password" method="POST">
+                <div class="form-group">
+                  <label for="forgot_email">Nhập email của bạn:</label>
+                  <input
+                    type="email"
+                    id="forgot_email"
+                    name="forgot_email"
+                    required
+                  />
+                </div>
+                <button type="submit" style="width: 30%; margin-left: 35%;">Lấy lại mật khẩu</button>
+                <p>Quay lại <a href="#" id="backToLogin">Đăng nhập</a></p>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="header">
+          <!-- logo -->
+          <div class="logo">
+            <a href="../homepage.html"><img src="../img/logo.png" alt="#" /></a>
+          </div>
+          <!-- /logo -->
+      
+          <!-- Menu trang chủ -->
+          <div class="menu_bar">
+            <li class="menu">
+              <a href="../homepage.html">Trang chủ</a>
+            </li>
+      
+            <li class="menu">
+              <a href="../gioithieu.html">Giới thiệu</a>
+            <ul class="sub_menu">
+                <li><a href="../gioithieu/kygui.html">Giới thiệu sàn ký gửi</a></li>
+                <li><a href="../gioithieu/AFIntroduction.html">Giới thiệu sàn đấu giá</a></li>
+            </ul>
+            </li>
+      
+            <li class="menu">
+              <a href="#">Các loại cá</a>
+              <ul class="sub_menu">
+                <li><a href="../sanpham/Kohaku.html">Koi Kohaku</a></li>
+                <li><a href="../sanpham/Showa.html">Koi Showa</a></li>
+                <li><a href="../sanpham/Asagi.html">Koi Asagi</a></li>
+                <li><a href="../sanpham/Shusui.html">Koi Shusui</a></li>
+                <li><a href="../sanpham/Tancho.html">Koi Tancho</a></li>
+              </ul>
+            </li>
+      
+      
+            <li class="menu">
+              <a href="../tintuc.html">Tin tức</a>
+            </li>
+      
+            <li class="menu">
+              <a href="../sanpham/Food.html">Thức ăn cho cá</a>
+            </li>
+      
+            <li class="menu">
+              <a href="#footer">Liên hệ</a>
+            </li>
+      
+            <!-- navi -->
+            <!-- <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+                >&times;</a
+              >
+              <a href="#kohaku">Koi Kohaku</a>
+              <a href="#karashi">Koi Karashi</a>
+              <a href="#showa">Koi Showa</a>
+              <a href="#asagi">Koi Asagi</a>
+              <a href="#news">Tin tức</a>
+            </div>
+            <span
+              style="font-size: 30px; cursor: pointer; margin-right: 10px"
+              onclick="openNav()"
+              >&#9776;
+            </span> -->
+            <!-- /navi -->
+          </div>
+      <!-- kaka -->
+       
+          <!-- /Menu trang chủ -->
+      </div>
+
+      <!-- Banner -->
+    <div class="banner">
+      <img src="..\img\banner.png" style="width: 100%" />
+    </div>
+    <!-- /Banner -->
+
+
+<div class="news-main">
+  <nav class="dh">
+    <a href="../homepage.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home" class="home-icon"> Trang chủ
+    </a>
+    <span> &gt; </span> <!-- Dấu ">" -->
+    <p>Giới thiệu sàn đấu giá</p>
+</nav>
+
+
+<div class="content-box">
+  <div class="content-title">
+      <span>&#9776; Nội dung bài viết:</span>
+  </div>
+    <ol class="content-list">
+      <li><a href="#cac-hinh-thuc-dau-gia">Các hình thức đấu giá</a></li>
+      <li><a href="#su-khac-nhau-giua-dau-gia-online-va-dau-gia-co-dinh">Sự Khác Nhau Giữa Đấu Giá Online Và Đấu Giá Cố Định</a></li>
+      <li><a href="#quy-trinh-dau-gia-ca-koi-online">Quy Trình Đấu Giá Cá Koi Online</a></li>
+      <li><a href="#cac-tieu-chi-can-tim-hieu-truoc">Các Tiêu Chí Cần Tìm Hiểu Trước Khi Đấu Thầu</a></li>
+      <li><a href="#nghe-thuat-dau-thau-hieu-qua">Nghệ Thuật Đấu Thầu Hiệu Quả</a></li>
+      <li><a href="#thanh-toan-va-van-chuyen-ca-sau-dau-gia">Thanh Toán Và Vận Chuyển Cá Sau Đấu Giá</a></li>
+      <li><a href="#lam-gi-khi-bo-lo-mot-vai-em-koi-dep-trong-mot-cuoc-dau-gia">Làm Gì Khi Bỏ Lỡ Một Vài Em Koi Đẹp Trong Một Cuộc Đấu Giá?</a></li>
+    </ol>
+</div>
+    <div class="news-container">
+      <p class="p-title">Giới thiệu và chính sách đấu giá</p>
+      <li id="cac-hinh-thuc-dau-gia" ><em class="li-title"> Các Hình Thức Đấu Giá</em>
+        <p>Các cuộc đấu giá cá Koi luôn diễn ra rất khốc liệt. Các em koi đẹp nhất, nhiều phẩm chất không nhiều nên ai cũng muốn sở hữu. Bạn có thể mua cá koi từ hệ thống website của chúng tôi hoặc tham gia đấu giá dưới 3 hình thức:</p>
+        <p style="margin: 20px;"><span>&#49;</span><em>. Bán Cá Với Giá Xác Định:</em> Hình thức này giá koi được xác định cụ thể ở một mức. Nếu một người muốn mua với mức giá cố định, tuy nhiên nếu có hai người cùng muốn mua một con, khi kết thúc thời gian đóng phiên, Onkoi Quang Minh sẽ bốc thăm ngẫu nhiên để xác định người mua con cá.</p>
+        <p style="margin: 20px;"><span>&#50;</span><em>. Bỏ Giá Một Lần:</em>Khi mỗi em koi được đưa lên đấu giá online, người đấu giá sẽ tự xác định mức giá trả cho em koi ấy (mức giá này hoàn toàn bí mật). Khi kết thúc phiên đấu giá, ai trả giá cao nhất sẽ mua được em Koi.</p>
+        <p style="margin: 20px;"><span>&#51;</span><em>. Đấu Giá Cả:</em>Khi mỗi em koi được đưa lên đấu giá online, người đấu giá sẽ tự xác định mức giá trả cho em koi ấy (mức giá này hoàn toàn bí mật). Khi kết thúc phiên đấu giá, ai trả giá cao nhất sẽ mua được em Koi.</p>
+        <p>Với những người nuôi Koi chuyên nghiệp, cảm giác mong chờ từng em koi được lên sàn, chiêm ngưỡng vẻ đẹp của các em ấy, không điều gì có thể tuyệt vời hơn.</p>
+      </li>
+      <li id="su-khac-nhau-giua-dau-gia-online-va-dau-gia-co-dinh" ><em class="li-title">Sự Khác Nhau Giữa Đấu Giá Online Và Đấu Giá Cố Định</em>
+        <p style="margin: 20px;"><span>&#49;</span><em>. Giá Cá Koi Ban Đầu:</em> Giá cá Koi ban đầu tùy thuộc vào hoạt động đấu thầu. Thường thì đấu giá online có mức giá tốt hơn so với giá chúng tôi định giá cho em koi của mình.</p>
+        <p style="margin: 20px;"><span>&#50;</span><em>. Kích Thước Cá:</em> Do đặc điểm hồ nuôi, điều kiện vật chất nên cá koi đấu giá cố định thường có kích thước lớn hơn đấu giá online.</p>
+        <p style="margin: 20px;"><span>&#51;</span><em>. Hình Thức Đấu Giá Chính:</em> Chúng tôi áp dụng hình thức đấu giá online là chính. Vì vậy, koi chất lượng tốt, koi kích thước khủng, koi đẹp nhất sẽ được tuyển chọn để đưa ra đấu giá.</p>
+        <p style="margin: 20px;"><span>&#52;</span><em>. Mức Giá Thầu:</em> Các em koi càng tuyệt vời thì giá thầu càng cao, người đấu giá càng nhiều. Hãy chọn em Koi theo điều kiện kinh tế, sở thích, thực tế hồ nuôi, mong muốn của bạn thay vì chạy theo đám đông.</p>
+      </li>
+      <li id="quy-trinh-dau-gia-ca-koi-online" ><em class="li-title">Quy Trình Đấu Giá Cá Koi Online</em>
+        <p style="margin: 20px;"><em>Bước 1: </em>Thông báo thông tin chi tiết về chương trình đấu giá cá koi online sắp diễn ra trên trang web, hệ thống facebook.</p>
+        <p style="margin: 20px;"><em>Bước 2: </em>Đăng tải các em koi sẽ đấu giá trong đợt lên web.</p>
+        <p style="margin: 20px;"><em>Bước 3:</em>Cung cấp đầy đủ video, hình ảnh chi tiết, giấy chứng nhận, nguồn gốc, thông tin của từng em koi đấu giá.</p>
+        <p style="margin: 20px;"><em>Bước 4:</em>Kiểm tra lại ngày và thời gian bắt đầu/kết thúc chương trình đầu giá. Xác định trước mức giá sẽ mua với em koi yêu thích.</p>
+        <p style="margin: 20px;"><em>Bước 5:</em>Liên hệ với Farm bằng cách đăng ký tài khoản để chuẩn bị đấu giá.</p>
+        <p style="margin: 20px;"><em>Bước 6:</em>Xác định đúng em Koi định mua, thực hiện các thủ tục theo từng bước hướng dẫn trên website để hoàn tất.</p>
+        <p style="margin: 20px;"><em>Bước 7:</em>Liên hệ lại với Farm qua điện thoại để xác nhận lại đơn hàng, thỏa thuận các điều khoản về vận chuyển, gửi cá theo yêu cầu của khách.</p>
+      </li>
+      <li id="cac-tieu-chi-can-tim-hieu-truoc" ><em class="li-title">Các Tiêu Chí Cần Tìm Hiểu Trước Khi Đấu Thầu:</em>
+        <p style="margin: 20px;"><span>&#8226;</span> Săn cá koi</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Trang sản phẩm</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Cách đấu thầu</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Cách thức đấu thầu proxy</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Đấu thầu online</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Lịch đấu giá</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Trả tiền đấu giá</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Giá vận chuyển</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Thời gian hoàn thành một cuộc đấu giá</p>
+
+      </li>
+      <li id="nghe-thuat-dau-thau-hieu-qua" ><em class="li-title">Nghệ Thuật Đấu Thầu Hiệu Quả</em>
+        <p>Khi đã biết cách đấu thầu, phương án tiếp theo là đấu thầu như thế nào để hiệu quả, mua được em koi chất lượng với giá thấp nhất. Dưới đây là một số nghệ thuật đấu thầu cá koi thường được các dealer áp dụng:</p>  
+        <p style="margin: 20px;"><span>&#49;</span><em>. Đặt Giá Thông Qua Ủy Quyền:</em> Bạn chỉ cần đưa ra một mức giá phù hợp nhất, trong giới hạn bạn mua được, sau khi đã xem xét đặc điểm của em Koi. Tất cả các việc còn lại để người ủy quyền chịu trách nhiệm.</p>
+        <p style="margin: 20px;"><span>&#50;</span><em>. Trả Giá Thầu:</em> Tăng giá thầu từ từ, dò xét xem đối phương ra giá bao nhiêu, nếu cao hơn lại tăng thêm một chút. Chiến lược này khá mất thời gian, gây sự căng não, căng thẳng, cũng như tính kịch tính cho cuộc đấu giá.</p>
+        <p style="margin: 20px;"><span>&#51;</span><em>. Bắn Tỉa Thầu:</em> Chỉ đặt giá thầu vào phút cuối hoặc vài giây trước khi phiên đấu giá kết thúc. Điều này không được khuyến nghị vì giá thầu vào phút cuối có thể không được xử lý kịp thời nếu kết nối internet chậm.</p>
+        <p style="margin: 20px;"><span>&#52;</span><em>. Trả Giá Cho Nhiều Cá Koi:</em> Nếu bạn muốn tăng tỷ lệ thắng một con cá koi tuyệt vời, bạn có thể đặt giá thầu cho nhiều cá koi cùng một lúc.</p>
+        
+      </li>
+      <li id="thanh-toan-va-van-chuyen-ca-sau-dau-gia" ><em class="li-title">Thanh Toán Và Vận Chuyển Cá Sau Đấu Giá</em>
+        <p style="margin: 20px;"><span>&#49;</span><em>. Thanh Toán:</em> Hãy trả tiền cho cá koi của bạn trong vòng 3 ngày sau khi giành được nó. Bạn có thể thanh toán trực tuyến và lên lịch gửi hàng cá koi sau khi thanh toán hoàn tất.</p>
+        <p style="margin: 20px;"><span>&#50;</span><em>. Chi Phí Vận Chuyển:</em> Chi phí vận chuyển khác nhau tùy thuộc vào số lượng và kích cỡ của cá koi bạn muốn vận chuyển.</p>
+        <p style="margin: 20px;"><span>&#51;</span><em>. Quan Trọng:</em>  Tất cả các lô hàng cá koi cần ít nhất 2 ngày làm việc (48 giờ) trước khi vận chuyển để ngừng cho ăn và chuẩn bị cá koi của bạn cho một hành trình an toàn.</p>
+        
+      </li>
+      <li id="lam-gi-khi-bo-lo-mot-vai-em-koi-dep-trong-mot-cuoc-dau-gia" ><em class="li-title">Làm Gì Khi Bỏ Lỡ Một Vài Em Koi Đẹp Trong Một Cuộc Đấu Giá?</em>
+        <p>Nếu một người trả giá khác thắng được một con cá koi mà trái tim bạn đã đặt vào, đôi khi có thể gây nản lòng. Vì vậy, chúng tôi đề nghị:</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Tham khảo kỹ tất cả các em koi chúng tôi có để chuẩn bị sẵn sàng đấu giá.</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Tìm kiếm cá koi ở mức giá cố định với các em koi có sẵn.</p>
+        <p style="margin: 20px;"><span>&#8226;</span> Liên hệ với chúng tôi ngay để yêu cầu một em koi khác na ná.</p>
+      </li>
+     </div>
+</div>
+
+
+
+<div class="c">
+  <h1>Blog Koi Nhật Bản & Tin tức</h1>
+  <div class="c1">
+      <div class="grid-item">
+          <a href="../news-page/tincay.html">
+              <img src="https://onkoi.vn/wp-content/uploads/2020/05/mino-koi-farm-300x182.jpg" alt="#">
+              <h3>Nguồn gốc cá Koi của trang trại</h3>
+              <p>Xuất phát từ tình yêu với cá Koi Nhật Bản...</p>
+              <button>Xem thêm</button>
+          </a>
+      </div>
+      <div class="grid-item">
+          <a href="../news-page/phongthuy.html">
+              <img src="https://onkoi.vn/wp-content/uploads/2020/04/quy-trinh-ve-sinh-ho-ca-koi-chuan-chi-300x225.jpg" alt="#">
+              <h3>Ý nghĩa của việc nuôi cá koi</h3>
+              <p>Từ lâu, trong văn hóa phương Đông...</p>
+              <button>Xem thêm</button>
+          </a>
+      </div>
+      <div class="grid-item">
+          <a href="../news-page/giaca.html">
+              <img src="https://onkoi.vn/wp-content/uploads/2022/04/thuc-an-koi-40-protein-aquamaster-hi-growth-15-kg-CA16_02-300x300.jpg" alt="#">
+              <h3>Giá cá koi chuẩn nhật</h3>
+              <p>Giá cá koi chuẩn nhật f0 + f1 70 cm...</p>
+              <button>Xem thêm</button>
+          </a>
+      </div>
+  </div>
+
+<script src="../js/user_login_register.js"></script>
+<script src="../js/cart.js"></script>  
+  <!-- Footer -->
+<div class="footer" id="footer">
+
+    <a href="#"><img src="../img/logo.png" alt="#" style="right: 20px; height: 30%; margin: auto" /></a>
+
+    <div class="text">
+    <h3>Thông tin liên hệ:</h3>
+    <p>
+      Địa chỉ: 70 Đ. Tô Ký, Tân Chánh Hiệp, Quận 12, Hồ Chí Minh, Việt Nam
+    </p>
+    <p>
+      Tele: 0123456789
+    </p>
+    <p>
+      gmail: ShopkoiFish@gmail.com
+    </p>
+    </div>
+
+    <div class="social">
+    <p>Mạng xã hội:</p>
+    <a href="#"
+      ><img src="../img/facebook.png" style="height: 30px; width: 30px"
+    /></a>
+    <a href="#"
+      ><img src="../img/youtube.png" style="height: 30px; width: 30px"
+    /></a>
+    <a href="#"
+      ><img src="../img/insta.png" style="height: 30px; width: 30px"
+    /></a>
+</div>
+
+<!-- back to top -->
+<!-- <div class="btntop">
+      <a href="#" class="top"></a>
+  </div> -->
+<!-- back to top -->
+</div>
+</body>
+</html>

@@ -4,24 +4,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quy trình vệ sinh hồ cá koi chuẩn chỉ</title>
     <link rel="stylesheet" href="./news.css" />
+    <link rel="stylesheet" href="../css/tintuc.css"/>
+    <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/sidenav.js"></script>
 </head>
 <body>
     
 
-<div class="top_head">
+  <div class="top_head">
     <div class="tele">
       <img src="../img/telephone.png" style="height: 15px; width: 15px" />
       <span>0123456789</span>
     </div>
     <div class="function">
+        <a href="../cart.html" id="shoppingCart" style="display: none; margin-right: 20px;">
+        <img
+          src="../img/shopping-cart2.png"
+          alt="Giỏ hàng"
+          style="height: 40px; width: 40px;"
+        />
+      </a>
       <a href="#" id="loginBtn" style="margin-right: 20px"
         >Đăng nhập/Đăng ký</a
       >
-
-      <a href="#">Giỏ hàng</a>
+      <span id="userName" style="display: none; margin-right: 20px"></span>
+      <!-- Thêm thẻ span cho tên người dùng -->
+      <a href="../caidat.html" id="settingsLink" style="margin-right: 10px; display: none"
+        >Cài đặt</a
+      >
+      <a href="#" id="logoutLink" style="display: none">Đăng xuất</a>
     </div>
   </div>
+<!-- /Chức năng -->
+
+  <!--Thịnh bố sung thêm đăng nhập, đăng ký cho user-->
+  <!-- Modal for Login/Register -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <!-- Login Form -->
+      <div id="loginForm">
+        <h2 style="text-align: center;">Đăng nhập</h2>
+        <form id="loginFormElement" action="/login" method="POST">
+          <div class="form-group">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit" class="button" style="width: 20%; margin-left: 40%;">Đăng nhập</button>
+          <p><a href="#" id="forgotPassword">Quên mật khẩu?</a></p>
+          <p>Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký</a></p>
+        </form>
+      </div>
+
+      <!-- Register Form (hidden initially) -->
+      <div id="registerForm" style="display: none">
+        <h2 style="text-align: center;">Đăng ký</h2>
+        <form action="/register" method="POST">
+          <div class="form-group">
+            <label for="reg_username">Tên đăng nhập:</label>
+            <input
+              type="text"
+              id="reg_username"
+              name="reg_username"
+              required
+            />
+          </div>
+          <p id="error-message-1" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="reg_password">Mật khẩu:</label>
+            <input
+              type="password"
+              id="reg_password"
+              name="reg_password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="confirm_password">Xác nhận mật khẩu:</label>
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              required
+            />
+          </div>
+          <p id="error-message-2" style="display: none; font-size: 0.8em; color: red; margin-left: -100px;"></p>
+          <div class="form-group">
+            <label for="phone">Số điện thoại:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{10}"
+              required
+            />
+          </div>
+          <button type="submit" style="width: 20%; margin-left: 40%;">Đăng ký</button>
+          <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
+        </form>
+      </div>
+
+      <!-- Forgot Password Form (hidden initially) -->
+      <div id="forgotPasswordForm" style="display: none">
+        <h2 style="text-align: center;">Quên mật khẩu</h2>
+        <form action="/forgot-password" method="POST">
+          <div class="form-group">
+            <label for="forgot_email">Nhập email của bạn:</label>
+            <input
+              type="email"
+              id="forgot_email"
+              name="forgot_email"
+              required
+            />
+          </div>
+          <button type="submit" style="width: 30%; margin-left: 35%;">Lấy lại mật khẩu</button>
+          <p>Quay lại <a href="#" id="backToLogin">Đăng nhập</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
 <div class="header">
     <!-- logo -->
     <div class="logo">
@@ -32,68 +143,42 @@
     <!-- Menu trang chủ -->
     <div class="menu_bar">
       <li class="menu">
-        <a href="../homepage.html">Trang chủ</a>
+          <a href="../homepage.html">Trang chủ</a>
       </li>
 
       <li class="menu">
-        <a href="#">Giới Thiệu</a>
-        <ul class="sub_menu">
-          <li><a href="#">Giới thiệu</a></li>
-          <li><a href="#">Giới thiệu sàn ký gửi</a></li>
-          <li><a href="#">Giới thiệu sàn đấu giá</a></li>
-          <li><a href="#">Các đơn vị bán koi</a></li>
-          <li><a href="#">Nguồn Koi của OnKoi</a></li>
-          <li><a href="#">Hướng dẫn</a></li>
-        </ul>
+        <a href="../gioithieu.html">Giới thiệu</a>
+      <ul class="sub_menu">
+          <li><a href="../gioithieu/kygui.html">Giới thiệu sàn ký gửi</a></li>
+          <li><a href="../gioithieu/AFIntroduction.html">Giới thiệu sàn đấu giá</a></li>
+      </ul>
       </li>
 
       <li class="menu">
-        <a href="#">Các loại cá</a>
-        <ul class="sub_menu">
-          <li><a href="#">Koi Kohaku</a></li>
-          <li><a href="#">koi Ogon</a></li>
-          <li><a href="#">Koi Showa</a></li>
-          <li><a href="#">Koi Tancho</a></li>
-        </ul>
+          <a href="#">Các loại cá</a>
+          <ul class="sub_menu">
+              <li><a href="../sanpham/Kohaku.html">Koi Kohaku</a></li>
+              <li><a href="../sanpham/Showa.html">Koi Showa</a></li>
+              <li><a href="../sanpham/Asagi.html">Koi Asagi</a></li>
+              <li><a href="../sanpham/Shusui.html">Koi Shusui</a></li>
+              <li><a href="../sanpham/Tancho.html">Koi Tancho</a></li>
+            </ul>
+      </li>
+
+
+      <li class="menu">
+          <a href="../tintuc.html">Tin tức</a>
       </li>
 
       <li class="menu">
-        <a href="#">Sản phẩm</a>
-        <ul class="sub_menu">
-          <li><a href="#">Hệ thống lọc hồ</a></li>
-          <li><a href="#">Phụ kiện trang trí</a></li>
-        </ul>
+          <a href="../sanpham/Food.html">Thức ăn cho cá</a>
       </li>
 
       <li class="menu">
-        <a href="../tintuc.html">Tin tức</a>
+          <a href="#footer">Liên hệ</a>
       </li>
 
-      <li class="menu">
-        <a href="#">Thức ăn cho cá</a>
-      </li>
-
-      <li class="menu">
-        <a href="#">Liên hệ</a>
-      </li>
-
-      <!-- navi -->
-      <!-- <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-          >&times;</a
-        >
-        <a href="#kohaku">Koi Kohaku</a>
-        <a href="#karashi">Koi Karashi</a>
-        <a href="#showa">Koi Showa</a>
-        <a href="#asagi">Koi Asagi</a>
-        <a href="#news">Tin tức</a>
-      </div>
-      <span
-        style="font-size: 30px; cursor: pointer; margin-right: 10px"
-        onclick="openNav()"
-        >&#9776;
-      </span> -->
-      <!-- /navi -->
+</div>
     </div>
 <!-- kaka -->
  
@@ -113,7 +198,9 @@
     <ol class="content-list">
         <li><a href="#ftoc-luu-y-ve-van-de-nuoi-ca-koi-cho-nguoi-moi-bat-dau">Lưu ý về vấn đề nuôi cá Koi cho người mới bắt đầu</a></li>
         <li><a href="#ftoc-huong-dan-ky-thuat-nuoi-ca-koi-chi-tiet">Hướng dẫn kỹ thuật nuôi cá Koi chi tiết</a>                </li>
-        <li><a href="#section3">Nội dung khác</a></li>
+        <li><a href="#ftoc-thuc-an-cho-ca-koi">Thức ăn cho cá Koi</a></li>
+        <li><a href="#ftoc-benh-tat-o-ca-ko">Bệnh tật ở cá Koi</a></li>
+        <li><a href="#ftoc-nhung-sai-lam-pho-bien-trong-qua-trinh-ky-thuat-cham-soc-va-nuoi-ca-koi">Những sai lầm phổ biến trong quá trình kỹ thuật chăm sóc và nuôi cá Koi</a></li>
         <!-- Các mục tiếp theo... -->
     </ol>
 </div>
@@ -142,7 +229,6 @@
         </li>
         <li id="ftoc-huong-dan-ky-thuat-nuoi-ca-koi-chi-tiet" > <em class="em-title">Hướng dẫn kỹ thuật nuôi cá Koi chi tiết</em>
             <div class="news-p"><span>&#8226;</span> Chuẩn bị hồ nuôi Koi</div>
-            <iframe class="news-video" src="https://www.youtube.com/embed/IsIn04Yqz3E?si=JeK83qSiYJPiqMtb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <p>Dù bạn thực hiện cách nuôi Koi trong nhà hay cách nuôi Koi ngoài trời thì bạn cũng cần phải ưu tiên hồ nuôi Koi. Ngoài ra, việc nuôi Koi trong nhà hay ngoài trời về cơ bản cũng đều giống nhau nhưng bạn cần chú ý đến diện tích của hồ. Nếu hồ nuôi Koi baby thì không cần quá rộng nhưng đến khi Koi to hơn thì phải lọc bớt Koi để hồ không bị chật, số lượng Koi nuôi quá nhiều trong hồ cũng làm giảm hiệu suất phát triển của Koi.</p>
             <p>Nếu hồ nuôi Koi to sai thì nên xây hồ rộng hoặc tùy theo số lượng Koi được nuôi để xây hồ. Tuy nhiên, đối với những Koi lớn thì diện tích hồ cần phải thực sự rộng rãi. Hãy tạo cho Koi cảm giác thật sự thoải mái giống như cảm giác thoải mái của bạn trên chính chiếc giường ngủ tại phòng ngủ vậy.</p>
             <p><span>&#8722;</span> Độ sâu của hồ nên từ 0,8-1m, đối với hồ nuôi Koi baby thì thường là 0,4-0,5m là tốt nhất. Vì nếu hồ quá sâu sẽ không nhìn thấy cá và khó vệ sinh, hồ quá cạn cũng khiến Koi bị khó thở.</p>
@@ -163,7 +249,6 @@
             <p><span>&#43;</span> Nước trước khi bơm cần phải thực hiện qua các bước xử lý (dùng than hoạt tính, phơi nắng…).</p>
             <img src="../img/kich-thuoc-ho-koi-nhu-nao-cho-phu-hop.jpg" alt="kich-thuoc-ho-koi-nhu-nao-cho-phu-hop" style="width: 100%; padding-left: 0;">
             <p>Chọn giống Koi để thả vào hồ:</p>
-            <iframe class="news-video" src="https://www.youtube.com/embed/uPIPvterSqE" title="HƯỚNG DẪN CÁCH CHO CÁ KOI ĂN ĐÚNG CÁCH ĐỂ CÁ PHÁT TRIỂN TOÀN DIỆN  OnKoi - Quang Minh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <p>Tùy theo từng loài Koi mà bạn có những cách chọn giống Koi để thả vào hồ cho phù hợp. Bạn có thể tham khảo thêm: Cách hướng dẫn chọn cá Koi Nhật theo từng loại. Nhìn chung, chọn Koi cần phải chọn loại giống khỏe mạnh, bơi đẹp, không bị dị tật…nhưng công cuộc này đòi hỏi bạn phải ĐẦU TƯ KIẾN THỨC VÀ SUY NGHĨ RẤT NHIỀU. Trên thị trường hiện nay có khá nhiều loại Koi với đầy đủ kích thước, hình dáng và màu sắc khác nhau.</p>
             <p><span>&#8722;</span> Koi Nhật: Là dòng Koi nổi bật và đắt tiền nhất nhưng thỏa mãn đầy đủ các yêu cầu về thú chơi nhất mang đến giá trị cao nhất về tinh thần và kinh tế.</p>
             <p><span>&#8722;</span> Koi Trung Quốc: Cũng có nguồn gốc từ Koi Nhật nhưng là những Koi Nhật, đã được sàng lọc theo tỉ lệ 7:3 (loại 7, giữ lại 3) sau khi Koi sinh được 60 ngày. Trung Quốc cũng là thị trường Koi lớn nhất của Nhật Bản tính đến thời điểm hiện tại.</p>
@@ -174,13 +259,11 @@
             <p><span>&#8722;</span> Chọn màu sắc: Màu sắc của thân cá không bị mờ, rõ ràng, việc phân cách giữa các màu thì cũng tùy từng giống nhưng cần phải phân chia rõ màu, không bị lem, vỡ màu.</p>
             <p><span>&#8722;</span> Quan sát dáng bơi: Dáng bơi cần phải thẳng, uyển chuyển, nhẹ nhàng, không có dấu hiệu lệch sang bên nào cả.</p>
             <p><span>&#8722;</span> Địa chỉ mua Koi: Hãy đến những địa chỉ mua Koi uy tín, tư vấn rõ ràng, có bảo hành, cam kết về đền bù, nguồn gốc xuất xứ. Tại những địa chỉ này sẽ giúp bạn tránh được tình trạng mua cá mua về làm sinh bệnh chết cá cũ.</p>
-            <iframe class="news-video" src="https://www.youtube.com/embed/IWFR7a-S5-o" title="Con giống benigoi đáng để sưu tập OnKoi - Quang Minh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="news-p"><span>&#8226;</span> Hệ sinh thái trong hồ nuôi Koi</div>
             <p>Những loại rong tảo sẽ góp phần mang đến hệ sinh thái khá tốt cho hồ nuôi cá Koi nhưng nếu như rong tảo phát triển quá nhiều thì sẽ không tốt vì chúng có thể khiến làm cá bị thiếu oxy để thở. Vì thế, bạn hãy kiểm soát sự phát triển của rong tảo trong hồ, có thể trồng thêm sen, súng hoặc kèm theo thác nước nhỏ là tốt nhất vì sẽ giúp tạo dòng oxy cho cá.</p>
         </li>
         <li id="ftoc-thuc-an-cho-ca-koi"><em class="em-title">Thức ăn cho cá Koi</em>
             <p>Mặc dù Koi khá dễ nuôi nhưng để có đàn cá khỏe mạnh, nhanh lớn và màu sắc bắt thì đòi hỏi khá nhiều kỹ thuật chăm sóc từ người nuôi. Quan trọng nhất là thức ăn, cách thức cho ăn, liều lượng… Việc chọn thức ăn cho cá Koi hợp lý cũng là cách nuôi cá Koi mau lớn.</p>
-            <iframe class="news-video" src="https://www.youtube.com/embed/Q_ghrXDp0_s" title="CÁCH CHO CÁ KOI ĂN ĐÚNG CÁCH, PHÁT TRIỂN NHANH  OnKoi - Quang Minh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <p><span>&#8722;</span> Ngay từ sau khi được 3 ngày tuổi (Koi tiêu hết noãn hoàng), chúng đã bắt đầu ăn những loại thức ăn bổ sung như bo bo, sinh vật phù du hoặc lòng đỏ trứng chín…</p>
             <p><span>&#8722;</span> Khi được khoảng 2 tuần tuổi thì Koi chuyển qua ăn động vật ở tầng đáy như loăng quăng, giun… Trong giai đoạn này, bạn cần phải đặc biệt chú ý vì nếu không cung cấp đủ thức ăn cho Koi thì Koi sẽ rất dễ chết.</p>
             <p><span>&#8722;</span> Bắt đầu từ 1 tháng tuổi trở đi, Koi chuyển sang ăn một số loại động vật nhỏ như ấu trùng, giun, ốc…giống như cá trưởng thành. Ngoài ra, Koi còn ăn thêm phân xanh, bã đậu, cám, thóc lép, các loại thức ăn chế biến sẵn dành cho Koi. Bạn có thể tham khảo từng loại thức ăn chế biến sẵn dành cho Koi đang có trên thị trường để chọn loại thức ăn phù hợp.</p>
@@ -211,12 +294,9 @@
             <p>Khi bộ lọc không đáp ứng được thể tích nước có trong hồ thì sẽ khiến sức khỏe của Koi bị giảm đi. Vì thế, bạn hãy làm thêm hệ thống lọc hoặc thường xuyên cải tạo hệ thống lọc của bạn để giúp Koi có sức khỏe tốt nhất.</p>
             <div class="news-p"><span>&#8226;</span> Koi bị sốc ngay sau khi thay nước</div> 
             <p>Nếu như thay nước mà bạn không khử độc Clo thì chẳng khác nào bạn đang “đầu độc” cả đàn cá của bạn. Hãy phơi nước trước 1 ngày rồi mới xả nước vào bể khi bạn có nhu cầu thay nước cho Koi hoặc bạn có thể dùng than hoạt tính để trung hòa Clo.</p>      
-            <iframe class="news-video" src="https://www.youtube.com/embed/ZAwjT3fPWrU" title="[BÍ QUYẾT] QUI TRÌNH VÀ CÁCH DƯỠNG CÁ KOI MỚI VÀO HỒ 99% KHÔNG CHẾT ONKOI.VN-QUANG MINH - 0932144888" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </li>
     </div>
 </div>
-
-
 
 <!-- Footer -->
 <div class="footer" id="footer">
@@ -255,5 +335,8 @@
       </div> -->
     <!-- back to top -->
   </div>
+  <script src="../js/user_login_register.js"></script>
+  <script src="../js/sidenav.js"></script>
+  <script src="../js/cart.js"></script>
 </body>
 </html>

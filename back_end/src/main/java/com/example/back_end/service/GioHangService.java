@@ -12,4 +12,5 @@ public interface GioHangService {
     List<GioHangDTO> getGioHangByUserName(String userName);
     boolean deleteGioHang(String userName);
     boolean deleteByUserNameAndItemID(HashMap<String, String> body);
+    boolean addToGioHang(GioHang gioHang);
 }

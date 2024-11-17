@@ -33,7 +33,7 @@ public class Donhang {
 
     @NotNull
     @Column(name = "order_date", nullable = false)
-    private LocalDate orderDate;
+    private String orderDate;
 
     @Size(max = 50)
     @NotNull
@@ -89,11 +89,11 @@ public class Donhang {
         this.deliveryTime = deliveryTime;
     }
 
-    public LocalDate getOrderDate() {
+    public String getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(LocalDate orderDate) {
+    public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
     }
 
