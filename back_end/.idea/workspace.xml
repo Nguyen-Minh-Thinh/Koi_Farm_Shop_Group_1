@@ -5,10 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="070c0ff4-b69d-4daa-9b35-7e651e630f3f" name="Changes" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/asagi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/insta.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/karashi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/kohaku.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/new.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/showa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/tancho.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/telephone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/youtube.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/js/sidenav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/templates/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/templates/users.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/ShopkoiApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/config/SpringSecurity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/dto/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/entity/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/repository/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/security/CustomUserDetailsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shopkoi/target/test-classes/ut/edu/shopkoi/ShopkoiApplicationTests.class" beforeDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/../admin/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/product.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../admin/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/ThucAnChoCaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/ThucAnChoCaController.class" afterDir="false" />
+>>>>>>> a9b40424405c7c687932a0c23b87631f27b0362e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +97,7 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/m/FlutterDev/Koi_Farm_Shop_Group_1/back_end&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java/junit_selenium&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
