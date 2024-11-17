@@ -27,6 +27,7 @@ public class GioHang {
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "tai_khoan_nguoi_dung")
 //    private TaiKhoanCuaNguoiDung taiKhoanNguoiDung;
+//
 
     public String getTaiKhoanNguoiDung() {
         return taiKhoanNguoiDung;

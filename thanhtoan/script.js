@@ -270,7 +270,7 @@ async function submitPayment() {
                 // Bước 2: Chỉnh sửa trường saleStatus
                 const updatedFishData = {
                     ...data,  // Sao chép dữ liệu cũ
-                    saleStatus: "Đã bán"  // Chỉ thay đổi saleStatus
+                    saleStatus: " Đã bán"  // Chỉ thay đổi saleStatus
                 };
         
                 // Bước 3: Gửi yêu cầu PUT để cập nhật cá

@@ -1,5 +1,6 @@
 package com.example.back_end.service;
 
+import com.example.back_end.modal.GioHang;
 import com.example.back_end.modal.GioHangDTO;
 import com.example.back_end.repository.GioHangRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +58,22 @@ public class GioHangServiceImple implements GioHangService {
         // Xóa tất cả sản phẩm trong giỏ hàng của người dùng
         return gioHangRepository.deleteByUserName(userName) > 0;
     }
+    @Override
+    public boolean addToGioHang(GioHang gioHang) {
+        try {
+            // Ensure the userName is set in the GioHang object
+            if (gioHang.getTaiKhoanNguoiDung() == null) {
+                throw new IllegalArgumentException("UserName is required for the cart item.");
+            }
 
+            // Save the GioHang object to the repository
+            gioHangRepository.save(gioHang);
+            return true;
+        } catch (Exception e) {
+            // Log the exception or print for debugging purposes (optional)
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 }
