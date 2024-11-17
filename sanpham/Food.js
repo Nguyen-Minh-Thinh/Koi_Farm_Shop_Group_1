@@ -55,13 +55,56 @@ function fetchAndDisplayFishFood(statusFilter) {
                 productElement.classList.add('products');
                 productElement.innerHTML = productHTML;
                 productsContainer.appendChild(productElement);
+
+                const buyButton = productElement.querySelector(`#buyButton-${product.id}`);
+                buyButton.addEventListener('click', () => {
+                    // Lấy username từ cookie
+                    const username = getCookie('username'); // Hàm này cần được định nghĩa để lấy cookie
+
+                    if (username) {
+                        fetch(`http://localhost:8080/giohang/${username}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                idOfFish: product.id,
+                                tenSanPham: product.saleStatus,
+                                tongCong: product.price,
+                                image: product.image
+                            })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                // Chuyển hướng đến cart.html sau khi thêm thành công
+                                window.location.href = '../cart.html';
+                            } else {
+                                console.error('Failed to add to cart');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error adding product to cart:', error);
+                        });
+                    } else {
+                        alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!');
+                    }
+                });
             });
         })
         .catch(error => {
             console.error('Error fetching products:', error);
         });
 }
-
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+        const [key, value] = cookie.trim().split('=');
+        if (key === name) {
+            return decodeURIComponent(value);
+        }
+    }
+    return null;
+}
 // Event listeners for filter radio buttons
 document.querySelectorAll('input[name="filter"]').forEach(radio => {
     radio.addEventListener('change', handleFilterChange);

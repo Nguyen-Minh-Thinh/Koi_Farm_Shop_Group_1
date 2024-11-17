@@ -29,6 +29,7 @@ if (idOfFish) {
                 buyButton.disabled = true;
                 buyButton.style.backgroundColor = "gray";
             }
+
             document.getElementById("detailSalePerson").innerText = data.salePerson;
             document.getElementById("detailDobOfFish").innerText = data.dobOfFish;
             document.getElementById("detailSexOfFish").innerText = data.sexOfFish;
@@ -46,8 +47,6 @@ if (idOfFish) {
                         if (videoData.video) {
                             // Gán URL video vào thẻ <iframe>
                             const videoFrame = document.getElementById("videoFrame");
-                            
-                            // Gán trực tiếp URL video từ videoData
                             videoFrame.src = videoData.video;
 
                             // Hiển thị video
@@ -58,10 +57,73 @@ if (idOfFish) {
                         console.error('Error fetching video:', error);
                     });
             }
+
+            // Handle "Đặt Hàng Ngay" button click
+            const buyButton = document.getElementById("buyButton");
+            buyButton.addEventListener('click', () => {
+                // Lấy username từ cookie
+                const username = getCookie('username'); // Hàm này cần được định nghĩa để lấy cookie
+
+                if (username) {
+                    // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+                    fetch(`http://localhost:8080/giohang/${username}`)
+                        .then(response => response.json())
+                        .then(cartItems => {
+                            const isProductInCart = cartItems.some(item => item.tenSanPham === data.nameOfFish);
+                            if (isProductInCart) {
+                                alert('Sản phẩm này đã có trong giỏ hàng!');
+                                window.location.href = '../cart.html'; // Chuyển hướng tới giỏ hàng
+                            } else {
+                                // Thêm sản phẩm vào giỏ hàng
+                                fetch(`http://localhost:8080/giohang/${username}`, {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        idOfFish: data.idOfFish,
+                                        tenSanPham: data.nameOfFish,
+                                        taiKhoanNguoiDung: username,
+                                        tongCong: data.price,
+                                        image: data.image
+                                    })
+                                })
+                                    .then(response => {
+                                        if (response.ok) {
+                                            alert('Sản phẩm đã được thêm vào giỏ hàng!');
+                                            window.location.href = '../cart.html'; // Chuyển hướng tới giỏ hàng
+                                        } else {
+                                            console.error('Failed to add to cart');
+                                        }
+                                    })
+                                    .catch(error => {
+                                        console.error('Error adding product to cart:', error);
+                                    });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching cart items:', error);
+                        });
+                } else {
+                    alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!');
+                }
+            });
         })
         .catch(error => {
             console.error('Error fetching product details:', error);
         });
 } else {
     console.error('No product ID found in URL');
+}
+
+// Hàm lấy cookie theo tên
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (const cookie of cookies) {
+        const [key, value] = cookie.trim().split('=');
+        if (key === name) {
+            return decodeURIComponent(value);
+        }
+    }
+    return null;
 }
