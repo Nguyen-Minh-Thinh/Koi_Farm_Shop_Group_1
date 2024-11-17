@@ -18,7 +18,7 @@
             <input type="text" id="address" name="address" required>
             <!-- Số điện thoại -->
             <label for="phone">Số điện thoại:</label>
-            <input type="text" id="phone" name="address" required>
+            <input type="text" id="phone" name="address" required readonly>
             <!-- Thời gian giao hàng -->
             <label for="deliveryTime">Thời gian dự kiến giao hàng:</label>
             <input type="text" id="deliveryTime" name="deliveryTime" readonly>
@@ -38,7 +38,7 @@
 
             <!-- Tổng tiền -->
             <label for="totalAmount">Tổng tiền (VND):</label>
-            <input type="number" id="totalAmount" name="totalAmount" required>
+            <input type="number" id="totalAmount" name="totalAmount" required readonly>
 
             <button type="button" onclick="submitPayment()">Thanh Toán</button>
         </form>
