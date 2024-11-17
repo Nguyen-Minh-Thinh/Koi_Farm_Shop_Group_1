@@ -247,3 +247,35 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchAndDisplayProducts(typeOfFish, statusFilter);
     });
 });
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+// Hàm hiển thị modal đăng nhập
+function showLoginModal() {
+    const modal = document.getElementById('loginModal');
+    modal.style.display = 'block';
+}
+
+// Hàm ẩn modal đăng nhập
+function hideLoginModal() {
+    const modal = document.getElementById('loginModal');
+    modal.style.display = 'none';
+}
+
+document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('buy_button')) {
+        const isLoggedIn = getCookie("username"); // Kiểm tra cookie đăng nhập
+
+        if (!isLoggedIn) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định
+            showLoginModal(); // Hiển thị modal đăng nhập
+        } else {
+            // Tiến hành đặt hàng nếu đã đăng nhập
+            alert('Đặt hàng thành công!');
+        }
+    }
+});
