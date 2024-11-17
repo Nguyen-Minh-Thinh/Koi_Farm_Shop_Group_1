@@ -179,7 +179,7 @@ function fetchAndDisplayProducts(typeOfFish, statusFilter) {
                             .then(response => {
                                 if (response.ok) {
                                     console.log('Product added to cart successfully:', cartDataToAdd);
-                                    alert(`Sản phẩm "${product.name_of_fish}" đã được thêm vào giỏ hàng!`);
+                                    alert(`Sản phẩm đã được thêm vào giỏ hàng!`);
                                     // Redirect to cart.html
                                     window.location.href = '../../cart.html';
                                 } else {
@@ -273,9 +273,6 @@ document.addEventListener('click', (event) => {
         if (!isLoggedIn) {
             event.preventDefault(); // Ngăn chặn hành động mặc định
             showLoginModal(); // Hiển thị modal đăng nhập
-        } else {
-            // Tiến hành đặt hàng nếu đã đăng nhập
-            alert('Đặt hàng thành công!');
         }
     }
 });

@@ -167,7 +167,7 @@ document.addEventListener('click', (event) => {
             showLoginModal(); // Hiển thị modal đăng nhập
         } else {
             // Tiến hành đặt hàng nếu đã đăng nhập
-            alert('Đặt hàng thành công!');
+            alert('Sản phẩm đã được thêm vào giỏ hàng!');
         }
     }
 });

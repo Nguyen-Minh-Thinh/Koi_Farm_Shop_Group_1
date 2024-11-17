@@ -116,19 +116,7 @@ if (idOfFish) {
     console.error('No product ID found in URL');
 }
 
-<<<<<<< HEAD
-// Hàm lấy cookie theo tên
-function getCookie(name) {
-    const cookies = document.cookie.split(';');
-    for (const cookie of cookies) {
-        const [key, value] = cookie.trim().split('=');
-        if (key === name) {
-            return decodeURIComponent(value);
-        }
-    }
-    return null;
-}
-=======
+
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -154,10 +142,6 @@ document.addEventListener('click', (event) => {
         if (!isLoggedIn) {
             event.preventDefault(); // Ngăn chặn hành động mặc định
             showLoginModal(); // Hiển thị modal đăng nhập
-        } else {
-            // Tiến hành đặt hàng nếu đã đăng nhập
-            alert('Đặt hàng thành công!');
         }
     }
 });
->>>>>>> 8cc997c0458df20d0360bea016c6e815157a13ee
