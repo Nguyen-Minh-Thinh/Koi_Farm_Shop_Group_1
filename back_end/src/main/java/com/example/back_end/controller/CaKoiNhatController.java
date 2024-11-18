@@ -4,6 +4,8 @@ import com.example.back_end.modal.CaKoiNhat;
 import com.example.back_end.repository.CaKoiNhatRepository;
 import com.example.back_end.service.CaKoiServiceImple;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -84,6 +86,18 @@ public class CaKoiNhatController {
     @DeleteMapping("/api/fish/{id}")
     public boolean deleteFish(@PathVariable String id) {
         return caKoiNhatService.deleteFish(id);
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/check/ca-koi-nhat/{id}")
+    public ResponseEntity<Boolean> checkIfFishExists(@PathVariable("id") String id) {
+        try {
+
+            boolean exists = caKoiNhatRepository.existsById(id); // Kiểm tra sự tồn tại của id
+            return new ResponseEntity<>(exists, HttpStatus.OK); // Trả về true hoặc false
+        } catch (Exception e) {
+            return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR); // Trả về false nếu có lỗi
+        }
     }
 
 }

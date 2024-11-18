@@ -123,7 +123,7 @@ function generateOrderDetails(order) {
   const orderInfoHtml = `
       <div class="order-info">
           <p><strong>Ngày đặt hàng:</strong> ${order.orderDate}</p>
-          <p><strong>Hình thức giao:</strong> ${order.pay}</p>
+          <p><strong>Hình thức thanh toán:</strong> ${order.pay}</p>
           <p><strong>Tài khoản đặt hàng:</strong> ${order.phoneNumber.tenKhachHang}</p>
           <p><strong>Số điện thoại:</strong> ${order.phoneNumber.phoneNumber}</p>
           <p><strong>Thời gian giao:</strong> ${order.deliveryTime}</p>

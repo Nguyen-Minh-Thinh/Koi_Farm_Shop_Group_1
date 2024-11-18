@@ -24,6 +24,8 @@ public class GioHang {
 
     @Column(name = "id_of_fish")
     private String idOfFish;
+
+
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "tai_khoan_nguoi_dung")
 //    private TaiKhoanCuaNguoiDung taiKhoanNguoiDung;

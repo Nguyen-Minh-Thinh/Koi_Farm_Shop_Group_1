@@ -94,4 +94,23 @@ public class ThucAnChoCaController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/check/thuc-an-cho-ca/{id}")
+    public ResponseEntity<Boolean> checkIfFoodExists(@PathVariable("id") String id) {
+        try {
+            // Kiểm tra sự tồn tại của ID
+            boolean exists = thucAnChoCaRepository.existsById(id);
+            return new ResponseEntity<>(exists, HttpStatus.OK);
+        } catch (Exception e) {
+            // Trả về trạng thái lỗi
+            return new ResponseEntity<>(false, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+//    @CrossOrigin(origins = "*")
+//    @PutMapping("/api/fish/update/{id}")
+//    public CaKoiNhat updateThucAnChoCa(@PathVariable String id, Body string updateValue) {
+//        return .updateThucAnChoCa(id, updatedFish)
+//    }
 }

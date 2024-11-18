@@ -1026,7 +1026,7 @@ test|schema||newuser||grant option|G</Grants>
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
     <schema id="292" parent="1" name="koi_farm_shop">
-      <LastIntrospectionLocalTimestamp>2024-11-14.10:09:53</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-11-17.13:44:26</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="293" parent="1" name="mysql">
@@ -1195,7 +1195,7 @@ test|schema||newuser||grant option|G</Grants>
     <column id="335" parent="309" name="id_of_fish">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>varchar(50)|0s</StoredType>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
     <column id="336" parent="309" name="quantity">
       <NotNull>1</NotNull>
@@ -1207,7 +1207,7 @@ test|schema||newuser||grant option|G</Grants>
       <RefColNames>order_id</RefColNames>
       <RefTableName>donhang</RefTableName>
     </foreign-key>
-    <foreign-key id="338" parent="309" name="fk_fish">
+    <foreign-key id="338" parent="309" name="FKg1wkmh42nbksay553njpdjqq7">
       <ColNames>id_of_fish</ColNames>
       <RefColNames>id_of_fish</RefColNames>
       <RefTableName>ca_koi_nhat</RefTableName>
@@ -1232,7 +1232,7 @@ id_of_fish</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="343" parent="310" name="order_id">
-      <AutoIncrement>6</AutoIncrement>
+      <AutoIncrement>8</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
@@ -1249,7 +1249,7 @@ id_of_fish</ColNames>
     <column id="346" parent="310" name="order_date">
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StoredType>date|0s</StoredType>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
     <column id="347" parent="310" name="pay">
       <NotNull>1</NotNull>
@@ -1302,14 +1302,14 @@ id_of_fish</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="358" parent="311" name="id">
-      <AutoIncrement>112</AutoIncrement>
+      <AutoIncrement>132</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
     <column id="359" parent="311" name="id_of_fish">
       <Position>2</Position>
-      <StoredType>varchar(50)|0s</StoredType>
+      <StoredType>varchar(255)|0s</StoredType>
     </column>
     <column id="360" parent="311" name="tong_cong">
       <Position>3</Position>
@@ -1319,11 +1319,10 @@ id_of_fish</ColNames>
       <Position>4</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <foreign-key id="362" parent="311" name="gio_hang_ibfk_1">
-      <ColNames>id_of_fish</ColNames>
-      <RefColNames>id_of_fish</RefColNames>
-      <RefTableName>ca_koi_nhat</RefTableName>
-    </foreign-key>
+    <column id="362" parent="311" name="id_of_food">
+      <Position>5</Position>
+      <StoredType>varchar(10)|0s</StoredType>
+    </column>
     <foreign-key id="363" parent="311" name="gio_hang_ibfk_2">
       <ColNames>tai_khoan_nguoi_dung</ColNames>
       <RefColNames>user_name</RefColNames>
@@ -1453,9 +1452,8 @@ id_of_fish</ColNames>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
     <column id="391" parent="315" name="pass_word">
-      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>varchar(50)|0s</StoredType>
+      <StoredType>text|0s</StoredType>
     </column>
     <index id="392" parent="315" name="PRIMARY">
       <ColNames>user_name</ColNames>
@@ -1467,7 +1465,7 @@ id_of_fish</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="394" parent="316" name="Id">
+    <column id="394" parent="316" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>varchar(10)|0s</StoredType>
@@ -1514,7 +1512,7 @@ id_of_fish</ColNames>
       <StoredType>varchar(20)|0s</StoredType>
     </column>
     <index id="405" parent="316" name="PRIMARY">
-      <ColNames>Id</ColNames>
+      <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
@@ -1543,7 +1541,7 @@ id_of_fish</ColNames>
       <StoredType>varchar(255)|0s</StoredType>
     </column>
     <column id="411" parent="317" name="id">
-      <AutoIncrement>13</AutoIncrement>
+      <AutoIncrement>15</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
@@ -1553,21 +1551,16 @@ id_of_fish</ColNames>
       <RefColNames>order_id</RefColNames>
       <RefTableName>donhang</RefTableName>
     </foreign-key>
-    <foreign-key id="413" parent="317" name="tinh_trang_don_hang_ibfk_1">
-      <ColNames>order_id</ColNames>
-      <RefColNames>order_id</RefColNames>
-      <RefTableName>donhang</RefTableName>
-    </foreign-key>
-    <index id="414" parent="317" name="PRIMARY">
+    <index id="413" parent="317" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="415" parent="317" name="fk_order_id">
+    <index id="414" parent="317" name="fk_order_id">
       <ColNames>order_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="416" parent="317" name="PRIMARY">
+    <key id="415" parent="317" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

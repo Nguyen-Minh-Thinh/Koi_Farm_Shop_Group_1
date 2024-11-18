@@ -138,7 +138,6 @@ async function updateFishStatus(fishId) {
 async function submitPayment() {
     const name = document.getElementById('name').value;
     const address = document.getElementById('address').value;
-    const phone = document.getElementById('phone').value;
     const deliveryTime = document.getElementById('deliveryTime').value;
     const paymentMethod = document.getElementById('paymentMethod').value;
     const totalAmount = document.getElementById('totalAmount').value;
