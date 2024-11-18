@@ -52,7 +52,6 @@
                         <!-- Rows will be dynamically generated here -->
                     </tbody>
                 </table>
-                <!-- Pagination Controls -->
                 <div id="pagination-controls" class="pagination-controls"></div>
             </div>
         </main>
@@ -60,38 +59,68 @@
 
     <!-- Product Modal -->
     <div id="productModal" class="modal">
-        <div class="modal-content" id="product-modal-content">
+        <div class="modal-content">
             <span class="close" id="close-modal">&times;</span>
             <h2 id="modal-title">Thêm sản phẩm mới</h2>
             <form id="product-form">
                 <label for="product-id">Mã sản phẩm:</label>
                 <input type="text" id="product-id" name="product-id" required>
-                
+
                 <label for="product-name">Tên sản phẩm:</label>
                 <input type="text" id="product-name" name="product-name" required>
-                
+
                 <label for="product-type">Loại:</label>
                 <select id="product-type" name="product-type" required></select>
 
                 <label for="product-price">Giá:</label>
                 <input type="text" id="product-price" name="product-price" required>
-                
+
                 <label for="product-size">Kích thước:</label>
                 <input type="text" id="product-size" name="product-size" required>
 
-                <select id="product-status" name="product-status" hidden>
+                <label for="product-status">Trạng thái:</label>
+                <select id="product-status" name="product-status">
                     <option value="Đang bán" selected>Đang bán</option>
+                    <option value="Ngừng bán">Ngừng bán</option>
                 </select>
-                
+
                 <label for="product-image">Hình ảnh (URL):</label>
                 <input type="text" id="product-image" name="product-image" required>
-                
+
+                <label for="product-note">Ghi chú:</label>
+            <textarea id="product-note" name="product-note" rows="4"></textarea>
+
+            <select id="product-sale-person" name="product-sale-person" hidden>
+                <option value="OnKoi Quang Minh">OnKoi Quang Minh</option>
+            </select>
+
+            <label for="product-sex-of-fish">Giới tính cá:</label>
+            <select id="product-sex-of-fish" name="product-sex-of-fish" required>
+                <option value="Koi Đực">Koi Đực</option>
+                <option value="Koi Cái">Koi Cái</option>
+            </select>
+
+            <label for="product-dob-of-fish">Năm sinh:</label>
+            <select id="product-dob-of-fish" name="product-dob-of-fish" required>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+
+            <label for="product-origin-of-fish">Xuất xứ:</label>
+            <select id="product-origin-of-fish" name="product-origin-of-fish" required>
+                <option value="Dainichi Koi Farm">Dainichi Koi Farm</option>
+                <option value="Momotaro Koi Farm">Momotaro Koi Farm</option>
+                <option value="Oyaji Koi Farm">Oyaji Koi Farm</option>
+            </select>
                 <button type="submit" class="btn" id="submit-btn">Thêm</button>
             </form>
         </div>
     </div>
 
-    <!-- Link to JavaScript file -->
     <script src="product.js"></script>
 </body>
 

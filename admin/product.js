@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const apiUrl = "http://localhost:8080/ca-koi-nhat"; // Replace with your API URL
+    const apiUrl = "http://localhost:8080/ca-koi-nhat";
     const productTableBody = document.getElementById("product-table-body");
     const productModal = document.getElementById("productModal");
     const closeModalBtn = document.getElementById("close-modal");
@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalTitle = document.getElementById("modal-title");
     const submitBtn = document.getElementById("submit-btn");
     const productTypeSelect = document.getElementById("product-type");
+    const productStatusSelect = document.getElementById("product-status");
+    const productSalePersonSelect = document.getElementById("product-sale-person");
+    const productSexOfFishSelect = document.getElementById("product-sex-of-fish");
+    const productDobOfFishSelect = document.getElementById("product-dob-of-fish");
+    const productOriginOfFishSelect = document.getElementById("product-origin-of-fish");
     const paginationControls = document.getElementById("pagination-controls");
 
     let currentPage = 1;
@@ -38,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const end = start + productsPerPage;
                 const paginatedProducts = products.slice(start, end);
                 productTableBody.innerHTML = "";
-                
+
                 paginatedProducts.forEach(product => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
@@ -104,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
         submitBtn.textContent = "Cập nhật";
         productModal.classList.add("show-modal");
 
-        // Fetch product data and populate the form
         fetch(`${apiUrl}/${id}`)
             .then(response => response.json())
             .then(product => {
@@ -113,10 +117,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 productTypeSelect.value = product.typeOfFish;
                 document.getElementById("product-price").value = product.price;
                 document.getElementById("product-size").value = product.sizeOfFish;
-                document.getElementById("product-status").value = product.saleStatus;
+                productStatusSelect.value = product.saleStatus;
                 document.getElementById("product-image").value = product.image;
+                document.getElementById("product-note").value = product.note || "";
+                productSalePersonSelect.value = product.salePerson || "OnKoi Quang Minh";
+                productSexOfFishSelect.value = product.sexOfFish || "";
+                productDobOfFishSelect.value = product.dobOfFish || "";
+                productOriginOfFishSelect.value = product.originOfFish || "";
             })
-            .catch(error => console.error("Error fetching product details:", error));
+            .catch(error => {
+                console.error("Error fetching product details:", error);
+                alert("Không thể tải thông tin sản phẩm. Vui lòng thử lại sau.");
+            });
     }
 
     // Delete product
@@ -127,6 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
                 .then(response => {
                     if (response.ok) {
+                        alert("Xóa sản phẩm thành công!");
                         fetchProducts(currentPage);
                     } else {
                         throw new Error("Error deleting product");
@@ -141,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modalTitle.textContent = "Thêm sản phẩm mới";
         submitBtn.textContent = "Thêm";
         productForm.reset();
-        fetchProductTypes(); // Populate product types when adding new product
+        fetchProductTypes();
         productModal.classList.add("show-modal");
     });
 
@@ -166,9 +179,19 @@ document.addEventListener("DOMContentLoaded", function () {
             typeOfFish: productTypeSelect.value,
             price: document.getElementById("product-price").value,
             sizeOfFish: document.getElementById("product-size").value,
-            saleStatus: document.getElementById("product-status").value,
-            image: document.getElementById("product-image").value
+            saleStatus: productStatusSelect.value,
+            image: document.getElementById("product-image").value,
+            note: document.getElementById("product-note").value,
+            salePerson: productSalePersonSelect.value,
+            sexOfFish: productSexOfFishSelect.value,
+            dobOfFish: productDobOfFishSelect.value,
+            originOfFish: productOriginOfFishSelect.value
         };
+
+        if (!productData.idOfFish || !productData.nameOfFish || !productData.price) {
+            alert("Vui lòng điền đầy đủ thông tin!");
+            return;
+        }
 
         const method = submitBtn.textContent === "Thêm" ? "POST" : "PUT";
         const url = method === "POST" ? "http://localhost:8080/api/fish/create" : `http://localhost:8080/api/fish/update/${productData.idOfFish}`;
@@ -182,13 +205,17 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then(response => {
                 if (response.ok) {
+                    alert(method === "POST" ? "Thêm sản phẩm thành công!" : "Cập nhật sản phẩm thành công!");
                     productModal.classList.remove("show-modal");
                     fetchProducts(currentPage);
                 } else {
                     throw new Error("Error saving product");
                 }
             })
-            .catch(error => console.error("Error saving product:", error));
+            .catch(error => {
+                console.error("Error saving product:", error);
+                alert("Không thể lưu sản phẩm. Vui lòng thử lại sau.");
+            });
     });
 
     // Initial fetch of product data and types
