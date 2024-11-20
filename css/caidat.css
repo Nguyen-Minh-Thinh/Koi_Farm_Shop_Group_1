@@ -315,15 +315,13 @@ button:hover {
 .footer {
     display: flex;
     color: white;
-    line-height: 50px; 
-    background-color: #111; 
-    text-align: center; 
+    line-height:50px; 
+    background-color:#111; 
+    text-align:center; 
     font-family: Arial, sans-serif; 
-    clear: both;
+    clear:both;
     position: relative;
     align-items: center;
-    margin: 0; /* Đặt margin là 0 */
-    padding: 0; /* Đặt padding là 0 */
 }
 
 .social {
@@ -331,7 +329,7 @@ button:hover {
     margin: auto;
 }
 
-.text {
-    padding-left: 130px;
+.text2 {
+    padding-left: 250px;
     text-align: center;
 }
