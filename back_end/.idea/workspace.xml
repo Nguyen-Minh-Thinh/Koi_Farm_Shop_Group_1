@@ -4,51 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="070c0ff4-b69d-4daa-9b35-7e651e630f3f" name="Changes" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="ecf6bd20-7366-4f8f-b1e9-05b1aa76baeb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_14_2024_7_19_PM_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/../cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/asagi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/banner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/facebook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/insta.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/karashi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/kohaku.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/new.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/showa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/tancho.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/telephone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/img/youtube.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/static/js/sidenav.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/templates/users.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/ShopkoiApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/config/SpringSecurity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/controller/AuthController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/dto/UserDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/entity/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/repository/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/security/CustomUserDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/classes/ut/edu/shopkoi/service/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shopkoi/target/test-classes/ut/edu/shopkoi/ShopkoiApplicationTests.class" beforeDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/../admin/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/product.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../admin/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/ThucAnChoCaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/back_end/controller/ThucAnChoCaController.class" afterDir="false" />
->>>>>>> a9b40424405c7c687932a0c23b87631f27b0362e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,30 +18,14 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="com.intellij.jpb.JpaEntity" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2nNOCxrRYPfeVFN2clk4xQcXlVL" />
+  <component name="ProjectId" id="2p9EKz34Y8qkpmj45fPgSO7iWHg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -97,30 +41,34 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java/junit_selenium&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/m/IdeaProjects/Koi_Farm_Shop_Group_1/back_end&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
   }
 }</component>
   <component name="RunManager">
-    <configuration name="BackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="BackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="back_end" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.back_end.BackEndApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.back_end.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BackEndApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -133,27 +81,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="070c0ff4-b69d-4daa-9b35-7e651e630f3f" name="Changes" comment="" />
-      <created>1728809944715</created>
+      <changelist id="ecf6bd20-7366-4f8f-b1e9-05b1aa76baeb" name="Changes" comment="" />
+      <created>1732169833808</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1728809944715</updated>
-      <workItem from="1728809945999" duration="24207000" />
-      <workItem from="1729748035749" duration="857000" />
-      <workItem from="1729825107185" duration="5247000" />
-      <workItem from="1729831960062" duration="3227000" />
-      <workItem from="1729836969863" duration="1395000" />
-      <workItem from="1730091694424" duration="1158000" />
-      <workItem from="1730093085665" duration="11321000" />
-      <workItem from="1730213222847" duration="632000" />
-      <workItem from="1730336762939" duration="483000" />
-      <workItem from="1730354348346" duration="1490000" />
-      <workItem from="1730470945063" duration="821000" />
-      <workItem from="1730535902046" duration="481000" />
-      <workItem from="1730712419380" duration="5614000" />
-      <workItem from="1731341783749" duration="2327000" />
-      <workItem from="1731423634467" duration="2214000" />
-      <workItem from="1731584106509" duration="7017000" />
+      <updated>1732169833808</updated>
+      <workItem from="1732169835125" duration="729000" />
+      <workItem from="1732199932082" duration="442000" />
     </task>
     <servers />
   </component>
