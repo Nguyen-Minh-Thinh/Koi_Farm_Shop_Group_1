@@ -82,12 +82,12 @@ function getUsernameFromCookies() {
 // Hàm lấy và hiển thị sản phẩm dựa trên loại và trạng thái được chọn
 function fetchAndDisplayProducts(typeOfFish, statusFilter) {
     const productsContainer = document.querySelector(`#products-${typeOfFish}`);
-    const username = getUsernameFromCookies(); // Get the username
+    // const username = getUsernameFromCookies(); // Get the username
 
-    if (!username) {
-        console.error('User not logged in or username not found in cookies.');
-        return;
-    }
+    // if (!username) {
+    //     console.error('User not logged in or username not found in cookies.');
+    //     return;
+    // }
 
     fetch(`http://localhost:8080/ca-koi-nhat/loai_ca/${typeOfFish}`)
         .then(response => response.json())

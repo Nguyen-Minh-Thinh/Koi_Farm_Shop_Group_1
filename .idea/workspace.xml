@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f4deb1c-7060-4f93-b935-d05fb047fd00" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/src/main/java/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back_end/target/classes/com/example/back_end/controller/TaiKhoanCuaNguoiDungController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql_data/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/mysql_data/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-page/veSinh.html" beforeDir="false" afterPath="$PROJECT_DIR$/news-page/veSinh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanpham/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Java/junit_selenium",
+    "last_opened_file_path": "D:/Java/bai_tap_cuoi_ky",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -163,6 +163,8 @@
       <workItem from="1731830373982" duration="58000" />
       <workItem from="1731830487957" duration="38000" />
       <workItem from="1732111960115" duration="2495000" />
+      <workItem from="1732151571171" duration="2394000" />
+      <workItem from="1732175596717" duration="711000" />
     </task>
     <servers />
   </component>
