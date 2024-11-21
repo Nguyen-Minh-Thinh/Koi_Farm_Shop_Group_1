@@ -26,7 +26,7 @@ public class TaiKhoanCuaNguoiDungController {
     @Autowired
     private TaiKhoanCuaNguoiDungRepository taiKhoanCuaNguoiDungRepository;
 
-    @CrossOrigin(origins = "http://127.0.0.1:5501", allowCredentials = "true")
+        @CrossOrigin(origins = "http://127.0.0.1:5501", allowCredentials = "true")
     @PostMapping("/user/login")
     public Map<String, String> login(@RequestBody HashMap<String, String> map, HttpSession session, HttpServletResponse response) {
         String userName = map.get("userName");
