@@ -573,7 +573,7 @@ ul.breadcrumb li a:hover {
 
 .content-list a {
     text-decoration: none;
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .content-list a:hover {
